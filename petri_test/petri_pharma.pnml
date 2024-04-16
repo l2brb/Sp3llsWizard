@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <name>
+      <text></text>
+    </name>
+    <page id="n0">
+      <place id="source0">
+        <name>
+          <text>source0</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="sink0">
+        <name>
+          <text>sink0</text>
+        </name>
+      </place>
+      <place id="pre_Ship drug">
+        <name>
+          <text>pre_Ship drug</text>
+        </name>
+      </place>
+      <place id="pre_Produce drug in laboratory">
+        <name>
+          <text>pre_Produce drug in laboratory</text>
+        </name>
+      </place>
+      <transition id="Produce drug in laboratory">
+        <name>
+          <text>Produce drug in laboratory</text>
+        </name>
+      </transition>
+      <transition id="Ship drug">
+        <name>
+          <text>Ship drug</text>
+        </name>
+      </transition>
+      <transition id="Receive drugs order from hospital">
+        <name>
+          <text>Receive drugs order from hospital</text>
+        </name>
+      </transition>
+      <arc id="6652762624" source="pre_Ship drug" target="Ship drug"/>
+      <arc id="5479747216" source="pre_Produce drug in laboratory" target="Produce drug in laboratory"/>
+      <arc id="6652762480" source="Ship drug" target="sink0"/>
+      <arc id="6652761424" source="Produce drug in laboratory" target="pre_Ship drug"/>
+      <arc id="6652764400" source="source0" target="Receive drugs order from hospital"/>
+      <arc id="6652762768" source="Receive drugs order from hospital" target="pre_Produce drug in laboratory"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="sink0">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>

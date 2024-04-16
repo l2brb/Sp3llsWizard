@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <name>
+      <text></text>
+    </name>
+    <page id="n0">
+      <place id="source0">
+        <name>
+          <text>source0</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="pre_Administer drug">
+        <name>
+          <text>pre_Administer drug</text>
+        </name>
+      </place>
+      <place id="splace_in_Discharge patient_Declare patient healed_0">
+        <name>
+          <text>splace_in_Discharge patient_Declare patient healed_0</text>
+        </name>
+      </place>
+      <place id="sink0">
+        <name>
+          <text>sink0</text>
+        </name>
+      </place>
+      <place id="pre_Receive patient back">
+        <name>
+          <text>pre_Receive patient back</text>
+        </name>
+      </place>
+      <place id="splace_in_Discharge patient_Prepare clinic documentation_0">
+        <name>
+          <text>splace_in_Discharge patient_Prepare clinic documentation_0</text>
+        </name>
+      </place>
+      <place id="pre_Carry out preliminary analyses">
+        <name>
+          <text>pre_Carry out preliminary analyses</text>
+        </name>
+      </place>
+      <place id="pre_Order drugs">
+        <name>
+          <text>pre_Order drugs</text>
+        </name>
+      </place>
+      <place id="pre_Receive drugs">
+        <name>
+          <text>pre_Receive drugs</text>
+        </name>
+      </place>
+      <place id="intplace_Administer drug">
+        <name>
+          <text>intplace_Administer drug</text>
+        </name>
+      </place>
+      <place id="pre_Declare patient healed">
+        <name>
+          <text>pre_Declare patient healed</text>
+        </name>
+      </place>
+      <place id="pre_Prepare clinic documentation">
+        <name>
+          <text>pre_Prepare clinic documentation</text>
+        </name>
+      </place>
+      <transition id="Transfer patient">
+        <name>
+          <text>Transfer patient</text>
+        </name>
+      </transition>
+      <transition id="Receive patient back">
+        <name>
+          <text>Receive patient back</text>
+        </name>
+      </transition>
+      <transition id="Order drugs">
+        <name>
+          <text>Order drugs</text>
+        </name>
+      </transition>
+      <transition id="Declare patient healed">
+        <name>
+          <text>Declare patient healed</text>
+        </name>
+      </transition>
+      <transition id="Perform response to treatment analyses">
+        <name>
+          <text>Perform response to treatment analyses</text>
+        </name>
+      </transition>
+      <transition id="Discharge patient">
+        <name>
+          <text>Discharge patient</text>
+        </name>
+      </transition>
+      <transition id="Administer drug">
+        <name>
+          <text>Administer drug</text>
+        </name>
+      </transition>
+      <transition id="Prepare clinic documentation">
+        <name>
+          <text>Prepare clinic documentation</text>
+        </name>
+      </transition>
+      <transition id="Carry out preliminary analyses">
+        <name>
+          <text>Carry out preliminary analyses</text>
+        </name>
+      </transition>
+      <transition id="Patient hospitalised">
+        <name>
+          <text>Patient hospitalised</text>
+        </name>
+      </transition>
+      <transition id="Receive drugs">
+        <name>
+          <text>Receive drugs</text>
+        </name>
+      </transition>
+      <arc id="6617183872" source="source0" target="Patient hospitalised"/>
+      <arc id="6617335424" source="Patient hospitalised" target="pre_Carry out preliminary analyses"/>
+      <arc id="6617336960" source="intplace_Administer drug" target="Perform response to treatment analyses"/>
+      <arc id="6617337104" source="intplace_Administer drug" target="Transfer patient"/>
+      <arc id="6617336096" source="Perform response to treatment analyses" target="pre_Declare patient healed"/>
+      <arc id="6617184928" source="Transfer patient" target="pre_Receive patient back"/>
+      <arc id="6617182384" source="pre_Prepare clinic documentation" target="Prepare clinic documentation"/>
+      <arc id="6617183152" source="pre_Receive patient back" target="Receive patient back"/>
+      <arc id="6617336240" source="Receive patient back" target="pre_Prepare clinic documentation"/>
+      <arc id="6617335472" source="Discharge patient" target="sink0"/>
+      <arc id="6617336384" source="Receive patient back" target="pre_Declare patient healed"/>
+      <arc id="6617183296" source="pre_Carry out preliminary analyses" target="Carry out preliminary analyses"/>
+      <arc id="6617183440" source="pre_Order drugs" target="Order drugs"/>
+      <arc id="6617175760" source="pre_Administer drug" target="Administer drug"/>
+      <arc id="6617336528" source="Perform response to treatment analyses" target="pre_Prepare clinic documentation"/>
+      <arc id="6617333840" source="Carry out preliminary analyses" target="pre_Order drugs"/>
+      <arc id="6617183584" source="pre_Receive drugs" target="Receive drugs"/>
+      <arc id="6617185888" source="Declare patient healed" target="splace_in_Discharge patient_Declare patient healed_0"/>
+      <arc id="6617336672" source="splace_in_Discharge patient_Prepare clinic documentation_0" target="Discharge patient"/>
+      <arc id="6617335136" source="Order drugs" target="pre_Receive drugs"/>
+      <arc id="6617175664" source="pre_Declare patient healed" target="Declare patient healed"/>
+      <arc id="6617184112" source="Administer drug" target="intplace_Administer drug"/>
+      <arc id="6617336816" source="splace_in_Discharge patient_Declare patient healed_0" target="Discharge patient"/>
+      <arc id="6617186032" source="Prepare clinic documentation" target="splace_in_Discharge patient_Prepare clinic documentation_0"/>
+      <arc id="6617335280" source="Receive drugs" target="pre_Administer drug"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="sink0">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>
