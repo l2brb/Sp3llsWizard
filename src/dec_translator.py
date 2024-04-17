@@ -33,8 +33,9 @@ def get_init_constraint(workflow_net):
                 next_transition_name = [t["name"] for t in workflow_net["transitions"] if t["id"] == next_transition_id][0]
                 #print(next_transition_name)
                 init_constraint += f"{next_transition_name}"
+                #print(type(init_constraint))
 
-    return init_constraint
+    return {"Init": init_constraint}
 
 
 # End
@@ -55,7 +56,7 @@ def get_end_constraint(workflow_net):
                 prev_transition_name = [t["name"] for t in workflow_net["transitions"] if t["id"] == prev_transition_id][0]
                 end_constraint += f"{prev_transition_name}"
 
-    return end_constraint
+    return {"End": end_constraint}
 
 
 # RELATION CONSTRAINTS
@@ -80,7 +81,7 @@ def get_alternate_precedence(workflow_net):
                 altprecedence_constraint[arc["source"]] = constraints[key]
     #print(altprecedence_constraint)
             
-    return altprecedence_constraint     
+    return {"AltPrecedence": altprecedence_constraint}    
 
 # Alternate Response
 def get_alternate_response(workflow_net):
@@ -103,60 +104,39 @@ def get_alternate_response(workflow_net):
                 altresponse_constraint[key] = arc["target"]
     #print(altresponse_constraint)
 
-    return altresponse_constraint
+    return {"AltResponse": altresponse_constraint}
         
 
 # Main Function
-def translate_to_DECLARE(workflow_net):
-    constraints = []
-    constraints.extend(get_init_constraint(workflow_net))
-    constraints.extend(get_end_constraint(workflow_net))
-    constraints.extend(get_alternate_precedence(workflow_net))
-    constraints.extend(get_alternate_response(workflow_net))
+def translate_to_DEC(workflow_net):
+    constraints = get_init_constraint(workflow_net)
+    constraints = constraints | get_end_constraint(workflow_net)
+    constraints = constraints | get_alternate_precedence(workflow_net)
+    constraints = constraints | get_alternate_response(workflow_net)
+  
  
     return constraints
 
 
 
 
-
-# TESTING FUNCTIONALITY
-
 import petri_parser
+
+def write_to_csv(constraints):
+    with open('/Users/luca/Documents/^main/DECpietro/output/constraints.csv', 'w', newline='') as file:
+        writer = csv.writer(file)
+        for key, value in constraints.items():
+            writer.writerow([key, value])
+
 if __name__ == "__main__":
     pnml_file_path = "/Users/luca/Documents/^main/DECpietro/test/hospital.pnml" 
     workflow_net = petri_parser.parse_wn_from_pnml(pnml_file_path)
 
     if workflow_net:
-        # print("############################# Workflow Net parsed successfully:")
-        # print(workflow_net)
-
-        
-        # constraints = translate_to_DECLARE(workflow_net)
-        # print("############################# DECLARE Constraints:")
-        # print(constraints)
-
-        constraints = translate_to_DECLARE(workflow_net)
-        print("############################# Declarative Constraints Generated succesfully:")
-        for constraint in constraints:
-            print(constraint)
-
-
- 
-
-
-
-"""def write_to_csv(constraint_name, activity_name):
-    with open('/Users/luca/Documents/^main/DECpietro/output/constraints.csv', 'w', newline='') as file:
-        writer = csv.writer(file)
-        writer.writerow(["Constraint", "Activity"])
-        writer.writerow([constraint_name, activity_name])
-
-# Uso della funzione
-constraint = "Init"
-activity = get_init_constraint(workflow_net)
-write_to_csv(constraint, activity)"""
-
+        constraints = translate_to_DEC(workflow_net)
+        print("############################# Declarative Constraints Generated succesfully #############################")
+        print(constraints)
+        write_to_csv(constraints)
 
 
 
