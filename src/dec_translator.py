@@ -1,3 +1,5 @@
+import csv
+import pandas as pd
 
 """
 translate_to_DECLARE
@@ -11,53 +13,172 @@ Returns:
 - constraints: List of DECLARE constraints.
 """
 
-def translate_to_DECLARE(workflow_net):
+# EXISTANCE CONTRAINTS 
 
-    constraints = []
-
-    # Init and End Constraints
-    init_constraint = "Init("
-    end_constraint = "End("
-    
+# Init
+def get_init_constraint(workflow_net):
+    init_constraint = ""
+    initial_place_id = None
     for place in workflow_net["places"]:
-        if "initialMarking" in place and place["initialMarking"] == "true":
-            init_constraint += f"{place['id']}, "
-        if "finalMarking" in place and place["finalMarking"] == "true":
-            end_constraint += f"{place['id']}, "
-    
-    init_constraint = init_constraint.rstrip(", ") + ")"
-    end_constraint = end_constraint.rstrip(", ") + ")"
-    
-    constraints.extend([init_constraint, end_constraint])
+        if "initialMarking" in place and place["initialMarking"] == "1":
+            initial_place_id = place["id"]
+            #print(initial_place_id)
+            break
 
-    # Alternate Precedence and Alternate Response constraints
-    for transition in workflow_net["transitions"]:
-        input_places = [arc["source"] for arc in workflow_net["arcs"] if arc["target"] == transition["id"]]
-        output_places = [arc["target"] for arc in workflow_net["arcs"] if arc["source"] == transition["id"]]
+    if initial_place_id:
+        for arc in workflow_net["arcs"]:
+            if arc["source"] == initial_place_id:
+                next_transition_id = arc["target"]
+                #print(next_transition_id)
+                next_transition_name = [t["name"] for t in workflow_net["transitions"] if t["id"] == next_transition_id][0]
+                #print(next_transition_name)
+                init_constraint += f"{next_transition_name}"
+
+    return init_constraint
+
+
+# End
+def get_end_constraint(workflow_net):
+    end_constraint = ""
+    final_place_id = None
+    for place in workflow_net["places"]:
+        if "finalMarking" in place and place["finalMarking"] == "1":
+            final_place_id = place["id"]
+            #print(final_place_id)
+            break
+
+    if final_place_id:
+        for arc in workflow_net["arcs"]:
+            if arc["target"] == final_place_id:
+                prev_transition_id = arc["source"]
+                #print(prev_transition_id)
+                prev_transition_name = [t["name"] for t in workflow_net["transitions"] if t["id"] == prev_transition_id][0]
+                end_constraint += f"{prev_transition_name}"
+
+    return end_constraint
+
+
+# RELATION CONSTRAINTS
+
+# Alternate Precedence
+def get_alternate_precedence(workflow_net):
+    constraints = {}
+    for place in workflow_net["places"]:
+        if place.get("initialMarking") != "1" and place.get("finalMarking") != "1":
+            a = set(arc["source"] for arc in workflow_net["arcs"] if arc["source"] == place["id"])
+            #print(a)
+            for source in a:
+                for arc in workflow_net["arcs"]:
+                    for transition in workflow_net["transitions"]:
+                        if arc["source"] == source and arc["target"] == transition["id"]:
+                            constraints[source] = arc["target"]
+    #print(constraints.keys())
+    altprecedence_constraint = {}
+    for key in constraints.keys():
+        for arc in workflow_net["arcs"]:
+            if arc["target"] == key:
+                altprecedence_constraint[arc["source"]] = constraints[key]
+    #print(altprecedence_constraint)
+            
+    return altprecedence_constraint     
+
+# Alternate Response
+def get_alternate_response(workflow_net):
+    constraints = {}
+    for place in workflow_net["places"]:
+        if place.get("initialMarking") != "1" and place.get("finalMarking") != "1":
+            b = set(arc["target"] for arc in workflow_net["arcs"] if arc["target"] == place["id"])
+            #print(b)
+            for target in b:
+                for arc in workflow_net["arcs"]:
+                    for transition in workflow_net["transitions"]:
+                        if arc["target"] == target and arc["source"] == transition["id"]:
+                            constraints[arc["source"]] = target
+    #print(constraints.values())
+    #print(constraints)    
+    altresponse_constraint = {}
+    for key, val in constraints.items():
+        for arc in workflow_net["arcs"]:
+            if arc["source"] == val:
+                altresponse_constraint[key] = arc["target"]
+    #print(altresponse_constraint)
+
+    return altresponse_constraint
         
-        for place in input_places:
-            for next_place in output_places:
-                if next_place != place:
-                    constraints.append(f"AlternatePrecedence({place}, {next_place})")
-                    constraints.append(f"AlternateResponse({place}, {next_place})")
 
+# Main Function
+def translate_to_DECLARE(workflow_net):
+    constraints = []
+    constraints.extend(get_init_constraint(workflow_net))
+    constraints.extend(get_end_constraint(workflow_net))
+    constraints.extend(get_alternate_precedence(workflow_net))
+    constraints.extend(get_alternate_response(workflow_net))
+ 
     return constraints
 
 
 
 
-"""# TESTING FUNCTIONALITY
+
+# TESTING FUNCTIONALITY
+
 import petri_parser
 if __name__ == "__main__":
-    pnml_file_path = "/Users/luca/Documents/^main/DECpietro/petri_test/petri_pharma.pnml" 
+    pnml_file_path = "/Users/luca/Documents/^main/DECpietro/test/hospital.pnml" 
     workflow_net = petri_parser.parse_wn_from_pnml(pnml_file_path)
+
     if workflow_net:
-        print("############################# Workflow Net parsed successfully:")
-        print(workflow_net)
+        # print("############################# Workflow Net parsed successfully:")
+        # print(workflow_net)
 
         
-    
-    constraints = translate_to_DECLARE(workflow_net)
-    print("DECLARE Constraints:")
-    for constraint in constraints:
-        print(constraint)"""
+        # constraints = translate_to_DECLARE(workflow_net)
+        # print("############################# DECLARE Constraints:")
+        # print(constraints)
+
+        constraints = translate_to_DECLARE(workflow_net)
+        print("############################# Declarative Constraints Generated succesfully:")
+        for constraint in constraints:
+            print(constraint)
+
+
+ 
+
+
+
+"""def write_to_csv(constraint_name, activity_name):
+    with open('/Users/luca/Documents/^main/DECpietro/output/constraints.csv', 'w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(["Constraint", "Activity"])
+        writer.writerow([constraint_name, activity_name])
+
+# Uso della funzione
+constraint = "Init"
+activity = get_init_constraint(workflow_net)
+write_to_csv(constraint, activity)"""
+
+
+
+
+
+"""    workflow_net = {
+        "places": [
+            {"id": "source0", "initialMarking": "1"},
+            {"id": "sink0", "finalMarking": "1"},
+            {"id": "pre_Ship drug"},
+            {"id": "pre_Produce drug in laboratory"}
+        ],
+        "transitions": [
+            {"id": "Produce drug in laboratory", "name": "Produce drug in laboratory"},
+            {"id": "Ship drug", "name": "Ship drug"},
+            {"id": "Receive drugs order from hospital", "name": "Receive drugs order from hospital"}
+        ],
+        "arcs": [
+            {"source": "pre_Ship drug", "target": "Ship drug"},
+            {"source": "pre_Produce drug in laboratory", "target": "Produce drug in laboratory"},
+            {"source": "Ship drug", "target": "sink0"},
+            {"source": "Produce drug in laboratory", "target": "pre_Ship drug"},
+            {"source": "source0", "target": "Receive drugs order from hospital"},
+            {"source": "Receive drugs order from hospital", "target": "pre_Produce drug in laboratory"}
+        ]
+    }"""

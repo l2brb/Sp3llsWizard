@@ -29,11 +29,10 @@ def parse_wn_from_pnml(file_path):
             place_name = place.findtext('.//name/text')
             initial_marking = place.findtext('.//initialMarking/text')
 
-            if place_id is not None and place_name is not None:
-                workflow_net["places"].append({
-                 "id": place_id,
-                 "name": place_name,
-                 "initialMarking": initial_marking
+            workflow_net["places"].append({
+                "id": place_id,
+                "name": place_name,
+                "initialMarking": initial_marking
             })
 
         # Parsing transitions
@@ -56,21 +55,11 @@ def parse_wn_from_pnml(file_path):
                 "target": arc_target
             })
 
-        # Parsing final markings
-        final_markings = root.find('.//finalmarkings')
-        if final_markings is not None:
-            for marking in final_markings.findall('.//place'):
-                place_idref = marking.get("idref")
-                for place in workflow_net["places"]:
-                    if place["id"] == place_idref:
-                        place["finalMarking"] = "1"
-
         return workflow_net
 
     except FileNotFoundError:
         print(f"File '{file_path}' not found.")
         return None
-
 
 
 
@@ -82,18 +71,18 @@ if __name__ == "__main__":
         print("Workflow Net parsed successfully:")
         print(workflow_net)
 
-"""
-
-"""
-{'places': [{'id': 'source0', 'name': 'source0', 'initialMarking': '1'}, 
-            {'id': 'sink0', 'name': 'sink0', 'initialMarking': None, 'finalMarking': '1'}, 
+{'places': [{'id': 'source0', 'name': 'source0', 'initialMarking': '1'},
+            {'id': 'sink0', 'name': 'sink0', 'initialMarking': None}, 
             {'id': 'pre_Ship drug', 'name': 'pre_Ship drug', 'initialMarking': None}, 
             {'id': 'pre_Produce drug in laboratory', 'name': 'pre_Produce drug in laboratory', 'initialMarking': None}, 
             {'id': None, 'name': None, 'initialMarking': None}], 
             
-'transitions': [{'id': 'Produce drug in laboratory', 'name': 'Produce drug in laboratory'},
-                {'id': 'Ship drug', 'name': 'Ship drug'},
+
+'transitions': [{'id': 'Produce drug in laboratory', 'name': 'Produce drug in laboratory'}, 
+                {'id': 'Ship drug', 'name': 'Ship drug'}, 
                 {'id': 'Receive drugs order from hospital', 'name': 'Receive drugs order from hospital'}], 
+                
+                
 
 'arcs': [{'source': 'pre_Ship drug', 'target': 'Ship drug'}, 
          {'source': 'pre_Produce drug in laboratory', 'target': 'Produce drug in laboratory'}, 
@@ -101,25 +90,3 @@ if __name__ == "__main__":
          {'source': 'Produce drug in laboratory', 'target': 'pre_Ship drug'}, 
          {'source': 'source0', 'target': 'Receive drugs order from hospital'}, 
          {'source': 'Receive drugs order from hospital', 'target': 'pre_Produce drug in laboratory'}]}"""
-
-"""
-{'places': 
-[{'id': 'source0', 'name': 'source0', 'initialMarking': '1'}, 
-{'id': 'sink0', 'name': 'sink0', 'initialMarking': None, 'finalMarking': '1'}, 
-{'id': 'pre_Ship drug', 'name': 'pre_Ship drug', 'initialMarking': None}, 
-{'id': 'pre_Produce drug in laboratory', 'name': 'pre_Produce drug in laboratory', 'initialMarking': None}], 
-
-'transitions': 
-[{'id': 'Produce drug in laboratory', 'name': 'Produce drug in laboratory'}, 
-{'id': 'Ship drug', 'name': 'Ship drug'}, 
-{'id': 'Receive drugs order from hospital', 'name': 'Receive drugs order from hospital'}], 
-
-'arcs': 
-[{'source': 'pre_Ship drug', 'target': 'Ship drug'}, 
-{'source': 'pre_Produce drug in laboratory', 'target': 'Produce drug in laboratory'}, 
-{'source': 'Ship drug', 'target': 'sink0'}, 
-{'source': 'Produce drug in laboratory', 'target': 'pre_Ship drug'}, 
-{'source': 'source0', 'target': 'Receive drugs order from hospital'}, 
-{'source': 'Receive drugs order from hospital', 'target': 'pre_Produce drug in laboratory'}]}
-
-"""
