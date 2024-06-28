@@ -46,6 +46,7 @@ def parse_wn_from_pnml(file_path):
                 "name": transition_name
             })
 
+
         # Parsing arcs
         for arc in root.findall('.//arc'):
             arc_source = arc.get("source")
@@ -81,45 +82,5 @@ if __name__ == "__main__":
     if workflow_net:
         print("Workflow Net parsed successfully:")
         print(workflow_net)
-
-"""
-
-"""
-{'places': [{'id': 'source0', 'name': 'source0', 'initialMarking': '1'}, 
-            {'id': 'sink0', 'name': 'sink0', 'initialMarking': None, 'finalMarking': '1'}, 
-            {'id': 'pre_Ship drug', 'name': 'pre_Ship drug', 'initialMarking': None}, 
-            {'id': 'pre_Produce drug in laboratory', 'name': 'pre_Produce drug in laboratory', 'initialMarking': None}, 
-            {'id': None, 'name': None, 'initialMarking': None}], 
-            
-'transitions': [{'id': 'Produce drug in laboratory', 'name': 'Produce drug in laboratory'},
-                {'id': 'Ship drug', 'name': 'Ship drug'},
-                {'id': 'Receive drugs order from hospital', 'name': 'Receive drugs order from hospital'}], 
-
-'arcs': [{'source': 'pre_Ship drug', 'target': 'Ship drug'}, 
-         {'source': 'pre_Produce drug in laboratory', 'target': 'Produce drug in laboratory'}, 
-         {'source': 'Ship drug', 'target': 'sink0'}, 
-         {'source': 'Produce drug in laboratory', 'target': 'pre_Ship drug'}, 
-         {'source': 'source0', 'target': 'Receive drugs order from hospital'}, 
-         {'source': 'Receive drugs order from hospital', 'target': 'pre_Produce drug in laboratory'}]}"""
-
-"""
-{'places': 
-[{'id': 'source0', 'name': 'source0', 'initialMarking': '1'}, 
-{'id': 'sink0', 'name': 'sink0', 'initialMarking': None, 'finalMarking': '1'}, 
-{'id': 'pre_Ship drug', 'name': 'pre_Ship drug', 'initialMarking': None}, 
-{'id': 'pre_Produce drug in laboratory', 'name': 'pre_Produce drug in laboratory', 'initialMarking': None}], 
-
-'transitions': 
-[{'id': 'Produce drug in laboratory', 'name': 'Produce drug in laboratory'}, 
-{'id': 'Ship drug', 'name': 'Ship drug'}, 
-{'id': 'Receive drugs order from hospital', 'name': 'Receive drugs order from hospital'}], 
-
-'arcs': 
-[{'source': 'pre_Ship drug', 'target': 'Ship drug'}, 
-{'source': 'pre_Produce drug in laboratory', 'target': 'Produce drug in laboratory'}, 
-{'source': 'Ship drug', 'target': 'sink0'}, 
-{'source': 'Produce drug in laboratory', 'target': 'pre_Ship drug'}, 
-{'source': 'source0', 'target': 'Receive drugs order from hospital'}, 
-{'source': 'Receive drugs order from hospital', 'target': 'pre_Produce drug in laboratory'}]}
 
 """

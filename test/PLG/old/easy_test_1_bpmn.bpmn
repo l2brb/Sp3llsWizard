@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" id="definitions_6606bdfb-1f1e-47de-9dc5-27ab7e6898d6" targetNamespace="http://plg.processmining.it/" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="process">
+    <startEvent id="element41" name="Start">
+      <outgoing>element41-element43</outgoing>
+    </startEvent>
+    <endEvent id="element42" name="End">
+      <incoming>element79-element42</incoming>
+    </endEvent>
+    <task id="element43" name="Activity A">
+      <incoming>element41-element43</incoming>
+      <outgoing>element43-element44</outgoing>
+    </task>
+    <parallelGateway id="element44">
+      <incoming>element43-element44</incoming>
+      <outgoing>element44-element47</outgoing>
+      <outgoing>element44-element51</outgoing>
+      <outgoing>element44-element54</outgoing>
+    </parallelGateway>
+    <parallelGateway id="element45">
+      <incoming>element47-element45</incoming>
+      <incoming>element51-element45</incoming>
+      <incoming>element54-element45</incoming>
+      <outgoing>element45-element46</outgoing>
+    </parallelGateway>
+    <task id="element46" name="Activity B">
+      <incoming>element45-element46</incoming>
+      <outgoing>element46-element59</outgoing>
+    </task>
+    <task id="element47" name="Activity C">
+      <incoming>element44-element47</incoming>
+      <outgoing>element47-element45</outgoing>
+    </task>
+    <dataObject id="element48" name="variable_a"/>
+    <task id="element51" name="Activity D">
+      <incoming>element44-element51</incoming>
+      <outgoing>element51-element45</outgoing>
+    </task>
+    <task id="element54" name="Activity E">
+      <incoming>element44-element54</incoming>
+      <outgoing>element54-element45</outgoing>
+    </task>
+    <task id="element59" name="Activity F">
+      <incoming>element46-element59</incoming>
+      <outgoing>element59-element60</outgoing>
+    </task>
+    <task id="element60" name="Activity G">
+      <incoming>element59-element60</incoming>
+      <outgoing>element60-element63</outgoing>
+    </task>
+    <task id="element63" name="Activity H">
+      <incoming>element60-element63</incoming>
+      <outgoing>element63-element64</outgoing>
+    </task>
+    <parallelGateway id="element64">
+      <incoming>element63-element64</incoming>
+      <outgoing>element64-element67</outgoing>
+      <outgoing>element64-element70</outgoing>
+    </parallelGateway>
+    <parallelGateway id="element65">
+      <incoming>element67-element65</incoming>
+      <incoming>element70-element65</incoming>
+      <outgoing>element65-element66</outgoing>
+    </parallelGateway>
+    <task id="element66" name="Activity I">
+      <incoming>element65-element66</incoming>
+      <outgoing>element66-element75</outgoing>
+    </task>
+    <task id="element67" name="Activity J">
+      <incoming>element64-element67</incoming>
+      <outgoing>element67-element65</outgoing>
+    </task>
+    <task id="element70" name="Activity K">
+      <incoming>element64-element70</incoming>
+      <outgoing>element70-element65</outgoing>
+    </task>
+    <task id="element75" name="Activity L">
+      <incoming>element66-element75</incoming>
+      <outgoing>element75-element77</outgoing>
+    </task>
+    <dataObject id="element76" name="variable_b"/>
+    <exclusiveGateway id="element77">
+      <incoming>element75-element77</incoming>
+      <outgoing>element77-element80</outgoing>
+      <outgoing>element77-element83</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="element78">
+      <incoming>element80-element78</incoming>
+      <incoming>element83-element78</incoming>
+      <outgoing>element78-element79</outgoing>
+    </exclusiveGateway>
+    <task id="element79" name="Activity M">
+      <incoming>element78-element79</incoming>
+      <outgoing>element79-element42</outgoing>
+    </task>
+    <task id="element80" name="Activity N">
+      <incoming>element77-element80</incoming>
+      <outgoing>element80-element78</outgoing>
+    </task>
+    <task id="element83" name="Activity O">
+      <incoming>element77-element83</incoming>
+      <outgoing>element83-element78</outgoing>
+    </task>
+    <sequenceFlow id="element44-element47" sourceRef="element44" targetRef="element47"/>
+    <sequenceFlow id="element47-element45" sourceRef="element47" targetRef="element45"/>
+    <sequenceFlow id="element44-element51" sourceRef="element44" targetRef="element51"/>
+    <sequenceFlow id="element51-element45" sourceRef="element51" targetRef="element45"/>
+    <sequenceFlow id="element44-element54" sourceRef="element44" targetRef="element54"/>
+    <sequenceFlow id="element54-element45" sourceRef="element54" targetRef="element45"/>
+    <sequenceFlow id="element43-element44" sourceRef="element43" targetRef="element44"/>
+    <sequenceFlow id="element45-element46" sourceRef="element45" targetRef="element46"/>
+    <sequenceFlow id="element59-element60" sourceRef="element59" targetRef="element60"/>
+    <sequenceFlow id="element46-element59" sourceRef="element46" targetRef="element59"/>
+    <sequenceFlow id="element64-element67" sourceRef="element64" targetRef="element67"/>
+    <sequenceFlow id="element67-element65" sourceRef="element67" targetRef="element65"/>
+    <sequenceFlow id="element64-element70" sourceRef="element64" targetRef="element70"/>
+    <sequenceFlow id="element70-element65" sourceRef="element70" targetRef="element65"/>
+    <sequenceFlow id="element63-element64" sourceRef="element63" targetRef="element64"/>
+    <sequenceFlow id="element65-element66" sourceRef="element65" targetRef="element66"/>
+    <sequenceFlow id="element77-element80" sourceRef="element77" targetRef="element80"/>
+    <sequenceFlow id="element80-element78" sourceRef="element80" targetRef="element78"/>
+    <sequenceFlow id="element77-element83" sourceRef="element77" targetRef="element83"/>
+    <sequenceFlow id="element83-element78" sourceRef="element83" targetRef="element78"/>
+    <sequenceFlow id="element75-element77" sourceRef="element75" targetRef="element77"/>
+    <sequenceFlow id="element78-element79" sourceRef="element78" targetRef="element79"/>
+    <sequenceFlow id="element66-element75" sourceRef="element66" targetRef="element75"/>
+    <sequenceFlow id="element60-element63" sourceRef="element60" targetRef="element63"/>
+    <sequenceFlow id="element41-element43" sourceRef="element41" targetRef="element43"/>
+    <sequenceFlow id="element79-element42" sourceRef="element79" targetRef="element42"/>
+  </process>
+  <bpmndi:BPMNDiagram documentation="bpmn diagram element" id="diagram" name="diagram" resolution="120.0">
+    <bpmndi:BPMNPlane bpmnElement="process" id="plane">
+      <bpmndi:BPMNShape bpmnElement="element41" id="shape41">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="element42" id="shape42">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="element43" id="shape43">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="element44" id="shape44">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="element45" id="shape45">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="element46" id="shape46">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="element47" id="shape47">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="element51" id="shape51">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="element54" id="shape54">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="element59" id="shape59">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="element60" id="shape60">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="element63" id="shape63">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="element64" id="shape64">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="element65" id="shape65">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="element66" id="shape66">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="element67" id="shape67">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="element70" id="shape70">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="element75" id="shape75">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="element77" id="shape77">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="element78" id="shape78">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="element79" id="shape79">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="element80" id="shape80">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="element83" id="shape83">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

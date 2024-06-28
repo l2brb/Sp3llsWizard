@@ -104,6 +104,7 @@ def get_alternate_response(workflow_net):
                 altresponse_constraint[key] = arc["target"]
     #print(altresponse_constraint)
 
+
     return {"AltResponse": altresponse_constraint}
         
 
@@ -117,48 +118,3 @@ def translate_to_DEC(workflow_net):
  
     return constraints
 
-
-
-
-import petri_parser
-
-def write_to_csv(constraints):
-    with open('/Users/luca/Documents/^main/DECpietro/output/constraints.csv', 'w', newline='') as file:
-        writer = csv.writer(file)
-        for key, value in constraints.items():
-            writer.writerow([key, value])
-
-if __name__ == "__main__":
-    pnml_file_path = "/Users/luca/Documents/^main/DECpietro/test/hospital.pnml" 
-    workflow_net = petri_parser.parse_wn_from_pnml(pnml_file_path)
-
-    if workflow_net:
-        constraints = translate_to_DEC(workflow_net)
-        print("############################# Declarative Constraints Generated succesfully #############################")
-        print(constraints)
-        write_to_csv(constraints)
-
-
-
-
-"""    workflow_net = {
-        "places": [
-            {"id": "source0", "initialMarking": "1"},
-            {"id": "sink0", "finalMarking": "1"},
-            {"id": "pre_Ship drug"},
-            {"id": "pre_Produce drug in laboratory"}
-        ],
-        "transitions": [
-            {"id": "Produce drug in laboratory", "name": "Produce drug in laboratory"},
-            {"id": "Ship drug", "name": "Ship drug"},
-            {"id": "Receive drugs order from hospital", "name": "Receive drugs order from hospital"}
-        ],
-        "arcs": [
-            {"source": "pre_Ship drug", "target": "Ship drug"},
-            {"source": "pre_Produce drug in laboratory", "target": "Produce drug in laboratory"},
-            {"source": "Ship drug", "target": "sink0"},
-            {"source": "Produce drug in laboratory", "target": "pre_Ship drug"},
-            {"source": "source0", "target": "Receive drugs order from hospital"},
-            {"source": "Receive drugs order from hospital", "target": "pre_Produce drug in laboratory"}
-        ]
-    }"""
