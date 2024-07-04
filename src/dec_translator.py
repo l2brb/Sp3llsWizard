@@ -61,6 +61,7 @@ def get_end_constraint(workflow_net):
 
 # RELATION CONSTRAINTS
 
+
 # Alternate Precedence
 def get_alternate_precedence(workflow_net):
     constraints = {}

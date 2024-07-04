@@ -1,24 +1,28 @@
 from src import petri_parser
-from src import dec_translator
+from src import dec_translator_update
 from src import csv_exporter
 from src import json_exporter
 
-
-if __name__ == "__main__":
-    pnml_file_path = "/Users/luca/Documents/^main/DECpietro/test/hospital.pnml" 
+def main():
+    pnml_file_path = "/home/l2brb/Docker/DECpietro/test/PLG/pm4py/pnml_test_plg.pnml"
     workflow_net = petri_parser.parse_wn_from_pnml(pnml_file_path)
 
     if workflow_net:
-        print("######################### Workflow Net parsed successfully! #######################")
-        #print(workflow_net["transitions"])
+        print("WORKFLOW NET PARSED SUCCESFULLY.")
+        # print(workflow_net)
 
-        constraints = dec_translator.translate_to_DEC(workflow_net)
-        print("################# Declarative Constraints Generated succesfully! ##################")
-        # print(constraints)
+        # Generate Declarative Constraints
+        constraints = dec_translator_update.translate_to_DEC(workflow_net)
+        print("DECLARATIVE CONTRAINTS GENERATED SUCCESFULLY.")
+        print(constraints)
 
+        # Export to CSV
         csv_exporter.write_to_csv(constraints)
-        print("############################# CSV Exported Correctly! #############################") 
+        print("CSV EXPORTED SUCCESFULLY.")
 
-
+        # Export to JSON
         json_exporter.write_to_json(constraints)
-        print("############################# json Exported Correctly! #############################")
+        print("JSON EXPORTED.")
+
+if __name__ == "__main__":
+    main()
