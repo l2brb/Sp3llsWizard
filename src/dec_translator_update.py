@@ -1,5 +1,3 @@
-import petri_parser
-
 """
 translate_to_DECLARE
 ---------------------------
@@ -12,8 +10,8 @@ Returns:
 - constraints: List of Declarative constraints.
 """
 
-pnml_file_path = "/home/l2brb/Docker/DECpietro/test/PLG/pm4py/pnml_test_plg.pnml"
-workflow_net = petri_parser.parse_wn_from_pnml(pnml_file_path)
+# pnml_file_path = "/home/l2brb/Docker/DECpietro/test/PLG/pm4py/pnml_test_plg.pnml"
+# workflow_net = petri_parser.parse_wn_from_pnml(pnml_file_path)
 # print(workflow_net)
 
 
@@ -44,7 +42,15 @@ def get_init_constraint(workflow_net):
                 init_constraint += f"{next_transition_name}"
                 #print(type(init_constraint))
 
-    return {"Init": init_constraint}
+    result_init = [{
+        "template": "Init",
+        "parameters": [[init_constraint]],
+        "support": 1.0,
+        "confidence": 1.0,
+        "interestFactor": 1.0
+    }]
+
+    return result_init
 
 
 # End
@@ -65,14 +71,23 @@ def get_end_constraint(workflow_net):
                 prev_transition_name = [t["name"] for t in workflow_net["transitions"] if t["id"] == prev_transition_id][0]
                 end_constraint += f"{prev_transition_name}"
 
-    return {"End": end_constraint}
+    result_end = [{
+        "template": "End",
+        "parameters": [[end_constraint]],
+        "support": 1.0,
+        "confidence": 1.0,
+        "interestFactor": 1.0
+    }]
+
+    return result_end
+
+# end_constraints = get_end_constraint(workflow_net)
+# print(end_constraints)
+
+
 
 
 # RELATION CONSTRAINTS
-
-
-# activity_a_name = [t["name"] for t in workflow_net["transitions"]]
-# print(activity_a_name)][0]
 
 
 # Alternate Precedence
@@ -82,7 +97,7 @@ def get_alternate_precedence(workflow_net):
     transition_names = {}
     for transition in workflow_net["transitions"]:
         if transition["id"] == transition["name"]:
-            transition_names[transition["id"]] = "" + transition["name"]
+            transition_names[transition["id"]] = "SILENT_" + transition["name"]
         else:
             transition_names[transition["id"]] = transition["name"]
 
@@ -104,11 +119,21 @@ def get_alternate_precedence(workflow_net):
                 if source_transition:
                     altprecedence_constraint[source_transition] = constraints[key]
 
-    return {"AltPrecedence": altprecedence_constraint}
+    result_altprec_list = []
+    for key, value in altprecedence_constraint.items():
+        result_altresp = {
+        "template": "AlternatePrecedence",
+        "parameters": [[key], [value]],
+        "support": 1.0,
+        "confidence": 1.0,
+        "interestFactor": 1.0
+    }
+        result_altprec_list.append(result_altresp)
+
+    return result_altprec_list
 
 # alt_prec_contraints = get_alternate_precedence(workflow_net)
 # print(alt_prec_contraints)
-
 
 
 # Alternate Response
@@ -141,21 +166,51 @@ def get_alternate_response(workflow_net):
                 if target_name:
                     altresponse_constraint[key] = target_name
 
-    return {"AltResponse": altresponse_constraint}
+    result_altresp_list = []
+    for key, value in altresponse_constraint.items():
+        result_altresp = {
+        "template": "AlternateResponse",
+        "parameters": [[key], [value]],
+        "support": 1.0,
+        "confidence": 1.0,
+        "interestFactor": 1.0
+    }
+        result_altresp_list.append(result_altresp)
+
+    return result_altresp_list
 
 
-alt_resp_constraints = get_alternate_response(workflow_net)
-print(alt_resp_constraints)
+
+# alt_resp_constraints = get_alternate_response(workflow_net)
+# print(alt_resp_constraints)
 
 
-# Main Function
+
+
 def translate_to_DEC(workflow_net):
-    constraints = get_init_constraint(workflow_net)
-    constraints = constraints | get_end_constraint(workflow_net)
-    constraints = constraints | get_alternate_precedence(workflow_net)
-    constraints = constraints | get_alternate_response(workflow_net)
 
+    model_name = "input_model.pnml"
 
-    return constraints
+    tasks = [transition["name"] for transition in workflow_net["transitions"]]
 
+    init_constraint = get_init_constraint(workflow_net)
+    end_constraint = get_end_constraint(workflow_net)
+    alternate_precedence = get_alternate_precedence(workflow_net)
+    alternate_response = get_alternate_response(workflow_net)
 
+    constraints = []
+    constraints.extend(init_constraint)
+    constraints.extend(end_constraint)
+    constraints.extend(alternate_precedence)
+    constraints.extend(alternate_response)
+
+    output = {
+        "name": model_name,
+        "tasks": tasks,
+        "constraints": constraints
+    }
+
+    return output
+
+# out = translate_to_DEC(workflow_net)
+# print(out)

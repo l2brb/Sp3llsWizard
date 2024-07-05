@@ -10,18 +10,18 @@ def main():
     if workflow_net:
         print("WORKFLOW NET PARSED SUCCESFULLY.")
         # print(workflow_net)
-
+      
         # Generate Declarative Constraints
-        constraints = dec_translator_update.translate_to_DEC(workflow_net)
+        output = dec_translator_update.translate_to_DEC(workflow_net)
         print("DECLARATIVE CONTRAINTS GENERATED SUCCESFULLY.")
-        print(constraints)
+        #print(constraints)
 
-        # Export to CSV
-        csv_exporter.write_to_csv(constraints)
-        print("CSV EXPORTED SUCCESFULLY.")
+        # # Export to CSV
+        # csv_exporter.write_to_csv(output)
+        # print("CSV EXPORTED SUCCESFULLY.")
 
         # Export to JSON
-        json_exporter.write_to_json(constraints)
+        json_exporter.write_to_json(output)
         print("JSON EXPORTED.")
 
 if __name__ == "__main__":

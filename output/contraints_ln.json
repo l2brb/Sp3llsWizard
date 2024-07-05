@@ -1,1 +1,842 @@
-{"Init": "Activity A", "End": "Activity M", "AltPrecedence": {"3": "4", "5": "24", "29": "12", "12": "31", "10": "26", "19": "28", "26": "6", "15": "31", "7": "29", "23": "20", "2": "23", "24": "3", "9": "24", "25": "8", "16": "31", "21": "28", "31": "9", "17": "27", "11": "10", "22": "24", "20": "22", "8": "11", "13": "11", "4": "25", "18": "26", "14": "31", "27": "21", "28": "18"}, "AltResponse": {"3": "4", "5": "24", "29": "12", "12": "31", "10": "26", "19": "28", "26": "6", "15": "31", "7": "29", "23": "20", "2": "23", "24": "3", "9": "24", "25": "8", "16": "31", "21": "28", "31": "9", "17": "27", "11": "10", "22": "24", "20": "22", "8": "11", "13": "11", "4": "25", "18": "26", "14": "31", "27": "21", "28": "18"}}
+{
+    "name": "input_model.pnml",
+    "tasks": [
+        "Activity K",
+        "24",
+        "29",
+        "Activity I",
+        "Activity N",
+        "Activity F",
+        "Activity S",
+        "Activity A",
+        "Activity T",
+        "Activity U",
+        "Activity J",
+        "28",
+        "Activity G",
+        "27",
+        "Activity R",
+        "Activity E",
+        "25",
+        "Activity Q",
+        "Activity H",
+        "26",
+        "Activity P",
+        "Activity D",
+        "Activity M",
+        "Activity B",
+        "23",
+        "Activity L",
+        "31",
+        "Activity C",
+        "Activity O"
+    ],
+    "constraints": [
+        {
+            "template": "Init",
+            "parameters": [
+                [
+                    "Activity A"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "End",
+            "parameters": [
+                [
+                    "Activity M"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity B"
+                ],
+                [
+                    "Activity L"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity C"
+                ],
+                [
+                    "SILENT_24"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "SILENT_29"
+                ],
+                [
+                    "Activity F"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity F"
+                ],
+                [
+                    "SILENT_31"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity O"
+                ],
+                [
+                    "SILENT_26"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity T"
+                ],
+                [
+                    "SILENT_28"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "SILENT_26"
+                ],
+                [
+                    "Activity M"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity H"
+                ],
+                [
+                    "SILENT_31"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity D"
+                ],
+                [
+                    "SILENT_29"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "SILENT_23"
+                ],
+                [
+                    "Activity J"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity A"
+                ],
+                [
+                    "SILENT_23"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "SILENT_24"
+                ],
+                [
+                    "Activity B"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity E"
+                ],
+                [
+                    "SILENT_24"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "SILENT_25"
+                ],
+                [
+                    "Activity N"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity I"
+                ],
+                [
+                    "SILENT_31"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity U"
+                ],
+                [
+                    "SILENT_28"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "SILENT_31"
+                ],
+                [
+                    "Activity E"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity R"
+                ],
+                [
+                    "SILENT_27"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity P"
+                ],
+                [
+                    "Activity O"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity K"
+                ],
+                [
+                    "SILENT_24"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity J"
+                ],
+                [
+                    "Activity K"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity N"
+                ],
+                [
+                    "Activity P"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity Q"
+                ],
+                [
+                    "Activity P"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity L"
+                ],
+                [
+                    "SILENT_25"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity S"
+                ],
+                [
+                    "SILENT_26"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity G"
+                ],
+                [
+                    "SILENT_31"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "SILENT_27"
+                ],
+                [
+                    "Activity U"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "SILENT_28"
+                ],
+                [
+                    "Activity S"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity B"
+                ],
+                [
+                    "Activity L"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity C"
+                ],
+                [
+                    "24"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "29"
+                ],
+                [
+                    "Activity F"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity F"
+                ],
+                [
+                    "31"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity O"
+                ],
+                [
+                    "26"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity T"
+                ],
+                [
+                    "28"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "26"
+                ],
+                [
+                    "Activity M"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity H"
+                ],
+                [
+                    "31"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity D"
+                ],
+                [
+                    "29"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "23"
+                ],
+                [
+                    "Activity J"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity A"
+                ],
+                [
+                    "23"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "24"
+                ],
+                [
+                    "Activity B"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity E"
+                ],
+                [
+                    "24"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "25"
+                ],
+                [
+                    "Activity N"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity I"
+                ],
+                [
+                    "31"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity U"
+                ],
+                [
+                    "28"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "31"
+                ],
+                [
+                    "Activity E"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity R"
+                ],
+                [
+                    "27"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity P"
+                ],
+                [
+                    "Activity O"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity K"
+                ],
+                [
+                    "24"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity J"
+                ],
+                [
+                    "Activity K"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity N"
+                ],
+                [
+                    "Activity P"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity Q"
+                ],
+                [
+                    "Activity P"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity L"
+                ],
+                [
+                    "25"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity S"
+                ],
+                [
+                    "26"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity G"
+                ],
+                [
+                    "31"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "27"
+                ],
+                [
+                    "Activity U"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "28"
+                ],
+                [
+                    "Activity S"
+                ]
+            ],
+            "support": 1.0,
+            "confidence": 1.0,
+            "interestFactor": 1.0
+        }
+    ]
+}
