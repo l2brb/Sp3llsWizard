@@ -194,7 +194,7 @@ def translate_to_DEC(workflow_net):
     tasks = [transition["name"] for transition in workflow_net["transitions"]]
 
     init_constraint = get_init_constraint(workflow_net)
-    end_constraint = get_end_constraint(workflow_net)A
+    end_constraint = get_end_constraint(workflow_net)
     alternate_precedence = get_alternate_precedence(workflow_net)
     alternate_response = get_alternate_response(workflow_net)
 
