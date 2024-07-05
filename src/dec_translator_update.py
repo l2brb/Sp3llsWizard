@@ -189,12 +189,12 @@ def get_alternate_response(workflow_net):
 
 def translate_to_DEC(workflow_net):
 
-    model_name = "input_model.pnml"
+    model_name = "input_model.pnml" # DEVO AGGIUNGERE IL NOME DEL FILE DAL PATH
 
     tasks = [transition["name"] for transition in workflow_net["transitions"]]
 
     init_constraint = get_init_constraint(workflow_net)
-    end_constraint = get_end_constraint(workflow_net)
+    end_constraint = get_end_constraint(workflow_net)A
     alternate_precedence = get_alternate_precedence(workflow_net)
     alternate_response = get_alternate_response(workflow_net)
 
