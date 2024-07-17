@@ -38,10 +38,7 @@
                 [
                     "Activity A"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
         },
         {
             "template": "End",
@@ -49,10 +46,7 @@
                 [
                     "Activity M"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
         },
         {
             "template": "AlternatePrecedence",
@@ -63,262 +57,7 @@
                 [
                     "Activity L"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
-        },
-        {
-            "template": "AlternatePrecedence",
-            "parameters": [
-                [
-                    "Activity C"
-                ],
-                [
-                    "SILENT_24"
-                ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
-        },
-        {
-            "template": "AlternatePrecedence",
-            "parameters": [
-                [
-                    "SILENT_29"
-                ],
-                [
-                    "Activity F"
-                ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
-        },
-        {
-            "template": "AlternatePrecedence",
-            "parameters": [
-                [
-                    "Activity F"
-                ],
-                [
-                    "SILENT_31"
-                ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
-        },
-        {
-            "template": "AlternatePrecedence",
-            "parameters": [
-                [
-                    "Activity O"
-                ],
-                [
-                    "SILENT_26"
-                ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
-        },
-        {
-            "template": "AlternatePrecedence",
-            "parameters": [
-                [
-                    "Activity T"
-                ],
-                [
-                    "SILENT_28"
-                ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
-        },
-        {
-            "template": "AlternatePrecedence",
-            "parameters": [
-                [
-                    "SILENT_26"
-                ],
-                [
-                    "Activity M"
-                ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
-        },
-        {
-            "template": "AlternatePrecedence",
-            "parameters": [
-                [
-                    "Activity H"
-                ],
-                [
-                    "SILENT_31"
-                ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
-        },
-        {
-            "template": "AlternatePrecedence",
-            "parameters": [
-                [
-                    "Activity D"
-                ],
-                [
-                    "SILENT_29"
-                ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
-        },
-        {
-            "template": "AlternatePrecedence",
-            "parameters": [
-                [
-                    "SILENT_23"
-                ],
-                [
-                    "Activity J"
-                ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
-        },
-        {
-            "template": "AlternatePrecedence",
-            "parameters": [
-                [
-                    "Activity A"
-                ],
-                [
-                    "SILENT_23"
-                ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
-        },
-        {
-            "template": "AlternatePrecedence",
-            "parameters": [
-                [
-                    "SILENT_24"
-                ],
-                [
-                    "Activity B"
-                ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
-        },
-        {
-            "template": "AlternatePrecedence",
-            "parameters": [
-                [
-                    "Activity E"
-                ],
-                [
-                    "SILENT_24"
-                ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
-        },
-        {
-            "template": "AlternatePrecedence",
-            "parameters": [
-                [
-                    "SILENT_25"
-                ],
-                [
-                    "Activity N"
-                ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
-        },
-        {
-            "template": "AlternatePrecedence",
-            "parameters": [
-                [
-                    "Activity I"
-                ],
-                [
-                    "SILENT_31"
-                ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
-        },
-        {
-            "template": "AlternatePrecedence",
-            "parameters": [
-                [
-                    "Activity U"
-                ],
-                [
-                    "SILENT_28"
-                ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
-        },
-        {
-            "template": "AlternatePrecedence",
-            "parameters": [
-                [
-                    "SILENT_31"
-                ],
-                [
-                    "Activity E"
-                ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
-        },
-        {
-            "template": "AlternatePrecedence",
-            "parameters": [
-                [
-                    "Activity R"
-                ],
-                [
-                    "SILENT_27"
-                ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
-        },
-        {
-            "template": "AlternatePrecedence",
-            "parameters": [
-                [
-                    "Activity P"
-                ],
-                [
-                    "Activity O"
-                ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
         },
         {
             "template": "AlternatePrecedence",
@@ -329,80 +68,18 @@
                 [
                     "SILENT_24"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
         },
         {
             "template": "AlternatePrecedence",
             "parameters": [
                 [
-                    "Activity J"
+                    "SILENT_29"
                 ],
                 [
-                    "Activity K"
+                    "Activity G"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
-        },
-        {
-            "template": "AlternatePrecedence",
-            "parameters": [
-                [
-                    "Activity N"
-                ],
-                [
-                    "Activity P"
-                ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
-        },
-        {
-            "template": "AlternatePrecedence",
-            "parameters": [
-                [
-                    "Activity Q"
-                ],
-                [
-                    "Activity P"
-                ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
-        },
-        {
-            "template": "AlternatePrecedence",
-            "parameters": [
-                [
-                    "Activity L"
-                ],
-                [
-                    "SILENT_25"
-                ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
-        },
-        {
-            "template": "AlternatePrecedence",
-            "parameters": [
-                [
-                    "Activity S"
-                ],
-                [
-                    "SILENT_26"
-                ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
         },
         {
             "template": "AlternatePrecedence",
@@ -413,10 +90,228 @@
                 [
                     "SILENT_31"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity S"
+                ],
+                [
+                    "SILENT_26"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity U"
+                ],
+                [
+                    "SILENT_28"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "SILENT_26"
+                ],
+                [
+                    "Activity M"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity D"
+                ],
+                [
+                    "SILENT_29"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "SILENT_23"
+                ],
+                [
+                    "Activity C"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity A"
+                ],
+                [
+                    "SILENT_23"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "SILENT_24"
+                ],
+                [
+                    "Activity B"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "SILENT_25"
+                ],
+                [
+                    "Activity R"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "SILENT_25"
+                ],
+                [
+                    "Activity N"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "SILENT_31"
+                ],
+                [
+                    "Activity E"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity R"
+                ],
+                [
+                    "SILENT_27"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity P"
+                ],
+                [
+                    "Activity Q"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity P"
+                ],
+                [
+                    "Activity O"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "SILENT_23"
+                ],
+                [
+                    "Activity D"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity J"
+                ],
+                [
+                    "Activity K"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity N",
+                    "Activity Q"
+                ],
+                [
+                    "Activity P"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity L"
+                ],
+                [
+                    "SILENT_25"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "SILENT_23"
+                ],
+                [
+                    "Activity J"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "SILENT_29"
+                ],
+                [
+                    "Activity H"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "SILENT_29"
+                ],
+                [
+                    "Activity I"
+                ]
+            ]
         },
         {
             "template": "AlternatePrecedence",
@@ -425,12 +320,9 @@
                     "SILENT_27"
                 ],
                 [
-                    "Activity U"
+                    "Activity T"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
         },
         {
             "template": "AlternatePrecedence",
@@ -441,10 +333,29 @@
                 [
                     "Activity S"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "SILENT_29"
+                ],
+                [
+                    "Activity F"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "SILENT_27"
+                ],
+                [
+                    "Activity U"
+                ]
+            ]
         },
         {
             "template": "AlternateResponse",
@@ -455,10 +366,7 @@
                 [
                     "Activity L"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
         },
         {
             "template": "AlternateResponse",
@@ -467,26 +375,20 @@
                     "Activity C"
                 ],
                 [
-                    "24"
+                    "t_24"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
         },
         {
             "template": "AlternateResponse",
             "parameters": [
                 [
-                    "29"
+                    "t_29"
                 ],
                 [
                     "Activity F"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
         },
         {
             "template": "AlternateResponse",
@@ -495,12 +397,9 @@
                     "Activity F"
                 ],
                 [
-                    "31"
+                    "t_31"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
         },
         {
             "template": "AlternateResponse",
@@ -509,12 +408,9 @@
                     "Activity O"
                 ],
                 [
-                    "26"
+                    "t_26"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
         },
         {
             "template": "AlternateResponse",
@@ -523,26 +419,20 @@
                     "Activity T"
                 ],
                 [
-                    "28"
+                    "t_28"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
         },
         {
             "template": "AlternateResponse",
             "parameters": [
                 [
-                    "26"
+                    "t_26"
                 ],
                 [
                     "Activity M"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
         },
         {
             "template": "AlternateResponse",
@@ -551,12 +441,9 @@
                     "Activity H"
                 ],
                 [
-                    "31"
+                    "t_31"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
         },
         {
             "template": "AlternateResponse",
@@ -565,26 +452,20 @@
                     "Activity D"
                 ],
                 [
-                    "29"
+                    "t_29"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
         },
         {
             "template": "AlternateResponse",
             "parameters": [
                 [
-                    "23"
+                    "t_23"
                 ],
                 [
                     "Activity J"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
         },
         {
             "template": "AlternateResponse",
@@ -593,26 +474,20 @@
                     "Activity A"
                 ],
                 [
-                    "23"
+                    "t_23"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
         },
         {
             "template": "AlternateResponse",
             "parameters": [
                 [
-                    "24"
+                    "t_24"
                 ],
                 [
                     "Activity B"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
         },
         {
             "template": "AlternateResponse",
@@ -621,26 +496,20 @@
                     "Activity E"
                 ],
                 [
-                    "24"
+                    "t_24"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
         },
         {
             "template": "AlternateResponse",
             "parameters": [
                 [
-                    "25"
+                    "t_25"
                 ],
                 [
                     "Activity N"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
         },
         {
             "template": "AlternateResponse",
@@ -649,12 +518,9 @@
                     "Activity I"
                 ],
                 [
-                    "31"
+                    "t_31"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
         },
         {
             "template": "AlternateResponse",
@@ -663,26 +529,20 @@
                     "Activity U"
                 ],
                 [
-                    "28"
+                    "t_28"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
         },
         {
             "template": "AlternateResponse",
             "parameters": [
                 [
-                    "31"
+                    "t_31"
                 ],
                 [
                     "Activity E"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
         },
         {
             "template": "AlternateResponse",
@@ -691,12 +551,9 @@
                     "Activity R"
                 ],
                 [
-                    "27"
+                    "t_27"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
         },
         {
             "template": "AlternateResponse",
@@ -705,12 +562,10 @@
                     "Activity P"
                 ],
                 [
+                    "Activity Q",
                     "Activity O"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
         },
         {
             "template": "AlternateResponse",
@@ -719,12 +574,9 @@
                     "Activity K"
                 ],
                 [
-                    "24"
+                    "t_24"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
         },
         {
             "template": "AlternateResponse",
@@ -735,10 +587,7 @@
                 [
                     "Activity K"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
         },
         {
             "template": "AlternateResponse",
@@ -749,10 +598,7 @@
                 [
                     "Activity P"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
         },
         {
             "template": "AlternateResponse",
@@ -763,10 +609,7 @@
                 [
                     "Activity P"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
         },
         {
             "template": "AlternateResponse",
@@ -775,12 +618,9 @@
                     "Activity L"
                 ],
                 [
-                    "25"
+                    "t_25"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
         },
         {
             "template": "AlternateResponse",
@@ -789,12 +629,9 @@
                     "Activity S"
                 ],
                 [
-                    "26"
+                    "t_26"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
         },
         {
             "template": "AlternateResponse",
@@ -803,40 +640,31 @@
                     "Activity G"
                 ],
                 [
-                    "31"
+                    "t_31"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
         },
         {
             "template": "AlternateResponse",
             "parameters": [
                 [
-                    "27"
+                    "t_27"
                 ],
                 [
                     "Activity U"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
         },
         {
             "template": "AlternateResponse",
             "parameters": [
                 [
-                    "28"
+                    "t_28"
                 ],
                 [
                     "Activity S"
                 ]
-            ],
-            "support": 1.0,
-            "confidence": 1.0,
-            "interestFactor": 1.0
+            ]
         }
     ]
 }

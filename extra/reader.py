@@ -2,7 +2,7 @@ import pm4py
 from pm4py.visualization.transition_system import visualizer as ts_visualizer
 
 #PNML READER
-net, im, fm, = pm4py.read_pnml("/home/l2brb/Docker/DECpietro/test/PLG/pm4py/pnml_test_plg.pnml", True)
+net, im, fm, = pm4py.read_pnml("/home/l2brb/Docker/DECpietro/test/PLG/pm4py/pnml_test_plg_loop.pnml", True)
 
 print(net, im, fm)
 
