@@ -1,11 +1,11 @@
 from src import petri_parser
 from src import dec_translator_target_version
-from src import csv_exporter
+# from src import csv_exporter
 from src import json_exporter
 from src import wn_json
 
 def main():
-    pnml_file_path = "/home/l2brb/Docker/DECpietro/test/PLG/pm4py/pnml_test_plg.pnml"
+    pnml_file_path = "/home/l2brb/main/DECpietro/test/sepsis/sepsis_heuristics.pnml"
     workflow_net = petri_parser.parse_wn_from_pnml(pnml_file_path)
 
     if workflow_net:
@@ -13,8 +13,8 @@ def main():
         # print(workflow_net)
 
         # Export WN to JSON
-        wn_json.write_to_json(workflow_net)
-        print("WN JSON EXPORTED.")
+        #wn_json.write_to_json(workflow_net)
+        #print("WN JSON EXPORTED.")
 
       
         # Generate Declarative Constraints

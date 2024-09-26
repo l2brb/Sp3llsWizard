@@ -45,9 +45,6 @@ def get_init_constraint(workflow_net):
     result_init = [{
         "template": "Init",
         "parameters": [[init_constraint]],
-        "support": 1.0,
-        "confidence": 1.0,
-        "interestFactor": 1.0
     }]
 
     return result_init
@@ -74,9 +71,6 @@ def get_end_constraint(workflow_net):
     result_end = [{
         "template": "End",
         "parameters": [[end_constraint]],
-        "support": 1.0,
-        "confidence": 1.0,
-        "interestFactor": 1.0
     }]
 
     return result_end
@@ -101,33 +95,43 @@ def get_alternate_precedence(workflow_net):
         else:
             transition_names[transition["id"]] = transition["name"]
 
+    #print(transition_names)
+
     for place in workflow_net["places"]:
         if place.get("initialMarking") != "1" and place.get("finalMarking") != "1":
             a = set(arc["source"] for arc in workflow_net["arcs"] if arc["source"] == place["id"])
+            #print(a)
             for source in a:
                 for arc in workflow_net["arcs"]:
                     if arc["source"] == source:
                         target_transition = transition_names.get(arc["target"])
+                        #print(target_transition)
                         if target_transition:
-                            constraints[source] = target_transition
+                            if source not in constraints:
+                                constraints[source] = []
+                            constraints[source].append(target_transition)
+    # print(constraints.values())
+    # print("............................")
 
     altprecedence_constraint = {}
     for key in constraints.keys():
         for arc in workflow_net["arcs"]:
             if arc["target"] == key:
+                # print(arc)
                 source_transition = transition_names.get(arc["source"])
+                # print(source_transition)
                 if source_transition:
                     altprecedence_constraint[source_transition] = constraints[key]
+    # print("............................")
+    # print(altprecedence_constraint)
+
 
     result_altprec_list = []
-    for key, value in altprecedence_constraint.items():
+    for key, values in altprecedence_constraint.items():
         result_altresp = {
-        "template": "AlternatePrecedence",
-        "parameters": [[key], [value]],
-        "support": 1.0,
-        "confidence": 1.0,
-        "interestFactor": 1.0
-    }
+            "template": "AlternatePrecedence",
+            "parameters": [[key], list(values)],
+        }
         result_altprec_list.append(result_altresp)
 
     return result_altprec_list
@@ -143,7 +147,7 @@ def get_alternate_response(workflow_net):
     transition_names = {}
     for transition in workflow_net["transitions"]:
         if transition["id"] == transition["name"]:
-            transition_names[transition["id"]] = "" + transition["name"]
+            transition_names[transition["id"]] = "SILENT_" + transition["name"]
         else:
             transition_names[transition["id"]] = transition["name"]
 
@@ -171,9 +175,6 @@ def get_alternate_response(workflow_net):
         result_altresp = {
         "template": "AlternateResponse",
         "parameters": [[key], [value]],
-        "support": 1.0,
-        "confidence": 1.0,
-        "interestFactor": 1.0
     }
         result_altresp_list.append(result_altresp)
 
@@ -185,7 +186,7 @@ def get_alternate_response(workflow_net):
 # print(alt_resp_constraints)
 
 
-
+# MAIN
 
 def translate_to_DEC(workflow_net):
 

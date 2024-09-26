@@ -36,6 +36,7 @@ def get_init_constraint(workflow_net):
             #print(initial_place_id)
             break
 
+    init_constraints = []        
     if initial_place_id:
         for arc in workflow_net["arcs"]:
             if arc["source"] == initial_place_id:
@@ -43,12 +44,12 @@ def get_init_constraint(workflow_net):
                 #print(next_transition_id)
                 next_transition_name = [t["name"] for t in workflow_net["transitions"] if t["id"] == next_transition_id][0]
                 #print(next_transition_name)
-                init_constraint += f"{next_transition_name}"
+                init_constraints.append(f"{next_transition_name}")
                 #print(type(init_constraint))
 
     result_init = [{
         "template": "Init",
-        "parameters": [[init_constraint]],
+        "parameters": [list(init_constraints)],
     }]
 
     return result_init
@@ -64,17 +65,19 @@ def get_end_constraint(workflow_net):
             #print(final_place_id)
             break
 
+    end_constraints = []
     if final_place_id:
         for arc in workflow_net["arcs"]:
             if arc["target"] == final_place_id:
                 prev_transition_id = arc["source"]
                 #print(prev_transition_id)
                 prev_transition_name = [t["name"] for t in workflow_net["transitions"] if t["id"] == prev_transition_id][0]
-                end_constraint += f"{prev_transition_name}"
+                end_constraints.append(f"{prev_transition_name}")
+    #print(end_constraint)
 
     result_end = [{
         "template": "End",
-        "parameters": [[end_constraint]],
+        "parameters": [list(end_constraints)],
     }]
 
     return result_end
@@ -98,7 +101,7 @@ def get_alternate_response(workflow_net):
     transition_names = {}
     for transition in workflow_net["transitions"]:
         if transition["id"] == transition["name"]:
-            transition_names[transition["id"]] = "t_" + transition["name"]
+            transition_names[transition["id"]] = "" + transition["name"]
         else:
             transition_names[transition["id"]] = transition["name"]
 
@@ -155,7 +158,7 @@ def get_alternate_precedence(workflow_net):
     transition_names = {}
     for transition in workflow_net["transitions"]:
         if transition["id"] == transition["name"]:
-            transition_names[transition["id"]] = "SILENT_" + transition["name"]
+            transition_names[transition["id"]] = "" + transition["name"]
         else:
             transition_names[transition["id"]] = transition["name"]
 
@@ -222,10 +225,11 @@ def translate_to_DEC(workflow_net):
     constraints.extend(alternate_precedence)
     constraints.extend(alternate_response)
 
+
     output = {
         "name": model_name,
         "tasks": tasks,
-        "constraints": constraints
+        "constraints": constraints,
     }
 
     return output

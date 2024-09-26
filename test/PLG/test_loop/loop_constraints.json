@@ -1,0 +1,833 @@
+{
+    "name": "input_model.pnml",
+    "tasks": [
+        "Activity V",
+        "Activity N",
+        "Activity W",
+        "99",
+        "103",
+        "96",
+        "Activity D",
+        "Activity K",
+        "Activity O",
+        "Activity U",
+        "105",
+        "Activity I",
+        "Activity AE",
+        "Activity AD",
+        "Activity S",
+        "Activity F",
+        "Activity L",
+        "Activity Z",
+        "100",
+        "Activity A",
+        "Activity X",
+        "Activity E",
+        "Activity AA",
+        "Activity J",
+        "102",
+        "101",
+        "Activity R",
+        "Activity G",
+        "Activity M",
+        "Activity B",
+        "Activity AC",
+        "Activity Y",
+        "Activity C",
+        "Activity AB",
+        "Activity T",
+        "98"
+    ],
+    "constraints": [
+        {
+            "template": "Init",
+            "parameters": [
+                [
+                    "Activity A"
+                ]
+            ]
+        },
+        {
+            "template": "End",
+            "parameters": [
+                [
+                    "Activity M"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "103"
+                ],
+                [
+                    "Activity F"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity AD"
+                ],
+                [
+                    "Activity AE"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity Z"
+                ],
+                [
+                    "Activity X"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity Z"
+                ],
+                [
+                    "Activity AA"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "96"
+                ],
+                [
+                    "Activity D"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "103"
+                ],
+                [
+                    "Activity G"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "99"
+                ],
+                [
+                    "Activity N"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity G"
+                ],
+                [
+                    "105"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity A"
+                ],
+                [
+                    "96"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity AC"
+                ],
+                [
+                    "Activity AD"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity U"
+                ],
+                [
+                    "102"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity S"
+                ],
+                [
+                    "100"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity AB"
+                ],
+                [
+                    "Activity AC"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "99"
+                ],
+                [
+                    "Activity R"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "96"
+                ],
+                [
+                    "Activity J"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity X",
+                    "Activity N"
+                ],
+                [
+                    "Activity V"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity C"
+                ],
+                [
+                    "98"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity R"
+                ],
+                [
+                    "101"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity Y"
+                ],
+                [
+                    "Activity Z"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity L"
+                ],
+                [
+                    "99"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity V"
+                ],
+                [
+                    "Activity W"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity V"
+                ],
+                [
+                    "Activity O"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "96"
+                ],
+                [
+                    "Activity C"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity W",
+                    "Activity AA"
+                ],
+                [
+                    "Activity Y"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity B"
+                ],
+                [
+                    "Activity L"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "103"
+                ],
+                [
+                    "Activity AB"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity D"
+                ],
+                [
+                    "103"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "100"
+                ],
+                [
+                    "Activity M"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "103"
+                ],
+                [
+                    "Activity I"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "102"
+                ],
+                [
+                    "Activity S"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "101"
+                ],
+                [
+                    "Activity T"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "105"
+                ],
+                [
+                    "Activity E"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "101"
+                ],
+                [
+                    "Activity U"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "98"
+                ],
+                [
+                    "Activity B"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity J"
+                ],
+                [
+                    "Activity K"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "103"
+                ],
+                [
+                    "Activity I"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity AD"
+                ],
+                [
+                    "Activity AE"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity Z"
+                ],
+                [
+                    "Activity X",
+                    "Activity AA"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "96"
+                ],
+                [
+                    "Activity C"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "99"
+                ],
+                [
+                    "Activity R"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity I"
+                ],
+                [
+                    "105"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity A"
+                ],
+                [
+                    "96"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity AC"
+                ],
+                [
+                    "Activity AD"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity T"
+                ],
+                [
+                    "102"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity O"
+                ],
+                [
+                    "100"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity AB"
+                ],
+                [
+                    "Activity AC"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity X"
+                ],
+                [
+                    "Activity V"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity N"
+                ],
+                [
+                    "Activity V"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity E"
+                ],
+                [
+                    "98"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity R"
+                ],
+                [
+                    "101"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity Y"
+                ],
+                [
+                    "Activity Z"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity L"
+                ],
+                [
+                    "99"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity V"
+                ],
+                [
+                    "Activity W",
+                    "Activity O"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity F"
+                ],
+                [
+                    "105"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity S"
+                ],
+                [
+                    "100"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity K"
+                ],
+                [
+                    "98"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity U"
+                ],
+                [
+                    "102"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity W"
+                ],
+                [
+                    "Activity Y"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity AA"
+                ],
+                [
+                    "Activity Y"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity B"
+                ],
+                [
+                    "Activity L"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity D"
+                ],
+                [
+                    "103"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "100"
+                ],
+                [
+                    "Activity M"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "102"
+                ],
+                [
+                    "Activity S"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "101"
+                ],
+                [
+                    "Activity U"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "105"
+                ],
+                [
+                    "Activity E"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity AE"
+                ],
+                [
+                    "105"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "98"
+                ],
+                [
+                    "Activity B"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity G"
+                ],
+                [
+                    "105"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity C"
+                ],
+                [
+                    "98"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity J"
+                ],
+                [
+                    "Activity K"
+                ]
+            ]
+        }
+    ]
+}
