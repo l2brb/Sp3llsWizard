@@ -1,11 +1,11 @@
 from src import petri_parser
-from src import dec_translator_target_version
+from src import dec_translator_untarget_test_version as dec_translator
 # from src import csv_exporter
 from src import json_exporter
 from src import wn_json
 
 def main():
-    pnml_file_path = "/home/l2brb/main/DECpietro/test/sepsis/sepsis_heuristics.pnml"
+    pnml_file_path = "/home/l2brb/main/DECpietro/test/PLG/test_and/and_pm4py.pnml"
     workflow_net = petri_parser.parse_wn_from_pnml(pnml_file_path)
 
     if workflow_net:
@@ -18,7 +18,7 @@ def main():
 
       
         # Generate Declarative Constraints
-        output = dec_translator_target_version.translate_to_DEC(workflow_net)
+        output = dec_translator.translate_to_DEC(workflow_net)
         print("DECLARATIVE CONTRAINTS GENERATED SUCCESFULLY.")
         #print(output)
 

@@ -84,47 +84,44 @@ def get_end_constraint(workflow_net):
 # RELATION CONSTRAINTS
 
 
-# Alternate Precedence
+# Alternate Precedence [UNBRANCHED] - NOT YET
 def get_alternate_precedence(workflow_net):
     constraints = {}
 
     transition_names = {}
     for transition in workflow_net["transitions"]:
         if transition["id"] == transition["name"]:
-            transition_names[transition["id"]] = "SILENT_" + transition["name"]
+            transition_names[transition["id"]] = "" + transition["name"]
         else:
             transition_names[transition["id"]] = transition["name"]
-
-    #print(transition_names)
 
     for place in workflow_net["places"]:
         if place.get("initialMarking") != "1" and place.get("finalMarking") != "1":
             a = set(arc["source"] for arc in workflow_net["arcs"] if arc["source"] == place["id"])
-            #print(a)
             for source in a:
                 for arc in workflow_net["arcs"]:
-                    if arc["source"] == source:
-                        target_transition = transition_names.get(arc["target"])
-                        #print(target_transition)
-                        if target_transition:
-                            if source not in constraints:
-                                constraints[source] = []
-                            constraints[source].append(target_transition)
-    # print(constraints.values())
-    # print("............................")
+                    for transition in workflow_net["transitions"]:                  
+                        if arc["source"] == source and arc["target"] == transition["id"]:  
+                            target_transition = transition_names.get(arc["target"])
+                            if target_transition:
+                                #constraints[target_transition] = source
+                                constraints[source] = target_transition 
+    print(constraints)
+    print("............................")
 
     altprecedence_constraint = {}
     for key in constraints.keys():
+
         for arc in workflow_net["arcs"]:
             if arc["target"] == key:
                 # print(arc)
                 source_transition = transition_names.get(arc["source"])
-                # print(source_transition)
+                print(source_transition)
                 if source_transition:
                     altprecedence_constraint[source_transition] = constraints[key]
-    # print("............................")
-    # print(altprecedence_constraint)
-
+    print("............................")
+    print(altprecedence_constraint)
+    print("............................")
 
     result_altprec_list = []
     for key, values in altprecedence_constraint.items():
@@ -140,14 +137,14 @@ def get_alternate_precedence(workflow_net):
 # print(alt_prec_contraints)
 
 
-# Alternate Response
+# Alternate Response [UNBRANCHED]
 def get_alternate_response(workflow_net):
     constraints = {}
 
     transition_names = {}
     for transition in workflow_net["transitions"]:
         if transition["id"] == transition["name"]:
-            transition_names[transition["id"]] = "SILENT_" + transition["name"]
+            transition_names[transition["id"]] = "" + transition["name"]
         else:
             transition_names[transition["id"]] = transition["name"]
 
@@ -162,6 +159,8 @@ def get_alternate_response(workflow_net):
                             if source_name:
                                 constraints[source_name] = target
 
+    #print(constraints)
+
     altresponse_constraint = {}
     for key, val in constraints.items():
         for arc in workflow_net["arcs"]:
@@ -169,6 +168,8 @@ def get_alternate_response(workflow_net):
                 target_name = transition_names.get(arc["target"])
                 if target_name:
                     altresponse_constraint[key] = target_name
+
+    print(altresponse_constraint)
 
     result_altresp_list = []
     for key, value in altresponse_constraint.items():

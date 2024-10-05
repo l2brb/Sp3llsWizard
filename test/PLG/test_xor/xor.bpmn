@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" id="definitions_3bf21ae9-e65c-47b3-bb80-b1176d4df069" targetNamespace="http://plg.processmining.it/" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="process">
+    <startEvent id="element0" name="Start">
+      <outgoing>element0-element2</outgoing>
+    </startEvent>
+    <endEvent id="element1" name="End">
+      <incoming>element5-element1</incoming>
+    </endEvent>
+    <task id="element2" name="Activity A">
+      <incoming>element0-element2</incoming>
+      <outgoing>element2-element3</outgoing>
+    </task>
+    <exclusiveGateway id="element3">
+      <incoming>element19-element3</incoming>
+      <incoming>element2-element3</incoming>
+      <outgoing>element3-element6</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="element4">
+      <incoming>element9-element4</incoming>
+      <outgoing>element4-element18</outgoing>
+      <outgoing>element4-element5</outgoing>
+    </exclusiveGateway>
+    <task id="element5" name="Activity B">
+      <incoming>element4-element5</incoming>
+      <outgoing>element5-element1</outgoing>
+    </task>
+    <task id="element6" name="Activity C">
+      <incoming>element3-element6</incoming>
+      <outgoing>element6-element7</outgoing>
+    </task>
+    <exclusiveGateway id="element7">
+      <incoming>element6-element7</incoming>
+      <outgoing>element7-element10</outgoing>
+      <outgoing>element7-element13</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="element8">
+      <incoming>element10-element8</incoming>
+      <incoming>element13-element8</incoming>
+      <outgoing>element8-element9</outgoing>
+    </exclusiveGateway>
+    <task id="element9" name="Activity D">
+      <incoming>element8-element9</incoming>
+      <outgoing>element9-element4</outgoing>
+    </task>
+    <task id="element10" name="Activity E">
+      <incoming>element7-element10</incoming>
+      <outgoing>element10-element8</outgoing>
+    </task>
+    <task id="element13" name="Activity F">
+      <incoming>element7-element13</incoming>
+      <outgoing>element13-element8</outgoing>
+    </task>
+    <task id="element18" name="Activity G">
+      <incoming>element4-element18</incoming>
+      <outgoing>element18-element19</outgoing>
+    </task>
+    <task id="element19" name="Activity H">
+      <incoming>element18-element19</incoming>
+      <outgoing>element19-element3</outgoing>
+    </task>
+    <sequenceFlow id="element7-element10" sourceRef="element7" targetRef="element10"/>
+    <sequenceFlow id="element10-element8" sourceRef="element10" targetRef="element8"/>
+    <sequenceFlow id="element7-element13" sourceRef="element7" targetRef="element13"/>
+    <sequenceFlow id="element13-element8" sourceRef="element13" targetRef="element8"/>
+    <sequenceFlow id="element6-element7" sourceRef="element6" targetRef="element7"/>
+    <sequenceFlow id="element8-element9" sourceRef="element8" targetRef="element9"/>
+    <sequenceFlow id="element18-element19" sourceRef="element18" targetRef="element19"/>
+    <sequenceFlow id="element3-element6" sourceRef="element3" targetRef="element6"/>
+    <sequenceFlow id="element9-element4" sourceRef="element9" targetRef="element4"/>
+    <sequenceFlow id="element4-element18" sourceRef="element4" targetRef="element18"/>
+    <sequenceFlow id="element19-element3" sourceRef="element19" targetRef="element3"/>
+    <sequenceFlow id="element2-element3" sourceRef="element2" targetRef="element3"/>
+    <sequenceFlow id="element4-element5" sourceRef="element4" targetRef="element5"/>
+    <sequenceFlow id="element0-element2" sourceRef="element0" targetRef="element2"/>
+    <sequenceFlow id="element5-element1" sourceRef="element5" targetRef="element1"/>
+  </process>
+  <bpmndi:BPMNDiagram documentation="bpmn diagram element" id="diagram" name="diagram" resolution="120.0">
+    <bpmndi:BPMNPlane bpmnElement="process" id="plane">
+      <bpmndi:BPMNShape bpmnElement="element0" id="shape0">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="element1" id="shape1">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="element2" id="shape2">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="element3" id="shape3">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="element4" id="shape4">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="element5" id="shape5">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="element6" id="shape6">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="element7" id="shape7">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="element8" id="shape8">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="element9" id="shape9">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="element10" id="shape10">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="element13" id="shape13">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="element18" id="shape18">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="element19" id="shape19">
+        <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

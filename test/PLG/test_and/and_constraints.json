@@ -1,0 +1,210 @@
+{
+    "name": "input_model.pnml",
+    "tasks": [
+        "Activity C",
+        "Activity E",
+        "26",
+        "33",
+        "Activity D",
+        "Activity A",
+        "25",
+        "Activity F",
+        "Activity B"
+    ],
+    "constraints": [
+        {
+            "template": "Init",
+            "parameters": [
+                [
+                    "Activity A"
+                ]
+            ]
+        },
+        {
+            "template": "End",
+            "parameters": [
+                [
+                    "Activity B"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "25"
+                ],
+                [
+                    "Activity E"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity E"
+                ],
+                [
+                    "26"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity D"
+                ],
+                [
+                    "33"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity D"
+                ],
+                [
+                    "Activity B"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "26"
+                ],
+                [
+                    "Activity D"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity C"
+                ],
+                [
+                    "25"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "25"
+                ],
+                [
+                    "Activity F"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity A",
+                    "33"
+                ],
+                [
+                    "Activity C"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "25"
+                ],
+                [
+                    "Activity F"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity F"
+                ],
+                [
+                    "26"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity E"
+                ],
+                [
+                    "26"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity D"
+                ],
+                [
+                    "33",
+                    "Activity B"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "26"
+                ],
+                [
+                    "Activity D"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity C"
+                ],
+                [
+                    "25"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "Activity A"
+                ],
+                [
+                    "Activity C"
+                ]
+            ]
+        },
+        {
+            "template": "AlternateResponse",
+            "parameters": [
+                [
+                    "33"
+                ],
+                [
+                    "Activity C"
+                ]
+            ]
+        }
+    ]
+}

@@ -2,13 +2,13 @@ import pm4py
 from pm4py.visualization.transition_system import visualizer as ts_visualizer
 
 #PNML READER
-net, im, fm, = pm4py.read_pnml("/home/l2brb/Docker/DECpietro/test/PLG/pm4py/pnml_test_plg_loop.pnml", True)
+net, im, fm, = pm4py.read_pnml("/home/l2brb/main/DECpietro/test/PLG/test_and/and.pnml", True)
 
-print(net, im, fm)
+#print(net, im, fm)
 
 
 
-#export_pm4py_pnml = pm4py.write_pnml(net, im, fm, "/home/l2brb/Docker/DECpietro/test/PLG/pm4py/pnml_test_plg.pnml")
+export_pm4py_pnml = pm4py.write_pnml(net, im, fm, "/home/l2brb/main/DECpietro/test/PLG/test_and/and_pm4py.pnml")
 pm4py.view_petri_net(net, im, fm, format='pdf')
 
 exit()

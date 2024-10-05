@@ -24,7 +24,7 @@ Returns:
 
 
 
-# EXISTANCE CONTRAINTS
+##################### EXISTANCE CONTRAINTS #####################
 
 # Init
 def get_init_constraint(workflow_net):
@@ -88,10 +88,10 @@ def get_end_constraint(workflow_net):
 
 
 
-# RELATION CONSTRAINTS
+##################### RELATION CONSTRAINTS [UNTARGET VERSION] #####################
 
 
-# Alternate Response [if A then B and not A in between]
+# Alternate Response [if A then B and not A in between] 
 
 def get_alternate_response(workflow_net):
     constraints = {}
@@ -138,11 +138,12 @@ def get_alternate_response(workflow_net):
 
     result_altresp_list = []
     for key, values in altresponse_constraint.items():
-        result_altresp = {
-            "template": "AlternateResponse",
-            "parameters": [[key], list(values)],
-        }
-        result_altresp_list.append(result_altresp)
+        for value in values:
+            result_altresp = {
+                "template": "AlternateResponse",
+                "parameters": [[key], [value]],
+            }
+            result_altresp_list.append(result_altresp)
 
     return result_altresp_list
 
@@ -191,11 +192,12 @@ def get_alternate_precedence(workflow_net):
     # print(altprecedence_constraint)
     result_altprec_list = []
     for key, values in altprecedence_constraint.items():
-        result_altresp = {
-            "template": "AlternatePrecedence",
-            "parameters": [list(values), [key]],
-        }
-        result_altprec_list.append(result_altresp)
+        for value in values:
+            result_altprec = {
+                "template": "AlternatePrecedence",
+                "parameters": [[value], [key]],
+            }
+            result_altprec_list.append(result_altprec)
 
     return result_altprec_list
 

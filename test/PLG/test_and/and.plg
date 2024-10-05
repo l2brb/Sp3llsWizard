@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 
+
+WARNING: Do not manually edit this file, unless you know what you are doing!
+
+This file has been generated with libPlg v.2.0.6.
+Check https://github.com/delas/plg for sources and other stuff.
+
+ -->
+<process>
+	<!-- This is the list of all meta-attributes of the process -->
+	<meta>
+		<LibPLG_NAME>libPlg</LibPLG_NAME>
+		<libPLG_VERSION>2.0.6</libPLG_VERSION>
+		<name>Process 2</name>
+		<id>9h05jn5es4dbqo6f1ar59p3ouu</id>
+	</meta>
+	<!-- This is the list of all actual process elements -->
+	<elements>
+		<startEvent id="29"/>
+		<task id="34" name="Activity B">
+			<dataObject id="35" direction="GENERATED"/>
+			<script/>
+		</task>
+		<task id="36" name="Activity C">
+			<script/>
+		</task>
+		<task id="39" name="Activity D">
+			<script/>
+		</task>
+		<task id="40" name="Activity E">
+			<script/>
+		</task>
+		<task id="43" name="Activity F">
+			<script/>
+		</task>
+		<task id="31" name="Activity A">
+			<script/>
+		</task>
+		<gateway id="32" type="ExclusiveGateway"/>
+		<gateway id="33" type="ExclusiveGateway"/>
+		<gateway id="37" type="ParallelGateway"/>
+		<gateway id="38" type="ParallelGateway"/>
+		<endEvent id="30"/>
+		<sequenceFlow id="41" sourceRef="37" targetRef="40"/>
+		<sequenceFlow id="42" sourceRef="40" targetRef="38"/>
+		<sequenceFlow id="44" sourceRef="37" targetRef="43"/>
+		<sequenceFlow id="45" sourceRef="43" targetRef="38"/>
+		<sequenceFlow id="46" sourceRef="36" targetRef="37"/>
+		<sequenceFlow id="47" sourceRef="38" targetRef="39"/>
+		<sequenceFlow id="48" sourceRef="32" targetRef="36"/>
+		<sequenceFlow id="49" sourceRef="39" targetRef="33"/>
+		<sequenceFlow id="50" sourceRef="33" targetRef="32"/>
+		<sequenceFlow id="51" sourceRef="31" targetRef="32"/>
+		<sequenceFlow id="52" sourceRef="33" targetRef="34"/>
+		<sequenceFlow id="53" sourceRef="29" targetRef="31"/>
+		<sequenceFlow id="54" sourceRef="34" targetRef="30"/>
+		<dataObject id="35" owner="34" name="variable_a" value="d3ul3sppcjbu9" type="DataObject"/>
+	</elements>
+</process>

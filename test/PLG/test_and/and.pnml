@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pnml>
+	<net id="net1" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+		<name>
+			<text>Process 2</text>
+		</name>
+		<page id="n0">
+			<name>
+				<text/>
+			</name>
+			<transition id="17">
+				<name>
+					<text>Activity B</text>
+				</name>
+				<toolspecific tool="libPlg" version="2.0.6" activity="Activity B"/>
+				<graphics>
+					<position x="50" y="50"/>
+					<dimension x="25" y="20"/>
+					<fill color="#FFFFFF"/>
+				</graphics>
+			</transition>
+			<transition id="33">
+				<name>
+					<text/>
+				</name>
+				<toolspecific tool="ProM" version="6.4" activity="$invisible$"/>
+				<toolspecific tool="libPlg" version="2.0.6"/>
+				<graphics>
+					<position x="100" y="50"/>
+					<dimension x="25" y="20"/>
+					<fill color="#FFFFFF"/>
+				</graphics>
+			</transition>
+			<transition id="20">
+				<name>
+					<text>Activity E</text>
+				</name>
+				<toolspecific tool="libPlg" version="2.0.6" activity="Activity E"/>
+				<graphics>
+					<position x="150" y="50"/>
+					<dimension x="25" y="20"/>
+					<fill color="#FFFFFF"/>
+				</graphics>
+			</transition>
+			<transition id="26">
+				<name>
+					<text/>
+				</name>
+				<toolspecific tool="ProM" version="6.4" activity="$invisible$"/>
+				<toolspecific tool="libPlg" version="2.0.6"/>
+				<graphics>
+					<position x="200" y="50"/>
+					<dimension x="25" y="20"/>
+					<fill color="#FFFFFF"/>
+				</graphics>
+			</transition>
+			<transition id="18">
+				<name>
+					<text>Activity C</text>
+				</name>
+				<toolspecific tool="libPlg" version="2.0.6" activity="Activity C"/>
+				<graphics>
+					<position x="250" y="50"/>
+					<dimension x="25" y="20"/>
+					<fill color="#FFFFFF"/>
+				</graphics>
+			</transition>
+			<transition id="19">
+				<name>
+					<text>Activity D</text>
+				</name>
+				<toolspecific tool="libPlg" version="2.0.6" activity="Activity D"/>
+				<graphics>
+					<position x="300" y="50"/>
+					<dimension x="25" y="20"/>
+					<fill color="#FFFFFF"/>
+				</graphics>
+			</transition>
+			<transition id="22">
+				<name>
+					<text>Activity A</text>
+				</name>
+				<toolspecific tool="libPlg" version="2.0.6" activity="Activity A"/>
+				<graphics>
+					<position x="350" y="50"/>
+					<dimension x="25" y="20"/>
+					<fill color="#FFFFFF"/>
+				</graphics>
+			</transition>
+			<transition id="25">
+				<name>
+					<text/>
+				</name>
+				<toolspecific tool="ProM" version="6.4" activity="$invisible$"/>
+				<toolspecific tool="libPlg" version="2.0.6"/>
+				<graphics>
+					<position x="400" y="50"/>
+					<dimension x="25" y="20"/>
+					<fill color="#FFFFFF"/>
+				</graphics>
+			</transition>
+			<transition id="21">
+				<name>
+					<text>Activity F</text>
+				</name>
+				<toolspecific tool="libPlg" version="2.0.6" activity="Activity F"/>
+				<graphics>
+					<position x="450" y="50"/>
+					<dimension x="25" y="20"/>
+					<fill color="#FFFFFF"/>
+				</graphics>
+			</transition>
+			<place id="32">
+				<name>
+					<text>32</text>
+				</name>
+				<graphics>
+					<position x="500" y="50"/>
+					<dimension x="12.5" y="12.5"/>
+				</graphics>
+			</place>
+			<place id="27">
+				<name>
+					<text>27</text>
+				</name>
+				<graphics>
+					<position x="550" y="50"/>
+					<dimension x="12.5" y="12.5"/>
+				</graphics>
+			</place>
+			<place id="31">
+				<name>
+					<text>31</text>
+				</name>
+				<graphics>
+					<position x="600" y="50"/>
+					<dimension x="12.5" y="12.5"/>
+				</graphics>
+			</place>
+			<place id="15">
+				<name>
+					<text>15</text>
+				</name>
+				<graphics>
+					<position x="650" y="50"/>
+					<dimension x="12.5" y="12.5"/>
+				</graphics>
+				<initialMarking>
+					<text>1</text>
+				</initialMarking>
+			</place>
+			<place id="16">
+				<name>
+					<text>16</text>
+				</name>
+				<graphics>
+					<position x="700" y="50"/>
+					<dimension x="12.5" y="12.5"/>
+				</graphics>
+			</place>
+			<place id="30">
+				<name>
+					<text>30</text>
+				</name>
+				<graphics>
+					<position x="750" y="50"/>
+					<dimension x="12.5" y="12.5"/>
+				</graphics>
+			</place>
+			<place id="29">
+				<name>
+					<text>29</text>
+				</name>
+				<graphics>
+					<position x="800" y="50"/>
+					<dimension x="12.5" y="12.5"/>
+				</graphics>
+			</place>
+			<place id="28">
+				<name>
+					<text>28</text>
+				</name>
+				<graphics>
+					<position x="850" y="50"/>
+					<dimension x="12.5" y="12.5"/>
+				</graphics>
+			</place>
+			<place id="23">
+				<name>
+					<text>23</text>
+				</name>
+				<graphics>
+					<position x="900" y="50"/>
+					<dimension x="12.5" y="12.5"/>
+				</graphics>
+			</place>
+			<place id="24">
+				<name>
+					<text>24</text>
+				</name>
+				<graphics>
+					<position x="950" y="50"/>
+					<dimension x="12.5" y="12.5"/>
+				</graphics>
+			</place>
+			<arc id="24-17" source="24" target="17">
+				<name>
+					<text>1</text>
+				</name>
+				<graphics/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="24-33" source="24" target="33">
+				<name>
+					<text>1</text>
+				</name>
+				<graphics/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="18-31" source="18" target="31">
+				<name>
+					<text>1</text>
+				</name>
+				<graphics/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="32-19" source="32" target="19">
+				<name>
+					<text>1</text>
+				</name>
+				<graphics/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="17-16" source="17" target="16">
+				<name>
+					<text>1</text>
+				</name>
+				<graphics/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="21-30" source="21" target="30">
+				<name>
+					<text>1</text>
+				</name>
+				<graphics/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="27-20" source="27" target="20">
+				<name>
+					<text>1</text>
+				</name>
+				<graphics/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="29-21" source="29" target="21">
+				<name>
+					<text>1</text>
+				</name>
+				<graphics/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="28-26" source="28" target="26">
+				<name>
+					<text>1</text>
+				</name>
+				<graphics/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="15-22" source="15" target="22">
+				<name>
+					<text>1</text>
+				</name>
+				<graphics/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="33-23" source="33" target="23">
+				<name>
+					<text>1</text>
+				</name>
+				<graphics/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="25-27" source="25" target="27">
+				<name>
+					<text>1</text>
+				</name>
+				<graphics/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="20-28" source="20" target="28">
+				<name>
+					<text>1</text>
+				</name>
+				<graphics/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="22-23" source="22" target="23">
+				<name>
+					<text>1</text>
+				</name>
+				<graphics/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="31-25" source="31" target="25">
+				<name>
+					<text>1</text>
+				</name>
+				<graphics/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="23-18" source="23" target="18">
+				<name>
+					<text>1</text>
+				</name>
+				<graphics/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="30-26" source="30" target="26">
+				<name>
+					<text>1</text>
+				</name>
+				<graphics/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="26-32" source="26" target="32">
+				<name>
+					<text>1</text>
+				</name>
+				<graphics/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="25-29" source="25" target="29">
+				<name>
+					<text>1</text>
+				</name>
+				<graphics/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+			<arc id="19-24" source="19" target="24">
+				<name>
+					<text>1</text>
+				</name>
+				<graphics/>
+				<arctype>
+					<text>normal</text>
+				</arctype>
+			</arc>
+		</page>
+	</net>
+</pnml>

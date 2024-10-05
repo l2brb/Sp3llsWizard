@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 
+
+WARNING: Do not manually edit this file, unless you know what you are doing!
+
+This file has been generated with libPlg v.2.0.6.
+Check https://github.com/delas/plg for sources and other stuff.
+
+ -->
+<process>
+	<!-- This is the list of all meta-attributes of the process -->
+	<meta>
+		<LibPLG_NAME>libPlg</LibPLG_NAME>
+		<libPLG_VERSION>2.0.6</libPLG_VERSION>
+		<name>super_easy</name>
+		<id>pn8savm59kv9guq969serp4icp</id>
+	</meta>
+	<!-- This is the list of all actual process elements -->
+	<elements>
+		<startEvent id="0"/>
+		<task id="2" name="Activity A">
+			<script/>
+		</task>
+		<task id="18" name="Activity G">
+			<script/>
+		</task>
+		<task id="19" name="Activity H">
+			<script/>
+		</task>
+		<task id="5" name="Activity B">
+			<script/>
+		</task>
+		<task id="6" name="Activity C">
+			<script/>
+		</task>
+		<task id="9" name="Activity D">
+			<script/>
+		</task>
+		<task id="10" name="Activity E">
+			<script/>
+		</task>
+		<task id="13" name="Activity F">
+			<script/>
+		</task>
+		<gateway id="3" type="ExclusiveGateway"/>
+		<gateway id="4" type="ExclusiveGateway"/>
+		<gateway id="7" type="ExclusiveGateway"/>
+		<gateway id="8" type="ExclusiveGateway"/>
+		<endEvent id="1"/>
+		<sequenceFlow id="11" sourceRef="7" targetRef="10"/>
+		<sequenceFlow id="12" sourceRef="10" targetRef="8"/>
+		<sequenceFlow id="14" sourceRef="7" targetRef="13"/>
+		<sequenceFlow id="15" sourceRef="13" targetRef="8"/>
+		<sequenceFlow id="16" sourceRef="6" targetRef="7"/>
+		<sequenceFlow id="17" sourceRef="8" targetRef="9"/>
+		<sequenceFlow id="20" sourceRef="18" targetRef="19"/>
+		<sequenceFlow id="21" sourceRef="3" targetRef="6"/>
+		<sequenceFlow id="22" sourceRef="9" targetRef="4"/>
+		<sequenceFlow id="23" sourceRef="4" targetRef="18"/>
+		<sequenceFlow id="24" sourceRef="19" targetRef="3"/>
+		<sequenceFlow id="25" sourceRef="2" targetRef="3"/>
+		<sequenceFlow id="26" sourceRef="4" targetRef="5"/>
+		<sequenceFlow id="27" sourceRef="0" targetRef="2"/>
+		<sequenceFlow id="28" sourceRef="5" targetRef="1"/>
+	</elements>
+</process>

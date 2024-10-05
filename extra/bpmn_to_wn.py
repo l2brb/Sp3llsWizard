@@ -3,7 +3,7 @@ import pm4py
 # imports a process tree from a PTML file
 #bpmn = pm4py.read_bpmn('/Users/luca/Documents/^main/DECpietro/test/PLG/easy_test_1_bpmn.bpmn')
 
-pnml = pm4py.read_pnml('/Users/luca/Documents/^main/DECpietro/test/PLG/easy_test_1.pnml')
+pnml = pm4py.read_pnml('/home/l2brb/main/DECpietro/test/PLG/test_xor/xor.pnml')
 pm4py.view_petri_net(pnml)
 
 exit()
