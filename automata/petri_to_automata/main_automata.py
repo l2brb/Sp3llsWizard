@@ -1,5 +1,5 @@
 import petri_parser_automata
-import petri_to_automata
+import automata.petri_to_automata.petri_to_automata as petri_to_automata
 
 def main():
     pnml_file_path = "/home/l2brb/main/DECpietro/test/PLG/test_xor/xor_pm4py.pnml"

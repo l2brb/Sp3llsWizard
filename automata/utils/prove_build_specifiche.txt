@@ -1,0 +1,9 @@
+
+        "{constraints: ["
++ "{template: Init, parameters: [['Activity A']]},"
++ "{template: End, parameters: [['Activity B']]},"
++ "{template: AlternatePrecedence, parameters: [['Activity A'], ['Activity B']]},"
++ "{template: AlternateResponse, parameters: [['Activity A'], ['Activity B']]}"
++ "] }";
+
+
