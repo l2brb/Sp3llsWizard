@@ -1,0 +1,15 @@
+digraph Automaton {
+  rankdir = LR;
+  0 [shape=doublecircle,label=""];
+  0 -> 1 [label="Activity A"]
+  0 -> 2 [label="Activity C\nActivity D\nActivity E\nActivity F\nActivity G\nActivity H"]
+  1 [shape=circle,label=""];
+  1 -> 1 [label="Activity A"]
+  1 -> 0 [label="Activity B"]
+  1 -> 1 [label="Activity C\nActivity D\nActivity E\nActivity F\nActivity G\nActivity H"]
+  2 [shape=circle,label=""];
+  initial [shape=plaintext,label=""];
+  initial -> 2
+  2 -> 1 [label="Activity A"]
+  2 -> 2 [label="Activity C\nActivity D\nActivity E\nActivity F\nActivity G\nActivity H"]
+}

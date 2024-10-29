@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- This file has been generated with the OpenXES library. It conforms -->
+<!-- to the XML serialization of the XES standard for log storage and -->
+<!-- management. -->
+<!-- XES standard version: 1.0 -->
+<!-- OpenXES library version: 1.0RC7 -->
+<!-- OpenXES is available from http://www.openxes.org/ -->
+<log xes.version="1.0" xes.features="nested-attributes" openxes.version="1.0RC7">
+	<extension name="Time" prefix="time" uri="http://www.xes-standard.org/time.xesext"/>
+	<extension name="Lifecycle" prefix="lifecycle" uri="http://www.xes-standard.org/lifecycle.xesext"/>
+	<extension name="Concept" prefix="concept" uri="http://www.xes-standard.org/concept.xesext"/>
+	<classifier name="Event Name" keys="concept:name"/>
+	<string key="concept:name" value="Synthetic log for process: input_model.pnml"/>
+	<string key="lifecycle:model" value="standard"/>
+	<trace>
+		<string key="concept:name" value="Synthetic trace no. 0"/>
+		<event>
+			<string key="concept:name" value="Activity A"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-07-29T06:30:51.265+02:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Activity C"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-07-29T22:09:35.786+02:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Activity E"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-07-30T13:24:45.561+02:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Activity D"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-07-30T14:07:29.474+02:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Activity B"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-07-30T16:26:51.827+02:00"/>
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="Synthetic trace no. 1"/>
+		<event>
+			<string key="concept:name" value="Activity A"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-07-31T02:38:42.142+02:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Activity C"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-07-31T14:47:11.480+02:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Activity F"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-08-01T12:24:22.955+02:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Activity D"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-08-01T20:08:21.839+02:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Activity B"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-08-01T23:21:04.991+02:00"/>
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="Synthetic trace no. 2"/>
+		<event>
+			<string key="concept:name" value="Activity A"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-08-01T23:40:00.350+02:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Activity C"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-08-02T05:16:09.540+02:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Activity F"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-08-02T06:47:53.255+02:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Activity D"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-08-02T10:32:20.097+02:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Activity B"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-08-03T09:18:16.047+02:00"/>
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="Synthetic trace no. 3"/>
+		<event>
+			<string key="concept:name" value="Activity A"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-08-04T00:57:10.962+02:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Activity C"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-08-04T08:11:58.443+02:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Activity F"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-08-05T03:45:20.337+02:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Activity D"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-08-05T11:04:09.125+02:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Activity B"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-08-05T19:01:04.701+02:00"/>
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="Synthetic trace no. 4"/>
+		<event>
+			<string key="concept:name" value="Activity A"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-08-06T00:29:46.846+02:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Activity C"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-08-06T22:58:47.042+02:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Activity E"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-08-07T11:22:38.439+02:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Activity D"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-08-07T22:08:11.804+02:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Activity B"/>
+			<string key="lifecycle:transition" value="complete"/>
+			<date key="time:timestamp" value="2023-08-08T00:47:37.397+02:00"/>
+		</event>
+	</trace>
+</log>

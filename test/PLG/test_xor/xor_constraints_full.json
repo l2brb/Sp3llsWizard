@@ -2,13 +2,13 @@
     "name": "input_model.pnml",
     "tasks": [
         "Activity D",
+        "Activity G",
         "Activity A",
         "Activity F",
         "Activity C",
+        "Activity H",
         "Activity B",
-        "Activity E",
-        "Activity G",
-        "Activity H"
+        "Activity E"
     ],
     "constraints": [
         {
@@ -28,10 +28,21 @@
             ]
         },
         {
-            "template": "AtMost1",
+            "template": "Atmost1",
             "parameters": [
                 [
                     "Activity A"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity G"
+                ],
+                [
+                    "Activity H"
                 ]
             ]
         },
@@ -54,7 +65,7 @@
                     "Activity C"
                 ],
                 [
-                    "Activity E"
+                    "Activity F"
                 ]
             ]
         },
@@ -65,16 +76,16 @@
                     "Activity C"
                 ],
                 [
-                    "Activity F"
-                ]
-            ]
-        },
-        {
-            "template": "AlternatePrecedence",
-            "parameters": [
-                [
-                    "Activity F",
                     "Activity E"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity E",
+                    "Activity F"
                 ],
                 [
                     "Activity D"
@@ -88,8 +99,7 @@
                     "Activity D"
                 ],
                 [
-                    "Activity B",
-                    "Activity G"
+                    "Activity B"
                 ]
             ]
         },
@@ -97,13 +107,12 @@
             "template": "AlternatePrecedence",
             "parameters": [
                 [
-                    "Activity G"
+                    "Activity D"
                 ],
                 [
-                    "Activity H"
+                    "Activity G"
                 ]
             ]
         }
-        
     ]
 }
