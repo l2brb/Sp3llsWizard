@@ -25,7 +25,7 @@ def main():
         # # Export to CSV
         # csv_exporter.write_to_csv(output)
         # print("CSV EXPORTED SUCCESFULLY.")
-
+    
         # Export to JSON
         json_exporter.write_to_json(output)
         print("JSON EXPORTED.")
