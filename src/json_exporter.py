@@ -1,6 +1,6 @@
 import json
 
-def write_to_json(output):
-    with open('/home/l2brb/main/DECpietro/test/PLG/test_xor/xor_constraints_full.json', 'w') as file:
+def write_to_json(output, path):
+    with open(path, 'w') as file:
         json.dump(output, file)
-        
+    print(f"JSON file successfully exported to {path}")

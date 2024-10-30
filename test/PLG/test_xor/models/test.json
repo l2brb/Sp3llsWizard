@@ -2,18 +2,20 @@
     "name": "input_model.pnml",
     "tasks": [
         "Activity D",
+        "Activity G",
+        "Activity A",
         "Activity F",
         "Activity C",
+        "Activity H",
+        "Activity B",
         "Activity E"
-
-
     ],
     "constraints": [
         {
             "template": "Init",
             "parameters": [
                 [
-                    "Activity C"
+                    "Activity A"
                 ]
             ]
         },
@@ -21,23 +23,38 @@
             "template": "End",
             "parameters": [
                 [
-                    "Activity D"
+                    "Activity B"
                 ]
             ]
         },
         {
-            "template": "AtMost1",
+            "template": "Atmost1",
             "parameters": [
+                [
+                    "Activity A"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity G"
+                ],
+                [
+                    "Activity H"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity A",
+                    "Activity H"
+                ],
                 [
                     "Activity C"
-                ]
-            ]
-        },
-        {
-            "template": "AtMost1",
-            "parameters": [
-                [
-                    "Activity D"
                 ]
             ]
         },
@@ -67,13 +84,35 @@
             "template": "AlternatePrecedence",
             "parameters": [
                 [
-                    "Activity F",
-                    "Activity E"
+                    "Activity E",
+                    "Activity F"
                 ],
                 [
                     "Activity D"
                 ]
             ]
-        }      
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity D"
+                ],
+                [
+                    "Activity B"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity D"
+                ],
+                [
+                    "Activity G"
+                ]
+            ]
+        }
     ]
 }

@@ -1,36 +1,66 @@
 from src import petri_parser
 from src import dec_translator_target_ultimate as dec_translator
-# from src import csv_exporter
 from src import json_exporter
-from src import wn_json
+from src import csv_exporter
+from src import wn_json  
+
+def export_workflow_net(workflow_net, output_format):
+    path = input("Enter the path ").strip()
+    if output_format == "json":
+        wn_json.write_to_json(workflow_net, path)
+    elif output_format == "csv":
+        csv_exporter.write_to_csv(workflow_net, path)
+
+def generate_declare_constraints(workflow_net, output_format):
+    output = dec_translator.translate_to_DEC(workflow_net)
+    print("DECLARE constraints generated successfully.")
+    path = input("Enter the path: ").strip()
+    if output_format == "json":
+        json_exporter.write_to_json(output, path)
+    elif output_format == "csv":
+        csv_exporter.write_to_csv(output, path)
+
+def display_menu():
+    """Displays the available operations menu and returns the user's choice."""
+    print("\nSelect an operation:")
+    print("1. Export Workflow net")
+    print("2. Generate DECLARE constraints")
+    print("3. Exit")
+    return input("Enter the number of the operation you want to perform: ").strip()
 
 def main():
-    pnml_file_path = "/home/l2brb/main/DECpietro/test/PLG/test_xor/xor_pm4py.pnml"
+    pnml_file_path = input("Enter the PNML file path for the Workflow net: ").strip()
     workflow_net = petri_parser.parse_wn_from_pnml(pnml_file_path)
 
-    if workflow_net:
-        print("WORKFLOW NET PARSED SUCCESFULLY.")
-        # print(workflow_net)
+    if not workflow_net:
+        print("Error: could not parse the WN.")
+        return
 
-        # Export WN to JSON
-        #wn_json.write_to_json(workflow_net)
-        #print("WN JSON EXPORTED.")
+    print("WORKFLOW NET PARSED SUCCESSFULLY.")
 
-      
-        # Generate Declarative Constraints
-        output = dec_translator.translate_to_DEC(workflow_net)
-        print("DECLARATIVE CONTRAINTS GENERATED SUCCESFULLY.")
-        #print(output)
+    while True:
+        choice = display_menu()
 
-        # # Export to CSV
-        # csv_exporter.write_to_csv(output)
-        # print("CSV EXPORTED SUCCESFULLY.")
-    
-        # Export to JSON
-        json_exporter.write_to_json(output)
-        print("JSON EXPORTED.")
+        if choice == "1":
+            output_format = input("Select the output format for the WN (json/csv): ").strip().lower()
+            if output_format in ["json", "csv"]:
+                export_workflow_net(workflow_net, output_format)
+            else:
+                print("Invalid format. Please try again.")
 
+        elif choice == "2":
+            output_format = input("Select the output format for the DECLARE constraints (json/csv): ").strip().lower()
+            if output_format in ["json", "csv"]:
+                generate_declare_constraints(workflow_net, output_format)
+            else:
+                print("Invalid format. Try again.")
 
+        elif choice == "3":
+            print("Exit.")
+            break
+
+        else:
+            print("Invalid choice. Please try again.")
 
 if __name__ == "__main__":
     main()

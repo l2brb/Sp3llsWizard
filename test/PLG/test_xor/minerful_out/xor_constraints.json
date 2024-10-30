@@ -54,7 +54,17 @@
                     "Activity C"
                 ],
                 [
-                    "Activity E",
+                    "Activity E"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Activity C"
+                ],
+                [
                     "Activity F"
                 ]
             ]
