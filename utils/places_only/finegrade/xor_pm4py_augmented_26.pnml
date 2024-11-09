@@ -1,0 +1,388 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="imported_1730838125.8052719" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <name>
+      <text>imported_1730838125.8052719</text>
+    </name>
+    <page id="n0">
+      <place id="Place_QZZ">
+        <name>
+          <text>Place_QZZ</text>
+        </name>
+      </place>
+      <place id="Place_NOW">
+        <name>
+          <text>Place_NOW</text>
+        </name>
+      </place>
+      <place id="Place_CZT">
+        <name>
+          <text>Place_CZT</text>
+        </name>
+      </place>
+      <place id="Place_FQP">
+        <name>
+          <text>Place_FQP</text>
+        </name>
+      </place>
+      <place id="Place_OGQ">
+        <name>
+          <text>Place_OGQ</text>
+        </name>
+      </place>
+      <place id="12">
+        <name>
+          <text>12</text>
+        </name>
+        <graphics>
+          <position x="550.0" y="50.0"/>
+          <dimension x="12.5" y="12.5"/>
+        </graphics>
+      </place>
+      <place id="Place_CVA">
+        <name>
+          <text>Place_CVA</text>
+        </name>
+      </place>
+      <place id="Place_JAW">
+        <name>
+          <text>Place_JAW</text>
+        </name>
+      </place>
+      <place id="Place_HIM">
+        <name>
+          <text>Place_HIM</text>
+        </name>
+      </place>
+      <place id="Place_DUI">
+        <name>
+          <text>Place_DUI</text>
+        </name>
+      </place>
+      <place id="13">
+        <name>
+          <text>13</text>
+        </name>
+        <graphics>
+          <position x="500.0" y="50.0"/>
+          <dimension x="12.5" y="12.5"/>
+        </graphics>
+      </place>
+      <place id="Place_HUV">
+        <name>
+          <text>Place_HUV</text>
+        </name>
+      </place>
+      <place id="Place_DDR">
+        <name>
+          <text>Place_DDR</text>
+        </name>
+      </place>
+      <place id="Place_CIZ">
+        <name>
+          <text>Place_CIZ</text>
+        </name>
+      </place>
+      <place id="Place_ODS">
+        <name>
+          <text>Place_ODS</text>
+        </name>
+      </place>
+      <place id="Place_SGF">
+        <name>
+          <text>Place_SGF</text>
+        </name>
+      </place>
+      <place id="Place_RCP">
+        <name>
+          <text>Place_RCP</text>
+        </name>
+      </place>
+      <place id="Place_PSD">
+        <name>
+          <text>Place_PSD</text>
+        </name>
+      </place>
+      <place id="Place_OXF">
+        <name>
+          <text>Place_OXF</text>
+        </name>
+      </place>
+      <place id="Place_FLW">
+        <name>
+          <text>Place_FLW</text>
+        </name>
+      </place>
+      <place id="Place_GBC">
+        <name>
+          <text>Place_GBC</text>
+        </name>
+      </place>
+      <place id="14">
+        <name>
+          <text>14</text>
+        </name>
+        <graphics>
+          <position x="450.0" y="50.0"/>
+          <dimension x="12.5" y="12.5"/>
+        </graphics>
+      </place>
+      <place id="11">
+        <name>
+          <text>11</text>
+        </name>
+        <graphics>
+          <position x="600.0" y="50.0"/>
+          <dimension x="12.5" y="12.5"/>
+        </graphics>
+      </place>
+      <place id="10">
+        <name>
+          <text>10</text>
+        </name>
+        <graphics>
+          <position x="650.0" y="50.0"/>
+          <dimension x="12.5" y="12.5"/>
+        </graphics>
+      </place>
+      <place id="Place_OYX">
+        <name>
+          <text>Place_OYX</text>
+        </name>
+      </place>
+      <place id="Place_DHX">
+        <name>
+          <text>Place_DHX</text>
+        </name>
+      </place>
+      <place id="Place_EJZ">
+        <name>
+          <text>Place_EJZ</text>
+        </name>
+      </place>
+      <place id="Place_ANT">
+        <name>
+          <text>Place_ANT</text>
+        </name>
+      </place>
+      <place id="Place_ERO">
+        <name>
+          <text>Place_ERO</text>
+        </name>
+      </place>
+      <place id="Place_PAR">
+        <name>
+          <text>Place_PAR</text>
+        </name>
+      </place>
+      <place id="0">
+        <name>
+          <text>0</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+        <graphics>
+          <position x="750.0" y="50.0"/>
+          <dimension x="12.5" y="12.5"/>
+        </graphics>
+      </place>
+      <place id="Place_FKO">
+        <name>
+          <text>Place_FKO</text>
+        </name>
+      </place>
+      <place id="Place_ODR">
+        <name>
+          <text>Place_ODR</text>
+        </name>
+      </place>
+      <place id="Place_FZK">
+        <name>
+          <text>Place_FZK</text>
+        </name>
+      </place>
+      <place id="1">
+        <name>
+          <text>1</text>
+        </name>
+        <graphics>
+          <position x="700.0" y="50.0"/>
+          <dimension x="12.5" y="12.5"/>
+        </graphics>
+      </place>
+      <place id="Place_EOB">
+        <name>
+          <text>Place_EOB</text>
+        </name>
+      </place>
+      <place id="Place_UMQ">
+        <name>
+          <text>Place_UMQ</text>
+        </name>
+      </place>
+      <place id="Place_KOE">
+        <name>
+          <text>Place_KOE</text>
+        </name>
+      </place>
+      <transition id="7">
+        <name>
+          <text>Activity D</text>
+        </name>
+        <graphics>
+          <position x="50.0" y="50.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="9">
+        <name>
+          <text>Activity F</text>
+        </name>
+        <graphics>
+          <position x="350.0" y="50.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="8">
+        <name>
+          <text>Activity E</text>
+        </name>
+        <graphics>
+          <position x="400.0" y="50.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="6">
+        <name>
+          <text>Activity C</text>
+        </name>
+        <graphics>
+          <position x="100.0" y="50.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="3">
+        <name>
+          <text>Activity G</text>
+        </name>
+        <graphics>
+          <position x="250.0" y="50.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="2">
+        <name>
+          <text>Activity A</text>
+        </name>
+        <graphics>
+          <position x="150.0" y="50.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="4">
+        <name>
+          <text>Activity H</text>
+        </name>
+        <graphics>
+          <position x="200.0" y="50.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="5">
+        <name>
+          <text>Activity B</text>
+        </name>
+        <graphics>
+          <position x="300.0" y="50.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <arc id="130989805851648" source="3" target="Place_JAW"/>
+      <arc id="130989805858816" source="Place_CIZ" target="4"/>
+      <arc id="130989805857808" source="Place_OXF" target="4"/>
+      <arc id="130989805853216" source="Place_EJZ" target="4"/>
+      <arc id="130989805856800" source="Place_FLW" target="4"/>
+      <arc id="130989814259760" source="0" target="2"/>
+      <arc id="130989805852208" source="3" target="Place_OGQ"/>
+      <arc id="130989805855792" source="Place_PAR" target="4"/>
+      <arc id="130989812691008" source="13" target="7"/>
+      <arc id="130989805365824" source="3" target="Place_OYX"/>
+      <arc id="130989805854784" source="Place_FKO" target="4"/>
+      <arc id="130989805858368" source="3" target="Place_KOE"/>
+      <arc id="130989805961296" source="14" target="4"/>
+      <arc id="130991354818640" source="4" target="10"/>
+      <arc id="130989805853776" source="3" target="Place_ANT"/>
+      <arc id="130989805857360" source="3" target="Place_ODR"/>
+      <arc id="130989805412448" source="11" target="5"/>
+      <arc id="130989805852768" source="Place_FZK" target="4"/>
+      <arc id="130989805856352" source="3" target="Place_UMQ"/>
+      <arc id="130989805917296" source="11" target="3"/>
+      <arc id="130989805851760" source="3" target="Place_SGF"/>
+      <arc id="130989805855344" source="3" target="Place_CZT"/>
+      <arc id="130989805854336" source="3" target="Place_HIM"/>
+      <arc id="130989805880464" source="7" target="11"/>
+      <arc id="130989805379728" source="3" target="Place_ODS"/>
+      <arc id="130989805853328" source="3" target="Place_EOB"/>
+      <arc id="130989805852320" source="Place_OGQ" target="4"/>
+      <arc id="130989805851312" source="Place_QZZ" target="4"/>
+      <arc id="130989805858480" source="Place_KOE" target="4"/>
+      <arc id="130989805853888" source="Place_ANT" target="4"/>
+      <arc id="130989805857472" source="Place_ODR" target="4"/>
+      <arc id="130989805856464" source="Place_UMQ" target="4"/>
+      <arc id="130989814120144" source="10" target="6"/>
+      <arc id="130989805824208" source="3" target="Place_CVA"/>
+      <arc id="130989805852880" source="3" target="Place_HUV"/>
+      <arc id="130989805851872" source="Place_SGF" target="4"/>
+      <arc id="130989805855456" source="Place_CZT" target="4"/>
+      <arc id="130989805896432" source="3" target="14"/>
+      <arc id="130989805854448" source="Place_HIM" target="4"/>
+      <arc id="130989805858032" source="3" target="Place_FQP"/>
+      <arc id="130989805853440" source="Place_EOB" target="4"/>
+      <arc id="130989805857024" source="3" target="Place_DUI"/>
+      <arc id="130989805852432" source="3" target="Place_GBC"/>
+      <arc id="130989805856016" source="3" target="Place_DDR"/>
+      <arc id="130989814260000" source="12" target="8"/>
+      <arc id="130989805851424" source="Place_JAW" target="4"/>
+      <arc id="130989805855008" source="3" target="Place_PSD"/>
+      <arc id="130989805877552" source="Place_OYX" target="4"/>
+      <arc id="130989805854000" source="3" target="Place_ERO"/>
+      <arc id="130989805852992" source="Place_HUV" target="4"/>
+      <arc id="130989812986192" source="9" target="13"/>
+      <arc id="130989805917520" source="6" target="12"/>
+      <arc id="130989805824336" source="Place_CVA" target="4"/>
+      <arc id="130989805851984" source="3" target="Place_NOW"/>
+      <arc id="130989805858144" source="Place_FQP" target="4"/>
+      <arc id="130989805879152" source="3" target="Place_DHX"/>
+      <arc id="130989805853552" source="3" target="Place_RCP"/>
+      <arc id="130989805857136" source="Place_DUI" target="4"/>
+      <arc id="130989805852544" source="Place_GBC" target="4"/>
+      <arc id="130989805856128" source="Place_DDR" target="4"/>
+      <arc id="130989805365648" source="Place_ODS" target="4"/>
+      <arc id="130989805412752" source="8" target="13"/>
+      <arc id="130989805382032" source="5" target="1"/>
+      <arc id="130989805851536" source="3" target="Place_QZZ"/>
+      <arc id="130989805855120" source="Place_PSD" target="4"/>
+      <arc id="130989805858704" source="3" target="Place_CIZ"/>
+      <arc id="130989805880736" source="2" target="10"/>
+      <arc id="130989805787552" source="Place_DHX" target="4"/>
+      <arc id="130989805854112" source="Place_ERO" target="4"/>
+      <arc id="130989805857696" source="3" target="Place_OXF"/>
+      <arc id="130989812885424" source="12" target="9"/>
+      <arc id="130989805853104" source="3" target="Place_EJZ"/>
+      <arc id="130989805856688" source="3" target="Place_FLW"/>
+      <arc id="130989805852096" source="Place_NOW" target="4"/>
+      <arc id="130989805855680" source="3" target="Place_PAR"/>
+      <arc id="130989805854672" source="3" target="Place_FKO"/>
+      <arc id="130989805853664" source="Place_RCP" target="4"/>
+      <arc id="130989805852656" source="3" target="Place_FZK"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="1">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>

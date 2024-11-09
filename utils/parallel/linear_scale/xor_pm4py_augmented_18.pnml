@@ -1,0 +1,291 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="imported_1730820282.966848" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <name>
+      <text>imported_1730820282.966848</text>
+    </name>
+    <page id="n0">
+      <place id="14">
+        <name>
+          <text>14</text>
+        </name>
+        <graphics>
+          <position x="450.0" y="50.0"/>
+          <dimension x="12.5" y="12.5"/>
+        </graphics>
+      </place>
+      <place id="13">
+        <name>
+          <text>13</text>
+        </name>
+        <graphics>
+          <position x="500.0" y="50.0"/>
+          <dimension x="12.5" y="12.5"/>
+        </graphics>
+      </place>
+      <place id="0">
+        <name>
+          <text>0</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+        <graphics>
+          <position x="750.0" y="50.0"/>
+          <dimension x="12.5" y="12.5"/>
+        </graphics>
+      </place>
+      <place id="p_Activity_QZN">
+        <name>
+          <text>p_Activity_QZN</text>
+        </name>
+      </place>
+      <place id="p_Activity_KCS">
+        <name>
+          <text>p_Activity_KCS</text>
+        </name>
+      </place>
+      <place id="p_Activity_BMV">
+        <name>
+          <text>p_Activity_BMV</text>
+        </name>
+      </place>
+      <place id="10">
+        <name>
+          <text>10</text>
+        </name>
+        <graphics>
+          <position x="650.0" y="50.0"/>
+          <dimension x="12.5" y="12.5"/>
+        </graphics>
+      </place>
+      <place id="12">
+        <name>
+          <text>12</text>
+        </name>
+        <graphics>
+          <position x="550.0" y="50.0"/>
+          <dimension x="12.5" y="12.5"/>
+        </graphics>
+      </place>
+      <place id="11">
+        <name>
+          <text>11</text>
+        </name>
+        <graphics>
+          <position x="600.0" y="50.0"/>
+          <dimension x="12.5" y="12.5"/>
+        </graphics>
+      </place>
+      <place id="1">
+        <name>
+          <text>1</text>
+        </name>
+        <graphics>
+          <position x="700.0" y="50.0"/>
+          <dimension x="12.5" y="12.5"/>
+        </graphics>
+      </place>
+      <place id="p_Activity_BYO">
+        <name>
+          <text>p_Activity_BYO</text>
+        </name>
+      </place>
+      <place id="p_Activity_EDY">
+        <name>
+          <text>p_Activity_EDY</text>
+        </name>
+      </place>
+      <place id="p_Activity_OQL">
+        <name>
+          <text>p_Activity_OQL</text>
+        </name>
+      </place>
+      <place id="p_Activity_HLS">
+        <name>
+          <text>p_Activity_HLS</text>
+        </name>
+      </place>
+      <place id="p_Activity_DGM">
+        <name>
+          <text>p_Activity_DGM</text>
+        </name>
+      </place>
+      <place id="p_Activity_QVR">
+        <name>
+          <text>p_Activity_QVR</text>
+        </name>
+      </place>
+      <place id="p_Activity_WFN">
+        <name>
+          <text>p_Activity_WFN</text>
+        </name>
+      </place>
+      <transition id="9">
+        <name>
+          <text>Activity F</text>
+        </name>
+        <graphics>
+          <position x="350.0" y="50.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="8">
+        <name>
+          <text>Activity E</text>
+        </name>
+        <graphics>
+          <position x="400.0" y="50.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="Activity_DGM">
+        <name>
+          <text>Activity_DGM</text>
+        </name>
+      </transition>
+      <transition id="Activity_HLS">
+        <name>
+          <text>Activity_HLS</text>
+        </name>
+      </transition>
+      <transition id="Activity_KCS">
+        <name>
+          <text>Activity_KCS</text>
+        </name>
+      </transition>
+      <transition id="7">
+        <name>
+          <text>Activity D</text>
+        </name>
+        <graphics>
+          <position x="50.0" y="50.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="6">
+        <name>
+          <text>Activity C</text>
+        </name>
+        <graphics>
+          <position x="100.0" y="50.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="3">
+        <name>
+          <text>Activity G</text>
+        </name>
+        <graphics>
+          <position x="250.0" y="50.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="2">
+        <name>
+          <text>Activity A</text>
+        </name>
+        <graphics>
+          <position x="150.0" y="50.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="4">
+        <name>
+          <text>Activity H</text>
+        </name>
+        <graphics>
+          <position x="200.0" y="50.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="5">
+        <name>
+          <text>Activity B</text>
+        </name>
+        <graphics>
+          <position x="300.0" y="50.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="Activity_BYO">
+        <name>
+          <text>Activity_BYO</text>
+        </name>
+      </transition>
+      <transition id="Activity_EDY">
+        <name>
+          <text>Activity_EDY</text>
+        </name>
+      </transition>
+      <transition id="Activity_OQL">
+        <name>
+          <text>Activity_OQL</text>
+        </name>
+      </transition>
+      <transition id="Activity_QZN">
+        <name>
+          <text>Activity_QZN</text>
+        </name>
+      </transition>
+      <transition id="Activity_QVR">
+        <name>
+          <text>Activity_QVR</text>
+        </name>
+      </transition>
+      <transition id="Activity_BMV">
+        <name>
+          <text>Activity_BMV</text>
+        </name>
+      </transition>
+      <transition id="Activity_WFN">
+        <name>
+          <text>Activity_WFN</text>
+        </name>
+      </transition>
+      <arc id="125092528460800" source="Activity_DGM" target="p_Activity_DGM"/>
+      <arc id="125092528021904" source="8" target="13"/>
+      <arc id="125092528037648" source="14" target="Activity_BYO"/>
+      <arc id="125092528489616" source="7" target="11"/>
+      <arc id="125092528039952" source="5" target="1"/>
+      <arc id="125092528486544" source="Activity_EDY" target="p_Activity_EDY"/>
+      <arc id="125092528460688" source="p_Activity_HLS" target="Activity_DGM"/>
+      <arc id="125092528461584" source="p_Activity_BMV" target="4"/>
+      <arc id="125092528538016" source="3" target="14"/>
+      <arc id="125092528489888" source="2" target="10"/>
+      <arc id="125092536869152" source="12" target="8"/>
+      <arc id="125092527975328" source="p_Activity_BYO" target="Activity_EDY"/>
+      <arc id="125092528413088" source="Activity_OQL" target="p_Activity_OQL"/>
+      <arc id="125092528460576" source="p_Activity_KCS" target="Activity_HLS"/>
+      <arc id="125092528461472" source="Activity_BMV" target="p_Activity_BMV"/>
+      <arc id="125092535494576" source="12" target="9"/>
+      <arc id="125092536868912" source="0" target="2"/>
+      <arc id="125092528460464" source="p_Activity_QZN" target="Activity_KCS"/>
+      <arc id="125092528461360" source="p_Activity_WFN" target="Activity_BMV"/>
+      <arc id="125092535300160" source="13" target="7"/>
+      <arc id="125092528460352" source="Activity_HLS" target="p_Activity_HLS"/>
+      <arc id="125092528461248" source="Activity_WFN" target="p_Activity_WFN"/>
+      <arc id="125092528570448" source="10" target="6"/>
+      <arc id="125094078476624" source="4" target="10"/>
+      <arc id="125092535611984" source="9" target="13"/>
+      <arc id="125092528526672" source="6" target="12"/>
+      <arc id="125092528488144" source="p_Activity_EDY" target="Activity_OQL"/>
+      <arc id="125092528430416" source="p_Activity_OQL" target="Activity_QZN"/>
+      <arc id="125092528433104" source="Activity_QZN" target="p_Activity_QZN"/>
+      <arc id="125092528460240" source="Activity_KCS" target="p_Activity_KCS"/>
+      <arc id="125092528461136" source="p_Activity_QVR" target="Activity_WFN"/>
+      <arc id="125092528021600" source="11" target="5"/>
+      <arc id="125092528461024" source="Activity_QVR" target="p_Activity_QVR"/>
+      <arc id="125092527975152" source="Activity_BYO" target="p_Activity_BYO"/>
+      <arc id="125092528526448" source="11" target="3"/>
+      <arc id="125092528460912" source="p_Activity_DGM" target="Activity_QVR"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="1">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>

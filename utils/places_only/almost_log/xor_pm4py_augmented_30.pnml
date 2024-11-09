@@ -1,0 +1,339 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="imported_1730830938.554933" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <name>
+      <text>imported_1730830938.554933</text>
+    </name>
+    <page id="n0">
+      <place id="Place_TEA">
+        <name>
+          <text>Place_TEA</text>
+        </name>
+      </place>
+      <place id="Place_AKQ">
+        <name>
+          <text>Place_AKQ</text>
+        </name>
+      </place>
+      <place id="Place_WNA">
+        <name>
+          <text>Place_WNA</text>
+        </name>
+      </place>
+      <place id="Place_BXK">
+        <name>
+          <text>Place_BXK</text>
+        </name>
+      </place>
+      <place id="12">
+        <name>
+          <text>12</text>
+        </name>
+        <graphics>
+          <position x="550.0" y="50.0"/>
+          <dimension x="12.5" y="12.5"/>
+        </graphics>
+      </place>
+      <place id="Place_SQR">
+        <name>
+          <text>Place_SQR</text>
+        </name>
+      </place>
+      <place id="Place_SLM">
+        <name>
+          <text>Place_SLM</text>
+        </name>
+      </place>
+      <place id="Place_ELS">
+        <name>
+          <text>Place_ELS</text>
+        </name>
+      </place>
+      <place id="13">
+        <name>
+          <text>13</text>
+        </name>
+        <graphics>
+          <position x="500.0" y="50.0"/>
+          <dimension x="12.5" y="12.5"/>
+        </graphics>
+      </place>
+      <place id="Place_HZU">
+        <name>
+          <text>Place_HZU</text>
+        </name>
+      </place>
+      <place id="Place_HGS">
+        <name>
+          <text>Place_HGS</text>
+        </name>
+      </place>
+      <place id="Place_DQQ">
+        <name>
+          <text>Place_DQQ</text>
+        </name>
+      </place>
+      <place id="Place_OHP">
+        <name>
+          <text>Place_OHP</text>
+        </name>
+      </place>
+      <place id="Place_VZG">
+        <name>
+          <text>Place_VZG</text>
+        </name>
+      </place>
+      <place id="Place_MUP">
+        <name>
+          <text>Place_MUP</text>
+        </name>
+      </place>
+      <place id="Place_DVF">
+        <name>
+          <text>Place_DVF</text>
+        </name>
+      </place>
+      <place id="Place_EPT">
+        <name>
+          <text>Place_EPT</text>
+        </name>
+      </place>
+      <place id="14">
+        <name>
+          <text>14</text>
+        </name>
+        <graphics>
+          <position x="450.0" y="50.0"/>
+          <dimension x="12.5" y="12.5"/>
+        </graphics>
+      </place>
+      <place id="11">
+        <name>
+          <text>11</text>
+        </name>
+        <graphics>
+          <position x="600.0" y="50.0"/>
+          <dimension x="12.5" y="12.5"/>
+        </graphics>
+      </place>
+      <place id="10">
+        <name>
+          <text>10</text>
+        </name>
+        <graphics>
+          <position x="650.0" y="50.0"/>
+          <dimension x="12.5" y="12.5"/>
+        </graphics>
+      </place>
+      <place id="Place_YXG">
+        <name>
+          <text>Place_YXG</text>
+        </name>
+      </place>
+      <place id="Place_BTN">
+        <name>
+          <text>Place_BTN</text>
+        </name>
+      </place>
+      <place id="Place_WLE">
+        <name>
+          <text>Place_WLE</text>
+        </name>
+      </place>
+      <place id="Place_IWE">
+        <name>
+          <text>Place_IWE</text>
+        </name>
+      </place>
+      <place id="Place_UEC">
+        <name>
+          <text>Place_UEC</text>
+        </name>
+      </place>
+      <place id="Place_GBN">
+        <name>
+          <text>Place_GBN</text>
+        </name>
+      </place>
+      <place id="0">
+        <name>
+          <text>0</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+        <graphics>
+          <position x="750.0" y="50.0"/>
+          <dimension x="12.5" y="12.5"/>
+        </graphics>
+      </place>
+      <place id="Place_GVG">
+        <name>
+          <text>Place_GVG</text>
+        </name>
+      </place>
+      <place id="Place_XMP">
+        <name>
+          <text>Place_XMP</text>
+        </name>
+      </place>
+      <place id="1">
+        <name>
+          <text>1</text>
+        </name>
+        <graphics>
+          <position x="700.0" y="50.0"/>
+          <dimension x="12.5" y="12.5"/>
+        </graphics>
+      </place>
+      <place id="Place_NDT">
+        <name>
+          <text>Place_NDT</text>
+        </name>
+      </place>
+      <transition id="7">
+        <name>
+          <text>Activity D</text>
+        </name>
+        <graphics>
+          <position x="50.0" y="50.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="9">
+        <name>
+          <text>Activity F</text>
+        </name>
+        <graphics>
+          <position x="350.0" y="50.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="8">
+        <name>
+          <text>Activity E</text>
+        </name>
+        <graphics>
+          <position x="400.0" y="50.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="6">
+        <name>
+          <text>Activity C</text>
+        </name>
+        <graphics>
+          <position x="100.0" y="50.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="3">
+        <name>
+          <text>Activity G</text>
+        </name>
+        <graphics>
+          <position x="250.0" y="50.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="2">
+        <name>
+          <text>Activity A</text>
+        </name>
+        <graphics>
+          <position x="150.0" y="50.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="4">
+        <name>
+          <text>Activity H</text>
+        </name>
+        <graphics>
+          <position x="200.0" y="50.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="5">
+        <name>
+          <text>Activity B</text>
+        </name>
+        <graphics>
+          <position x="300.0" y="50.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <arc id="130424103326720" source="Place_SLM" target="4"/>
+      <arc id="130424103327616" source="Place_BXK" target="4"/>
+      <arc id="130424103328512" source="Place_WLE" target="4"/>
+      <arc id="130424103329408" source="Place_GBN" target="4"/>
+      <arc id="130424103330304" source="3" target="Place_ELS"/>
+      <arc id="130424103329744" source="Place_NDT" target="4"/>
+      <arc id="130424102840720" source="Place_HGS" target="4"/>
+      <arc id="130424102887824" source="8" target="13"/>
+      <arc id="130424103355536" source="7" target="11"/>
+      <arc id="130424102854800" source="3" target="Place_HGS"/>
+      <arc id="130424102857104" source="5" target="1"/>
+      <arc id="130424103352464" source="Place_YXG" target="4"/>
+      <arc id="130424103326608" source="Place_TEA" target="4"/>
+      <arc id="130424103327504" source="3" target="Place_BXK"/>
+      <arc id="130424103328400" source="3" target="Place_WLE"/>
+      <arc id="130424103329296" source="3" target="Place_GBN"/>
+      <arc id="130424103355808" source="2" target="10"/>
+      <arc id="130424111735072" source="12" target="8"/>
+      <arc id="130424103262624" source="Place_BTN" target="4"/>
+      <arc id="130424103327392" source="Place_AKQ" target="4"/>
+      <arc id="130424103328288" source="Place_HZU" target="4"/>
+      <arc id="130424103329184" source="Place_UEC" target="4"/>
+      <arc id="130424103330080" source="Place_MUP" target="4"/>
+      <arc id="130424103330976" source="3" target="Place_VZG"/>
+      <arc id="130424103330640" source="3" target="Place_GVG"/>
+      <arc id="130424110360496" source="12" target="9"/>
+      <arc id="130424111734832" source="0" target="2"/>
+      <arc id="130424103327280" source="3" target="Place_AKQ"/>
+      <arc id="130424103328176" source="3" target="Place_HZU"/>
+      <arc id="130424103329072" source="3" target="Place_UEC"/>
+      <arc id="130424103329968" source="3" target="Place_MUP"/>
+      <arc id="130424103331760" source="Place_DVF" target="4"/>
+      <arc id="130424110166080" source="13" target="7"/>
+      <arc id="130424102840896" source="3" target="Place_YXG"/>
+      <arc id="130424103327168" source="Place_DQQ" target="4"/>
+      <arc id="130424103328064" source="Place_XMP" target="4"/>
+      <arc id="130424103328960" source="Place_OHP" target="4"/>
+      <arc id="130424103330752" source="Place_GVG" target="4"/>
+      <arc id="130424103331648" source="3" target="Place_DVF"/>
+      <arc id="130424103436368" source="14" target="4"/>
+      <arc id="130424111595216" source="10" target="6"/>
+      <arc id="130425652260944" source="4" target="10"/>
+      <arc id="130424110461264" source="9" target="13"/>
+      <arc id="130424103408976" source="6" target="12"/>
+      <arc id="130424103282512" source="3" target="Place_SQR"/>
+      <arc id="130424103282640" source="Place_SQR" target="4"/>
+      <arc id="130424103327056" source="3" target="Place_DQQ"/>
+      <arc id="130424103327952" source="3" target="Place_XMP"/>
+      <arc id="130424103328848" source="3" target="Place_OHP"/>
+      <arc id="130424102887520" source="11" target="5"/>
+      <arc id="130424103326944" source="3" target="Place_SLM"/>
+      <arc id="130424103327840" source="Place_EPT" target="4"/>
+      <arc id="130424103328736" source="Place_IWE" target="4"/>
+      <arc id="130424103329632" source="3" target="Place_NDT"/>
+      <arc id="130424103331424" source="Place_WNA" target="4"/>
+      <arc id="130424103371504" source="3" target="14"/>
+      <arc id="130424103408752" source="11" target="3"/>
+      <arc id="130424103354224" source="3" target="Place_BTN"/>
+      <arc id="130424103326832" source="3" target="Place_TEA"/>
+      <arc id="130424103327728" source="3" target="Place_EPT"/>
+      <arc id="130424103328624" source="3" target="Place_IWE"/>
+      <arc id="130424103330416" source="Place_ELS" target="4"/>
+      <arc id="130424103331312" source="3" target="Place_WNA"/>
+      <arc id="130424103331088" source="Place_VZG" target="4"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="1">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>

@@ -69,7 +69,7 @@ def parse_wn_from_pnml(file_path):
         return workflow_net
 
     except FileNotFoundError:
-        print(f"File '{file_path}' not found.")
+        #print(f"File '{file_path}' not found.")
         return None
 
 
