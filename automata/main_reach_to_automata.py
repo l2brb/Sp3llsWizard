@@ -6,7 +6,7 @@ from exporter import save_automaton_to_dot
 
 def main():
     # Read PetriNet from pnml 
-    net, im, fm = pm4py.read_pnml("/home/l2brb/main/DECpietro/test/PLG/test_xor/xor_pm4py.pnml")
+    net, im, fm = pm4py.read_pnml("/Users/l2brb/Documents/main/DECpietro/test/PLG/test_xor/models/sample_xor_evo_cleaned_pm4py.pnml")
     
     # Convert PetriNet into reachability graph
     reach_graph = pm4py.convert_to_reachability_graph(net, im, fm)
@@ -24,11 +24,11 @@ def main():
         print(automaton.final_states)
 
 
-        save_automaton_to_json(automaton, '/home/l2brb/main/DECpietro/automata/test/automaton_xor.json')
-        save_automaton_to_dot(automaton, '/home/l2brb/main/DECpietro/automata/test/automaton_xor.dot')
+        save_automaton_to_json(automaton, '/Users/l2brb/Documents/main/DECpietro/automata/test/automaton_complete.json')
+        save_automaton_to_dot(automaton, '/Users/l2brb/Documents/main/DECpietro/automata/test/automaton_complete.dot')
 
 
-        with open('/home/l2brb/main/DECpietro/automata/test/automaton_xor.dot', 'r') as file:
+        with open('/Users/l2brb/Documents/main/DECpietro/automata/test/automaton_complete.dot', 'r') as file:
             dot_source = file.read()
         dot = graphviz.Source(dot_source)
         dot.view()

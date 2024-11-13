@@ -9,11 +9,9 @@ from src import json_exporter
 from src import wn_json
 
 def main():
-    if len(sys.argv) != 2:
-        print("Usage: python main_test.py <pnml_file_path>")
-        sys.exit(1)
     
-    pnml_file_path = sys.argv[1]
+    
+    pnml_file_path = "/Users/l2brb/Documents/main/DECpietro/test/PLG/test_xor/models/sample_xor_evo_cleaned_pm4py.pnml"
 
     start_time = time.time()
     process = psutil.Process(os.getpid())
@@ -30,7 +28,9 @@ def main():
     end_time = time.time()
     execution_time_ms = (end_time - start_time) * 1000  
 
+    print(f"{memory_usage:.2f},{execution_time_ms:.2f}")
 
-    print(f"{pnml_file_path},{memory_usage:.2f},{execution_time_ms:.2f}")
+if __name__ == "__main__":
+    main()
 
 

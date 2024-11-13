@@ -1,0 +1,598 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="imported_1731343974.737338" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <name>
+      <text>imported_1731343974.737338</text>
+    </name>
+    <page id="n0">
+      <place id="14">
+        <name>
+          <text>14</text>
+        </name>
+        <graphics>
+          <position x="450.0" y="50.0"/>
+          <dimension x="12.5" y="12.5"/>
+        </graphics>
+      </place>
+      <place id="11">
+        <name>
+          <text>11</text>
+        </name>
+        <graphics>
+          <position x="600.0" y="50.0"/>
+          <dimension x="12.5" y="12.5"/>
+        </graphics>
+      </place>
+      <place id="0">
+        <name>
+          <text>0</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+        <graphics>
+          <position x="750.0" y="50.0"/>
+          <dimension x="12.5" y="12.5"/>
+        </graphics>
+      </place>
+      <place id="12">
+        <name>
+          <text>12</text>
+        </name>
+        <graphics>
+          <position x="550.0" y="50.0"/>
+          <dimension x="12.5" y="12.5"/>
+        </graphics>
+      </place>
+      <place id="13">
+        <name>
+          <text>13</text>
+        </name>
+        <graphics>
+          <position x="500.0" y="50.0"/>
+          <dimension x="12.5" y="12.5"/>
+        </graphics>
+      </place>
+      <place id="10">
+        <name>
+          <text>10</text>
+        </name>
+        <graphics>
+          <position x="650.0" y="50.0"/>
+          <dimension x="12.5" y="12.5"/>
+        </graphics>
+      </place>
+      <place id="1">
+        <name>
+          <text>1</text>
+        </name>
+        <graphics>
+          <position x="700.0" y="50.0"/>
+          <dimension x="12.5" y="12.5"/>
+        </graphics>
+      </place>
+      <transition id="Activity_LSHQM">
+        <name>
+          <text>Activity_LSHQM</text>
+        </name>
+      </transition>
+      <transition id="Activity_MHHLB">
+        <name>
+          <text>Activity_MHHLB</text>
+        </name>
+      </transition>
+      <transition id="Activity_TWAHY">
+        <name>
+          <text>Activity_TWAHY</text>
+        </name>
+      </transition>
+      <transition id="Activity_NHSMF">
+        <name>
+          <text>Activity_NHSMF</text>
+        </name>
+      </transition>
+      <transition id="Activity_MFIGD">
+        <name>
+          <text>Activity_MFIGD</text>
+        </name>
+      </transition>
+      <transition id="Activity_ZOPIF">
+        <name>
+          <text>Activity_ZOPIF</text>
+        </name>
+      </transition>
+      <transition id="Activity_GSJQF">
+        <name>
+          <text>Activity_GSJQF</text>
+        </name>
+      </transition>
+      <transition id="Activity_RWJFF">
+        <name>
+          <text>Activity_RWJFF</text>
+        </name>
+      </transition>
+      <transition id="Activity_PZVYD">
+        <name>
+          <text>Activity_PZVYD</text>
+        </name>
+      </transition>
+      <transition id="7">
+        <name>
+          <text>Activity D</text>
+        </name>
+        <graphics>
+          <position x="50.0" y="50.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="2">
+        <name>
+          <text>Activity A</text>
+        </name>
+        <graphics>
+          <position x="150.0" y="50.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="Activity_ZTZIF">
+        <name>
+          <text>Activity_ZTZIF</text>
+        </name>
+      </transition>
+      <transition id="Activity_IXZHF">
+        <name>
+          <text>Activity_IXZHF</text>
+        </name>
+      </transition>
+      <transition id="Activity_TLEKL">
+        <name>
+          <text>Activity_TLEKL</text>
+        </name>
+      </transition>
+      <transition id="Activity_GAECN">
+        <name>
+          <text>Activity_GAECN</text>
+        </name>
+      </transition>
+      <transition id="Activity_ZOMIX">
+        <name>
+          <text>Activity_ZOMIX</text>
+        </name>
+      </transition>
+      <transition id="Activity_JBLZB">
+        <name>
+          <text>Activity_JBLZB</text>
+        </name>
+      </transition>
+      <transition id="Activity_RNXLZ">
+        <name>
+          <text>Activity_RNXLZ</text>
+        </name>
+      </transition>
+      <transition id="Activity_YVQDO">
+        <name>
+          <text>Activity_YVQDO</text>
+        </name>
+      </transition>
+      <transition id="Activity_LWXOW">
+        <name>
+          <text>Activity_LWXOW</text>
+        </name>
+      </transition>
+      <transition id="Activity_HVCYH">
+        <name>
+          <text>Activity_HVCYH</text>
+        </name>
+      </transition>
+      <transition id="Activity_FENUZ">
+        <name>
+          <text>Activity_FENUZ</text>
+        </name>
+      </transition>
+      <transition id="Activity_DYFBB">
+        <name>
+          <text>Activity_DYFBB</text>
+        </name>
+      </transition>
+      <transition id="Activity_KUDGR">
+        <name>
+          <text>Activity_KUDGR</text>
+        </name>
+      </transition>
+      <transition id="Activity_KIFSX">
+        <name>
+          <text>Activity_KIFSX</text>
+        </name>
+      </transition>
+      <transition id="9">
+        <name>
+          <text>Activity F</text>
+        </name>
+        <graphics>
+          <position x="350.0" y="50.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="Activity_VYXTC">
+        <name>
+          <text>Activity_VYXTC</text>
+        </name>
+      </transition>
+      <transition id="Activity_KYWDX">
+        <name>
+          <text>Activity_KYWDX</text>
+        </name>
+      </transition>
+      <transition id="Activity_SCMPJ">
+        <name>
+          <text>Activity_SCMPJ</text>
+        </name>
+      </transition>
+      <transition id="Activity_BKFKW">
+        <name>
+          <text>Activity_BKFKW</text>
+        </name>
+      </transition>
+      <transition id="Activity_XBUEH">
+        <name>
+          <text>Activity_XBUEH</text>
+        </name>
+      </transition>
+      <transition id="Activity_LWJVM">
+        <name>
+          <text>Activity_LWJVM</text>
+        </name>
+      </transition>
+      <transition id="Activity_ETVDA">
+        <name>
+          <text>Activity_ETVDA</text>
+        </name>
+      </transition>
+      <transition id="Activity_DCTWL">
+        <name>
+          <text>Activity_DCTWL</text>
+        </name>
+      </transition>
+      <transition id="Activity_QLWKP">
+        <name>
+          <text>Activity_QLWKP</text>
+        </name>
+      </transition>
+      <transition id="Activity_OWRER">
+        <name>
+          <text>Activity_OWRER</text>
+        </name>
+      </transition>
+      <transition id="Activity_VRWUB">
+        <name>
+          <text>Activity_VRWUB</text>
+        </name>
+      </transition>
+      <transition id="Activity_XZXVX">
+        <name>
+          <text>Activity_XZXVX</text>
+        </name>
+      </transition>
+      <transition id="Activity_GRLQF">
+        <name>
+          <text>Activity_GRLQF</text>
+        </name>
+      </transition>
+      <transition id="Activity_CGXOM">
+        <name>
+          <text>Activity_CGXOM</text>
+        </name>
+      </transition>
+      <transition id="Activity_IKKNT">
+        <name>
+          <text>Activity_IKKNT</text>
+        </name>
+      </transition>
+      <transition id="3">
+        <name>
+          <text>Activity G</text>
+        </name>
+        <graphics>
+          <position x="250.0" y="50.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="5">
+        <name>
+          <text>Activity B</text>
+        </name>
+        <graphics>
+          <position x="300.0" y="50.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="Activity_IFNWQ">
+        <name>
+          <text>Activity_IFNWQ</text>
+        </name>
+      </transition>
+      <transition id="Activity_ZNBQJ">
+        <name>
+          <text>Activity_ZNBQJ</text>
+        </name>
+      </transition>
+      <transition id="Activity_HENAH">
+        <name>
+          <text>Activity_HENAH</text>
+        </name>
+      </transition>
+      <transition id="Activity_YMXXF">
+        <name>
+          <text>Activity_YMXXF</text>
+        </name>
+      </transition>
+      <transition id="Activity_IXRHN">
+        <name>
+          <text>Activity_IXRHN</text>
+        </name>
+      </transition>
+      <transition id="Activity_LAACC">
+        <name>
+          <text>Activity_LAACC</text>
+        </name>
+      </transition>
+      <transition id="Activity_HUOJA">
+        <name>
+          <text>Activity_HUOJA</text>
+        </name>
+      </transition>
+      <transition id="Activity_MYNZN">
+        <name>
+          <text>Activity_MYNZN</text>
+        </name>
+      </transition>
+      <transition id="6">
+        <name>
+          <text>Activity C</text>
+        </name>
+        <graphics>
+          <position x="100.0" y="50.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="8">
+        <name>
+          <text>Activity E</text>
+        </name>
+        <graphics>
+          <position x="400.0" y="50.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="Activity_REZEI">
+        <name>
+          <text>Activity_REZEI</text>
+        </name>
+      </transition>
+      <transition id="Activity_NOLSN">
+        <name>
+          <text>Activity_NOLSN</text>
+        </name>
+      </transition>
+      <transition id="Activity_GWZXS">
+        <name>
+          <text>Activity_GWZXS</text>
+        </name>
+      </transition>
+      <transition id="Activity_GHLNE">
+        <name>
+          <text>Activity_GHLNE</text>
+        </name>
+      </transition>
+      <transition id="Activity_NNSYO">
+        <name>
+          <text>Activity_NNSYO</text>
+        </name>
+      </transition>
+      <transition id="Activity_JLPNQ">
+        <name>
+          <text>Activity_JLPNQ</text>
+        </name>
+      </transition>
+      <transition id="Activity_MQEPG">
+        <name>
+          <text>Activity_MQEPG</text>
+        </name>
+      </transition>
+      <transition id="Activity_CBSJZ">
+        <name>
+          <text>Activity_CBSJZ</text>
+        </name>
+      </transition>
+      <transition id="4">
+        <name>
+          <text>Activity H</text>
+        </name>
+        <graphics>
+          <position x="200.0" y="50.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="Activity_RFZZD">
+        <name>
+          <text>Activity_RFZZD</text>
+        </name>
+      </transition>
+      <transition id="Activity_IIJPK">
+        <name>
+          <text>Activity_IIJPK</text>
+        </name>
+      </transition>
+      <transition id="Activity_DTVAO">
+        <name>
+          <text>Activity_DTVAO</text>
+        </name>
+      </transition>
+      <transition id="Activity_CGZEB">
+        <name>
+          <text>Activity_CGZEB</text>
+        </name>
+      </transition>
+      <transition id="Activity_GXWPB">
+        <name>
+          <text>Activity_GXWPB</text>
+        </name>
+      </transition>
+      <transition id="Activity_VNSLM">
+        <name>
+          <text>Activity_VNSLM</text>
+        </name>
+      </transition>
+      <transition id="Activity_XHINO">
+        <name>
+          <text>Activity_XHINO</text>
+        </name>
+      </transition>
+      <arc id="4709110784" source="0" target="2"/>
+      <arc id="4713022976" source="Activity_YMXXF" target="13"/>
+      <arc id="4713030144" source="Activity_HVCYH" target="13"/>
+      <arc id="4713033728" source="12" target="Activity_JBLZB"/>
+      <arc id="4713121280" source="Activity_KUDGR" target="11"/>
+      <arc id="4713029136" source="Activity_BKFKW" target="11"/>
+      <arc id="4713032720" source="13" target="Activity_FENUZ"/>
+      <arc id="4713120272" source="Activity_QLWKP" target="12"/>
+      <arc id="4713024544" source="Activity_LAACC" target="1"/>
+      <arc id="4713028128" source="Activity_VRWUB" target="1"/>
+      <arc id="4713031712" source="12" target="Activity_XBUEH"/>
+      <arc id="4713059888" source="11" target="3"/>
+      <arc id="4713023536" source="13" target="Activity_PZVYD"/>
+      <arc id="4713027120" source="Activity_MYNZN" target="10"/>
+      <arc id="4713030704" source="13" target="Activity_XZXVX"/>
+      <arc id="4713121840" source="12" target="Activity_IKKNT"/>
+      <arc id="4713022528" source="Activity_VYXTC" target="13"/>
+      <arc id="4713026112" source="Activity_GWZXS" target="11"/>
+      <arc id="4713029696" source="10" target="Activity_RWJFF"/>
+      <arc id="4713036864" source="Activity_CBSJZ" target="13"/>
+      <arc id="4713120832" source="14" target="Activity_KIFSX"/>
+      <arc id="4713025104" source="Activity_IIJPK" target="13"/>
+      <arc id="4712539728" source="9" target="13"/>
+      <arc id="4713028688" source="0" target="Activity_GHLNE"/>
+      <arc id="4713035856" source="Activity_VNSLM" target="13"/>
+      <arc id="4713119824" source="11" target="Activity_GSJQF"/>
+      <arc id="4713024096" source="Activity_IXRHN" target="13"/>
+      <arc id="4713027680" source="12" target="Activity_DTVAO"/>
+      <arc id="4713034848" source="Activity_NHSMF" target="11"/>
+      <arc id="4713023088" source="11" target="Activity_IXZHF"/>
+      <arc id="4713026672" source="14" target="Activity_LSHQM"/>
+      <arc id="4713033840" source="Activity_JBLZB" target="13"/>
+      <arc id="4713037424" source="10" target="Activity_MFIGD"/>
+      <arc id="4712717440" source="Activity_IFNWQ" target="13"/>
+      <arc id="4713025664" source="12" target="Activity_TLEKL"/>
+      <arc id="4713032832" source="Activity_FENUZ" target="11"/>
+      <arc id="4713036416" source="14" target="Activity_RNXLZ"/>
+      <arc id="4713024656" source="10" target="Activity_HUOJA"/>
+      <arc id="4713031824" source="Activity_XBUEH" target="13"/>
+      <arc id="4713035408" source="11" target="Activity_DYFBB"/>
+      <arc id="4713023648" source="Activity_PZVYD" target="11"/>
+      <arc id="4713030816" source="Activity_XZXVX" target="11"/>
+      <arc id="4713034400" source="0" target="Activity_LWJVM"/>
+      <arc id="4713121952" source="Activity_IKKNT" target="13"/>
+      <arc id="4713022640" source="11" target="Activity_YVQDO"/>
+      <arc id="4713029808" source="Activity_RWJFF" target="12"/>
+      <arc id="4713033392" source="12" target="Activity_GRLQF"/>
+      <arc id="4713120944" source="Activity_KIFSX" target="10"/>
+      <arc id="4712489664" source="8" target="13"/>
+      <arc id="4713028800" source="Activity_GHLNE" target="10"/>
+      <arc id="4713032384" source="11" target="Activity_JLPNQ"/>
+      <arc id="4713119936" source="Activity_GSJQF" target="14"/>
+      <arc id="4712507600" source="5" target="1"/>
+      <arc id="4713024208" source="0" target="Activity_KYWDX"/>
+      <arc id="4713027792" source="Activity_DTVAO" target="13"/>
+      <arc id="4713031376" source="11" target="Activity_NNSYO"/>
+      <arc id="4713023200" source="Activity_IXZHF" target="1"/>
+      <arc id="4713026784" source="Activity_LSHQM" target="10"/>
+      <arc id="4713030368" source="0" target="Activity_CGZEB"/>
+      <arc id="4713037536" source="Activity_MFIGD" target="12"/>
+      <arc id="4713121504" source="13" target="Activity_XHINO"/>
+      <arc id="4713029360" source="14" target="Activity_MHHLB"/>
+      <arc id="4709111024" source="12" target="8"/>
+      <arc id="4713022192" source="12" target="Activity_VYXTC"/>
+      <arc id="4713025776" source="Activity_TLEKL" target="13"/>
+      <arc id="4713036528" source="Activity_RNXLZ" target="10"/>
+      <arc id="4713120496" source="13" target="Activity_ZOPIF"/>
+      <arc id="4708892416" source="2" target="10"/>
+      <arc id="4713024768" source="Activity_HUOJA" target="12"/>
+      <arc id="4713028352" source="12" target="Activity_GAECN"/>
+      <arc id="4713035520" source="Activity_DYFBB" target="1"/>
+      <arc id="4709055248" source="14" target="4"/>
+      <arc id="4713060112" source="6" target="12"/>
+      <arc id="4713023760" source="10" target="Activity_RFZZD"/>
+      <arc id="4713027344" source="11" target="Activity_LWXOW"/>
+      <arc id="4713034512" source="Activity_LWJVM" target="10"/>
+      <arc id="4713022752" source="Activity_YVQDO" target="1"/>
+      <arc id="4713026336" source="0" target="Activity_SCMPJ"/>
+      <arc id="4713033504" source="Activity_GRLQF" target="13"/>
+      <arc id="4713037088" source="11" target="Activity_DCTWL"/>
+      <arc id="4712717616" source="10" target="Activity_ZNBQJ"/>
+      <arc id="4712986928" source="12" target="Activity_REZEI"/>
+      <arc id="4713025328" source="11" target="Activity_OWRER"/>
+      <arc id="4713032496" source="Activity_JLPNQ" target="1"/>
+      <arc id="4713036080" source="11" target="Activity_CGXOM"/>
+      <arc id="4713024320" source="Activity_KYWDX" target="10"/>
+      <arc id="4713031488" source="Activity_NNSYO" target="1"/>
+      <arc id="4713035072" source="11" target="Activity_ETVDA"/>
+      <arc id="4352831312" source="4" target="10"/>
+      <arc id="4712948048" source="11" target="Activity_HENAH"/>
+      <arc id="4713023312" source="11" target="Activity_NOLSN"/>
+      <arc id="4713030480" source="Activity_CGZEB" target="10"/>
+      <arc id="4713034064" source="11" target="Activity_MQEPG"/>
+      <arc id="4713121616" source="Activity_XHINO" target="11"/>
+      <arc id="4710169440" source="3" target="14"/>
+      <arc id="4713022304" source="Activity_ZTZIF" target="13"/>
+      <arc id="4713029472" source="Activity_MHHLB" target="10"/>
+      <arc id="4713033056" source="0" target="Activity_GXWPB"/>
+      <arc id="4713120608" source="Activity_ZOPIF" target="11"/>
+      <arc id="4712988528" source="Activity_ZNBQJ" target="12"/>
+      <arc id="4713028464" source="Activity_GAECN" target="13"/>
+      <arc id="4713032048" source="10" target="Activity_TWAHY"/>
+      <arc id="4713023872" source="Activity_RFZZD" target="12"/>
+      <arc id="4713027456" source="Activity_LWXOW" target="1"/>
+      <arc id="4713031040" source="12" target="Activity_ZOMIX"/>
+      <arc id="4712989584" source="13" target="7"/>
+      <arc id="4712489360" source="11" target="5"/>
+      <arc id="4712860560" source="12" target="9"/>
+      <arc id="4713022864" source="12" target="Activity_YMXXF"/>
+      <arc id="4713026448" source="Activity_SCMPJ" target="10"/>
+      <arc id="4713030032" source="12" target="Activity_HVCYH"/>
+      <arc id="4713037200" source="Activity_DCTWL" target="1"/>
+      <arc id="4713121168" source="13" target="Activity_KUDGR"/>
+      <arc id="4712803232" source="Activity_REZEI" target="13"/>
+      <arc id="4713025440" source="Activity_OWRER" target="1"/>
+      <arc id="4713029024" source="13" target="Activity_BKFKW"/>
+      <arc id="4713036192" source="Activity_CGXOM" target="1"/>
+      <arc id="4713120160" source="10" target="Activity_QLWKP"/>
+      <arc id="4713024432" source="11" target="Activity_LAACC"/>
+      <arc id="4713028016" source="11" target="Activity_VRWUB"/>
+      <arc id="4713035184" source="Activity_ETVDA" target="1"/>
+      <arc id="4713023424" source="Activity_NOLSN" target="14"/>
+      <arc id="4713027008" source="14" target="Activity_MYNZN"/>
+      <arc id="4713034176" source="Activity_MQEPG" target="1"/>
+      <arc id="4713026000" source="13" target="Activity_GWZXS"/>
+      <arc id="4712505296" source="12" target="Activity_IFNWQ"/>
+      <arc id="4709054928" source="10" target="6"/>
+      <arc id="4712948176" source="Activity_HENAH" target="1"/>
+      <arc id="4713022416" source="12" target="Activity_ZTZIF"/>
+      <arc id="4713033168" source="Activity_GXWPB" target="10"/>
+      <arc id="4713036752" source="12" target="Activity_CBSJZ"/>
+      <arc id="4713024992" source="12" target="Activity_IIJPK"/>
+      <arc id="4713032160" source="Activity_TWAHY" target="12"/>
+      <arc id="4713035744" source="12" target="Activity_VNSLM"/>
+      <arc id="4708892144" source="7" target="11"/>
+      <arc id="4713023984" source="12" target="Activity_IXRHN"/>
+      <arc id="4713031152" source="Activity_ZOMIX" target="13"/>
+      <arc id="4713034736" source="13" target="Activity_NHSMF"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="1">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>
