@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="imported_1731672086.0420628" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <name>
+      <text>imported_1731672086.0420628</text>
+    </name>
+    <page id="n0">
+      <place id="Activity_ZXTKU">
+        <name>
+          <text>Activity_ZXTKU</text>
+        </name>
+      </place>
+      <place id="Activity_QQDBJ">
+        <name>
+          <text>Activity_QQDBJ</text>
+        </name>
+      </place>
+      <place id="Activity_RCDAS">
+        <name>
+          <text>Activity_RCDAS</text>
+        </name>
+      </place>
+      <place id="p1">
+        <name>
+          <text>
+          </text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+        <graphics>
+          <position x="120.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <place id="Activity_UKTTX">
+        <name>
+          <text>Activity_UKTTX</text>
+        </name>
+      </place>
+      <place id="p2">
+        <name>
+          <text>
+          </text>
+        </name>
+        <graphics>
+          <position x="320.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <place id="Activity_HVGCA">
+        <name>
+          <text>Activity_HVGCA</text>
+        </name>
+      </place>
+      <place id="Activity_MSSGW">
+        <name>
+          <text>Activity_MSSGW</text>
+        </name>
+      </place>
+      <transition id="Activity_EUNIE">
+        <name>
+          <text>Activity_EUNIE</text>
+        </name>
+      </transition>
+      <transition id="Activity_GRJZT">
+        <name>
+          <text>Activity_GRJZT</text>
+        </name>
+      </transition>
+      <transition id="Activity_AAOEF">
+        <name>
+          <text>Activity_AAOEF</text>
+        </name>
+      </transition>
+      <transition id="Activity_TTJIT">
+        <name>
+          <text>Activity_TTJIT</text>
+        </name>
+      </transition>
+      <transition id="Activity_GGUMQ">
+        <name>
+          <text>Activity_GGUMQ</text>
+        </name>
+      </transition>
+      <transition id="Activity_AFXFY">
+        <name>
+          <text>Activity_AFXFY</text>
+        </name>
+      </transition>
+      <transition id="Activity_ZSJCU">
+        <name>
+          <text>Activity_ZSJCU</text>
+        </name>
+      </transition>
+      <transition id="Activity_SYBLC">
+        <name>
+          <text>Activity_SYBLC</text>
+        </name>
+      </transition>
+      <transition id="Activity_MJEWM">
+        <name>
+          <text>Activity_MJEWM</text>
+        </name>
+      </transition>
+      <transition id="Activity_MFEUD">
+        <name>
+          <text>Activity_MFEUD</text>
+        </name>
+      </transition>
+      <transition id="Activity_FIINU">
+        <name>
+          <text>Activity_FIINU</text>
+        </name>
+      </transition>
+      <transition id="Activity_SMWZN">
+        <name>
+          <text>Activity_SMWZN</text>
+        </name>
+      </transition>
+      <transition id="Activity_DKEIB">
+        <name>
+          <text>Activity_DKEIB</text>
+        </name>
+      </transition>
+      <arc id="135590462209792" source="Activity_UKTTX" target="Activity_ZSJCU"/>
+      <arc id="135590454023168" source="Activity_QQDBJ" target="Activity_GGUMQ"/>
+      <arc id="135590454024064" source="Activity_DKEIB" target="Activity_MSSGW"/>
+      <arc id="135590453553552" source="Activity_AFXFY" target="Activity_ZXTKU"/>
+      <arc id="135590460862736" source="Activity_UKTTX" target="Activity_AFXFY"/>
+      <arc id="135590454023056" source="Activity_HVGCA" target="Activity_MFEUD"/>
+      <arc id="135590454048912" source="Activity_SYBLC" target="Activity_QQDBJ"/>
+      <arc id="135590454023952" source="Activity_GGUMQ" target="Activity_MSSGW"/>
+      <arc id="135590462415136" source="Activity_QQDBJ" target="Activity_EUNIE"/>
+      <arc id="135590454022944" source="Activity_GRJZT" target="Activity_ZXTKU"/>
+      <arc id="135590454022832" source="Activity_HVGCA" target="Activity_GRJZT"/>
+      <arc id="135590462414896" source="Activity_EUNIE" target="Activity_QQDBJ"/>
+      <arc id="135590454023728" source="Activity_AAOEF" target="Activity_HVGCA"/>
+      <arc id="135590453537344" source="Activity_ZXTKU" target="Activity_SYBLC"/>
+      <arc id="135590454023616" source="Activity_RCDAS" target="Activity_AAOEF"/>
+      <arc id="135590454100048" source="p1" target="Activity_TTJIT"/>
+      <arc id="135590453583056" source="Activity_TTJIT" target="Activity_UKTTX"/>
+      <arc id="135590454132816" source="Activity_ZSJCU" target="p2"/>
+      <arc id="135590454024400" source="Activity_SMWZN" target="Activity_UKTTX"/>
+      <arc id="135590454023504" source="Activity_RCDAS" target="Activity_FIINU"/>
+      <arc id="135590453959648" source="Activity_MJEWM" target="Activity_HVGCA"/>
+      <arc id="135590454023392" source="Activity_FIINU" target="Activity_RCDAS"/>
+      <arc id="135590454024288" source="Activity_MSSGW" target="Activity_SMWZN"/>
+      <arc id="135590454050672" source="Activity_ZXTKU" target="Activity_MJEWM"/>
+      <arc id="135590454023280" source="Activity_MFEUD" target="Activity_RCDAS"/>
+      <arc id="135590454024176" source="Activity_MSSGW" target="Activity_DKEIB"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="p2">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>

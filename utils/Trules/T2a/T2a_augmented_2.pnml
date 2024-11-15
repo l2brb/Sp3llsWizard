@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="imported_1731682280.7642145" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <name>
+      <text>imported_1731682280.7642145</text>
+    </name>
+    <page id="n0">
+      <place id="p1">
+        <name>
+          <text>
+          </text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+        <graphics>
+          <position x="120.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <place id="p2">
+        <name>
+          <text>
+          </text>
+        </name>
+        <graphics>
+          <position x="320.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <transition id="ufoxb">
+        <name>
+          <text>ufoxb</text>
+        </name>
+      </transition>
+      <transition id="bqptm">
+        <name>
+          <text>bqptm</text>
+        </name>
+      </transition>
+      <transition id="axdaq">
+        <name>
+          <text>axdaq</text>
+        </name>
+      </transition>
+      <arc id="129892772871936" source="p1" target="ufoxb"/>
+      <arc id="129892764261280" source="p1" target="axdaq"/>
+      <arc id="129892771733744" source="axdaq" target="p2"/>
+      <arc id="129892764762192" source="p1" target="bqptm"/>
+      <arc id="129894314684496" source="ufoxb" target="p2"/>
+      <arc id="129892771836240" source="bqptm" target="p2"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="p2">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>

@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="imported_1731672086.0420628" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <name>
+      <text>imported_1731672086.0420628</text>
+    </name>
+    <page id="n0">
+      <place id="Activity_ZXTKU">
+        <name>
+          <text>Activity_ZXTKU</text>
+        </name>
+      </place>
+      <place id="Activity_QQDBJ">
+        <name>
+          <text>Activity_QQDBJ</text>
+        </name>
+      </place>
+      <place id="p1">
+        <name>
+          <text>
+          </text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+        <graphics>
+          <position x="120.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <place id="Activity_UKTTX">
+        <name>
+          <text>Activity_UKTTX</text>
+        </name>
+      </place>
+      <place id="p2">
+        <name>
+          <text>
+          </text>
+        </name>
+        <graphics>
+          <position x="320.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <transition id="Activity_EUNIE">
+        <name>
+          <text>Activity_EUNIE</text>
+        </name>
+      </transition>
+      <transition id="Activity_TTJIT">
+        <name>
+          <text>Activity_TTJIT</text>
+        </name>
+      </transition>
+      <transition id="Activity_KYCTC">
+        <name>
+          <text>Activity_KYCTC</text>
+        </name>
+      </transition>
+      <transition id="Activity_AFXFY">
+        <name>
+          <text>Activity_AFXFY</text>
+        </name>
+      </transition>
+      <transition id="Activity_ZSJCU">
+        <name>
+          <text>Activity_ZSJCU</text>
+        </name>
+      </transition>
+      <transition id="Activity_SYBLC">
+        <name>
+          <text>Activity_SYBLC</text>
+        </name>
+      </transition>
+      <transition id="Activity_LLQFG">
+        <name>
+          <text>Activity_LLQFG</text>
+        </name>
+      </transition>
+      <arc id="135590462415136" source="Activity_QQDBJ" target="Activity_EUNIE"/>
+      <arc id="135590462209792" source="Activity_UKTTX" target="Activity_ZSJCU"/>
+      <arc id="135590453537344" source="Activity_ZXTKU" target="Activity_SYBLC"/>
+      <arc id="135590454100048" source="p1" target="Activity_TTJIT"/>
+      <arc id="135590453553552" source="Activity_AFXFY" target="Activity_ZXTKU"/>
+      <arc id="135590453583056" source="Activity_TTJIT" target="Activity_UKTTX"/>
+      <arc id="135590454132816" source="Activity_ZSJCU" target="p2"/>
+      <arc id="135590460862736" source="Activity_UKTTX" target="Activity_AFXFY"/>
+      <arc id="135590462414896" source="Activity_EUNIE" target="Activity_QQDBJ"/>
+      <arc id="135590454086352" source="Activity_QQDBJ" target="Activity_KYCTC"/>
+      <arc id="135590454086576" source="Activity_KYCTC" target="Activity_UKTTX"/>
+      <arc id="135590453551248" source="Activity_LLQFG" target="Activity_ZXTKU"/>
+      <arc id="135590453537168" source="Activity_ZXTKU" target="Activity_LLQFG"/>
+      <arc id="135590454048912" source="Activity_SYBLC" target="Activity_QQDBJ"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="p2">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>

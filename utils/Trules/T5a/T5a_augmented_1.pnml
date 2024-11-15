@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="imported_1731686469.2813146" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <name>
+      <text>imported_1731686469.2813146</text>
+    </name>
+    <page id="n0">
+      <place id="oyiyn">
+        <name>
+          <text>oyiyn</text>
+        </name>
+      </place>
+      <place id="tqvne">
+        <name>
+          <text>tqvne</text>
+        </name>
+      </place>
+      <place id="p1">
+        <name>
+          <text>
+          </text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+        <graphics>
+          <position x="120.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <place id="p2">
+        <name>
+          <text>
+          </text>
+        </name>
+        <graphics>
+          <position x="320.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <place id="newui">
+        <name>
+          <text>newui</text>
+        </name>
+      </place>
+      <place id="piunf">
+        <name>
+          <text>piunf</text>
+        </name>
+      </place>
+      <place id="xgihm">
+        <name>
+          <text>xgihm</text>
+        </name>
+      </place>
+      <transition id="peplu">
+        <name>
+          <text>peplu</text>
+        </name>
+      </transition>
+      <transition id="iznnv">
+        <name>
+          <text>iznnv</text>
+        </name>
+      </transition>
+      <transition id="nayrn">
+        <name>
+          <text>nayrn</text>
+        </name>
+      </transition>
+      <transition id="odbqv">
+        <name>
+          <text>odbqv</text>
+        </name>
+      </transition>
+      <arc id="138567751516240" source="iznnv" target="newui"/>
+      <arc id="138567758573904" source="newui" target="nayrn"/>
+      <arc id="138567758573648" source="odbqv" target="xgihm"/>
+      <arc id="138567751487952" source="peplu" target="p2"/>
+      <arc id="138567750983776" source="p1" target="iznnv"/>
+      <arc id="138567751516512" source="oyiyn" target="odbqv"/>
+      <arc id="138567759831328" source="xgihm" target="peplu"/>
+      <arc id="138567758473136" source="iznnv" target="oyiyn"/>
+      <arc id="138567759831088" source="nayrn" target="tqvne"/>
+      <arc id="138567751487728" source="tqvne" target="peplu"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="p2">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>

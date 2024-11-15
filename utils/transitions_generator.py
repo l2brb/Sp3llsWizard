@@ -5,12 +5,12 @@ from pm4py.objects.petri_net.utils import petri_utils as utils
 from pm4py.objects.petri_net.importer import importer as pnml_importer
 from pm4py.objects.petri_net.exporter import exporter as pnml_exporter
 
-# Random activity name generator
+
 def generate_random_activity_name():
     random_suffix = ''.join(random.choice(string.ascii_uppercase) for _ in range(3))
     return f"Activity_{random_suffix}"
 
-# Aggiungo le transition alla petri net, posso scegliere dove appendere le nuove transizioni e quante metterne 
+
 def add_activities(petri_net, num_activities, target_place_id):
     target_place = next((place for place in petri_net.places if place.name == target_place_id), None)
     if not target_place:
@@ -21,7 +21,7 @@ def add_activities(petri_net, num_activities, target_place_id):
     next_transition = next((arc.target for arc in original_target_place.out_arcs), None)
     
     if next_transition:
-        # Tolgo l'arco che collegava il place originale alla transition
+  
         arc_to_remove = next((arc for arc in original_target_place.out_arcs if arc.target == next_transition), None)
         if arc_to_remove:
             utils.remove_arc(petri_net, arc_to_remove)

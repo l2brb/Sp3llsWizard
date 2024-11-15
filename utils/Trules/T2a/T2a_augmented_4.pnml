@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="imported_1731682280.7642145" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <name>
+      <text>imported_1731682280.7642145</text>
+    </name>
+    <page id="n0">
+      <place id="p1">
+        <name>
+          <text>
+          </text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+        <graphics>
+          <position x="120.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <place id="p2">
+        <name>
+          <text>
+          </text>
+        </name>
+        <graphics>
+          <position x="320.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <transition id="crnxw">
+        <name>
+          <text>crnxw</text>
+        </name>
+      </transition>
+      <transition id="eufns">
+        <name>
+          <text>eufns</text>
+        </name>
+      </transition>
+      <transition id="qulml">
+        <name>
+          <text>qulml</text>
+        </name>
+      </transition>
+      <transition id="axdaq">
+        <name>
+          <text>axdaq</text>
+        </name>
+      </transition>
+      <transition id="nrjje">
+        <name>
+          <text>nrjje</text>
+        </name>
+      </transition>
+      <arc id="129892773077280" source="p1" target="crnxw"/>
+      <arc id="129892764261280" source="p1" target="axdaq"/>
+      <arc id="129892771733744" source="axdaq" target="p2"/>
+      <arc id="129892764232080" source="p1" target="nrjje"/>
+      <arc id="129892773077040" source="p1" target="eufns"/>
+      <arc id="129892771541264" source="p1" target="qulml"/>
+      <arc id="129892764747152" source="eufns" target="p2"/>
+      <arc id="129892764747376" source="crnxw" target="p2"/>
+      <arc id="129892764229776" source="qulml" target="p2"/>
+      <arc id="129892764215696" source="nrjje" target="p2"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="p2">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>

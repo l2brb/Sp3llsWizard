@@ -36,14 +36,10 @@ log_intervals = [0, 8, 18, 35, 63, 109, 185, 308, 509, 840, 1381, 2267, 3719, 60
 
 def main():
     pnml_file_path = "/Users/l2brb/Documents/main/DECpietro/test/PLG/test_xor/models/xor_pm4py.pnml"
-    
     petri_net, initial_marking, final_marking = pnml_importer.apply(pnml_file_path)
 
     for num_activities in log_intervals:
-        
         updated_petri_net = add_activities(petri_net, num_activities)
-        
- 
         output_file_path = f"{num_activities + 8}.pnml"
         
         if updated_petri_net:

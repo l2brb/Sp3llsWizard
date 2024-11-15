@@ -6,7 +6,7 @@ from src import json_exporter
 # from src import wn_json
 
 def main():
-    pnml_file_path = "/Users/l2brb/Documents/main/DECpietro/test/PLG/test_xor/models/sample_xor_evo_cleaned_pm4py.pnml"
+    pnml_file_path = "/home/l2brb/main/DECpietro/utils/Trules/T1a/T1a_augmented_1.pnml"
     workflow_net = petri_parser.parse_wn_from_pnml(pnml_file_path)
 
     if workflow_net:

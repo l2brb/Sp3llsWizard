@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="imported_1731672274.5395865" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <name>
+      <text>imported_1731672274.5395865</text>
+    </name>
+    <page id="n0">
+      <place id="Activity_CPLNO">
+        <name>
+          <text>Activity_CPLNO</text>
+        </name>
+      </place>
+      <place id="p1">
+        <name>
+          <text>
+          </text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+        <graphics>
+          <position x="120.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <place id="Activity_STZJN">
+        <name>
+          <text>Activity_STZJN</text>
+        </name>
+      </place>
+      <place id="Activity_IMLXD">
+        <name>
+          <text>Activity_IMLXD</text>
+        </name>
+      </place>
+      <place id="p2">
+        <name>
+          <text>
+          </text>
+        </name>
+        <graphics>
+          <position x="320.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <place id="Activity_EMAJR">
+        <name>
+          <text>Activity_EMAJR</text>
+        </name>
+      </place>
+      <transition id="Activity_TCXBK">
+        <name>
+          <text>Activity_TCXBK</text>
+        </name>
+      </transition>
+      <transition id="Activity_ASKHI">
+        <name>
+          <text>Activity_ASKHI</text>
+        </name>
+      </transition>
+      <transition id="Activity_BDGZD">
+        <name>
+          <text>Activity_BDGZD</text>
+        </name>
+      </transition>
+      <transition id="Activity_MPEIW">
+        <name>
+          <text>Activity_MPEIW</text>
+        </name>
+      </transition>
+      <arc id="139939570573408" source="Activity_TCXBK" target="Activity_IMLXD"/>
+      <arc id="139939579019008" source="Activity_CPLNO" target="Activity_MPEIW"/>
+      <arc id="139939579240736" source="Activity_ASKHI" target="p2"/>
+      <arc id="139939571105872" source="p1" target="Activity_TCXBK"/>
+      <arc id="139939577882256" source="Activity_IMLXD" target="Activity_BDGZD"/>
+      <arc id="139939570573712" source="Activity_TCXBK" target="Activity_CPLNO"/>
+      <arc id="139939571122256" source="Activity_BDGZD" target="Activity_STZJN"/>
+      <arc id="139941119848528" source="Activity_MPEIW" target="Activity_EMAJR"/>
+      <arc id="139939577983312" source="Activity_STZJN" target="Activity_ASKHI"/>
+      <arc id="139939579240496" source="Activity_EMAJR" target="Activity_ASKHI"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="p2">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>

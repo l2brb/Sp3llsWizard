@@ -11,14 +11,13 @@ from src import wn_json
 def main():
     
     
-    pnml_file_path = "/Users/l2brb/Documents/main/DECpietro/test/PLG/test_xor/models/sample_xor_evo_cleaned_pm4py.pnml"
-
+    pnml_file_path = "/home/l2brb/main/DECpietro/utils/Trules/T1a/T1a_augmented_7.pnml"
+    # Execution Time
     start_time = time.time()
     process = psutil.Process(os.getpid())
     
 
     workflow_net = petri_parser.parse_wn_from_pnml(pnml_file_path)
-
     if workflow_net:
         output = dec_translator.translate_to_DEC(workflow_net)
     
