@@ -1,20 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <pnml>
-  <net id="imported_1731686469.2813146" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+  <net id="imported_1731958246.0786538" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
     <name>
-      <text>imported_1731686469.2813146</text>
+      <text>imported_1731958246.0786538</text>
     </name>
     <page id="n0">
-      <place id="oyiyn">
-        <name>
-          <text>oyiyn</text>
-        </name>
-      </place>
-      <place id="tqvne">
-        <name>
-          <text>tqvne</text>
-        </name>
-      </place>
       <place id="p1">
         <name>
           <text>
@@ -28,6 +18,26 @@
           <dimension x="40.0" y="40.0"/>
         </graphics>
       </place>
+      <place id="xhyoi">
+        <name>
+          <text>xhyoi</text>
+        </name>
+      </place>
+      <place id="gafgs">
+        <name>
+          <text>gafgs</text>
+        </name>
+      </place>
+      <place id="piunf">
+        <name>
+          <text>piunf</text>
+        </name>
+      </place>
+      <place id="hbffc">
+        <name>
+          <text>hbffc</text>
+        </name>
+      </place>
       <place id="p2">
         <name>
           <text>
@@ -38,29 +48,19 @@
           <dimension x="40.0" y="40.0"/>
         </graphics>
       </place>
-      <place id="newui">
+      <place id="lcrcf">
         <name>
-          <text>newui</text>
+          <text>lcrcf</text>
         </name>
       </place>
-      <place id="piunf">
+      <transition id="zljsu">
         <name>
-          <text>piunf</text>
-        </name>
-      </place>
-      <place id="xgihm">
-        <name>
-          <text>xgihm</text>
-        </name>
-      </place>
-      <transition id="peplu">
-        <name>
-          <text>peplu</text>
+          <text>zljsu</text>
         </name>
       </transition>
-      <transition id="iznnv">
+      <transition id="grkfi">
         <name>
-          <text>iznnv</text>
+          <text>grkfi</text>
         </name>
       </transition>
       <transition id="nayrn">
@@ -73,16 +73,16 @@
           <text>odbqv</text>
         </name>
       </transition>
-      <arc id="138567751516240" source="iznnv" target="newui"/>
-      <arc id="138567758573904" source="newui" target="nayrn"/>
-      <arc id="138567758573648" source="odbqv" target="xgihm"/>
-      <arc id="138567751487952" source="peplu" target="p2"/>
-      <arc id="138567750983776" source="p1" target="iznnv"/>
-      <arc id="138567751516512" source="oyiyn" target="odbqv"/>
-      <arc id="138567759831328" source="xgihm" target="peplu"/>
-      <arc id="138567758473136" source="iznnv" target="oyiyn"/>
-      <arc id="138567759831088" source="nayrn" target="tqvne"/>
-      <arc id="138567751487728" source="tqvne" target="peplu"/>
+      <arc id="123950509154400" source="p1" target="grkfi"/>
+      <arc id="123950509719904" source="xhyoi" target="odbqv"/>
+      <arc id="123950518018336" source="lcrcf" target="zljsu"/>
+      <arc id="123950509719632" source="grkfi" target="hbffc"/>
+      <arc id="123950516643760" source="grkfi" target="xhyoi"/>
+      <arc id="123952058642512" source="hbffc" target="nayrn"/>
+      <arc id="123950516744528" source="odbqv" target="lcrcf"/>
+      <arc id="123950518018096" source="nayrn" target="gafgs"/>
+      <arc id="123950509674512" source="gafgs" target="zljsu"/>
+      <arc id="123950509674736" source="zljsu" target="p2"/>
     </page>
     <finalmarkings>
       <marking>

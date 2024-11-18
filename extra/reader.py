@@ -2,7 +2,7 @@ import pm4py
 from pm4py.visualization.transition_system import visualizer as ts_visualizer
 
 #PNML READER
-net, im, fm, = pm4py.read_pnml("/home/l2brb/main/DECpietro/utils/Trules/T5a/T5a_augmented_1.pnml", True)
+net, im, fm, = pm4py.read_pnml("/home/l2brb/main/DECpietro/utils/DTRules/out/T3a_augmented_test.pnml", True)
 
 #print(net, im, fm)
 

@@ -19,7 +19,8 @@ def generate_random_activity_name():
 
 def replace_transition_t5a(petri_net):
 
-    target_transition1 = random.choice(list(petri_net.transitions)) #TODO   qui ho la saelezione casuale, ma devo decidere come fare nei test
+    #target_transition1 = random.choice(list(petri_net.transitions)) #TODO SELEZIONE CASUALE DELLA TRANSITION SU CUI APPLICARE LA TRASFORMAZIONE, MA NEI TEST DEVO MODIFICARE
+    target_transition1 = list(petri_net.transitions)[0]
     
    
     target_transition2 = None
@@ -43,7 +44,7 @@ def replace_transition_t5a(petri_net):
         utils.remove_arc(petri_net, arc)
     petri_net.transitions.remove(target_transition1)
     petri_net.transitions.remove(target_transition2)
-    
+
     
     # c1 e c2
     c1_name = generate_random_activity_name()
@@ -91,7 +92,7 @@ def replace_transition_t5a(petri_net):
 
 ########################################################################################### EXECUTION
 
-log_intervals = [1, 2, 3, 4, 5, 6, 7]  #TODO: SCALA DA RIVEDERE, DEVO DECIDERE COME APPLICARE LA REGOLA
+log_intervals = [1]  #TODO: SCALA DA RIVEDERE, DEVO DECIDERE COME APPLICARE LA REGOLA
 
 def main():
     pnml_file_path = "/home/l2brb/main/DECpietro/utils/Trules/T1a/T1a_augmented_1.pnml"
@@ -104,7 +105,7 @@ def main():
         output_file_path = f"/home/l2brb/main/DECpietro/utils/Trules/T5a/T5a_augmented_{num_activities}.pnml"
         if updated_petri_net:
             pnml_exporter.apply(updated_petri_net, initial_marking, output_file_path, final_marking=final_marking)
-            print(f"Updated Petri net with {num_activities + 1} activities exported to {output_file_path}")
+            #print(f"Updated Petri net with {num_activities + 1} activities exported to {output_file_path}")
 
 if __name__ == "__main__":
     main()

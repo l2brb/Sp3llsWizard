@@ -6,7 +6,7 @@ from pm4py.objects.petri_net.importer import importer as pnml_importer
 from pm4py.objects.petri_net.exporter import exporter as pnml_exporter
 
 
-# RULE T4a
+# RULE T4a - LOOP
 # Task t1 is replaced by an iteration of task t2.
 # The execution of task t1 (e.g. type letter) corresponds to zero or more executions of task t2 (e.g.type sentence). 
 # The transitions c1 and c2 represent control activities that mark the begin and end of a sequence of ‘t2-tasks’.

@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="imported_1731971049.4485502" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <name>
+      <text>imported_1731971049.4485502</text>
+    </name>
+    <page id="n0">
+      <place id="p1">
+        <name>
+          <text>
+          </text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+        <graphics>
+          <position x="120.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <place id="wetvf">
+        <name>
+          <text>wetvf</text>
+        </name>
+      </place>
+      <place id="koenr">
+        <name>
+          <text>koenr</text>
+        </name>
+      </place>
+      <place id="vlrfl">
+        <name>
+          <text>vlrfl</text>
+        </name>
+      </place>
+      <place id="saxgl">
+        <name>
+          <text>saxgl</text>
+        </name>
+      </place>
+      <place id="p2">
+        <name>
+          <text>
+          </text>
+        </name>
+        <graphics>
+          <position x="320.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <place id="puaud">
+        <name>
+          <text>puaud</text>
+        </name>
+      </place>
+      <place id="pehcq">
+        <name>
+          <text>pehcq</text>
+        </name>
+      </place>
+      <transition id="prova">
+        <name>
+          <text>prova</text>
+        </name>
+      </transition>
+      <transition id="prova_2">
+        <name>
+          <text>prova_2</text>
+        </name>
+      </transition>
+      <transition id="t1">
+        <name>
+          <text>t1</text>
+        </name>
+      </transition>
+      <transition id="provaprova">
+        <name>
+          <text>provaprova</text>
+        </name>
+      </transition>
+      <arc id="136704397794816" source="prova" target="vlrfl"/>
+      <arc id="136704398409808" source="p1" target="prova"/>
+      <arc id="136704405385552" source="saxgl" target="prova_2"/>
+      <arc id="136704405385296" source="prova_2" target="p2"/>
+      <arc id="136704398398352" source="wetvf" target="t1"/>
+      <arc id="136704405057808" source="puaud" target="provaprova"/>
+      <arc id="136704397811472" source="t1" target="koenr"/>
+      <arc id="136704397811856" source="provaprova" target="pehcq"/>
+      <arc id="136704397765712" source="pehcq" target="prova_2"/>
+      <arc id="136704406626592" source="prova" target="wetvf"/>
+      <arc id="136704397765536" source="koenr" target="prova_2"/>
+      <arc id="136704406626352" source="vlrfl" target="prova"/>
+      <arc id="136704398398128" source="prova" target="puaud"/>
+      <arc id="136704398292336" source="prova_2" target="saxgl"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="p2">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>

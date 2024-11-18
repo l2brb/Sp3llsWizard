@@ -5,7 +5,7 @@ from pm4py.objects.petri_net.utils import petri_utils as utils
 from pm4py.objects.petri_net.importer import importer as pnml_importer
 from pm4py.objects.petri_net.exporter import exporter as pnml_exporter
 
-# RULE T2a
+# RULE T2a - XOR SPLIT
 # Task t1 is replaced by two conditional tasks t2 and t3. 
 # This transformation rule corresponds to the specialization of a task (e.g. handle order) into two more specialized tasks (e.g. handle small order and handle large order).
 
@@ -27,14 +27,18 @@ def replace_random_transition_t2a(petri_net):
     petri_net.transitions.remove(target_transition)
     
     # t2 e t3
-    t2_name = generate_random_activity_name() #TODO: DA RIVEDERE IN CASO IN CUI VOLESSI MANTENERE LA TRANSITION PIVOT CON LA LABEL ORIGINALE 
-    t3_name = generate_random_activity_name()
+    if t2_name is None:
+        t2_name = generate_random_activity_name()   #TODO: CONTROLLA IL CICLO IN MAIN
+
+    if t3_name is None:
+        t3_name = generate_random_activity_name()   #TODO: CONTROLLA IL CICLO IN MAIN
+    
     t2 = PetriNet.Transition(t2_name, label=t2_name)
     t3 = PetriNet.Transition(t3_name, label=t3_name)
     petri_net.transitions.add(t2)
     petri_net.transitions.add(t3)
     
-    for place in incoming_places:
+    for place in incoming_places: #TODO   QUI FORSE DOVREI MARCARE I PLACE ESTREMI PER LIMITARE LO SPAZIO DELLA MIA ESPANSIONE
         utils.add_arc_from_to(place, t2, petri_net)
         utils.add_arc_from_to(place, t3, petri_net)
     
@@ -45,23 +49,4 @@ def replace_random_transition_t2a(petri_net):
     print(f"Transition {target_transition.name} replaced by {t2_name} and {t3_name}.")
     return petri_net
 
-########################################################################################### EXECUTION
-
-intervals = [1, 2, 3, 4, 5, 6, 7]  #TODO: SCALA DA RIVEDERE, DEVO DECIDERE COME APPLICARE LA REGOLA
-
-
-def main():
-    pnml_file_path = "/home/l2brb/main/DECpietro/utils/simple-wn.pnml"
-    
-    petri_net, initial_marking, final_marking = pnml_importer.apply(pnml_file_path)
-
-    for num_activities in intervals:
-        updated_petri_net = replace_random_transition_t2a(petri_net)
-
-        output_file_path = f"/home/l2brb/main/DECpietro/utils/Trules/T2a/T2a_augmented_{num_activities}.pnml"
-        if updated_petri_net:
-            pnml_exporter.apply(updated_petri_net, initial_marking, output_file_path, final_marking=final_marking)
-            print(f"Updated WN with {num_activities + 1} activities exported to {output_file_path}")
-
-if __name__ == "__main__":
-    main()
+#

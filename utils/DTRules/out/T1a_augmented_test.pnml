@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="imported_1731968281.1168694" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <name>
+      <text>imported_1731968281.1168694</text>
+    </name>
+    <page id="n0">
+      <place id="p1">
+        <name>
+          <text>
+          </text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+        <graphics>
+          <position x="120.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <place id="bhlcg">
+        <name>
+          <text>bhlcg</text>
+        </name>
+      </place>
+      <place id="yvsli">
+        <name>
+          <text>yvsli</text>
+        </name>
+      </place>
+      <place id="p2">
+        <name>
+          <text>
+          </text>
+        </name>
+        <graphics>
+          <position x="320.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <transition id="ttgcf">
+        <name>
+          <text>ttgcf</text>
+        </name>
+      </transition>
+      <transition id="jhyza">
+        <name>
+          <text>jhyza</text>
+        </name>
+      </transition>
+      <transition id="t1">
+        <name>
+          <text>t1</text>
+        </name>
+      </transition>
+      <arc id="137247029615520" source="ttgcf" target="yvsli"/>
+      <arc id="137247030149472" source="t1" target="bhlcg"/>
+      <arc id="137247030165584" source="p1" target="ttgcf"/>
+      <arc id="137248580055120" source="bhlcg" target="jhyza"/>
+      <arc id="137247030149200" source="yvsli" target="t1"/>
+      <arc id="137247037206864" source="jhyza" target="p2"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="p2">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>
