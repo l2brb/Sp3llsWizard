@@ -1,0 +1,219 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="imported_1732046843.8064022" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <name>
+      <text>imported_1732046843.8064022</text>
+    </name>
+    <page id="n0">
+      <place id="p1">
+        <name>
+          <text>
+          </text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+        <graphics>
+          <position x="120.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <place id="dtjzv">
+        <name>
+          <text>dtjzv</text>
+        </name>
+      </place>
+      <place id="yqusp">
+        <name>
+          <text>yqusp</text>
+        </name>
+      </place>
+      <place id="qutfp">
+        <name>
+          <text>qutfp</text>
+        </name>
+      </place>
+      <place id="rrxis">
+        <name>
+          <text>rrxis</text>
+        </name>
+      </place>
+      <place id="skven">
+        <name>
+          <text>skven</text>
+        </name>
+      </place>
+      <place id="bdnyu">
+        <name>
+          <text>bdnyu</text>
+        </name>
+      </place>
+      <place id="cwjgm">
+        <name>
+          <text>cwjgm</text>
+        </name>
+      </place>
+      <place id="p2">
+        <name>
+          <text>
+          </text>
+        </name>
+        <graphics>
+          <position x="320.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <place id="revsk">
+        <name>
+          <text>revsk</text>
+        </name>
+      </place>
+      <place id="ugtaq">
+        <name>
+          <text>ugtaq</text>
+        </name>
+      </place>
+      <place id="tojhb">
+        <name>
+          <text>tojhb</text>
+        </name>
+      </place>
+      <place id="zsjoa">
+        <name>
+          <text>zsjoa</text>
+        </name>
+      </place>
+      <place id="axute">
+        <name>
+          <text>axute</text>
+        </name>
+      </place>
+      <place id="qrmpe">
+        <name>
+          <text>qrmpe</text>
+        </name>
+      </place>
+      <place id="rsahe">
+        <name>
+          <text>rsahe</text>
+        </name>
+      </place>
+      <place id="opytf">
+        <name>
+          <text>opytf</text>
+        </name>
+      </place>
+      <place id="verpw">
+        <name>
+          <text>verpw</text>
+        </name>
+      </place>
+      <transition id="hzklz">
+        <name>
+          <text>hzklz</text>
+        </name>
+      </transition>
+      <transition id="nmoxi">
+        <name>
+          <text>nmoxi</text>
+        </name>
+      </transition>
+      <transition id="jzepl">
+        <name>
+          <text>jzepl</text>
+        </name>
+      </transition>
+      <transition id="wvytm">
+        <name>
+          <text>wvytm</text>
+        </name>
+      </transition>
+      <transition id="glwxb">
+        <name>
+          <text>glwxb</text>
+        </name>
+      </transition>
+      <transition id="jnwqd">
+        <name>
+          <text>jnwqd</text>
+        </name>
+      </transition>
+      <transition id="pmfda">
+        <name>
+          <text>pmfda</text>
+        </name>
+      </transition>
+      <transition id="hxahb">
+        <name>
+          <text>hxahb</text>
+        </name>
+      </transition>
+      <transition id="rqdof">
+        <name>
+          <text>rqdof</text>
+        </name>
+      </transition>
+      <transition id="gmhuf">
+        <name>
+          <text>gmhuf</text>
+        </name>
+      </transition>
+      <transition id="t1">
+        <name>
+          <text>t1</text>
+        </name>
+      </transition>
+      <transition id="hkrnc">
+        <name>
+          <text>hkrnc</text>
+        </name>
+      </transition>
+      <transition id="bhuad">
+        <name>
+          <text>bhuad</text>
+        </name>
+      </transition>
+      <arc id="131108462222848" source="wvytm" target="bdnyu"/>
+      <arc id="131108462679040" source="jnwqd" target="rrxis"/>
+      <arc id="131108462583040" source="pmfda" target="cwjgm"/>
+      <arc id="131108462679936" source="gmhuf" target="qutfp"/>
+      <arc id="131108462679488" source="t1" target="verpw"/>
+      <arc id="131108462680384" source="jnwqd" target="opytf"/>
+      <arc id="131108462680832" source="bhuad" target="skven"/>
+      <arc id="131108462679824" source="rsahe" target="gmhuf"/>
+      <arc id="131108462805072" source="p1" target="wvytm"/>
+      <arc id="131108469813584" source="cwjgm" target="hzklz"/>
+      <arc id="131108469813328" source="hzklz" target="p2"/>
+      <arc id="131108462791824" source="revsk" target="hzklz"/>
+      <arc id="131108469485840" source="bdnyu" target="nmoxi"/>
+      <arc id="131108462239504" source="nmoxi" target="ugtaq"/>
+      <arc id="131110011104848" source="nmoxi" target="zsjoa"/>
+      <arc id="131108462756240" source="tojhb" target="pmfda"/>
+      <arc id="131108462633808" source="zsjoa" target="hxahb"/>
+      <arc id="131108462678928" source="ugtaq" target="jzepl"/>
+      <arc id="131108462680272" source="rrxis" target="t1"/>
+      <arc id="131108462678816" source="axute" target="pmfda"/>
+      <arc id="131108471054624" source="dtjzv" target="glwxb"/>
+      <arc id="131108462679264" source="qrmpe" target="jnwqd"/>
+      <arc id="131108462679712" source="rqdof" target="tojhb"/>
+      <arc id="131108462680608" source="hkrnc" target="yqusp"/>
+      <arc id="131108462680720" source="opytf" target="bhuad"/>
+      <arc id="131108462679152" source="jzepl" target="qrmpe"/>
+      <arc id="131108471054384" source="wvytm" target="dtjzv"/>
+      <arc id="131108462791600" source="glwxb" target="revsk"/>
+      <arc id="131108462678704" source="hxahb" target="axute"/>
+      <arc id="131108462679600" source="yqusp" target="rqdof"/>
+      <arc id="131108462680048" source="qutfp" target="rqdof"/>
+      <arc id="131108462680496" source="verpw" target="hkrnc"/>
+      <arc id="131108462680944" source="skven" target="hkrnc"/>
+      <arc id="131108462679376" source="jzepl" target="rsahe"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="p2">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>

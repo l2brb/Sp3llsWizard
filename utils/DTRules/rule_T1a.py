@@ -17,10 +17,10 @@ def generate_random_activity_name():
     return f"{random_suffix}"
 
 # T1a
-def extend_transition_t1a(petri_net, target_transition=None, t2_name=None, t3_name=None):
+def extend_transition_t1a(petri_net, target_transition=None, t2_name=None, t3_name=None, intermediate_place_name=None):
 
     # seleziono t1
-    if target_transition is None:  #TODO SELEZIONE DELLA TRANSITION SU CUI APPLICARE LA TRASFORMAZIONE, VEDI MAIN-TEST (UTILIZZO UN A TRS PIVOT)
+    if target_transition is None:  #TODO SELEZIONE DELLA TRANSITION SU CUI APPLICARE LA TRASFORMAZIONE, VEDI MAIN-TEST (UTILIZZO UNA TRS PIVOT)
         target_transition = random.choice(list(petri_net.transitions))
     elif isinstance(target_transition, str):  # Se target_transition è una stringa (nome della transizione)
         target_transition = next((t for t in petri_net.transitions if t.name == target_transition), None)
@@ -47,7 +47,10 @@ def extend_transition_t1a(petri_net, target_transition=None, t2_name=None, t3_na
     petri_net.transitions.add(t2)
     petri_net.transitions.add(t3)
     
-    intermediate_place_name = generate_random_activity_name()
+
+    if intermediate_place_name is None:
+        intermediate_place_name = generate_random_activity_name()   #TODO: CONTROLLA IL CICLO IN MAIN
+    
     intermediate_place = PetriNet.Place(intermediate_place_name)
     petri_net.places.add(intermediate_place)
 

@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="imported_1732036291.6898167" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <name>
+      <text>imported_1732036291.6898167</text>
+    </name>
+    <page id="n0">
+      <place id="p1">
+        <name>
+          <text>
+          </text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+        <graphics>
+          <position x="120.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <place id="giioq">
+        <name>
+          <text>giioq</text>
+        </name>
+      </place>
+      <place id="di">
+        <name>
+          <text>di</text>
+        </name>
+      </place>
+      <place id="test">
+        <name>
+          <text>test</text>
+        </name>
+      </place>
+      <place id="ghlue">
+        <name>
+          <text>ghlue</text>
+        </name>
+      </place>
+      <place id="p2">
+        <name>
+          <text>
+          </text>
+        </name>
+        <graphics>
+          <position x="320.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <place id="a">
+        <name>
+          <text>a</text>
+        </name>
+      </place>
+      <place id="cazzo">
+        <name>
+          <text>cazzo</text>
+        </name>
+      </place>
+      <transition id="frgtt">
+        <name>
+          <text>frgtt</text>
+        </name>
+      </transition>
+      <transition id="vryre">
+        <name>
+          <text>vryre</text>
+        </name>
+      </transition>
+      <transition id="prova_2">
+        <name>
+          <text>prova_2</text>
+        </name>
+      </transition>
+      <transition id="t1">
+        <name>
+          <text>t1</text>
+        </name>
+      </transition>
+      <arc id="140713618137376" source="frgtt" target="a"/>
+      <arc id="140713609292528" source="cazzo" target="prova_2"/>
+      <arc id="140713609904208" source="p1" target="frgtt"/>
+      <arc id="140713617415984" source="frgtt" target="ghlue"/>
+      <arc id="140713618137136" source="frgtt" target="test"/>
+      <arc id="140715159744592" source="giioq" target="prova_2"/>
+      <arc id="140713616896336" source="prova_2" target="p2"/>
+      <arc id="140713609892304" source="test" target="t1"/>
+      <arc id="140713609892528" source="a" target="vryre"/>
+      <arc id="140713616568592" source="t1" target="di"/>
+      <arc id="140713609322256" source="vryre" target="cazzo"/>
+      <arc id="140713609322640" source="di" target="prova_2"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="p2">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>

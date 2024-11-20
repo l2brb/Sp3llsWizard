@@ -15,9 +15,15 @@ def generate_random_activity_name():
     return f"{random_suffix}"
 
 # T2a
-def replace_random_transition_t2a(petri_net):
-    target_transition = random.choice(list(petri_net.transitions)) #TODO   SELEZIONE CASUALE DELLA TRANSITION SU CUI APPLICARE LA TRASFORMAZIONE, MA NEI TEST DEVO MODIFICARE
+def xor_split_transition_t3a(petri_net, target_transition=None, t2_name=None, t3_name=None):  
     
+     # seleziono t1
+    if target_transition is None:  #TODO SELEZIONE DELLA TRANSITION SU CUI APPLICARE LA TRASFORMAZIONE, VEDI MAIN-TEST (UTILIZZO UN A TRS PIVOT)
+        target_transition = random.choice(list(petri_net.transitions))
+    elif isinstance(target_transition, str):  # Se target_transition è una stringa (nome della transizione)
+        target_transition = next((t for t in petri_net.transitions if t.name == target_transition), None)
+        # if target_transition is None:
+        #     raise ValueError
     
     incoming_places = [arc.source for arc in target_transition.in_arcs]
     outgoing_places = [arc.target for arc in target_transition.out_arcs]
@@ -46,7 +52,5 @@ def replace_random_transition_t2a(petri_net):
         utils.add_arc_from_to(t2, place, petri_net)
         utils.add_arc_from_to(t3, place, petri_net)
     
-    print(f"Transition {target_transition.name} replaced by {t2_name} and {t3_name}.")
+    #print(f"Transition {target_transition.name} replaced by {t2_name} and {t3_name}.")
     return petri_net
-
-#
