@@ -18,9 +18,17 @@ def generate_random_activity_name():
     return f"{random_suffix}"
 
 # T4a
-def replace_random_transition_t4a(petri_net):
+def loop_transition_t4a(petri_net):
     
-    target_transition = random.choice(list(petri_net.transitions)) #TODO SELEZIONE CASUALE DELLA TRANSITION SU CUI APPLICARE LA TRASFORMAZIONE, MA NEI TEST DEVO MODIFICARE
+    # seleziono t1
+    if target_transition is None:  #TODO SELEZIONE DELLA TRANSITION SU CUI APPLICARE LA TRASFORMAZIONE, VEDI MAIN-TEST (UTILIZZO UNA TRS PIVOT)
+        target_transition = random.choice(list(petri_net.transitions))
+    elif isinstance(target_transition, str):  # Se target_transition è una stringa (nome della transizione)
+        target_transition = next((t for t in petri_net.transitions if t.name == target_transition), None)
+        if target_transition is None:
+            raise ValueError
+    
+
     
     incoming_places = [arc.source for arc in target_transition.in_arcs]
     outgoing_places = [arc.target for arc in target_transition.out_arcs]
@@ -63,22 +71,3 @@ def replace_random_transition_t4a(petri_net):
     #print(f"Transition {target_transition.name} replaced by parallel tasks {t2_name} and {t3_name} with control transitions {c1_name} and {c2_name}.")
     return petri_net
 
-########################################################################################### EXECUTION
-
-intervals = [1, 2, 3, 4, 5, 6, 7]  #TODO: SCALA DA RIVEDERE, DEVO DECIDERE COME APPLICARE LA REGOLA
-
-def main():
-    pnml_file_path = "/home/l2brb/main/DECpietro/utils/simple-wn.pnml"
-    
-    petri_net, initial_marking, final_marking = pnml_importer.apply(pnml_file_path)
-
-    for num_activities in intervals:
-        updated_petri_net = replace_random_transition_t4a(petri_net)
-
-        output_file_path = f"/home/l2brb/main/DECpietro/utils/Trules/T4a/T4a_augmented_{num_activities}.pnml"
-        if updated_petri_net:
-            pnml_exporter.apply(updated_petri_net, initial_marking, output_file_path, final_marking=final_marking)
-            print(f"Updated Petri net with {num_activities + 1} activities exported to {output_file_path}")
-
-if __name__ == "__main__":
-    main()

@@ -66,22 +66,3 @@ def extend_transition_t1a(petri_net, target_transition=None, t2_name=None, t3_na
     #print(f"Transition {target_transition.name} replaced by {t2_name} and {t3_name}.")
     return petri_net
 
-
-
-
-########################################################################################### EXECUTION
-
-
-"""def main():
-    pnml_file_path = "/home/l2brb/main/DECpietro/utils/simple-wn.pnml"
-    
-    petri_net, initial_marking, final_marking = pnml_importer.apply(pnml_file_path)
-
-    updated_petri_net = replace_random_transition_t1a(petri_net)
-
-    output_file_path = f"/home/l2brb/main/DECpietro/utils/Trules/T1a/T1a_augmented_{num_activities}.pnml"
-    if updated_petri_net:
-            pnml_exporter.apply(updated_petri_net, initial_marking, output_file_path, final_marking=final_marking)
-            print(f"Updated WN")
-
-"""

@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <pnml>
-  <net id="imported_1732046843.8064022" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+  <net id="imported_1732098700.255675" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
     <name>
-      <text>imported_1732046843.8064022</text>
+      <text>imported_1732098700.255675</text>
     </name>
     <page id="n0">
-      <place id="p1">
+      <place id="rggmo">
         <name>
           <text>
           </text>
@@ -18,22 +18,12 @@
           <dimension x="40.0" y="40.0"/>
         </graphics>
       </place>
-      <place id="dtjzv">
+      <place id="lkejd">
         <name>
-          <text>dtjzv</text>
+          <text>lkejd</text>
         </name>
       </place>
-      <place id="bdnyu">
-        <name>
-          <text>bdnyu</text>
-        </name>
-      </place>
-      <place id="cwjgm">
-        <name>
-          <text>cwjgm</text>
-        </name>
-      </place>
-      <place id="p2">
+      <place id="qwqon">
         <name>
           <text>
           </text>
@@ -43,45 +33,62 @@
           <dimension x="40.0" y="40.0"/>
         </graphics>
       </place>
-      <place id="revsk">
+      <place id="bwlhi">
         <name>
-          <text>revsk</text>
+          <text>bwlhi</text>
         </name>
       </place>
-      <transition id="hzklz">
+      <place id="fdlfu">
         <name>
-          <text>hzklz</text>
+          <text>fdlfu</text>
         </name>
-      </transition>
-      <transition id="wvytm">
+      </place>
+      <place id="jphfr">
         <name>
-          <text>wvytm</text>
+          <text>jphfr</text>
         </name>
-      </transition>
-      <transition id="glwxb">
-        <name>
-          <text>glwxb</text>
-        </name>
-      </transition>
+      </place>
       <transition id="t1">
         <name>
           <text>t1</text>
         </name>
       </transition>
-      <arc id="131108462222848" source="wvytm" target="bdnyu"/>
-      <arc id="131108462805072" source="p1" target="wvytm"/>
-      <arc id="131108469813584" source="cwjgm" target="hzklz"/>
-      <arc id="131108469813328" source="hzklz" target="p2"/>
-      <arc id="131108462791824" source="revsk" target="hzklz"/>
-      <arc id="131108462723424" source="bdnyu" target="t1"/>
-      <arc id="131108471054624" source="dtjzv" target="glwxb"/>
-      <arc id="131108462723696" source="t1" target="cwjgm"/>
-      <arc id="131108471054384" source="wvytm" target="dtjzv"/>
-      <arc id="131108462791600" source="glwxb" target="revsk"/>
+      <transition id="dcllr">
+        <name>
+          <text>dcllr</text>
+        </name>
+      </transition>
+      <transition id="aprdx">
+        <name>
+          <text>aprdx</text>
+        </name>
+      </transition>
+      <transition id="vwcgm">
+        <name>
+          <text>vwcgm</text>
+        </name>
+      </transition>
+      <transition id="jbrpf">
+        <name>
+          <text>jbrpf</text>
+        </name>
+      </transition>
+      <arc id="133870517831616" source="bwlhi" target="t1"/>
+      <arc id="133870526161184" source="fdlfu" target="jbrpf"/>
+      <arc id="133870524608160" source="rggmo" target="dcllr"/>
+      <arc id="133870518092176" source="rggmo" target="aprdx"/>
+      <arc id="133870517526320" source="aprdx" target="bwlhi"/>
+      <arc id="133870517831888" source="t1" target="lkejd"/>
+      <arc id="133872066262096" source="lkejd" target="vwcgm"/>
+      <arc id="133870524920144" source="vwcgm" target="qwqon"/>
+      <arc id="133870526160944" source="aprdx" target="fdlfu"/>
+      <arc id="133870518078384" source="jbrpf" target="jphfr"/>
+      <arc id="133870518078608" source="jphfr" target="vwcgm"/>
+      <arc id="133870517496208" source="dcllr" target="qwqon"/>
     </page>
     <finalmarkings>
       <marking>
-        <place idref="p2">
+        <place idref="qwqon">
           <text>1</text>
         </place>
       </marking>

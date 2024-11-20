@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="imported_1732046843.8064022" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <name>
+      <text>imported_1732046843.8064022</text>
+    </name>
+    <page id="n0">
+      <place id="p1">
+        <name>
+          <text>
+          </text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+        <graphics>
+          <position x="120.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <place id="dtjzv">
+        <name>
+          <text>dtjzv</text>
+        </name>
+      </place>
+      <place id="bdnyu">
+        <name>
+          <text>bdnyu</text>
+        </name>
+      </place>
+      <place id="cwjgm">
+        <name>
+          <text>cwjgm</text>
+        </name>
+      </place>
+      <place id="p2">
+        <name>
+          <text>
+          </text>
+        </name>
+        <graphics>
+          <position x="320.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <place id="revsk">
+        <name>
+          <text>revsk</text>
+        </name>
+      </place>
+      <transition id="hzklz">
+        <name>
+          <text>hzklz</text>
+        </name>
+      </transition>
+      <transition id="wvytm">
+        <name>
+          <text>wvytm</text>
+        </name>
+      </transition>
+      <transition id="glwxb">
+        <name>
+          <text>glwxb</text>
+        </name>
+      </transition>
+      <transition id="t1">
+        <name>
+          <text>t1</text>
+        </name>
+      </transition>
+      <arc id="131108462222848" source="wvytm" target="bdnyu"/>
+      <arc id="131108462805072" source="p1" target="wvytm"/>
+      <arc id="131108469813584" source="cwjgm" target="hzklz"/>
+      <arc id="131108469813328" source="hzklz" target="p2"/>
+      <arc id="131108462791824" source="revsk" target="hzklz"/>
+      <arc id="131108462723424" source="bdnyu" target="t1"/>
+      <arc id="131108471054624" source="dtjzv" target="glwxb"/>
+      <arc id="131108462723696" source="t1" target="cwjgm"/>
+      <arc id="131108471054384" source="wvytm" target="dtjzv"/>
+      <arc id="131108462791600" source="glwxb" target="revsk"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="p2">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>

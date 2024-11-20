@@ -15,42 +15,21 @@ def generate_random_activity_name():
     return f"{random_suffix}"
 
 # T2a
-def xor_split_transition_t3a(petri_net, target_transition=None, t2_name=None, t3_name=None):  
+def xor_split_transition_t2a(petri_net, t3_name=None):  
     
-     # seleziono t1
-    if target_transition is None:  #TODO SELEZIONE DELLA TRANSITION SU CUI APPLICARE LA TRASFORMAZIONE, VEDI MAIN-TEST (UTILIZZO UN A TRS PIVOT)
-        target_transition = random.choice(list(petri_net.transitions))
-    elif isinstance(target_transition, str):  # Se target_transition è una stringa (nome della transizione)
-        target_transition = next((t for t in petri_net.transitions if t.name == target_transition), None)
-        # if target_transition is None:
-        #     raise ValueError
-    
-    incoming_places = [arc.source for arc in target_transition.in_arcs]
-    outgoing_places = [arc.target for arc in target_transition.out_arcs]
-    
-    for arc in list(target_transition.in_arcs) + list(target_transition.out_arcs):
-        utils.remove_arc(petri_net, arc)
-    petri_net.transitions.remove(target_transition)
-    
-    # t2 e t3
-    if t2_name is None:
-        t2_name = generate_random_activity_name()   #TODO: CONTROLLA IL CICLO IN MAIN
+    # Add new transition t3 and connect to p1 and p2
 
     if t3_name is None:
-        t3_name = generate_random_activity_name()   #TODO: CONTROLLA IL CICLO IN MAIN
+        t3_name = generate_random_activity_name()
     
-    t2 = PetriNet.Transition(t2_name, label=t2_name)
     t3 = PetriNet.Transition(t3_name, label=t3_name)
-    petri_net.transitions.add(t2)
     petri_net.transitions.add(t3)
     
-    for place in incoming_places: #TODO   QUI FORSE DOVREI MARCARE I PLACE ESTREMI PER LIMITARE LO SPAZIO DELLA MIA ESPANSIONE
-        utils.add_arc_from_to(place, t2, petri_net)
-        utils.add_arc_from_to(place, t3, petri_net)
+    p1 = next((p for p in petri_net.places if p.name == 'p1'), None)
+    p2 = next((p for p in petri_net.places if p.name == 'p2'), None)
     
-    for place in outgoing_places:
-        utils.add_arc_from_to(t2, place, petri_net)
-        utils.add_arc_from_to(t3, place, petri_net)
+    if p1 and p2:
+        utils.add_arc_from_to(p1, t3, petri_net)
+        utils.add_arc_from_to(t3, p2, petri_net)
     
-    #print(f"Transition {target_transition.name} replaced by {t2_name} and {t3_name}.")
     return petri_net
