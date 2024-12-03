@@ -16,3 +16,9 @@ utils/expansion rules/rules/T2a/*
 utils/expansion rules/rules/T3a/*
 utils/expansion rules/rules/T4a/*
 utils/expansion rules/rules/T5a/*
+
+#vscode
+.vscode/*
+#pycharm
+.idea/*
+
