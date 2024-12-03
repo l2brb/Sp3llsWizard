@@ -1,0 +1,111 @@
+{
+    "name": "bpic14f_aplha.pnml",
+    "tasks": [
+        "Update",
+        "Caused By CI",
+        "Reassignment",
+        "Status Change",
+        "Open",
+        "Quality Indicator Fixed",
+        "Closed",
+        "Operator Update",
+        "Assignment"
+    ],
+    "constraints": [
+        {
+            "template": "End",
+            "parameters": [
+                [
+                    "Caused By CI",
+                    "Quality Indicator Fixed",
+                    "Closed"
+                ]
+            ]
+        },
+        {
+            "template": "Atmost1",
+            "parameters": [
+                [
+                    "Open"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Open"
+                ],
+                [
+                    "Status Change"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Caused By CI"
+                ],
+                [
+                    "Quality Indicator Fixed"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Open"
+                ],
+                [
+                    "Reassignment"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Status Change"
+                ],
+                [
+                    "Reassignment"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Status Change"
+                ],
+                [
+                    "Caused By CI"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Status Change"
+                ],
+                [
+                    "Closed"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Status Change"
+                ],
+                [
+                    "Reassignment"
+                ]
+            ]
+        }
+    ]
+}

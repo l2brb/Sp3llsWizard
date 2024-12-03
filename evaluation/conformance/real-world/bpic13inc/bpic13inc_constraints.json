@@ -1,0 +1,30 @@
+{
+    "name": "bpic13inc_aplha.pnml",
+    "tasks": [
+        "Queued",
+        "Completed",
+        "Unmatched",
+        "Accepted"
+    ],
+    "constraints": [
+        {
+            "template": "End",
+            "parameters": [
+                [
+                    "Completed",
+                    "Accepted"
+                ]
+            ]
+        },
+        {
+            "template": "Atmost1",
+            "parameters": [
+                [
+                    "Accepted",
+                    "Completed",
+                    "Queued"
+                ]
+            ]
+        }
+    ]
+}

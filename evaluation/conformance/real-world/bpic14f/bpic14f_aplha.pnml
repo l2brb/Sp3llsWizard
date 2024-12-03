@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="alpha_classic_net_1732825077.5717258" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <name>
+      <text>alpha_classic_net_1732825077.5717258</text>
+    </name>
+    <page id="n0">
+      <place id="start">
+        <name>
+          <text>start</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="({'Open'}, {'Status Change'})">
+        <name>
+          <text>({'Open'}, {'Status Change'})</text>
+        </name>
+      </place>
+      <place id="({'Caused By CI'}, {'Quality Indicator Fixed'})">
+        <name>
+          <text>({'Caused By CI'}, {'Quality Indicator Fixed'})</text>
+        </name>
+      </place>
+      <place id="end">
+        <name>
+          <text>end</text>
+        </name>
+      </place>
+      <place id="({'Open'}, {'Reassignment'})">
+        <name>
+          <text>({'Open'}, {'Reassignment'})</text>
+        </name>
+      </place>
+      <place id="({'Status Change'}, {'Reassignment', 'Caused By CI'})">
+        <name>
+          <text>({'Status Change'}, {'Reassignment', 'Caused By CI'})</text>
+        </name>
+      </place>
+      <place id="({'Status Change'}, {'Closed', 'Reassignment'})">
+        <name>
+          <text>({'Status Change'}, {'Closed', 'Reassignment'})</text>
+        </name>
+      </place>
+      <transition id="Update">
+        <name>
+          <text>Update</text>
+        </name>
+      </transition>
+      <transition id="Caused By CI">
+        <name>
+          <text>Caused By CI</text>
+        </name>
+      </transition>
+      <transition id="Reassignment">
+        <name>
+          <text>Reassignment</text>
+        </name>
+      </transition>
+      <transition id="Status Change">
+        <name>
+          <text>Status Change</text>
+        </name>
+      </transition>
+      <transition id="Open">
+        <name>
+          <text>Open</text>
+        </name>
+      </transition>
+      <transition id="Quality Indicator Fixed">
+        <name>
+          <text>Quality Indicator Fixed</text>
+        </name>
+      </transition>
+      <transition id="Closed">
+        <name>
+          <text>Closed</text>
+        </name>
+      </transition>
+      <transition id="Operator Update">
+        <name>
+          <text>Operator Update</text>
+        </name>
+      </transition>
+      <transition id="Assignment">
+        <name>
+          <text>Assignment</text>
+        </name>
+      </transition>
+      <arc id="125659446824288" source="Caused By CI" target="({'Caused By CI'}, {'Quality Indicator Fixed'})"/>
+      <arc id="125659030503776" source="({'Open'}, {'Reassignment'})" target="Reassignment"/>
+      <arc id="125659451371552" source="({'Status Change'}, {'Reassignment', 'Caused By CI'})" target="Reassignment"/>
+      <arc id="125658821791680" source="({'Status Change'}, {'Closed', 'Reassignment'})" target="Closed"/>
+      <arc id="125659030494960" source="Status Change" target="({'Status Change'}, {'Closed', 'Reassignment'})"/>
+      <arc id="125659451579696" source="start" target="Open"/>
+      <arc id="125659451095824" source="Caused By CI" target="end"/>
+      <arc id="125659446823984" source="Quality Indicator Fixed" target="end"/>
+      <arc id="125659451095504" source="Closed" target="end"/>
+      <arc id="125659451431760" source="({'Caused By CI'}, {'Quality Indicator Fixed'})" target="Quality Indicator Fixed"/>
+      <arc id="125659030503504" source="Open" target="({'Open'}, {'Reassignment'})"/>
+      <arc id="125659451559248" source="Open" target="({'Open'}, {'Status Change'})"/>
+      <arc id="125659451560272" source="({'Open'}, {'Status Change'})" target="Status Change"/>
+      <arc id="125659451366512" source="Status Change" target="({'Status Change'}, {'Reassignment', 'Caused By CI'})"/>
+      <arc id="125659030494288" source="({'Status Change'}, {'Reassignment', 'Caused By CI'})" target="Caused By CI"/>
+      <arc id="125659451037776" source="({'Status Change'}, {'Closed', 'Reassignment'})" target="Reassignment"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="end">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>

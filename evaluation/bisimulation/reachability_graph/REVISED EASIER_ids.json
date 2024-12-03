@@ -1,0 +1,147 @@
+{
+    "name": "REVISED EASIER.pnml",
+    "tasks": [
+        "J",
+        "K",
+        "A",
+        "",
+        "B",
+        "C",
+        "E",
+        "M",
+        "F",
+        "G",
+        "I",
+        ""
+    ],
+    "constraints": [
+        {
+            "template": "End",
+            "parameters": [
+                []
+            ]
+        },
+        {
+            "template": "Atmost1",
+            "parameters": [
+                [
+                    "A"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "M"
+                ],
+                [
+                    ""
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "G",
+                    "A"
+                ],
+                [
+                    "C"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "C"
+                ],
+                [
+                    "F",
+                    "E"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "F",
+                    "E"
+                ],
+                [
+                    "I"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "I"
+                ],
+                [
+                    ""
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    ""
+                ],
+                [
+                    "K"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    ""
+                ],
+                [
+                    "M"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "K"
+                ],
+                [
+                    ""
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "J"
+                ],
+                [
+                    "G",
+                    "B"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    ""
+                ],
+                [
+                    "J"
+                ]
+            ]
+        }
+    ]
+}

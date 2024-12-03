@@ -1,0 +1,1681 @@
+{
+    "name": "BPIC15_1f_alpha.pnml",
+    "tasks": [
+        "01_HOOFD_510_3",
+        "01_HOOFD_260",
+        "01_HOOFD_370",
+        "01_HOOFD_010",
+        "04_BPT_005",
+        "08_AWB45_010",
+        "01_HOOFD_200",
+        "01_HOOFD_110",
+        "01_HOOFD_050",
+        "01_HOOFD_491",
+        "01_HOOFD_430",
+        "01_HOOFD_130",
+        "06_VD_010",
+        "01_HOOFD_015",
+        "01_HOOFD_065_0",
+        "01_HOOFD_520",
+        "01_HOOFD_020",
+        "09_AH_I_010",
+        "01_HOOFD_515",
+        "01_HOOFD_060",
+        "01_HOOFD_250_2",
+        "01_HOOFD_490_5",
+        "05_EIND_010",
+        "01_HOOFD_120",
+        "08_AWB45_020_1",
+        "01_HOOFD_510_0",
+        "01_HOOFD_330",
+        "08_AWB45_005",
+        "01_HOOFD_180",
+        "01_HOOFD_500",
+        "01_HOOFD_030_2",
+        "11_AH_II_010",
+        "01_HOOFD_250_1",
+        "01_HOOFD_530",
+        "01_HOOFD_490_1a",
+        "01_HOOFD_510_4",
+        "01_HOOFD_110_0",
+        "01_HOOFD_495",
+        "01_HOOFD_380",
+        "01_HOOFD_490_4",
+        "01_HOOFD_480",
+        "01_HOOFD_490_2",
+        "01_HOOFD_490_1",
+        "01_HOOFD_490_5a",
+        "01_HOOFD_510_2",
+        "01_HOOFD_375",
+        "01_HOOFD_100",
+        "01_HOOFD_030_1",
+        "01_HOOFD_065_1",
+        "01_HOOFD_494a",
+        "01_HOOFD_061",
+        "08_AWB45_040",
+        "01_HOOFD_470",
+        "01_HOOFD_065_2",
+        "01_HOOFD_196",
+        "01_HOOFD_250",
+        "END",
+        "01_HOOFD_040",
+        "01_HOOFD_490_3",
+        "01_HOOFD_195",
+        "02_DRZ_010",
+        "08_AWB45_020_2",
+        "01_HOOFD_510_2a",
+        "01_HOOFD_101",
+        "01_HOOFD_510_1",
+        "08_AWB45_030",
+        "01_HOOFD_090",
+        "START",
+        "01_HOOFD_100_0",
+        "01_HOOFD_011"
+    ],
+    "constraints": [
+        {
+            "template": "End",
+            "parameters": [
+                [
+                    "END"
+                ]
+            ]
+        },
+        {
+            "template": "Atmost1",
+            "parameters": [
+                [
+                    "START"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_120",
+                    "01_HOOFD_101"
+                ],
+                [
+                    "01_HOOFD_180"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_015"
+                ],
+                [
+                    "01_HOOFD_020"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_490_2"
+                ],
+                [
+                    "01_HOOFD_490_3"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_490_2"
+                ],
+                [
+                    "01_HOOFD_490_4"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_510_1",
+                    "01_HOOFD_490_3",
+                    "01_HOOFD_490_5"
+                ],
+                [
+                    "01_HOOFD_510_2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_510_1"
+                ],
+                [
+                    "01_HOOFD_510_3"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_510_1"
+                ],
+                [
+                    "01_HOOFD_520"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "09_AH_I_010"
+                ],
+                [
+                    "01_HOOFD_370"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_330"
+                ],
+                [
+                    "01_HOOFD_370"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "08_AWB45_020_1"
+                ],
+                [
+                    "08_AWB45_020_2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_510_2"
+                ],
+                [
+                    "END"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_510_2"
+                ],
+                [
+                    "01_HOOFD_520"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_490_2",
+                    "01_HOOFD_520"
+                ],
+                [
+                    "01_HOOFD_490_3"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_510_4"
+                ],
+                [
+                    "01_HOOFD_515"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_510_2"
+                ],
+                [
+                    "01_HOOFD_520"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_510_2"
+                ],
+                [
+                    "01_HOOFD_510_2a"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_061",
+                    "01_HOOFD_101"
+                ],
+                [
+                    "02_DRZ_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_040"
+                ],
+                [
+                    "01_HOOFD_060"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_500"
+                ],
+                [
+                    "01_HOOFD_510_1"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_490_5"
+                ],
+                [
+                    "01_HOOFD_491"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_490_5"
+                ],
+                [
+                    "01_HOOFD_510_2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "04_BPT_005"
+                ],
+                [
+                    "01_HOOFD_065_0"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "04_BPT_005"
+                ],
+                [
+                    "01_HOOFD_065_1"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "04_BPT_005"
+                ],
+                [
+                    "01_HOOFD_030_2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "08_AWB45_030"
+                ],
+                [
+                    "08_AWB45_040"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "08_AWB45_030"
+                ],
+                [
+                    "END"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_491"
+                ],
+                [
+                    "01_HOOFD_494a"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_120",
+                    "01_HOOFD_110_0"
+                ],
+                [
+                    "01_HOOFD_180"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_510_2a"
+                ],
+                [
+                    "01_HOOFD_510_3"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_510_2a"
+                ],
+                [
+                    "END"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "06_VD_010"
+                ],
+                [
+                    "01_HOOFD_250"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "06_VD_010"
+                ],
+                [
+                    "01_HOOFD_110"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_490_4"
+                ],
+                [
+                    "01_HOOFD_490_5a"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_065_1"
+                ],
+                [
+                    "01_HOOFD_065_2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_065_1"
+                ],
+                [
+                    "01_HOOFD_100"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_065_1"
+                ],
+                [
+                    "01_HOOFD_110"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_490_2"
+                ],
+                [
+                    "01_HOOFD_490_4"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_490_2"
+                ],
+                [
+                    "01_HOOFD_495"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_510_2"
+                ],
+                [
+                    "01_HOOFD_530"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_510_2"
+                ],
+                [
+                    "01_HOOFD_510_2a"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_250"
+                ],
+                [
+                    "01_HOOFD_260"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_490_1"
+                ],
+                [
+                    "01_HOOFD_490_1a"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_065_0"
+                ],
+                [
+                    "01_HOOFD_090"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_065_0"
+                ],
+                [
+                    "01_HOOFD_101"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "05_EIND_010"
+                ],
+                [
+                    "01_HOOFD_020"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "05_EIND_010"
+                ],
+                [
+                    "END"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_195"
+                ],
+                [
+                    "01_HOOFD_196"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_180"
+                ],
+                [
+                    "08_AWB45_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_180"
+                ],
+                [
+                    "01_HOOFD_195"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_520"
+                ],
+                [
+                    "01_HOOFD_530"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_520"
+                ],
+                [
+                    "01_HOOFD_490_3"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "08_AWB45_005"
+                ],
+                [
+                    "08_AWB45_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "08_AWB45_005"
+                ],
+                [
+                    "01_HOOFD_196"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_491",
+                    "01_HOOFD_490_2"
+                ],
+                [
+                    "01_HOOFD_495"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_100"
+                ],
+                [
+                    "01_HOOFD_130"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_065_0",
+                    "01_HOOFD_065_2"
+                ],
+                [
+                    "01_HOOFD_101"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_490_5a"
+                ],
+                [
+                    "01_HOOFD_491"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_490_5a"
+                ],
+                [
+                    "01_HOOFD_510_2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "05_EIND_010",
+                    "08_AWB45_030",
+                    "01_HOOFD_510_2",
+                    "01_HOOFD_030_2"
+                ],
+                [
+                    "END"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "08_AWB45_040",
+                    "01_HOOFD_180"
+                ],
+                [
+                    "01_HOOFD_195"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "08_AWB45_020_2"
+                ],
+                [
+                    "08_AWB45_030"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_020"
+                ],
+                [
+                    "01_HOOFD_030_1"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_065_0"
+                ],
+                [
+                    "01_HOOFD_100_0"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_330"
+                ],
+                [
+                    "09_AH_I_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_380"
+                ],
+                [
+                    "01_HOOFD_430"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_494a",
+                    "01_HOOFD_490_2"
+                ],
+                [
+                    "01_HOOFD_495"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "08_AWB45_010"
+                ],
+                [
+                    "08_AWB45_020_1"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_510_0",
+                    "01_HOOFD_495"
+                ],
+                [
+                    "01_HOOFD_510_1"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "05_EIND_010",
+                    "01_HOOFD_530",
+                    "01_HOOFD_510_2a",
+                    "01_HOOFD_030_2",
+                    "08_AWB45_030"
+                ],
+                [
+                    "END"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_510_3"
+                ],
+                [
+                    "01_HOOFD_515"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_195"
+                ],
+                [
+                    "08_AWB45_005"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_195"
+                ],
+                [
+                    "01_HOOFD_200"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_370"
+                ],
+                [
+                    "01_HOOFD_375"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_500"
+                ],
+                [
+                    "01_HOOFD_510_0"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_050",
+                    "01_HOOFD_065_1"
+                ],
+                [
+                    "01_HOOFD_110"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_490_3"
+                ],
+                [
+                    "01_HOOFD_510_2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_490_3"
+                ],
+                [
+                    "01_HOOFD_495"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_010"
+                ],
+                [
+                    "01_HOOFD_011"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_490_5"
+                ],
+                [
+                    "01_HOOFD_490_5a"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "06_VD_010",
+                    "01_HOOFD_065_1"
+                ],
+                [
+                    "01_HOOFD_110"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_510_1"
+                ],
+                [
+                    "01_HOOFD_510_3"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_510_1"
+                ],
+                [
+                    "01_HOOFD_510_2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_180"
+                ],
+                [
+                    "08_AWB45_005"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_490_1a"
+                ],
+                [
+                    "01_HOOFD_490_2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_030_2"
+                ],
+                [
+                    "01_HOOFD_110_0"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_030_2"
+                ],
+                [
+                    "01_HOOFD_040"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_030_2"
+                ],
+                [
+                    "01_HOOFD_061"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_030_2"
+                ],
+                [
+                    "END"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_200"
+                ],
+                [
+                    "01_HOOFD_250_1"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_200"
+                ],
+                [
+                    "01_HOOFD_250"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_250_1"
+                ],
+                [
+                    "01_HOOFD_250_2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_480"
+                ],
+                [
+                    "01_HOOFD_490_1"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "04_BPT_005",
+                    "01_HOOFD_030_1"
+                ],
+                [
+                    "01_HOOFD_030_2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_060",
+                    "04_BPT_005"
+                ],
+                [
+                    "01_HOOFD_065_1"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_491",
+                    "01_HOOFD_490_3"
+                ],
+                [
+                    "01_HOOFD_495"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_065_2",
+                    "01_HOOFD_130"
+                ],
+                [
+                    "01_HOOFD_050"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_515",
+                    "01_HOOFD_510_1",
+                    "01_HOOFD_490_3",
+                    "01_HOOFD_490_5a"
+                ],
+                [
+                    "01_HOOFD_510_2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_200",
+                    "06_VD_010"
+                ],
+                [
+                    "01_HOOFD_250"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_196"
+                ],
+                [
+                    "01_HOOFD_200"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_050"
+                ],
+                [
+                    "06_VD_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_110"
+                ],
+                [
+                    "01_HOOFD_120"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_375"
+                ],
+                [
+                    "01_HOOFD_380"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_010"
+                ],
+                [
+                    "01_HOOFD_015"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_030_1"
+                ],
+                [
+                    "01_HOOFD_040"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_030_1"
+                ],
+                [
+                    "01_HOOFD_061"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_061"
+                ],
+                [
+                    "02_DRZ_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_061"
+                ],
+                [
+                    "01_HOOFD_065_0"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_101"
+                ],
+                [
+                    "02_DRZ_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_101"
+                ],
+                [
+                    "01_HOOFD_110_0"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_101"
+                ],
+                [
+                    "01_HOOFD_050"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_494a",
+                    "01_HOOFD_490_3"
+                ],
+                [
+                    "01_HOOFD_495"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "START"
+                ],
+                [
+                    "01_HOOFD_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_065_2",
+                    "01_HOOFD_100_0"
+                ],
+                [
+                    "01_HOOFD_101"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "08_AWB45_020_1"
+                ],
+                [
+                    "08_AWB45_030"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_260",
+                    "01_HOOFD_250_2"
+                ],
+                [
+                    "01_HOOFD_330"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "02_DRZ_010"
+                ],
+                [
+                    "04_BPT_005"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_061",
+                    "04_BPT_005"
+                ],
+                [
+                    "01_HOOFD_065_0"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_515",
+                    "01_HOOFD_490_4"
+                ],
+                [
+                    "01_HOOFD_490_5"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_510_3"
+                ],
+                [
+                    "01_HOOFD_510_4"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_130",
+                    "01_HOOFD_101"
+                ],
+                [
+                    "01_HOOFD_050"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_495"
+                ],
+                [
+                    "01_HOOFD_500"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_430"
+                ],
+                [
+                    "11_AH_II_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_430"
+                ],
+                [
+                    "01_HOOFD_470"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_011"
+                ],
+                [
+                    "01_HOOFD_015"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_015"
+                ],
+                [
+                    "05_EIND_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_090"
+                ],
+                [
+                    "01_HOOFD_100_0"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_490_4"
+                ],
+                [
+                    "01_HOOFD_491"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_030_2",
+                    "01_HOOFD_101"
+                ],
+                [
+                    "02_DRZ_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_030_2",
+                    "01_HOOFD_101"
+                ],
+                [
+                    "01_HOOFD_110_0"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_101"
+                ],
+                [
+                    "02_DRZ_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_101"
+                ],
+                [
+                    "01_HOOFD_050"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_101"
+                ],
+                [
+                    "01_HOOFD_180"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_490_1"
+                ],
+                [
+                    "01_HOOFD_490_2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_430"
+                ],
+                [
+                    "01_HOOFD_480"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "11_AH_II_010",
+                    "01_HOOFD_470"
+                ],
+                [
+                    "01_HOOFD_480"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_510_1"
+                ],
+                [
+                    "01_HOOFD_520"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_510_1"
+                ],
+                [
+                    "01_HOOFD_510_2a"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_030_2"
+                ],
+                [
+                    "02_DRZ_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_030_2"
+                ],
+                [
+                    "01_HOOFD_040"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_030_2"
+                ],
+                [
+                    "01_HOOFD_110_0"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_030_2"
+                ],
+                [
+                    "END"
+                ]
+            ]
+        }
+    ]
+}

@@ -6,3 +6,10 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+# Test files memusage and time exec
+evaluation/d_contraints/expanded_pnml
+evaluation/n_contraints/expanded_pnml
+#vs
+/.vscode
+#conda
+/.conda

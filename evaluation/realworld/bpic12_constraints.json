@@ -1,0 +1,989 @@
+{
+    "name": "input_model.pnml",
+    "tasks": [
+        "O_CREATED",
+        "A_APPROVED",
+        "A_DECLINED",
+        "O_CANCELLED",
+        "tauJoin_50",
+        "skip_54",
+        "init_loop_9",
+        "tauSplit_45",
+        "A_ACTIVATED",
+        "A_CANCELLED",
+        "tauJoin_17",
+        "init_loop_24",
+        "tauSplit_28",
+        "tauSplit_37",
+        "W_Nabellen offertes",
+        "skip_18",
+        "skip_15",
+        "A_FINALIZED",
+        "skip_22",
+        "skip_27",
+        "W_Beoordelen fraude",
+        "skip_51",
+        "skip_55",
+        "O_DECLINED",
+        "A_SUBMITTED",
+        "tauSplit_16",
+        "skip_12",
+        "skip_21",
+        "skip_44",
+        "skip_8",
+        "skip_14",
+        "skip_26",
+        "tauJoin_7",
+        "O_ACCEPTED",
+        "skip_4",
+        "skip_11",
+        "A_ACCEPTED",
+        "tauJoin_46",
+        "skip_52",
+        "skip_36",
+        "A_REGISTERED",
+        "init_loop_57",
+        "skip_23",
+        "tauJoin_29",
+        "tauSplit_49",
+        "skip_64",
+        "skip_34",
+        "O_SENT",
+        "tauJoin_38",
+        "A_PREACCEPTED",
+        "skip_5",
+        "W_Wijzigen contractgegevens",
+        "skip_35",
+        "skip_43",
+        "skip_56",
+        "skip_60",
+        "O_SENT_BACK",
+        "skip_13",
+        "skip_53",
+        "skip_63",
+        "O_SELECTED",
+        "skip_33",
+        "skip_61",
+        "init_loop_31",
+        "skip_42",
+        "skip_59",
+        "init_loop_40",
+        "skip_47",
+        "A_PARTLYSUBMITTED",
+        "W_Afhandelen leads",
+        "W_Completeren aanvraag",
+        "init_loop_19",
+        "W_Nabellen incomplete dossiers",
+        "skip_30",
+        "W_Valideren aanvraag",
+        "tauSplit_6",
+        "skip_39",
+        "skip_48"
+    ],
+    "constraints": [
+        {
+            "template": "End",
+            "parameters": [
+                [
+                    "skip_64"
+                ]
+            ]
+        },
+        {
+            "template": "Atmost1",
+            "parameters": [
+                [
+                    "A_SUBMITTED"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "O_SENT",
+                    "A_CANCELLED",
+                    "tskip_26"
+                ],
+                [
+                    "ttauSplit_28"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "O_SENT",
+                    "A_CANCELLED",
+                    "tskip_26"
+                ],
+                [
+                    "tskip_27"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tskip_35",
+                    "O_CANCELLED",
+                    "tskip_55"
+                ],
+                [
+                    "ttauJoin_29"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tskip_43",
+                    "tskip_39"
+                ],
+                [
+                    "ttauJoin_38"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ttauJoin_50",
+                    "tskip_48"
+                ],
+                [
+                    "tskip_54"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ttauJoin_50",
+                    "tskip_48"
+                ],
+                [
+                    "O_SENT_BACK"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ttauSplit_49"
+                ],
+                [
+                    "A_DECLINED"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ttauSplit_49"
+                ],
+                [
+                    "tskip_51"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tskip_11",
+                    "tinit_loop_9"
+                ],
+                [
+                    "W_Completeren aanvraag"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ttauSplit_16"
+                ],
+                [
+                    "tinit_loop_19"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ttauSplit_16"
+                ],
+                [
+                    "tskip_18"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tskip_56",
+                    "tskip_60",
+                    "tskip_27"
+                ],
+                [
+                    "tskip_61"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tskip_18",
+                    "tskip_22"
+                ],
+                [
+                    "ttauJoin_17"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "O_CREATED"
+                ],
+                [
+                    "O_SENT"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "W_Completeren aanvraag"
+                ],
+                [
+                    "tskip_12"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "W_Completeren aanvraag"
+                ],
+                [
+                    "tskip_11"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ttauSplit_28"
+                ],
+                [
+                    "tinit_loop_31"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ttauSplit_28"
+                ],
+                [
+                    "tskip_30"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ttauSplit_28"
+                ],
+                [
+                    "ttauSplit_37"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ttauSplit_28"
+                ],
+                [
+                    "tskip_36"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ttauSplit_28"
+                ],
+                [
+                    "tskip_35"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ttauSplit_37"
+                ],
+                [
+                    "tskip_48"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ttauSplit_37"
+                ],
+                [
+                    "ttauSplit_45"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ttauSplit_37"
+                ],
+                [
+                    "tskip_44"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ttauSplit_37"
+                ],
+                [
+                    "ttauSplit_49"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "A_DECLINED",
+                    "tskip_51"
+                ],
+                [
+                    "ttauJoin_50"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tskip_47",
+                    "O_ACCEPTED"
+                ],
+                [
+                    "ttauJoin_46"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tskip_23",
+                    "A_FINALIZED"
+                ],
+                [
+                    "tinit_loop_24"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "A_PREACCEPTED",
+                    "W_Beoordelen fraude",
+                    "tskip_4",
+                    "W_Afhandelen leads"
+                ],
+                [
+                    "ttauSplit_6"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "A_PREACCEPTED",
+                    "W_Beoordelen fraude",
+                    "tskip_4",
+                    "W_Afhandelen leads"
+                ],
+                [
+                    "tskip_5"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "O_SELECTED"
+                ],
+                [
+                    "tskip_22"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "O_SELECTED"
+                ],
+                [
+                    "tskip_21"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ttauSplit_16"
+                ],
+                [
+                    "A_FINALIZED"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ttauSplit_16"
+                ],
+                [
+                    "tskip_23"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tskip_33",
+                    "tinit_loop_31"
+                ],
+                [
+                    "W_Nabellen incomplete dossiers"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tskip_36",
+                    "ttauJoin_38"
+                ],
+                [
+                    "O_CANCELLED"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tskip_36",
+                    "ttauJoin_38"
+                ],
+                [
+                    "tskip_55"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ttauSplit_37"
+                ],
+                [
+                    "tinit_loop_40"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ttauSplit_37"
+                ],
+                [
+                    "tskip_39"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tinit_loop_57",
+                    "tskip_59"
+                ],
+                [
+                    "W_Wijzigen contractgegevens"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tinit_loop_40",
+                    "tskip_42"
+                ],
+                [
+                    "W_Valideren aanvraag"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ttauSplit_49"
+                ],
+                [
+                    "O_DECLINED"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ttauSplit_49"
+                ],
+                [
+                    "tskip_53"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tskip_14",
+                    "A_ACCEPTED"
+                ],
+                [
+                    "ttauSplit_16"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tskip_14",
+                    "A_ACCEPTED"
+                ],
+                [
+                    "tskip_15"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "A_SUBMITTED"
+                ],
+                [
+                    "A_PARTLYSUBMITTED"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tskip_63",
+                    "A_PARTLYSUBMITTED"
+                ],
+                [
+                    "W_Afhandelen leads"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tskip_63",
+                    "A_PARTLYSUBMITTED"
+                ],
+                [
+                    "A_PREACCEPTED"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tskip_63",
+                    "A_PARTLYSUBMITTED"
+                ],
+                [
+                    "tskip_4"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tskip_63",
+                    "A_PARTLYSUBMITTED"
+                ],
+                [
+                    "W_Beoordelen fraude"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ttauSplit_6"
+                ],
+                [
+                    "tskip_8"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ttauSplit_6"
+                ],
+                [
+                    "tinit_loop_9"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tskip_15",
+                    "ttauJoin_17",
+                    "tskip_13"
+                ],
+                [
+                    "ttauJoin_7"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ttauSplit_6"
+                ],
+                [
+                    "tskip_14"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ttauSplit_6"
+                ],
+                [
+                    "A_ACCEPTED"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ttauSplit_6"
+                ],
+                [
+                    "tskip_13"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tinit_loop_19",
+                    "tskip_21"
+                ],
+                [
+                    "O_SELECTED"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tskip_61",
+                    "tinit_loop_24"
+                ],
+                [
+                    "O_CREATED"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tskip_61",
+                    "tinit_loop_24"
+                ],
+                [
+                    "A_CANCELLED"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tskip_61",
+                    "tinit_loop_24"
+                ],
+                [
+                    "tskip_26"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "W_Nabellen incomplete dossiers"
+                ],
+                [
+                    "tskip_33"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "W_Nabellen incomplete dossiers"
+                ],
+                [
+                    "tskip_34"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ttauSplit_45"
+                ],
+                [
+                    "A_REGISTERED"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ttauSplit_49"
+                ],
+                [
+                    "W_Nabellen offertes"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ttauSplit_49"
+                ],
+                [
+                    "tskip_52"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "W_Wijzigen contractgegevens"
+                ],
+                [
+                    "tskip_59"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "W_Wijzigen contractgegevens"
+                ],
+                [
+                    "tskip_60"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tskip_5",
+                    "ttauJoin_7"
+                ],
+                [
+                    "tskip_64"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tskip_5",
+                    "ttauJoin_7"
+                ],
+                [
+                    "tskip_63"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ttauJoin_29"
+                ],
+                [
+                    "tinit_loop_57"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ttauJoin_29"
+                ],
+                [
+                    "tskip_56"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "W_Valideren aanvraag"
+                ],
+                [
+                    "tskip_42"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "W_Valideren aanvraag"
+                ],
+                [
+                    "tskip_43"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ttauSplit_45"
+                ],
+                [
+                    "tskip_47"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ttauSplit_45"
+                ],
+                [
+                    "O_ACCEPTED"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ttauSplit_45"
+                ],
+                [
+                    "A_APPROVED"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ttauSplit_45"
+                ],
+                [
+                    "A_ACTIVATED"
+                ]
+            ]
+        }
+    ]
+}

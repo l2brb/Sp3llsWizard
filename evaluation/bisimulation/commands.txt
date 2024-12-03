@@ -18,6 +18,5 @@ java -cp Janus.jar minerful.JanusOfflineMinerStarter -iLF '/home/l2brb/Docker/DE
 ./run-MINERful.sh -iLF /Users/ceciliaiacometta/Desktop/examples/university10000.xes -prune hierarchyconflictredundancydouble --support 0.02 --confidence 1.0 --coverage 0.02 --trace-support 0.125 --trace-confidence 1.0 --trace-coverage 0.125  -oCSV /Users/ceciliaiacometta/Desktop/examples/prova.csv  -autoDOT /Users/ceciliaiacometta/Desktop/examples/prova.dot
 
 
-
 ### sepsis test
 java -cp Janus.jar minerful.JanusMeasurementsStarter -iLF '/home/l2brb/main/DECpietro/test/sepsis/sepsis.xes' -iLE xes -iMF '/home/l2brb/main/DECpietro/test/sepsis/sepsis_constraints.json' -iME json -oCSV '/home/l2brb/main/DECpietro/test/sepsis/output/sepsis_janus.csv' 

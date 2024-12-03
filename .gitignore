@@ -1,0 +1,18 @@
+#test memusage time exec
+evaluation/d_contraints/expanded_pnml/out-extra/*
+evaluation/d_contraints/expanded_pnml/out-complete/*
+evaluation/n_constraints/expanded_pnml/out-extra/*
+evaluation/n_constraints/expanded_pnml/out-complete/*
+
+#eventlogs
+evaluation/realworld/logs/*
+
+src-interface/*
+test/*
+
+
+utils/expansion rules/rules/T1a/*
+utils/expansion rules/rules/T2a/*
+utils/expansion rules/rules/T3a/*
+utils/expansion rules/rules/T4a/*
+utils/expansion rules/rules/T5a/*

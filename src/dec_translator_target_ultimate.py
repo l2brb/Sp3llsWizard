@@ -1,4 +1,6 @@
 # import petri_parser
+#from memory_profiler import profile
+
 
 # VERSIONE CON RAGGRUPPAMENTO SOLO SUL TARGET DEL CONSTRAINT
 
@@ -23,10 +25,10 @@ Returns:
 # print(activity_a_name)
 
 
-
 # EXISTANCE CONTRAINTS
 
-# Init
+"""# Init
+#@profile
 def get_init_constraint(workflow_net):
     init_constraint = ""
     initial_place_id = None
@@ -52,9 +54,10 @@ def get_init_constraint(workflow_net):
         "parameters": [list(init_constraints)],
     }]
 
-    return result_init
+    return result_init"""
 
 # AtMost1
+#@profile
 def get_atmost1_constraint(workflow_net):
     atmost1_constraint = ""
     initial_place_id = None
@@ -84,6 +87,7 @@ def get_atmost1_constraint(workflow_net):
 
 
 # End
+##@profile
 def get_end_constraint(workflow_net):
     end_constraint = ""
     final_place_id = None
@@ -121,14 +125,14 @@ def get_end_constraint(workflow_net):
 
 
 # Alternate Precedence [if B prev A and not B in between]
-
+#@profile
 def get_alternate_precedence(workflow_net):
     constraints = {}
 
     transition_names = {}
     for transition in workflow_net["transitions"]:
         if transition["id"] == transition["name"]:
-            transition_names[transition["id"]] = "" + transition["name"]
+            transition_names[transition["id"]] = "t" + transition["name"]
         else:
             transition_names[transition["id"]] = transition["name"]
 
@@ -142,7 +146,7 @@ def get_alternate_precedence(workflow_net):
                         source_transition = transition_names.get(arc["source"])
                         if source_transition:
                             if target not in constraints:
-                                constraints[target] = []    
+                                constraints[target] = []    #TODO: METTI QUALCHE SET
                             constraints[target].append(source_transition)
     # print("###########################")
     # print(constraints)
@@ -184,13 +188,13 @@ def translate_to_DEC(workflow_net):
 
     tasks = [transition["name"] for transition in workflow_net["transitions"]]
 
-    init_constraint = get_init_constraint(workflow_net)
+    #init_constraint = get_init_constraint(workflow_net)
     end_constraint = get_end_constraint(workflow_net)
     alternate_precedence = get_alternate_precedence(workflow_net)
     atmost1 = get_atmost1_constraint(workflow_net)
 
     constraints = []
-    constraints.extend(init_constraint)
+    #constraints.extend(init_constraint)
     constraints.extend(end_constraint)
     constraints.extend(atmost1)
     constraints.extend(alternate_precedence)

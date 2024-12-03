@@ -1,0 +1,8 @@
+#### JANUS COMMANDS ####
+
+
+### CONFORMANCE 
+java -cp Janus.jar minerful.JanusMeasurementsStarter -iLF '/home/l2brb/main/DECpietro/test/PLG/test_xor/xor_log.xes' -iLE xes -iMF '/home/l2brb/main/DECpietro/test/PLG/test_xor/xor_constraints.json' -iME json -oCSV '/home/l2brb/main/DECpietro/test/PLG/test_xor/janus_out/xor_janus_untarget.csv' 
+
+### DISCOVERY 
+java -cp Janus.jar minerful.JanusOfflineMinerStarter -iLF '/home/l2brb/Docker/DECpietro/test/sepsis/sepsis.xes' -s 0 -c 0.95 -oJSON '/home/l2brb/Docker/DECpietro/test/sepsis/output/model_sepsis_janus.json'
