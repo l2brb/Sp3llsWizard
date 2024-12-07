@@ -17,6 +17,10 @@ utils/expansion rules/rules/T3a/*
 utils/expansion rules/rules/T4a/*
 utils/expansion rules/rules/T5a/*
 
+
+evaluation/conformance/benchmarking/*
+
+
 #vscode
 .vscode/*
 #pycharm
