@@ -20,3 +20,8 @@ java -cp Janus.jar minerful.JanusOfflineMinerStarter -iLF '/home/l2brb/Docker/DE
 
 ### sepsis test
 java -cp Janus.jar minerful.JanusMeasurementsStarter -iLF '/home/l2brb/main/DECpietro/test/sepsis/sepsis.xes' -iLE xes -iMF '/home/l2brb/main/DECpietro/test/sepsis/sepsis_constraints.json' -iME json -oCSV '/home/l2brb/main/DECpietro/test/sepsis/output/sepsis_janus.csv' 
+
+
+sudo update-alternatives --config javac
+
+

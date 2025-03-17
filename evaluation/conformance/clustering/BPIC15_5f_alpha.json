@@ -1,0 +1,1626 @@
+{
+    "name": "BPIC15_5f_alpha.pnml",
+    "tasks": [
+        "01_HOOFD_120",
+        "01_HOOFD_495",
+        "01_HOOFD_060",
+        "01_HOOFD_110_2",
+        "01_HOOFD_490_5a",
+        "08_AWB45_010",
+        "01_HOOFD_490_1a",
+        "01_HOOFD_490_4",
+        "01_HOOFD_250_1",
+        "01_HOOFD_010",
+        "02_DRZ_010",
+        "06_VD_010",
+        "01_HOOFD_815",
+        "11_AH_II_010",
+        "01_BB_540",
+        "01_HOOFD_491",
+        "01_HOOFD_110",
+        "01_HOOFD_015",
+        "01_HOOFD_510_0",
+        "05_EIND_010",
+        "01_HOOFD_110_1",
+        "01_HOOFD_494a",
+        "01_HOOFD_520",
+        "09_AH_I_010",
+        "01_HOOFD_040",
+        "01_HOOFD_250_2",
+        "01_HOOFD_510_4",
+        "01_HOOFD_375",
+        "01_HOOFD_380",
+        "01_HOOFD_490_1",
+        "01_HOOFD_515",
+        "01_HOOFD_200",
+        "01_HOOFD_530",
+        "01_HOOFD_370",
+        "01_HOOFD_430",
+        "01_HOOFD_195",
+        "01_HOOFD_020",
+        "01_HOOFD_030_1",
+        "08_AWB45_030",
+        "14_VRIJ_010",
+        "01_HOOFD_250",
+        "01_HOOFD_814",
+        "01_HOOFD_490_5",
+        "01_HOOFD_330",
+        "01_HOOFD_510_2",
+        "08_AWB45_020_1",
+        "03_GBH_005",
+        "01_HOOFD_510_3",
+        "01_HOOFD_810",
+        "01_HOOFD_490_2",
+        "01_HOOFD_065_0",
+        "01_HOOFD_011",
+        "01_HOOFD_510_1",
+        "END",
+        "01_HOOFD_110_0",
+        "08_AWB45_005",
+        "01_HOOFD_180",
+        "01_HOOFD_065_1",
+        "01_HOOFD_050",
+        "01_HOOFD_061",
+        "01_HOOFD_820",
+        "01_HOOFD_500",
+        "START",
+        "01_HOOFD_065_2",
+        "01_HOOFD_100",
+        "01_HOOFD_260",
+        "16_LGSV_010",
+        "01_BB_770",
+        "01_HOOFD_510_2a",
+        "04_BPT_005",
+        "01_HOOFD_030_2",
+        "08_AWB45_020_2",
+        "01_HOOFD_480",
+        "13_CRD_010"
+    ],
+    "constraints": [
+        {
+            "template": "End",
+            "parameters": [
+                [
+                    "END"
+                ]
+            ]
+        },
+        {
+            "template": "Atmost1",
+            "parameters": [
+                [
+                    "START"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_510_3"
+                ],
+                [
+                    "01_HOOFD_510_4"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_010",
+                    "01_HOOFD_030_1",
+                    "04_BPT_005"
+                ],
+                [
+                    "01_HOOFD_030_2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_490_1a",
+                    "11_AH_II_010"
+                ],
+                [
+                    "01_HOOFD_490_2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "13_CRD_010",
+                    "08_AWB45_020_1",
+                    "01_HOOFD_060"
+                ],
+                [
+                    "14_VRIJ_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "14_VRIJ_010"
+                ],
+                [
+                    "01_HOOFD_065_1",
+                    "01_HOOFD_490_1a",
+                    "08_AWB45_020_2",
+                    "01_HOOFD_490_5"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_040"
+                ],
+                [
+                    "01_HOOFD_050"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_020",
+                    "16_LGSV_010"
+                ],
+                [
+                    "01_HOOFD_030_1"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_110_0"
+                ],
+                [
+                    "01_HOOFD_110_1",
+                    "01_HOOFD_180"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "14_VRIJ_010",
+                    "01_HOOFD_515",
+                    "01_HOOFD_491"
+                ],
+                [
+                    "01_HOOFD_490_5"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "08_AWB45_020_2",
+                    "08_AWB45_005"
+                ],
+                [
+                    "08_AWB45_030"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_BB_770",
+                    "01_HOOFD_515"
+                ],
+                [
+                    "01_HOOFD_810",
+                    "END"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_820",
+                    "01_BB_540"
+                ],
+                [
+                    "01_BB_770"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_030_1",
+                    "04_BPT_005"
+                ],
+                [
+                    "01_HOOFD_061",
+                    "01_HOOFD_030_2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_061",
+                    "01_HOOFD_060"
+                ],
+                [
+                    "01_HOOFD_065_1"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_490_2",
+                    "14_VRIJ_010"
+                ],
+                [
+                    "01_HOOFD_490_4"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_020",
+                    "02_DRZ_010"
+                ],
+                [
+                    "03_GBH_005"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_491"
+                ],
+                [
+                    "01_HOOFD_494a",
+                    "01_HOOFD_490_5"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "08_AWB45_020_1"
+                ],
+                [
+                    "08_AWB45_030",
+                    "14_VRIJ_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "11_AH_II_010",
+                    "01_HOOFD_480"
+                ],
+                [
+                    "01_HOOFD_490_1"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_195"
+                ],
+                [
+                    "01_HOOFD_200"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_370"
+                ],
+                [
+                    "01_HOOFD_375"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_490_2"
+                ],
+                [
+                    "01_HOOFD_495",
+                    "01_HOOFD_490_4",
+                    "08_AWB45_005"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_010",
+                    "16_LGSV_010",
+                    "04_BPT_005"
+                ],
+                [
+                    "01_HOOFD_030_2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_495"
+                ],
+                [
+                    "01_HOOFD_500"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_030_2"
+                ],
+                [
+                    "01_HOOFD_050",
+                    "01_HOOFD_110_0",
+                    "END"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "04_BPT_005",
+                    "01_HOOFD_060"
+                ],
+                [
+                    "01_HOOFD_065_1"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_490_2"
+                ],
+                [
+                    "01_HOOFD_491",
+                    "08_AWB45_005"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "02_DRZ_010"
+                ],
+                [
+                    "01_HOOFD_061",
+                    "03_GBH_005"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "START"
+                ],
+                [
+                    "01_HOOFD_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_180"
+                ],
+                [
+                    "01_HOOFD_195",
+                    "08_AWB45_005"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_495",
+                    "01_HOOFD_510_0"
+                ],
+                [
+                    "01_HOOFD_510_1"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_430"
+                ],
+                [
+                    "01_HOOFD_480"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "08_AWB45_010"
+                ],
+                [
+                    "08_AWB45_020_1"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_480",
+                    "08_AWB45_005"
+                ],
+                [
+                    "09_AH_I_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "04_BPT_005"
+                ],
+                [
+                    "05_EIND_010",
+                    "01_HOOFD_061",
+                    "01_HOOFD_030_2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "02_DRZ_010"
+                ],
+                [
+                    "04_BPT_005"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_065_0",
+                    "01_HOOFD_030_2"
+                ],
+                [
+                    "01_HOOFD_110_0",
+                    "02_DRZ_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_061"
+                ],
+                [
+                    "01_HOOFD_065_1",
+                    "01_HOOFD_065_0"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_490_2",
+                    "01_HOOFD_490_5a"
+                ],
+                [
+                    "01_HOOFD_491"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_510_2"
+                ],
+                [
+                    "END",
+                    "01_HOOFD_510_2a",
+                    "01_HOOFD_520"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "03_GBH_005"
+                ],
+                [
+                    "16_LGSV_010",
+                    "04_BPT_005"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_510_4"
+                ],
+                [
+                    "01_HOOFD_515"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_180"
+                ],
+                [
+                    "01_HOOFD_195",
+                    "08_AWB45_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_510_1"
+                ],
+                [
+                    "01_HOOFD_510_2a",
+                    "01_HOOFD_520"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "08_AWB45_030"
+                ],
+                [
+                    "01_HOOFD_195",
+                    "END",
+                    "09_AH_I_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "08_AWB45_030",
+                    "01_HOOFD_480"
+                ],
+                [
+                    "09_AH_I_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_510_2a"
+                ],
+                [
+                    "01_HOOFD_510_3"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_515"
+                ],
+                [
+                    "01_BB_540",
+                    "END",
+                    "01_HOOFD_490_5"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_010"
+                ],
+                [
+                    "01_HOOFD_011",
+                    "01_HOOFD_030_2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_030_2"
+                ],
+                [
+                    "01_HOOFD_110_0",
+                    "END",
+                    "02_DRZ_010",
+                    "01_HOOFD_040"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "14_VRIJ_010",
+                    "01_HOOFD_061"
+                ],
+                [
+                    "01_HOOFD_065_1"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_510_2"
+                ],
+                [
+                    "01_HOOFD_510_3",
+                    "END",
+                    "01_HOOFD_520"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_810"
+                ],
+                [
+                    "01_HOOFD_820",
+                    "01_BB_540"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "08_AWB45_020_2",
+                    "01_HOOFD_180"
+                ],
+                [
+                    "01_HOOFD_195"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_110"
+                ],
+                [
+                    "01_HOOFD_120"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_250"
+                ],
+                [
+                    "01_HOOFD_260"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_510_1"
+                ],
+                [
+                    "01_HOOFD_510_3",
+                    "01_HOOFD_520"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_490_1"
+                ],
+                [
+                    "01_HOOFD_490_1a",
+                    "09_AH_I_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_BB_770",
+                    "01_HOOFD_515",
+                    "01_HOOFD_530"
+                ],
+                [
+                    "01_HOOFD_810"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "08_AWB45_030",
+                    "01_HOOFD_510_2",
+                    "01_HOOFD_515",
+                    "01_HOOFD_030_2",
+                    "01_HOOFD_820"
+                ],
+                [
+                    "END"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "04_BPT_005"
+                ],
+                [
+                    "01_HOOFD_065_1",
+                    "05_EIND_010",
+                    "01_HOOFD_030_2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_330"
+                ],
+                [
+                    "01_HOOFD_370"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_490_4"
+                ],
+                [
+                    "01_HOOFD_491"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_010"
+                ],
+                [
+                    "01_HOOFD_015",
+                    "01_HOOFD_030_2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_065_1"
+                ],
+                [
+                    "01_HOOFD_100",
+                    "01_HOOFD_065_2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_490_2",
+                    "01_HOOFD_494a",
+                    "01_HOOFD_180",
+                    "01_HOOFD_200"
+                ],
+                [
+                    "08_AWB45_005"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_810"
+                ],
+                [
+                    "01_HOOFD_820",
+                    "01_HOOFD_814"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "08_AWB45_030",
+                    "01_HOOFD_180"
+                ],
+                [
+                    "01_HOOFD_195"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_375"
+                ],
+                [
+                    "01_HOOFD_380"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_BB_540"
+                ],
+                [
+                    "01_HOOFD_814"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "13_CRD_010",
+                    "01_HOOFD_490_1"
+                ],
+                [
+                    "01_HOOFD_490_1a"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_515"
+                ],
+                [
+                    "01_HOOFD_810",
+                    "END",
+                    "01_HOOFD_490_5"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "08_AWB45_005"
+                ],
+                [
+                    "08_AWB45_030",
+                    "01_HOOFD_250_1",
+                    "08_AWB45_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "09_AH_I_010"
+                ],
+                [
+                    "11_AH_II_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_020"
+                ],
+                [
+                    "01_HOOFD_030_1",
+                    "03_GBH_005"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_065_2"
+                ],
+                [
+                    "01_HOOFD_110_1",
+                    "01_HOOFD_110"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_490_2",
+                    "01_HOOFD_494a"
+                ],
+                [
+                    "01_HOOFD_495",
+                    "08_AWB45_005"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_515",
+                    "13_CRD_010",
+                    "01_HOOFD_490_4"
+                ],
+                [
+                    "01_HOOFD_490_5"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_810",
+                    "01_HOOFD_815"
+                ],
+                [
+                    "01_HOOFD_820"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "14_VRIJ_010",
+                    "04_BPT_005"
+                ],
+                [
+                    "01_HOOFD_065_1"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_490_4"
+                ],
+                [
+                    "01_HOOFD_490_5a"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "05_EIND_010"
+                ],
+                [
+                    "16_LGSV_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_200"
+                ],
+                [
+                    "01_HOOFD_250_1",
+                    "01_HOOFD_250"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_814"
+                ],
+                [
+                    "01_HOOFD_815"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "14_VRIJ_010",
+                    "01_HOOFD_490_1"
+                ],
+                [
+                    "01_HOOFD_490_1a"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_490_2",
+                    "01_HOOFD_490_5",
+                    "01_HOOFD_494a"
+                ],
+                [
+                    "01_HOOFD_495"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_BB_770",
+                    "08_AWB45_030",
+                    "01_HOOFD_510_2",
+                    "01_HOOFD_515",
+                    "01_HOOFD_030_2"
+                ],
+                [
+                    "END"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "08_AWB45_005"
+                ],
+                [
+                    "01_HOOFD_250_1",
+                    "08_AWB45_010",
+                    "09_AH_I_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "11_AH_II_010"
+                ],
+                [
+                    "13_CRD_010",
+                    "01_HOOFD_490_1"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "05_EIND_010",
+                    "01_HOOFD_020"
+                ],
+                [
+                    "01_HOOFD_030_1"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_100",
+                    "01_HOOFD_065_2"
+                ],
+                [
+                    "01_HOOFD_110"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_110_1"
+                ],
+                [
+                    "01_HOOFD_110_2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_500"
+                ],
+                [
+                    "01_HOOFD_510_1"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_510_3"
+                ],
+                [
+                    "01_HOOFD_515"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_490_5"
+                ],
+                [
+                    "01_HOOFD_490_5a",
+                    "01_HOOFD_510_2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_515",
+                    "13_CRD_010",
+                    "01_HOOFD_491"
+                ],
+                [
+                    "01_HOOFD_490_5"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_011"
+                ],
+                [
+                    "01_HOOFD_015"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_200"
+                ],
+                [
+                    "08_AWB45_005",
+                    "01_HOOFD_250"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_515",
+                    "01_HOOFD_530"
+                ],
+                [
+                    "01_BB_540"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "14_VRIJ_010"
+                ],
+                [
+                    "01_HOOFD_490_1a",
+                    "01_HOOFD_065_1",
+                    "01_HOOFD_490_4",
+                    "08_AWB45_020_2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_490_1"
+                ],
+                [
+                    "01_HOOFD_490_2",
+                    "09_AH_I_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "11_AH_II_010"
+                ],
+                [
+                    "01_HOOFD_490_2",
+                    "13_CRD_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_065_2"
+                ],
+                [
+                    "01_HOOFD_110_1",
+                    "06_VD_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_490_5"
+                ],
+                [
+                    "01_HOOFD_495",
+                    "01_HOOFD_510_2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_330"
+                ],
+                [
+                    "01_HOOFD_375"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_491"
+                ],
+                [
+                    "01_HOOFD_495"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_050",
+                    "01_HOOFD_065_0",
+                    "01_HOOFD_030_1"
+                ],
+                [
+                    "02_DRZ_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_250_2",
+                    "01_HOOFD_260"
+                ],
+                [
+                    "01_HOOFD_330"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_490_1",
+                    "08_AWB45_005"
+                ],
+                [
+                    "09_AH_I_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_490_2",
+                    "01_HOOFD_490_5a",
+                    "01_HOOFD_494a"
+                ],
+                [
+                    "01_HOOFD_495"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "13_CRD_010"
+                ],
+                [
+                    "01_HOOFD_490_1a",
+                    "01_HOOFD_490_5"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_110_0",
+                    "01_HOOFD_065_2"
+                ],
+                [
+                    "01_HOOFD_110_1"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_015"
+                ],
+                [
+                    "01_HOOFD_020"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_040"
+                ],
+                [
+                    "01_HOOFD_060"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_250_1"
+                ],
+                [
+                    "01_HOOFD_250_2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_050"
+                ],
+                [
+                    "02_DRZ_010",
+                    "01_HOOFD_060"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_380"
+                ],
+                [
+                    "01_HOOFD_430"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_500"
+                ],
+                [
+                    "01_HOOFD_510_0"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "08_AWB45_020_1"
+                ],
+                [
+                    "08_AWB45_020_2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_110_0",
+                    "01_HOOFD_110_2",
+                    "01_HOOFD_120"
+                ],
+                [
+                    "01_HOOFD_180"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "08_AWB45_030",
+                    "01_HOOFD_490_1"
+                ],
+                [
+                    "09_AH_I_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "03_GBH_005"
+                ],
+                [
+                    "05_EIND_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_100",
+                    "06_VD_010"
+                ],
+                [
+                    "01_HOOFD_110"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_510_1",
+                    "01_HOOFD_490_5"
+                ],
+                [
+                    "01_HOOFD_510_2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "08_AWB45_020_1",
+                    "08_AWB45_005"
+                ],
+                [
+                    "08_AWB45_030"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_520"
+                ],
+                [
+                    "01_HOOFD_530"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_BB_770"
+                ],
+                [
+                    "END",
+                    "01_HOOFD_814"
+                ]
+            ]
+        }
+    ]
+}

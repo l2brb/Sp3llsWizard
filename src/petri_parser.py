@@ -42,11 +42,15 @@ def parse_wn_from_pnml(file_path):
             transition_id = transition.get("id")
             transition_name = transition.findtext('.//name/text')
 
+            # Cerco toolspecific e verifico se è invisibile
+            toolspecific = transition.find('.//toolspecific[@activity="$invisible$"]')
+            is_tau = toolspecific is not None  # True se esiste un elemento toolspecific con activity="$invisible$"
+
             workflow_net["transitions"].append({
                 "id": transition_id,
-                "name": transition_name
+                "name": transition_name,
+                "is_tau": is_tau
             })
-
 
         # Parsing arcs
         for arc in root.findall('.//arc'):

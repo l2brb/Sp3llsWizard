@@ -2,13 +2,14 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
+import matplotlib.patches as mpatches
+import matplotlib.lines as mlines
 
 # Leggi il CSV
-df = pd.read_csv('/home/l2brb/main/DECpietro/evaluation/n_constraints/results/cleaned/cleaned_results_rog_complete_extra_5k_update.csv')
+df = pd.read_csv('/home/l2brb/main/DECpietro/evaluation/n_constraints/results/results_rog_nconstraints_updated_bugfix.csv')
 
-
-# Filtra il DataFrame per includere solo i file_name che sono multipli di 40
-df = df[df['file_name'] % 20 == 0]
+# Filtra il DataFrame per includere solo i file_name che sono multipli di 20
+df = df[df['file_name'] % 10 == 0]
 
 # PLOT
 plt.style.use("seaborn-v0_8-bright")
@@ -26,26 +27,36 @@ y_pred = model.predict(X)
 beta = model.coef_[0]
 r2 = r2_score(y, y_pred)
 
-# Stampa i risultati
-print(f"Execution time: Beta = {beta:.4f}, R^2 = {r2:.4f}")
 
-# Disegna la retta di regressione lineare
-#plt.plot(df['file_name'], y_pred, label='Execution time (Linear fit)', linestyle='--')
+#print(f"Execution time: Beta = {beta:.4f}, R^2 = {r2:.4f}")
 
 plt.xticks(fontsize=30)
 plt.yticks(fontsize=30)
-plt.xlabel('Number of transformation iterations', fontsize=30, labelpad=15)
-plt.ylabel('Execution time (ms)', fontsize=30, labelpad=15)
+plt.xlabel('Number of transformation iterations', fontsize=40, labelpad=15)
+plt.ylabel('Execution time [ms]', fontsize=40, labelpad=15)
 plt.grid(True, linestyle='--')
-plt.tight_layout()
+
+# **Box Metrics**
+x_pos, y_pos = 0.98, 0.05  # Posizionato in basso a destra (come il grafico della memoria)
+legend_text = f"$\\hat{{\\beta}} = {beta:.4f}$, $R_{{\\text{{lin}}}}^2 = {r2:.4f}$"
+bbox_props = dict(boxstyle="round,pad=0.2", facecolor="white", edgecolor="#D3D3D3", linewidth=1)
+
+# Inserisce il testo dentro il box con perfetto allineamento
+plt.text(x_pos, y_pos, legend_text, fontsize=35, transform=plt.gca().transAxes,
+         verticalalignment='bottom', horizontalalignment='right', bbox=bbox_props)
 
 plt.xlim([0, 1000])
-plt.ylim([0, 500])
+plt.ylim([0, 600])
 
-plt.legend(['Execution time'], loc='upper left', fontsize=35)
+
+plt.legend(['Execution time [ms]'], loc='upper left', fontsize=35)
+
 
 plt.fill_between(df['file_name'], df['time_ms'], color='lightseagreen', alpha=0.2)
-plt.tight_layout()
+
+
+plt.subplots_adjust(left=0.098, right=0.967, bottom=0.124, top=0.97)
+
 
 plt.savefig('/home/l2brb/main/DECpietro/evaluation/n_constraints/plot/pdf/executiontime.pdf')
 

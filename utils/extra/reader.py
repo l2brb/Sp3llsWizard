@@ -2,16 +2,16 @@ import pm4py
 from pm4py.visualization.transition_system import visualizer as ts_visualizer
 
 #PNML READER
-net, im, fm, = pm4py.read_pnml("/home/l2brb/main/DECpietro/evaluation/bisimulation/wn/complete_pm4py.pnml", True)
+net, im, fm, = pm4py.read_pnml("/home/l2brb/main/DECpietro/complete_pm4py.pnml", True)
 
 #print(net, im, fm)
 
 
 
-#export_pm4py_pnml = pm4py.write_pnml(net, im, fm, "/home/l2brb/main/DECpietro/evaluation/bisimulation/wn/complete_pm4py.pnml")
-#pm4py.view_petri_net(net, im, fm, format='pdf')
+#export_pm4py_pnml = pm4py.write_pnml(net, im, fm, "/home/l2brb/main/DECpietro/evaluation/conformance/benchmarking/road_fines_enriched.pnml_pm4py.pnml")
+pm4py.view_petri_net(net, im, fm, format='pdf')
 
-#exit()
+exit()
 
 
 # reach_graph = pm4py.convert_to_reachability_graph(net, im, fm)

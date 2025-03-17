@@ -1,0 +1,125 @@
+{
+    "name": "complete_pm4py_paper.pnml",
+    "tasks": [
+        "f",
+        "a",
+        "v",
+        "b",
+        "d",
+        "g",
+        "c",
+        "w",
+        "e",
+        "u"
+    ],
+    "constraints": [
+        {
+            "template": "End",
+            "parameters": [
+                [
+                    "v"
+                ]
+            ]
+        },
+        {
+            "template": "Atmost1",
+            "parameters": [
+                [
+                    "a"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "a",
+                    "w"
+                ],
+                [
+                    "b"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "b"
+                ],
+                [
+                    "d",
+                    "c"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "d",
+                    "c"
+                ],
+                [
+                    "e"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "e"
+                ],
+                [
+                    "f"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "e"
+                ],
+                [
+                    "g"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "f"
+                ],
+                [
+                    "u"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "g"
+                ],
+                [
+                    "u"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "u"
+                ],
+                [
+                    "v",
+                    "w"
+                ]
+            ]
+        }
+    ]
+}

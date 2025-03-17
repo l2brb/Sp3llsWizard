@@ -1,0 +1,149 @@
+{
+    "name": "complete_pm4py.pnml",
+    "tasks": [
+        "J",
+        "B",
+        "E",
+        "I",
+        "K",
+        "A",
+        "t2",
+        "C",
+        "M",
+        "F",
+        "G",
+        "t1"
+    ],
+    "constraints": [
+        {
+            "template": "End",
+            "parameters": [
+                [
+                    "B"
+                ]
+            ]
+        },
+        {
+            "template": "Atmost1",
+            "parameters": [
+                [
+                    "A"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "F",
+                    "E"
+                ],
+                [
+                    "I"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "t1"
+                ],
+                [
+                    "K"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "t2"
+                ],
+                [
+                    "J"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "M"
+                ],
+                [
+                    "t2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "C"
+                ],
+                [
+                    "F",
+                    "E"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "G",
+                    "A"
+                ],
+                [
+                    "C"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "I"
+                ],
+                [
+                    "t1"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "t1"
+                ],
+                [
+                    "M"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "K"
+                ],
+                [
+                    "t2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "J"
+                ],
+                [
+                    "G",
+                    "B"
+                ]
+            ]
+        }
+    ]
+}

@@ -1,0 +1,78 @@
+Constraint,Fitness,Cluster,fitness_sublog_1,fitness_sublog_2,fitness_sublog_3,fitness_sublog_4,fitness_sublog_5,fitness_sublog_6,fitness_sublog_7,fitness_sublog_8,fitness_sublog_9,fitness_sublog_10
+"'AlternatePrecedence(01_HOOFD_515, {01_BB_540, 01_HOOFD_490_5, END})'",0.059,1,0.09,0.03,0.04,0.24,,,0.0,0.05,0.0,0.14
+"'AlternatePrecedence(01_HOOFD_810, {01_BB_540, 01_HOOFD_820})'",0.699,4,0.4,0.41,0.8,0.79,,,0.61,0.55,0.84,0.62
+"'AlternatePrecedence(01_HOOFD_010, {01_HOOFD_011, 01_HOOFD_030_2})'",0.343,2,0.17,0.1,0.427,0.21,,0.66,0.16,0.22,0.22,0.28
+"'AlternatePrecedence(01_HOOFD_010, {01_HOOFD_015, 01_HOOFD_030_2})'",0.245,2,0.16,0.1,0.253,0.0,,0.66,0.03,0.09,0.0,0.16
+"'AlternatePrecedence(01_HOOFD_011, 01_HOOFD_015)'",0.901,3,0.99,1.0,0.813,0.79,,1.0,0.87,0.87,0.78,0.87
+"'AlternatePrecedence(01_HOOFD_020, {01_HOOFD_030_1, 03_GBH_005})'",0.39,2,0.17,0.17,0.52,0.52,,1.0,0.0,0.23,0.02,0.3
+"'AlternatePrecedence({01_HOOFD_030_1, 04_BPT_005}, {01_HOOFD_030_2, 01_HOOFD_061})'",0.757,4,0.81,0.94,0.88,1.0,0.0,0.34,0.94,0.84,1.0,0.85
+"'AlternatePrecedence(04_BPT_005, {01_HOOFD_030_2, 01_HOOFD_061, 05_EIND_010})'",0.018,1,0.0,0.02,0.08,0.09,0.0,0.0,0.0,0.0,0.0,0.01
+"'AlternatePrecedence(04_BPT_005, {01_HOOFD_030_2, 01_HOOFD_065_1, 05_EIND_010})'",0.2,2,0.16,0.17,0.413,0.42,0.0,0.34,0.0,0.23,0.02,0.3
+"'AlternatePrecedence(01_HOOFD_030_2, {01_HOOFD_040, 01_HOOFD_110_0, 02_DRZ_010, END})'",0.268,2,0.0,,0.027,0.11,,,0.0,0.0,,0.0
+"'AlternatePrecedence(01_HOOFD_030_2, {01_HOOFD_050, 01_HOOFD_110_0, END})'",0.424,2,0.3,0.24,0.107,0.29,1.0,,0.14,0.19,0.84,0.05
+"'AlternatePrecedence(01_HOOFD_040, 01_HOOFD_050)'",0.895,3,0.95,0.94,0.947,0.95,1.0,,0.67,0.8,0.84,0.87
+"'AlternatePrecedence(01_HOOFD_050, {01_HOOFD_060, 02_DRZ_010})'",0.523,4,0.21,,0.533,0.37,,,0.49,0.42,,0.41
+"'AlternatePrecedence(02_DRZ_010, {01_HOOFD_061, 03_GBH_005})'",0.269,2,0.09,0.14,0.227,0.19,1.0,0.66,0.18,0.05,0.0,0.14
+"'AlternatePrecedence(01_HOOFD_061, {01_HOOFD_065_0, 01_HOOFD_065_1})'",0.808,3,0.91,0.92,0.733,0.74,,1.0,0.54,0.67,0.84,0.71
+"'AlternatePrecedence({01_HOOFD_060, 01_HOOFD_061}, 01_HOOFD_065_1)'",0.88,3,0.92,0.92,0.867,0.95,1.0,1.0,0.67,0.8,0.84,0.83
+"'AlternatePrecedence({01_HOOFD_060, 04_BPT_005}, 01_HOOFD_065_1)'",0.964,3,0.85,0.95,1.0,1.0,1.0,1.0,0.98,0.88,1.0,0.99
+"'AlternatePrecedence({01_HOOFD_061, 14_VRIJ_010}, 01_HOOFD_065_1)'",0.87,3,0.92,0.92,0.773,0.95,1.0,1.0,0.67,0.8,0.84,0.8
+"'AlternatePrecedence({04_BPT_005, 14_VRIJ_010}, 01_HOOFD_065_1)'",0.954,3,0.85,0.95,0.907,1.0,1.0,1.0,0.98,0.88,1.0,0.96
+"'AlternatePrecedence(14_VRIJ_010, {01_HOOFD_065_1, 01_HOOFD_490_1a, 01_HOOFD_490_4, 08_AWB45_020_2})'",0.434,2,0.05,0.06,0.4,0.5,1.0,1.0,0.21,0.15,0.84,0.12
+"'AlternatePrecedence(14_VRIJ_010, {01_HOOFD_065_1, 01_HOOFD_490_1a, 01_HOOFD_490_5, 08_AWB45_020_2})'",0.415,2,0.01,0.04,0.28,0.5,1.0,1.0,0.21,0.15,0.84,0.09
+"'AlternatePrecedence(01_HOOFD_065_2, {01_HOOFD_110, 01_HOOFD_110_1})'",0.702,4,,,0.547,,,,,,,
+"'AlternatePrecedence({01_HOOFD_100, 06_VD_010}, 01_HOOFD_110)'",0.959,3,,,0.92,,,,,,,
+"'AlternatePrecedence({01_HOOFD_030_2, 01_HOOFD_065_0}, {01_HOOFD_110_0, 02_DRZ_010})'",0.918,3,,,0.867,,,,,,,
+"'AlternatePrecedence(01_HOOFD_065_2, {01_HOOFD_110_1, 06_VD_010})'",0.703,4,,,0.56,,1.0,1.0,,,,
+"'AlternatePrecedence(01_HOOFD_110_0, {01_HOOFD_110_1, 01_HOOFD_180})'",0.436,2,,,0.28,,1.0,1.0,,,,
+"'AlternatePrecedence(01_HOOFD_180, {01_HOOFD_195, 08_AWB45_005})'",0.677,4,,,0.72,,1.0,1.0,,,,
+"'AlternatePrecedence(01_HOOFD_180, {01_HOOFD_195, 08_AWB45_010})'",0.883,3,,,0.88,,1.0,1.0,,,,
+"'AlternatePrecedence(08_AWB45_030, {01_HOOFD_195, 09_AH_I_010, END})'",0.056,1,,,0.307,,0.0,0.0,,,,
+"'AlternatePrecedence(01_HOOFD_200, {01_HOOFD_250, 01_HOOFD_250_1})'",0.977,3,,,0.96,,1.0,1.0,,,,
+"'AlternatePrecedence(01_HOOFD_200, {01_HOOFD_250, 08_AWB45_005})'",0.841,3,,,0.573,,1.0,1.0,,,,
+"'AlternatePrecedence(08_AWB45_005, {01_HOOFD_250_1, 08_AWB45_010, 08_AWB45_030})'",0.584,4,,,0.507,,1.0,1.0,,,,
+"'AlternatePrecedence(08_AWB45_005, {01_HOOFD_250_1, 08_AWB45_010, 09_AH_I_010})'",0.517,4,,,0.72,,1.0,1.0,,,,
+"'AlternatePrecedence(01_HOOFD_370, 01_HOOFD_375)'",0.915,3,,,0.96,,1.0,1.0,,,,
+"'AlternatePrecedence(11_AH_II_010, {01_HOOFD_490_1, 13_CRD_010})'",0.508,4,,,0.667,,1.0,1.0,,,,
+"'AlternatePrecedence(01_HOOFD_490_1, {01_HOOFD_490_1a, 09_AH_I_010})'",0.655,4,,,0.653,,1.0,1.0,,,1.0,
+"'AlternatePrecedence({01_HOOFD_490_1, 13_CRD_010}, 01_HOOFD_490_1a)'",0.997,3,,,0.987,,1.0,1.0,,,1.0,
+"'AlternatePrecedence({01_HOOFD_490_1, 14_VRIJ_010}, 01_HOOFD_490_1a)'",0.982,3,,,0.92,,1.0,1.0,,,1.0,
+"'AlternatePrecedence(13_CRD_010, {01_HOOFD_490_1a, 01_HOOFD_490_5})'",0.623,4,,,0.773,,1.0,1.0,,,1.0,
+"'AlternatePrecedence(01_HOOFD_490_1, {01_HOOFD_490_2, 09_AH_I_010})'",0.582,4,,,0.653,,,,,,,
+"'AlternatePrecedence({01_HOOFD_490_1a, 11_AH_II_010}, 01_HOOFD_490_2)'",0.891,3,,,0.84,,,,,,,
+"'AlternatePrecedence(11_AH_II_010, {01_HOOFD_490_2, 13_CRD_010})'",0.558,4,,,0.56,,,,,,,
+"'AlternatePrecedence(01_HOOFD_490_2, {01_HOOFD_490_4, 01_HOOFD_495, 08_AWB45_005})'",0.527,4,,,0.32,,1.0,1.0,,,1.0,
+"'AlternatePrecedence(01_HOOFD_491, {01_HOOFD_490_5, 01_HOOFD_494a})'",0.735,4,,,0.693,,1.0,1.0,,,1.0,
+"'AlternatePrecedence({01_HOOFD_491, 01_HOOFD_515, 13_CRD_010}, 01_HOOFD_490_5)'",0.981,3,,,1.0,,1.0,1.0,,,1.0,
+"'AlternatePrecedence({01_HOOFD_491, 01_HOOFD_515, 14_VRIJ_010}, 01_HOOFD_490_5)'",0.947,3,,,0.88,,1.0,1.0,,,1.0,
+"'AlternatePrecedence(01_HOOFD_515, {01_HOOFD_490_5, 01_HOOFD_810, END})'",0.072,1,,,0.053,,0.0,0.0,,,0.0,
+"'AlternatePrecedence(01_HOOFD_490_4, 01_HOOFD_490_5a)'",0.956,3,,,0.92,,1.0,1.0,,,1.0,
+"'AlternatePrecedence(01_HOOFD_490_5, {01_HOOFD_490_5a, 01_HOOFD_510_2})'",0.621,4,,,0.64,,1.0,1.0,,,0.84,
+"'AlternatePrecedence(01_HOOFD_490_2, {01_HOOFD_491, 08_AWB45_005})'",0.606,4,,,0.36,,,,,,,
+"'AlternatePrecedence(01_HOOFD_490_4, 01_HOOFD_491)'",0.876,3,,,0.907,,,,,,,
+"'AlternatePrecedence({01_HOOFD_490_2, 01_HOOFD_494a}, {01_HOOFD_495, 08_AWB45_005})'",0.685,4,,,0.387,,,,,,,
+"'AlternatePrecedence(01_HOOFD_490_5, {01_HOOFD_495, 01_HOOFD_510_2})'",0.501,4,,,0.56,,,,,,,
+"'AlternatePrecedence(01_HOOFD_491, 01_HOOFD_495)'",0.895,3,,,0.773,,,,,,,
+"'AlternatePrecedence(01_HOOFD_500, 01_HOOFD_510_1)'",0.842,3,,,0.813,,,,,,,
+"'AlternatePrecedence(01_HOOFD_510_1, {01_HOOFD_510_2a, 01_HOOFD_520})'",0.995,3,,,1.0,,1.0,1.0,,,1.0,
+"'AlternatePrecedence(01_HOOFD_510_2, {01_HOOFD_510_2a, 01_HOOFD_520, END})'",0.104,1,,,0.2,,0.0,0.0,,,0.0,
+"'AlternatePrecedence(01_HOOFD_510_1, {01_HOOFD_510_3, 01_HOOFD_520})'",0.985,3,,,0.96,,,,,,,
+"'AlternatePrecedence(01_HOOFD_510_2, {01_HOOFD_510_3, 01_HOOFD_520, END})'",0.023,1,,,0.16,,,,,,,
+"'AlternatePrecedence(01_HOOFD_510_2a, 01_HOOFD_510_3)'",0.866,3,,,0.92,,,,,,,
+"'AlternatePrecedence(01_HOOFD_510_4, 01_HOOFD_515)'",0.909,3,,,0.96,,,,,,,
+"'AlternatePrecedence({01_BB_770, 01_HOOFD_515}, {01_HOOFD_810, END})'",0.472,4,,,0.427,,,,,,,
+"'AlternatePrecedence(01_BB_540, 01_HOOFD_814)'",0.943,3,,,0.987,,,,,,,
+"'AlternatePrecedence(01_BB_770, {01_HOOFD_814, END})'",0.146,1,,,0.133,,,,,,,
+"'AlternatePrecedence(01_HOOFD_810, {01_HOOFD_814, 01_HOOFD_820})'",0.769,4,,,0.92,,,,,,,
+"'AlternatePrecedence({01_HOOFD_030_1, 01_HOOFD_050, 01_HOOFD_065_0}, 02_DRZ_010)'",0.999,3,,,1.0,,,,,,,
+"'AlternatePrecedence(02_DRZ_010, 04_BPT_005)'",0.999,3,,,0.987,,,,,,,
+"'AlternatePrecedence(03_GBH_005, {04_BPT_005, 16_LGSV_010})'",0.659,4,,,0.707,,,,,,,
+"'AlternatePrecedence(08_AWB45_020_1, 08_AWB45_020_2)'",0.998,3,,,0.973,,,,,,,
+"'AlternatePrecedence({08_AWB45_005, 08_AWB45_020_1}, 08_AWB45_030)'",0.998,3,,,0.973,,,,,,,
+"'AlternatePrecedence({08_AWB45_005, 08_AWB45_020_2}, 08_AWB45_030)'",0.99,3,,,0.96,,,,,,,
+"'AlternatePrecedence(08_AWB45_020_1, {08_AWB45_030, 14_VRIJ_010})'",0.721,4,,,0.747,,,,,,,
+"'AlternatePrecedence({01_HOOFD_480, 08_AWB45_005}, 09_AH_I_010)'",0.997,3,,,0.973,,,,,,,
+"'AlternatePrecedence({01_HOOFD_480, 08_AWB45_030}, 09_AH_I_010)'",0.956,3,,,0.773,,,,,,,
+"'AlternatePrecedence({01_HOOFD_490_1, 08_AWB45_005}, 09_AH_I_010)'",0.97,3,,,0.973,,,,,,,
+"'AlternatePrecedence({01_HOOFD_490_1, 08_AWB45_030}, 09_AH_I_010)'",0.916,3,,,0.76,,,,,,,
+"'AlternatePrecedence(05_EIND_010, 16_LGSV_010)'",0.937,3,,,0.853,,,,,,,

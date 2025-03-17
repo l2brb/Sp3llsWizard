@@ -4,13 +4,17 @@ import os
 import sys
 import tracemalloc
 from src import petri_parser
-from src import dec_translator_target_ultimate_update as dec_translator
+from src import dec_translator_target_source_powerup as dec_translator
+
+# MAIN PER TESTING
+
 
 def main():
     if len(sys.argv) < 2:
         print("Error: no PNML path")
         sys.exit(1)
     pnml_file_path = sys.argv[1]
+    #pnml_file_path = "/home/l2brb/main/DECpietro/evaluation/realworld/models/bpic12.pnml"
 
     
     tracemalloc.start()

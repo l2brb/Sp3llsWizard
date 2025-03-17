@@ -2,61 +2,71 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
-from sklearn.preprocessing import PolynomialFeatures
+
 
 # Leggi il CSV
-df = pd.read_csv('/home/l2brb/main/DECpietro/evaluation/d_contraints/results/cleaned_results_rog_dconstraints.csv')
+df = pd.read_csv('/home/l2brb/main/DECpietro/evaluation/d_contraints/results/cleaned_results_rog_dconstraints_updated.csv')
+
+# Filtra il DataFrame per includere solo i file_name che sono multipli di 40
 df = df[df['file_name'] % 40 == 0]
 
 # PLOT
 plt.style.use("seaborn-v0_8-bright")
 plt.figure(figsize=(16,9))
 
-columns_of_interest = [
-    'mem_usage_mb'
-]
+# Colonne di interesse
+column = 'mem_usage_mb'
 
-for column in columns_of_interest:
-    plt.plot(df['file_name'], df[column], label=column, linewidth=2, color= 'purple', marker='>')
+# Regression
+X = df['file_name'].values.reshape(-1, 1)
+y = df[column].values
+model = LinearRegression()
+model.fit(X, y)
+y_pred = model.predict(X)
+beta = model.coef_[0]
+r2 = r2_score(y, y_pred)
 
-    # Beta and R^2
-    X = df['file_name'].values.reshape(-1, 1)
-    y = df[column].values
-    model = LinearRegression()
-    model.fit(X, y)
-    y_pred = model.predict(X)
-    beta = model.coef_[0]
-    r2 = r2_score(y, y_pred)
-
-    # Stampa i risultati
-    print(f"{column}: Beta = {beta:.4f}, R^2 = {r2:.4f}")
-
-
-#plt.plot(df['file_name'], y_pred, label=f'{column} (Linear fit)', linestyle='--', color='darkseagreen', alpha=0.7)
-
+# PLOT
+plt.plot(df['file_name'], df[column], label="Memory Usage [MB]", linewidth=2, color='purple', marker='o')
 plt.xticks(fontsize=30)
 plt.yticks(fontsize=30)
 plt.xlabel('Increasing number of transitions', fontsize=30, labelpad=15)
-plt.ylabel('Memory usage (MB)', fontsize=30, labelpad=15)
+plt.ylabel('Memory usage [MB]', fontsize=30, labelpad=15)
 plt.grid(True, linestyle='--')
 plt.tight_layout()
 
-plt.legend(['Memory usage'], loc='upper left', fontsize=35)
+
+# Prima legenda Memory Usage
+legend1 = plt.legend(loc='upper left', fontsize=35, bbox_to_anchor=(0.01, 1))
+plt.gca().add_artist(legend1)  
 
 
-plt.xlim([0, 1000])
+
+# Box cooridnates
+x_pos, y_pos = 0.98, 0.05
+
+legend_text = f"$\\hat{{\\beta}} = {beta:.4f}$, $R_{{\\text{{lin}}}}^2 = {r2:.4f}$"
+bbox_props = dict(boxstyle="round,pad=0.2", facecolor="white", edgecolor="#D3D3D3", linewidth=1)
+
+# Inserisce il testo dentro il box con perfetto allineamento
+plt.text(x_pos, y_pos, legend_text, fontsize=35, transform=plt.gca().transAxes,
+         verticalalignment='bottom', horizontalalignment='right', bbox=bbox_props)
+
+
+
+plt.xlim([0, 1000]) 
 plt.ylim([0, 50])
 
 
 plt.fill_between(df['file_name'], df['mem_usage_mb'], color='purple', alpha=0.2)
-# plt.fill_between(df['file_name'], df['peak_mem_mb'], color='red', alpha=0.2)
-# plt.fill_between(df['file_name'], df['avg_mem_overall_mb'], color='green', alpha=0.2)
-# plt.fill_between(df['file_name'], df['peak_mem_petri_parser_mb'], color='purple', alpha=0.2)
-# plt.fill_between(df['file_name'], df['avg_mem_dec_translator_mb'], color='orange', alpha=0.2)
-# plt.fill_between(df['file_name'], df['peak_mem_dec_translator_mb'], color='brown', alpha=0.2)
+
+
+
+plt.subplots_adjust(left=0.08, right=0.967, bottom=0.128, top=0.97)
 
 
 plt.savefig('/home/l2brb/main/DECpietro/evaluation/d_contraints/plot/memoryusage-trs.pdf')
+
 
 plt.show()
 exit()

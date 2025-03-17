@@ -7,7 +7,11 @@ evaluation/n_constraints/expanded_pnml/out-complete/*
 #eventlogs
 evaluation/realworld/logs/*
 
+evaluation/conformance/clustering/dump*
+
+
 src-interface/*
+src/old/*
 test/*
 
 
