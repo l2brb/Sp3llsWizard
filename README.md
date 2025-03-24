@@ -36,7 +36,7 @@ To evaluate the runtime memory utilization of our Sp3llsWizard implementation, w
 #### Increasing constraint-set cardinality.
 
 
-##### Increasing constraint formula size
+#### Increasing constraint formula size
 
 #### Real-world process model testing. 
 

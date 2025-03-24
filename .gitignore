@@ -1,6 +1,8 @@
 #test memusage time exec
 evaluation/d_contraints/expanded_pnml/out-extra/*
 evaluation/d_contraints/expanded_pnml/out-complete/*
+
+
 evaluation/n_constraints/expanded_pnml/out-extra/*
 evaluation/n_constraints/expanded_pnml/out-complete/*
 
@@ -12,17 +14,18 @@ evaluation/conformance/clustering/dump*
 
 src-interface/*
 src/old/*
+src/__pychache__/*
+
 test/*
 
 
-utils/expansion rules/rules/T1a/*
-utils/expansion rules/rules/T2a/*
-utils/expansion rules/rules/T3a/*
-utils/expansion rules/rules/T4a/*
-utils/expansion rules/rules/T5a/*
+utils/*
+
+
 
 
 evaluation/conformance/benchmarking/*
+evaluation/conformance/extra/*
 
 
 #vscode
@@ -30,3 +33,6 @@ evaluation/conformance/benchmarking/*
 #pycharm
 .idea/*
 
+#gitignore
+.gitignore
+.gitattributes

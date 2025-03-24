@@ -2,7 +2,7 @@ import os
 import json
 import csv
 from src import dec_translator_target_source as dec_translator
-from src import petri_parser
+from utils import petri_parser
 # from src import csv_exporter
 # from src import wn_json
 #from memory_profiler import profile

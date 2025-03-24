@@ -3,7 +3,7 @@ import psutil
 import os
 import sys
 import tracemalloc
-from src import petri_parser
+from utils import petri_parser
 from src import dec_translator_target_source_powerup as dec_translator
 
 # MAIN PER TESTING
