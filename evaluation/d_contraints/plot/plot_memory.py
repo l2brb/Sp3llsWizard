@@ -5,7 +5,7 @@ from sklearn.metrics import r2_score
 
 
 # Leggi il CSV
-df = pd.read_csv('/home/l2brb/main/DECpietro/evaluation/d_contraints/results/cleaned_results_rog_dconstraints_updated.csv')
+df = pd.read_csv('/home/l2brb/main/DECpietro/evaluation/d_contraints/results/cleaned_results_rog_dconstraints_updated_bugfix.csv')
 
 # Filtra il DataFrame per includere solo i file_name che sono multipli di 40
 df = df[df['file_name'] % 40 == 0]
@@ -30,8 +30,8 @@ r2 = r2_score(y, y_pred)
 plt.plot(df['file_name'], df[column], label="Memory Usage [MB]", linewidth=2, color='purple', marker='o')
 plt.xticks(fontsize=30)
 plt.yticks(fontsize=30)
-plt.xlabel('Increasing number of transitions', fontsize=30, labelpad=15)
-plt.ylabel('Memory usage [MB]', fontsize=30, labelpad=15)
+plt.xlabel('Number of transitions', fontsize=40, labelpad=15)
+plt.ylabel('Memory usage [MB]', fontsize=40, labelpad=15)
 plt.grid(True, linestyle='--')
 plt.tight_layout()
 
@@ -62,7 +62,7 @@ plt.fill_between(df['file_name'], df['mem_usage_mb'], color='purple', alpha=0.2)
 
 
 
-plt.subplots_adjust(left=0.08, right=0.967, bottom=0.128, top=0.97)
+plt.subplots_adjust(left=0.09, right=0.967, bottom=0.127, top=0.97)
 
 
 plt.savefig('/home/l2brb/main/DECpietro/evaluation/d_contraints/plot/memoryusage-trs.pdf')

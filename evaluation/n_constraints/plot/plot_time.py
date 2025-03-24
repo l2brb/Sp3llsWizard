@@ -55,10 +55,10 @@ plt.legend(['Execution time [ms]'], loc='upper left', fontsize=35)
 plt.fill_between(df['file_name'], df['time_ms'], color='lightseagreen', alpha=0.2)
 
 
-plt.subplots_adjust(left=0.098, right=0.967, bottom=0.124, top=0.97)
+plt.subplots_adjust(left=0.105, right=0.967, bottom=0.135, top=0.97)
 
 
 plt.savefig('/home/l2brb/main/DECpietro/evaluation/n_constraints/plot/pdf/executiontime.pdf')
 
-plt.show()
+#plt.show()
 exit()

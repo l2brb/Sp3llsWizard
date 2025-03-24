@@ -61,11 +61,11 @@ plt.ylim([0, 100])
 plt.fill_between(df['file_name'], df['mem_usage_mb'], color='lightseagreen', alpha=0.2)
 
 
-plt.subplots_adjust(left=0.098, right=0.967, bottom=0.124, top=0.97)
+plt.subplots_adjust(left=0.105, right=0.967, bottom=0.135, top=0.97)
 
 
 plt.savefig('/home/l2brb/main/DECpietro/evaluation/n_constraints/plot/pdf/memoryusage.pdf')
 
 
-plt.show()
+#plt.show()
 exit()

@@ -29,6 +29,6 @@ def clean_and_sort_csv(input_file, output_file):
             writer.writerow(row)
 
 if __name__ == "__main__":
-    input_file = '/home/l2brb/main/DECpietro/evaluation/d_contraints/results/results_rog_dconstraints_updated.csv'
-    output_file = '/home/l2brb/main/DECpietro/evaluation/d_contraints/results/cleaned_results_rog_dconstraints_updated.csv'
+    input_file = '/home/l2brb/main/DECpietro/evaluation/d_contraints/results/results_rog_dconstraints_updated_bugfix.csv'
+    output_file = '/home/l2brb/main/DECpietro/evaluation/d_contraints/results/cleaned_results_rog_dconstraints_updated_bugfix.csv'
     clean_and_sort_csv(input_file, output_file)

@@ -2,9 +2,10 @@ import pm4py
 
 
 # Read XES
-event_log = pm4py.read_xes(
-    '/home/l2brb/main/DECpietro/evaluation/conformance/real-world/bpic151f/BPIC15_1f.xes'
-    )
+event_log = pm4py.read_xes('/home/l2brb/main/DECpietro/evaluation/conformance/real-world/bpic155f/BPIC15_5f.xes')
+
+
+
 # # Discover the Petri net (Alpha Miner)
 net, im, fm = pm4py.discover_petri_net_alpha(
     event_log)
@@ -30,8 +31,8 @@ pm4py.write_bpmn(bpmn_graph, '/home/l2brb/main/DECpietro/test/literature/RTFMP/R
 
 
 # Export to PNML
-log = pm4py.write_pnml(net, im, fm, '/home/l2brb/main/DECpietro/evaluation/conformance/real-world/15_1/BPIC15_1.pnml')
+#og = pm4py.write_pnml(net, im, fm, '/home/l2brb/main/DECpietro/evaluation/conformance/real-world/bpic155f/BPIC15_5f_alpha_plus.pnml')
 
 # # Export pdf
-# pm4py.view_petri_net(net, im, fm, format='pdf')
+pm4py.view_petri_net(net, im, fm, format='pdf')
 # pm4py.save_vis_petri_net(net, im, fm, file_path='/home/l2brb/main/DECpietro/evaluation/conformance/real-world/15.1/BPIC15_1.pdf')

@@ -30,8 +30,8 @@ r2 = r2_score(y, y_pred)
 plt.plot(df['file_name'], df[column], label="Execution time [ms]", linewidth=2, color='purple', marker='o')
 plt.xticks(fontsize=30)
 plt.yticks(fontsize=30)
-plt.xlabel('Increasing number of transitions', fontsize=30, labelpad=15)
-plt.ylabel('Execution time [ms]', fontsize=30, labelpad=15)
+plt.xlabel('Number of transitions', fontsize=40, labelpad=15)
+plt.ylabel('Execution time [ms]', fontsize=40, labelpad=15)
 plt.grid(True, linestyle='--')
 plt.tight_layout()
 
@@ -61,7 +61,7 @@ plt.ylim([0, 60])
 plt.fill_between(df['file_name'], df['time_ms'], color='purple', alpha=0.2)
 
 
-plt.subplots_adjust(left=0.08, right=0.967, bottom=0.128, top=0.97)
+plt.subplots_adjust(left=0.09, right=0.967, bottom=0.128, top=0.97)
 
 
 plt.savefig('/home/l2brb/main/DECpietro/evaluation/d_contraints/plot/executiontime-trs.pdf')
