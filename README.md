@@ -34,11 +34,15 @@ To evaluate the runtime memory utilization of our Sp3llsWizard implementation, w
 
 
 #### Increasing constraint-set cardinality.
-![sampleWN](/evaluation/performance/n_constraints/expanded_pnml/images/cardinality.png)
+![sampleWN](/evaluation/performance/n_constraints/expanded_pnml/images/rsample.png)
+![expantionrules](/evaluation/performance/n_constraints/expanded_pnml/images/cardinality.png)
 
 
 
 #### Increasing constraint formula size
+![conditionalexpantion](/evaluation/performance/n_constraints/expanded_pnml/images/rconditional.png)
+
+
 
 #### Real-world process model testing. 
 
