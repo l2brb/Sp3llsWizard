@@ -34,7 +34,7 @@ To evaluate the runtime memory utilization of our Sp3llsWizard implementation, w
 
 
 #### Increasing constraint-set cardinality.
-![Sample Workflow net](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/performance/n_constraints/expanded_pnml/images/rsample.png)
+![sampleWN](/evaluation/performance/n_constraints/expanded_pnml/images/rsample.png)
 
 
 
