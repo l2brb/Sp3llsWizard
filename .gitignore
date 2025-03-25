@@ -12,12 +12,12 @@ evaluation/realworld/logs/*
 evaluation/conformance/clustering/dump*
 
 
-.src-interface/*
+extra/*
+
 src/old/*
 src/__pychache__/*
 
-.test/*
-.utils/*
+
 
 
 evaluation/conformance/benchmarking/*
