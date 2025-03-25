@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="imported_1731682284.7471483" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <name>
+      <text>imported_1731682284.7471483</text>
+    </name>
+    <page id="n0">
+      <place id="wbjlf">
+        <name>
+          <text>wbjlf</text>
+        </name>
+      </place>
+      <place id="p1">
+        <name>
+          <text>
+          </text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+        <graphics>
+          <position x="120.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <place id="oswzs">
+        <name>
+          <text>oswzs</text>
+        </name>
+      </place>
+      <place id="piunf">
+        <name>
+          <text>piunf</text>
+        </name>
+      </place>
+      <place id="p2">
+        <name>
+          <text>
+          </text>
+        </name>
+        <graphics>
+          <position x="320.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <transition id="gpvje">
+        <name>
+          <text>gpvje</text>
+        </name>
+      </transition>
+      <transition id="rhcfl">
+        <name>
+          <text>rhcfl</text>
+        </name>
+      </transition>
+      <transition id="nsjpn">
+        <name>
+          <text>nsjpn</text>
+        </name>
+      </transition>
+      <transition id="fkilq">
+        <name>
+          <text>fkilq</text>
+        </name>
+      </transition>
+      <arc id="128512746127104" source="piunf" target="fkilq"/>
+      <arc id="128512746365216" source="nsjpn" target="wbjlf"/>
+      <arc id="128512746364976" source="p1" target="nsjpn"/>
+      <arc id="128512738066512" source="fkilq" target="oswzs"/>
+      <arc id="128514286956624" source="oswzs" target="gpvje"/>
+      <arc id="128512745124176" source="gpvje" target="p2"/>
+      <arc id="128512738036432" source="wbjlf" target="rhcfl"/>
+      <arc id="128512738036656" source="rhcfl" target="piunf"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="p2">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>

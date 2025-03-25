@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="imported_1731958246.0786538" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <name>
+      <text>imported_1731958246.0786538</text>
+    </name>
+    <page id="n0">
+      <place id="p1">
+        <name>
+          <text>
+          </text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+        <graphics>
+          <position x="120.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <place id="xhyoi">
+        <name>
+          <text>xhyoi</text>
+        </name>
+      </place>
+      <place id="gafgs">
+        <name>
+          <text>gafgs</text>
+        </name>
+      </place>
+      <place id="piunf">
+        <name>
+          <text>piunf</text>
+        </name>
+      </place>
+      <place id="hbffc">
+        <name>
+          <text>hbffc</text>
+        </name>
+      </place>
+      <place id="p2">
+        <name>
+          <text>
+          </text>
+        </name>
+        <graphics>
+          <position x="320.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <place id="lcrcf">
+        <name>
+          <text>lcrcf</text>
+        </name>
+      </place>
+      <transition id="zljsu">
+        <name>
+          <text>zljsu</text>
+        </name>
+      </transition>
+      <transition id="grkfi">
+        <name>
+          <text>grkfi</text>
+        </name>
+      </transition>
+      <transition id="nayrn">
+        <name>
+          <text>nayrn</text>
+        </name>
+      </transition>
+      <transition id="odbqv">
+        <name>
+          <text>odbqv</text>
+        </name>
+      </transition>
+      <arc id="123950509154400" source="p1" target="grkfi"/>
+      <arc id="123950509719904" source="xhyoi" target="odbqv"/>
+      <arc id="123950518018336" source="lcrcf" target="zljsu"/>
+      <arc id="123950509719632" source="grkfi" target="hbffc"/>
+      <arc id="123950516643760" source="grkfi" target="xhyoi"/>
+      <arc id="123952058642512" source="hbffc" target="nayrn"/>
+      <arc id="123950516744528" source="odbqv" target="lcrcf"/>
+      <arc id="123950518018096" source="nayrn" target="gafgs"/>
+      <arc id="123950509674512" source="gafgs" target="zljsu"/>
+      <arc id="123950509674736" source="zljsu" target="p2"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="p2">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>

@@ -1,0 +1,111 @@
+{
+    "name": "0.pnml",
+    "tasks": [
+        "fxgsj",
+        "momcg",
+        "lembk",
+        "t1",
+        "fxyyu",
+        "qvrsp",
+        "edfwh",
+        "toauy"
+    ],
+    "constraints": [
+        {
+            "template": "End",
+            "parameters": [
+                [
+                    "edfwh",
+                    "fxgsj"
+                ]
+            ]
+        },
+        {
+            "template": "Atmost1",
+            "parameters": [
+                [
+                    "qvrsp",
+                    "fxgsj"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "lembk"
+                ],
+                [
+                    "fxyyu"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "toauy",
+                    "qvrsp"
+                ],
+                [
+                    "lembk"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "lembk"
+                ],
+                [
+                    "t1"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "t1"
+                ],
+                [
+                    "momcg"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "fxyyu"
+                ],
+                [
+                    "momcg"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "momcg"
+                ],
+                [
+                    "toauy"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "momcg"
+                ],
+                [
+                    "edfwh"
+                ]
+            ]
+        }
+    ]
+}
