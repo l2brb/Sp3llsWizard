@@ -1,27 +1,27 @@
 #test memusage time exec
-evaluation/d_contraints/expanded_pnml/out-extra/*
-evaluation/d_contraints/expanded_pnml/out-complete/*
+evaluation/performance/d_contraints/expanded_pnml/out-extra/*
+evaluation/performance/d_contraints/expanded_pnml/out-complete/*
 
 
-evaluation/n_constraints/expanded_pnml/out-extra/*
-evaluation/n_constraints/expanded_pnml/out-complete/*
+evaluation/performance/n_constraints/expanded_pnml/out-extra/*
+evaluation/performance/n_constraints/expanded_pnml/out-complete/*
 
 #eventlogs
-evaluation/realworld/logs/*
+evaluation/performance/realworld/logs/*
 
-evaluation/conformance/clustering/dump*
+evaluation/diagnostics/clustering/dump*
 
 
 extra/*
 
 src/old/*
-src/__pychache__/*
+src/__pycache__/*
 
 
 
 
-evaluation/conformance/benchmarking/*
-evaluation/conformance/extra/*
+evaluation/diagnostics/benchmarking/*
+evaluation/diagnostics/extra/*
 
 
 #vscode
