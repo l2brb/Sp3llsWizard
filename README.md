@@ -16,8 +16,13 @@ The main content of the repository is structured as follows:
     - [/evaluation/realworld/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/realworld) contains the data of the scalability tests
 -  [/diagnostics/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/conformance): folder containing datasets and results of our tests
 
-## Setup
+## Setup and run
 As a requirement, python 3.13.0 at least should be installed on your machine. To launch the .sh test files, you have to run them on a Unix-based system with a BASH shell. No installation procedure is required. This version has been tested on both a Ubuntu Linux (24.04.1) and a Mac OS X machine.
+
+```
+python3 main.py -iWN file/path.pnml -oJSON file/path.json
+```
+
 
 
 ## Evaluation
@@ -44,6 +49,15 @@ To evaluate the runtime memory utilization of our Sp3llsWizard implementation, w
 
 
 #### Real-world process model testing 
+
+To evaluate the performance of our algorithm on real process models, we run memory usage and execution time tests on workflow nets derived from real-world event logs. First, we generate workflow nets by applying the Inductive Miner algorithm, available in pm4py.
+
+```
+python3 miner.py
+```
+
+
+Next, we run our algorithm on the generated workflow nets to derive the corresponding Declare specification in JSON format. The scripts record memory usage (in MB) and execution time (in ms) during processing.
 
 | **Event log** | **Trans.** | **Places** | **Nodes** | **Mem.usage [MB]** | **Exec.time [ms]** |
 |---------------|-----------:|-----------:|----------:|-------------------:|-------------------:|
