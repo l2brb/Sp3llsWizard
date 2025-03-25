@@ -16,8 +16,8 @@ src-interface/*
 src/old/*
 src/__pychache__/*
 
-test/*
-utils/*
+/test/*
+/utils/*
 
 
 evaluation/conformance/benchmarking/*
