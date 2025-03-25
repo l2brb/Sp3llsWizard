@@ -39,11 +39,19 @@ To evaluate the runtime memory utilization of our Sp3llsWizard implementation, w
 
 
 #### Increasing constraint-set cardinality.
+
+The evaluation method relies on an expansion mechanism that iteratively applies a structured pattern of four soundness-preserving transformation rules to progressively increase the number of nodes and their configuration. This leads to a gradual increase in the number of constraints our algorithm needs to initiate. 
+
+
 ![expantionrules](/evaluation/performance/n_constraints/expanded_pnml/images/cardinality.png)
 
 
 
 #### Increasing constraint formula size
+
+Here, we configure the test on memory usage and execution time to investigate the algorithm’s performance while handling an expanding constraints’ formula size (i.e., with an increasing number of disjuncts). To this end, we progressively broaden the Workflow net by applying the soundness-preserving conditional
+expansion rule. 
+
 ![conditionalexpantion](/evaluation/performance/n_constraints/expanded_pnml/images/formulasize.png)
 
 
@@ -57,7 +65,7 @@ python3 miner.py
 ```
 
 
-Next, we run our algorithm on the generated workflow nets to derive the corresponding Declare specification in JSON format. The scripts record memory usage (in MB) and execution time (in ms) during processing.
+We run our algorithm on the generated workflow nets to derive the corresponding Declare specification in JSON format. The scripts record memory usage (in MB) and execution time (in ms) during processing.
 
 | **Event log** | **Trans.** | **Places** | **Nodes** | **Mem.usage [MB]** | **Exec.time [ms]** |
 |---------------|-----------:|-----------:|----------:|-------------------:|-------------------:|
