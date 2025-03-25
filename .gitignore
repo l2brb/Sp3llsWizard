@@ -17,11 +17,7 @@ src/old/*
 src/__pychache__/*
 
 test/*
-
-
 utils/*
-
-
 
 
 evaluation/conformance/benchmarking/*
@@ -33,6 +29,3 @@ evaluation/conformance/extra/*
 #pycharm
 .idea/*
 
-#gitignore
-.gitignore
-.gitattributes
