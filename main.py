@@ -1,57 +1,79 @@
 import os
 import json
 import csv
-from src import dec_translator_target_source as dec_translator
-from utils import petri_parser
-# from src import csv_exporter
-# from src import wn_json
-#from memory_profiler import profile
+import typer
+from rich import print
+from rich.console import Console
+
+from src.utils import petri_parser
+from src.declare_translator import dec_translator 
 
 
 
-def write_to_json(output):
-    with open('/home/l2brb/main/DECpietro/complete_paper.json', 'w') as file:
-        json.dump(output, file)
+app = typer.Typer(
+    help="""
+Welocme to Sp3llsWizard, a tool for synthesizing DECLARE specifications from safe and sound Worfflow net casting three spells.
+"""
+)
+console = Console()
 
 
-# def write_to_csv(constraints):
-#     with open('/home/l2brb/main/DECpietro/evaluation/bisimulation/reachability_graph/REVISED EASIER_targetsource.csv', 'w', newline='') as file:
-#         writer = csv.writer(file)
-#         for key, value in constraints.items():
-#             writer.writerow([key, value])       
+def write_to_json(output, output_path: str):
+    with open(output_path, 'w') as file:
+        json.dump(output, file, indent=4)
+    console.log(f"[green]Output JSON saved in[/green] {output_path}")
 
 
-def main():
-    pnml_file_path = "/home/l2brb/main/DECpietro/complete_pm4py_paper.pnml"
-    workflow_net = petri_parser.parse_wn_from_pnml(pnml_file_path)
+def write_to_csv(constraints, output_path: str):
+    with open(output_path, 'w', newline='') as file:
+        writer = csv.writer(file)
+        for key, value in constraints.items():
+            writer.writerow([key, value])
+    console.log(f"[green]CSV saved in[/green] {output_path}")
 
+@app.command()
+def export_wn(
+    pnml_file: str = typer.Option(..., help="File path .pnml"),
+    output_path: str = typer.Option(..., help="File path WF.json")
+):
+    """
+    Export WF net to JSON.
+    """
+    workflow_net = petri_parser.parse_wn_from_pnml(pnml_file)
     if workflow_net:
-        print("WORKFLOW NET PARSED SUCCESFULLY.")
-        model_name = os.path.basename(pnml_file_path)
-        #print(workflow_net["arcs"])
-        #print(workflow_net["transitions"])
-        #print(workflow_net["places"])
-        
+        from src.utils import wn_json  # solo se serve
+        wn_json.write_to_json(workflow_net, output_path)
+        console.print("[bold green]WF net succesfully exported![/bold green]")
+    else:
+        console.print("[bold red]Error in WN parsing.[/bold red]")
 
-        # Export WN to JSON
-        #wn_json.write_to_json(workflow_net)
-        #print("WN JSON EXPORTED.")
+@app.command()
+def run_algorithm(
+    pnml_file: str = typer.Option(..., help="File path .pnml"),
+    output_format: str = typer.Option("json", help="Output format: 'json' o 'csv'"),
+    output_path: str = typer.Option(..., help="output file path")
+):
+    """
+    Cast the three spells and save output to csv or json
+    """
+    workflow_net = petri_parser.parse_wn_from_pnml(pnml_file)
+    if not workflow_net:
+        console.print("[bold red]Error in WN parsing[/bold red]")
+        raise typer.Exit()
 
-      
-        #TESTING BYPASS
+    model_name = os.path.basename(pnml_file)
+    console.print(f"[cyan]DECLARE Synthesizing {model_name}...[/cyan]")
 
-        # Generate Declarative Constraints
-        output = dec_translator.translate_to_DEC(workflow_net, model_name)
-        print("DECLARATIVE CONTRAINTS GENERATED SUCCESFULLY.")
-        print(output)
+    output = dec_translator.translate_to_DEC(workflow_net, model_name)
+    console.print("[bold green]DECLARE Constraints generated succesfully.[/bold green]")
 
-        # # # Export to CSV
-        # write_to_csv(output)
-        # print("CSV EXPORTED SUCCESFULLY.")
-    
-        # Export to JSON
-        write_to_json(output)
-        print("JSON EXPORTED.")
+    if output_format.lower() == "json":
+        write_to_json(output, output_path)
+    elif output_format.lower() == "csv":
+        write_to_csv(output, output_path)
+    else:
+        console.print("[bold red]Invalid output format. Use 'json' or 'csv'.[/bold red]")
 
-if __name__ == "__main__":  
-    main()
+
+if __name__ == "__main__":
+    app()

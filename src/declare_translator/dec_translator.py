@@ -1,7 +1,3 @@
-# import petri_parser
-#from memory_profiler import profile
-
-
 # TARGET SOURCE BRANCHING VERSION
 
 """
@@ -16,42 +12,32 @@ Returns:
 - constraints: List of Declarative constraints.
 """
 
-# pnml_file_path = "/home/l2brb/Docker/DECpietro/test/PLG/pm4py/pnml_test_plg.pnml"
-# workflow_net = petri_parser.parse_wn_from_pnml(pnml_file_path)
-# print(workflow_net)
-
-
-# activity_a_name = [t["name"] for t in workflow_net["transitions"]]
-# print(activity_a_name)
-
 
 # EXISTANCE CONTRAINTS
 
 # AtMost1
-#@profile
+
 def get_atmost1_constraint(workflow_net):
-    # Pre-calcola il set dei target degli archi
+    # Arc target set
     arc_targets = {arc.get("target") for arc in workflow_net["arcs"]}
     
-    # Raggruppa gli archi per source
+    # group by source
     arcs_by_source = {}
     for arc in workflow_net["arcs"]:
         source = arc.get("source")
         arcs_by_source.setdefault(source, []).append(arc)
         
-    # Crea un dizionario: id della transizione -> nome della transizione
+    # dict id -> name
     transition_by_id = {
         t.get("id"): t.get("name")
         for t in workflow_net["transitions"]
     }
     
-    # Usa un set per raccogliere i nomi (evita duplicati)
+    # set to collect names
     atmost1_constraints = set()
     
     for place in workflow_net["places"]:
-        # Se il posto non è un target di alcun arco
         if place["id"] not in arc_targets:
-            # Itera solo sugli archi che partono da questo posto
             for arc in arcs_by_source.get(place["id"], []):
                 transition_name = transition_by_id.get(arc.get("target"))
                 if transition_name:
@@ -64,30 +50,27 @@ def get_atmost1_constraint(workflow_net):
 
 
 # End
-#@profile
 def get_end_constraint(workflow_net):
-    # Pre-calcola il set delle sorgenti degli archi
+    # Arc source set
     arc_sources = {arc.get("source") for arc in workflow_net.get("arcs", [])}
     
-    # Raggruppa gli archi per target
+    # group by target
     arcs_by_target = {}
     for arc in workflow_net.get("arcs", []):
         target = arc.get("target")
         arcs_by_target.setdefault(target, []).append(arc)
         
-    # Dizionario: id della transizione -> nome della transizione
+    # dict id -> name
     transition_by_id = {
         t.get("id"): t.get("name")
         for t in workflow_net.get("transitions", [])
     }
     
-    # Usa un set per raccogliere i nomi
+    # set to collect names
     end_constraints = set()
     
     for place in workflow_net.get("places", []):
-        # Se il posto non è una sorgente di alcun arco
         if place["id"] not in arc_sources:
-            # Itera solo sugli archi che arrivano a questo posto
             for arc in arcs_by_target.get(place["id"], []):
                 transition_name = transition_by_id.get(arc.get("source"))
                 if transition_name:
@@ -99,13 +82,9 @@ def get_end_constraint(workflow_net):
     }]
 
 
-
-
-
 # RELATION CONSTRAINTS
 
 # Alternate Precedence [if B prev A and not B in between]
-#@profile
 def get_alternate_precedence(workflow_net):
 
     transition_names = {t["id"]: t["name"] for t in workflow_net["transitions"]}
