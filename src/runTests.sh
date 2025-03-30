@@ -1,7 +1,7 @@
 #!/bin/bash
 
-input_folder="/home/l2brb/main/DECpietro/evaluation/d_contraints/expanded_pnml/out-complete"
-output_csv="/home/l2brb/main/DECpietro/evaluation/d_contraints/results/results_rog_dconstraints_updated_bugfix.csv"
+input_folder="YOUR PATH HERE"
+output_csv="YOUR PATH HERE"
 
 
 echo "file_name,mem_usage_mb,peak_mem_mb,avg_mem_overall_mb,time_ms" > "$output_csv"
@@ -13,7 +13,7 @@ for file_path in $(ls "$input_folder" | sort); do
     if [ -f "$full_path" ]; then
 
         
-        output=$(python3 main.py "$full_path")
+        output=$(python3 test-runner.py "$full_path")
 
         
         memory_usage=$(echo "$output" | grep "Memory usage (rss)" | awk '{print $4}')

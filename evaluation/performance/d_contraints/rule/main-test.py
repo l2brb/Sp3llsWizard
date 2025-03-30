@@ -10,7 +10,7 @@ def generate_random_place_name():
 
 
 def main():
-    pnml_file_path = "/home/l2brb/main/DECpietro/evaluation/d_contraints/rule/simple-t2.pnml"
+    pnml_file_path = "YOUR PATH"
     petri_net, initial_marking, final_marking = pnml_importer.apply(pnml_file_path)
     
 
@@ -22,9 +22,8 @@ def main():
 
         
         # Save the output for each iteration
-        output_file_path = f"/home/l2brb/main/DECpietro/evaluation/d_contraints/expanded_pnml/{iteration}.pnml"
+        output_file_path = f"/YOUT/PATH/{iteration}.pnml"
         pnml_exporter.apply(updated_petri_net, initial_marking, output_file_path, final_marking=final_marking)
-        # print(f"Updated WN saved to {output_file_path}")
 
         # Use the updated Petri net for the next iteration
         petri_net = updated_petri_net

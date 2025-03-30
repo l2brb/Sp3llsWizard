@@ -30,7 +30,7 @@ def and_split_transition_t3a(petri_net, target_transition=None, t2_name=None, t3
     outgoing_places = [arc.target for arc in target_transition.out_arcs]
     
 
-    # c1 e c2 #TODO: HOUN PROBLEMA QUI SE REITERO PERCHE I PLACES CAMBIANO
+    # c1 e c2 #TODO: HO UN PROBLEMA QUI SE REITERO PERCHE I PLACES CAMBIANO
 
     # Find the transition that precedes t1 (c1)
     c1 = next((arc.source for place in incoming_places for arc in place.in_arcs if isinstance(arc.source, PetriNet.Transition)), None)
