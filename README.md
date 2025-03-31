@@ -1,4 +1,4 @@
-![logo](logo.png)
+![logo](logo_d.png)
 
 ## From Sound Workflow Nets to LTLf Declarative Specifications by Casting Three Spells
 
