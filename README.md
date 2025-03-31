@@ -40,15 +40,15 @@ To evaluate the runtime memory utilization of our Sp3llsWizard implementation, w
 
 
 #### Increasing constraint-set cardinality.
-We rely on an **iterative expansion mechanism**, implemented in [performance](https://github.com/l2brb/Sp3llsWizard\evaluation\performance\n_constraints\rules), that applies four soundness-preserving transformation rules to progressively grow a Workflow net. Starting from a base net, we fix a central transition (`t1`) as a pivot and preserve the initial and final places (`p1`, `p2`). At each iteration:
+We rely on an **iterative expansion mechanism**, implemented in [/expansion_rules/](https://github.com/l2brb/Sp3llsWizard\evaluation\performance\n_constraints\rules), that applies four soundness-preserving transformation rules to progressively grow a Workflow net. Starting from a base net, we fix a central transition (`t1`) as a pivot and preserve the initial and final places (`p1`, `p2`). At each iteration:
 
-- 1. A transition is split into two, extending the activity sequence.
-- 2. Parallel paths are introduced to add concurrency.
-- 3. Conditional branches are added to create alternative paths.
-- 4. Loops are added for iteration.
+1. A transition is split into two, extending the activity sequence.
+2. Parallel paths are introduced to add concurrency.
+3. Conditional branches are added to create alternative paths.
+4. Loops are added for iteration.
 
 This process is repeated for **1000 iterations**, each time expanding the net and applying our algorithm.  
-Results are available in [performance](https://github.com/l2brb/Sp3llsWizard\evaluation\performance\n_constraints\results).
+Results are available in [/cardinality_test_results/](https://github.com/l2brb/Sp3llsWizard\evaluation\performance\n_constraints\results).
 
 ![cardinality](cardinality.png)
 
