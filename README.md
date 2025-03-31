@@ -11,13 +11,13 @@ Sp3llsWizard is an approach designed to formally synthesize DECLARE specificatio
 
 The main content of the repository is structured as follows:
 -  [/src/](https://github.com/l2brb/Sp3llsWizard/tree/main/src): the root folder of the implementation source code
-    -  [/src/declare-translator](https://github.com/l2brb/Sp3llsWizard/tree/main/src/declare-translator): contains the algorithm's implementation
+    -  [/src/declare_translator](https://github.com/l2brb/Sp3llsWizard/tree/main/src/declare_translator): contains the algorithm's implementation
 -  [/evaluation/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation): folder containing datasets and results of our tests
-    - [/evaluation/bisimualtion/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/bisimulation) contains the convergence test data 
-    - [/evaluation/setcardinality/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/d_contraints) includes the memory usage tests data 
-    - [/evaluation/formulasize/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/n_constraints) contains the data of the scalability tests
-    - [/evaluation/realworld/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/realworld) contains the data of the scalability tests
--  [/diagnostics/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/conformance): folder containing datasets and results of our tests
+    - [/evaluation/bisimualtion/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/bisimulation) contains the bisimulation test data 
+    - [/evaluation/setcardinality/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/d_contraints) includes the memory usage and execution time tests data 
+    - [/evaluation/formulasize/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/n_constraints) includes the memory usage and execution time tests data 
+    - [/evaluation/realworld/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/realworld) includes the memory usage and execution time tests data for real-world process models
+-  [/diagnostics/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/conformance): folder containing a downstream application of our algorithm for process diagnostics
 
 ## Setup and run
 As a requirement, python 3.13.0 should be installed on your machine. To launch the .sh test files, you have to run them on a Unix-based system with a BASH shell. No installation procedure is required. This version has been tested on both a Ubuntu Linux (24.04.1) and a Mac OS X machine.
