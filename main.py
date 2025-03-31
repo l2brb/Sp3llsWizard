@@ -41,7 +41,7 @@ def export_wn(
     """
     workflow_net = petri_parser.parse_wn_from_pnml(pnml_file)
     if workflow_net:
-        from src.utils import wn_json  # solo se serve
+        from src.utils import wn_json  
         wn_json.write_to_json(workflow_net, output_path)
         console.print("[bold green]WF net succesfully exported![/bold green]")
     else:
