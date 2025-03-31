@@ -1,8 +1,8 @@
-![logo](logo_d.png)
+![logo](logo.png)
 
-## From Sound Workflow Nets to LTLf Declarative Specifications by Casting Three Spells
+## Sp3llsWizard: From Sound Workflow Nets to LTLf Declarative Specifications by Casting Three Spells
 
-This repository contains the implementation and experimental toolbench presented in the paper “From Sound Workflow Nets to LTLf Declarative Specifications by Casting Three Spells". This work introduces a systematic approach to synthesize declarative process specifications from safe and sound Workflow nets, ensuring that the original behavior is fully preserved. Here, you'll find the complete toolchain and experimental setups, tested on both synthetic and real-world datasets, analyzing the correctness and performance of our implemented algorithm. 
+This repository contains the implementation and experimental toolbench presented in the paper “From Sound Workflow Nets to LTLf Declarative Specifications by Casting Three Spells". The work introduces a systematic approach to synthesize declarative process specifications from safe and sound Workflow nets, ensuring that the original behavior is fully preserved. Here, you'll find the complete toolchain and experimental setups, tested on both synthetic and real-world datasets, analyzing the correctness and performance of the implemented algorithm. 
 
 ## Overview
 Sp3llsWizard is an approach designed to formally synthesize DECLARE specifications from sound Workflow nets. The proof-of-concept implememtation automatically generates LTLf constraints from an input Workflow net in the form of a .pnml file.
@@ -20,12 +20,11 @@ The main content of the repository is structured as follows:
 -  [/diagnostics/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/conformance): folder containing datasets and results of our tests
 
 ## Setup and run
-As a requirement, python 3.13.0 at least should be installed on your machine. To launch the .sh test files, you have to run them on a Unix-based system with a BASH shell. No installation procedure is required. This version has been tested on both a Ubuntu Linux (24.04.1) and a Mac OS X machine.
+As a requirement, python 3.13.0 should be installed on your machine. To launch the .sh test files, you have to run them on a Unix-based system with a BASH shell. No installation procedure is required. This version has been tested on both a Ubuntu Linux (24.04.1) and a Mac OS X machine.
 
 ```
 python3 main.py run-algorithm --pnml-file ${INPUT_WN}  --output-format json --output-path ${OUTPUT_PATH}
 ```
-
 
 ## Evaluation
 We evaluated our algorithm on a range of both synthetic and real-world data. For the real-world testbed, we take as input processes discovered by a well-known imperative process mining algorithm from a collection of openly available event logs. We conducted the performance tests on an AMD Ryzen 9 8945HS CPU at 4.00 GHz with 32 GB RAM running Ubuntu 24.04.1. 
@@ -42,11 +41,9 @@ To evaluate the runtime memory utilization of our Sp3llsWizard implementation, w
 
 #### Increasing constraint-set cardinality.
 
-The evaluation method relies on an expansion mechanism that iteratively applies a structured pattern of four soundness-preserving transformation rules to progressively increase the number of nodes and their configuration. This leads to a gradual increase in the number of constraints our algorithm needs to initiate. 
-
+The evaluation method relies on an expansion mechanism that iteratively applies a structured pattern of four soundness-preserving transformation rules to progressively increase the number of nodes and their configuration. This leads to a gradual increase in the number of constraints our algorithm needs to initiate. Starting from the base Workflow net shown in the left side of the figure, we fix the transition 't1' as a ‘pivot’, i.e. a central point that remains unchanged while the rest of the net is expanded. We also fix the two final and initial places, 'p1' and 'p2' respectively, and iteratively apply the expansion mechanism. The first rule entails the decomposition of a singular transition into two consecutive transitions, augmenting the sequence of activities within the Workflow. We apply this rule twice consecutively in each iteration cycle. Having fixed the initial and final places, the second rule in consists of the rewiring of the previous transition group as two parallel execution paths by adding a parallel transition, thus introducing concurrency into the net structure. Furthermore, the third rule introduces conditional branching by adding a new transition that creates an alternative path between the initial and final places, 'p1' and 'p2'. Finally, the fourth rule adds an iteration structure allowing the group of transitions to be repeated. Upon completion of the growth process with the expansion mechanism in the specified order, we execute the algorithm, record the results, and initiate a new expansion iteration. Throughout this process, we maintained the transition 't1' and reassigned the place names 'p1' and 'p2' to the two places contiguous to 't1'. We applied the set of rules throughout \num{1000} iterations, results are available in [performance](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/d_contraints).
 
 ![cardinality](cardinality.png)
-
 
 
 #### Increasing constraint formula size
