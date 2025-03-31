@@ -23,9 +23,8 @@ The main content of the repository is structured as follows:
 As a requirement, python 3.13.0 at least should be installed on your machine. To launch the .sh test files, you have to run them on a Unix-based system with a BASH shell. No installation procedure is required. This version has been tested on both a Ubuntu Linux (24.04.1) and a Mac OS X machine.
 
 ```
-python3 main.py -iWN file/path.pnml -oJSON file/path.json
+python3 main.py run-algorithm --pnml-file ${INPUT_WN}  --output-format json --output-path ${OUTPUT_PATH}
 ```
-
 
 
 ## Evaluation
@@ -46,7 +45,7 @@ To evaluate the runtime memory utilization of our Sp3llsWizard implementation, w
 The evaluation method relies on an expansion mechanism that iteratively applies a structured pattern of four soundness-preserving transformation rules to progressively increase the number of nodes and their configuration. This leads to a gradual increase in the number of constraints our algorithm needs to initiate. 
 
 
-![expantionrules](cardinality.png)
+![cardinality](cardinality.png)
 
 
 
@@ -55,7 +54,7 @@ The evaluation method relies on an expansion mechanism that iteratively applies 
 Here, we configure the test on memory usage and execution time to investigate the algorithm’s performance while handling an expanding constraints’ formula size (i.e., with an increasing number of disjuncts). To this end, we progressively broaden the Workflow net by applying the soundness-preserving conditional
 expansion rule. 
 
-![conditionalexpantion](formulasize.png)
+![formulasize](formulasize.png)
 
 
 
@@ -88,7 +87,9 @@ We run our algorithm on the generated workflow nets to derive the corresponding 
 
 ### Process Diagnostics
 
-
+```
+./run-MINERfulFitnessChecker-unstable.sh -iLF ${INPUT_LOG} -iLF xes -oCSV ${OUTPUT_PATH}
+```
 
 
 
