@@ -1,6 +1,6 @@
 ![logo](logo.png)
 
-# Spe3llsWizard: From Sound Workflow Nets to LTLf Declarative Specifications by Casting Three Spells
+## From Sound Workflow Nets to LTLf Declarative Specifications by Casting Three Spells
 
 This repository contains the implementation and experimental toolbench presented in the paper “From Sound Workflow Nets to LTLf Declarative Specifications by Casting Three Spells". This work introduces a systematic approach to synthesize declarative process specifications from safe and sound Workflow nets, ensuring that the original behavior is fully preserved. Here, you'll find the complete toolchain and experimental setups, tested on both synthetic and real-world datasets, analyzing the correctness and performance of our implemented algorithm. 
 
