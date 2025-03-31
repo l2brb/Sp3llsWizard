@@ -40,8 +40,15 @@ To evaluate the runtime memory utilization of our Sp3llsWizard implementation, w
 
 
 #### Increasing constraint-set cardinality.
+We rely on an **iterative expansion mechanism**, implemented in [performance](https://github.com/l2brb/Sp3llsWizard\evaluation\performance\n_constraints\rules), that applies four soundness-preserving transformation rules to progressively grow a Workflow net. Starting from a base net, we fix a central transition (`t1`) as a pivot and preserve the initial and final places (`p1`, `p2`). At each iteration:
 
-The evaluation method relies on an expansion mechanism that iteratively applies a structured pattern of four soundness-preserving transformation rules to progressively increase the number of nodes and their configuration. This leads to a gradual increase in the number of constraints our algorithm needs to initiate. Starting from the base Workflow net shown in the left side of the figure, we fix the transition 't1' as a ‘pivot’, i.e. a central point that remains unchanged while the rest of the net is expanded. We also fix the two final and initial places, 'p1' and 'p2' respectively, and iteratively apply the expansion mechanism. The first rule entails the decomposition of a singular transition into two consecutive transitions, augmenting the sequence of activities within the Workflow. We apply this rule twice consecutively in each iteration cycle. Having fixed the initial and final places, the second rule in consists of the rewiring of the previous transition group as two parallel execution paths by adding a parallel transition, thus introducing concurrency into the net structure. Furthermore, the third rule introduces conditional branching by adding a new transition that creates an alternative path between the initial and final places, 'p1' and 'p2'. Finally, the fourth rule adds an iteration structure allowing the group of transitions to be repeated. Upon completion of the growth process with the expansion mechanism in the specified order, we execute the algorithm, record the results, and initiate a new expansion iteration. Throughout this process, we maintained the transition 't1' and reassigned the place names 'p1' and 'p2' to the two places contiguous to 't1'. We applied the set of rules throughout \num{1000} iterations, results are available in [performance](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/d_contraints).
+- 1. A transition is split into two, extending the activity sequence.
+- 2. Parallel paths are introduced to add concurrency.
+- 3. Conditional branches are added to create alternative paths.
+- 4. Loops are added for iteration.
+
+This process is repeated for **1000 iterations**, each time expanding the net and applying our algorithm.  
+Results are available in [performance](https://github.com/l2brb/Sp3llsWizard\evaluation\performance\n_constraints\results).
 
 ![cardinality](cardinality.png)
 
