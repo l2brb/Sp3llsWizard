@@ -43,7 +43,7 @@ To evaluate the runtime memory utilization of our Sp3llsWizard implementation, w
 The evaluation method relies on an expansion mechanism that iteratively applies a structured pattern of four soundness-preserving transformation rules to progressively increase the number of nodes and their configuration. This leads to a gradual increase in the number of constraints our algorithm needs to initiate. 
 
 
-![expantionrules](/evaluation/performance/n_constraints/expanded_pnml/images/cardinality.png)
+![expantionrules](/images/cardinality.png)
 
 
 
@@ -52,7 +52,7 @@ The evaluation method relies on an expansion mechanism that iteratively applies 
 Here, we configure the test on memory usage and execution time to investigate the algorithm’s performance while handling an expanding constraints’ formula size (i.e., with an increasing number of disjuncts). To this end, we progressively broaden the Workflow net by applying the soundness-preserving conditional
 expansion rule. 
 
-![conditionalexpantion](/evaluation/performance/n_constraints/expanded_pnml/images/formulasize.png)
+![conditionalexpantion](/images/formulasize.png)
 
 
 
