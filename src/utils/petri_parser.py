@@ -42,9 +42,9 @@ def parse_wn_from_pnml(file_path):
             transition_id = transition.get("id")
             transition_name = transition.findtext('.//name/text')
 
-            # Cerco toolspecific e verifico se è invisibile
+            # invisible transition check
             toolspecific = transition.find('.//toolspecific[@activity="$invisible$"]')
-            is_tau = toolspecific is not None  # True se esiste un elemento toolspecific con activity="$invisible$"
+            is_tau = toolspecific is not None  # True if toolspecific activity="$invisible$"
 
             workflow_net["transitions"].append({
                 "id": transition_id,
@@ -82,7 +82,7 @@ def parse_wn_from_pnml(file_path):
 
 """# Example usage
 if __name__ == "__main__":
-    file_path = "/Users/luca/Documents/^main/DECpietro/petri_test/petri_pharma.pnml" 
+    file_path = "" 
     workflow_net = parse_wn_from_pnml(file_path)
     if workflow_net:
         print("Workflow Net parsed successfully:")

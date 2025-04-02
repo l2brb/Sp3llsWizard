@@ -1,4 +1,4 @@
-# TARGET SOURCE VERSION W/SILENT BYPASS
+# TARGET SOURCE BRANCHING VERSION W/SILENT BYPASS
 
 """
 translate_to_DECLARE
@@ -16,66 +16,99 @@ Returns:
 ################################################# EXISTANCE CONTRAINTS
 
 # AtMost1
-#@profile
-
-#TODO: QUI LA LOGICA DI SISNTESI DELLE SILENT CON START ARTIFICIALE
 
 def get_atmost1_constraint(workflow_net):
-    atmost1_constraints = []     
+    # Arc target set
+    arc_targets = {arc.get("target") for arc in workflow_net["arcs"]}
+    #rint(arc_targets)
+    
+    # group by source
+    arcs_by_source = {}
+    for arc in workflow_net["arcs"]:
+        source = arc.get("source")
+        #print(source)
+        arcs_by_source.setdefault(source, []).append(arc)
+    #print(arcs_by_source)
+        
+    # dict id -> name
+    transition_by_id = {
+        t.get("id"): (t.get("name"), t.get("is_tau", False))
+        for t in workflow_net["transitions"]
+    }
+    
+    # set to collect names
+    atmost1_constraints = set()
     
     for place in workflow_net["places"]:
-        if not any(arc.get("target") == place["id"] for arc in workflow_net["arcs"]):
-            for arc in workflow_net["arcs"]:
-                if arc.get("source") == place["id"]:
-                    transition_id = arc.get("target")
+        if place["id"] not in arc_targets: # @TODO check is_tau here
+            for arc in arcs_by_source.get(place["id"], []):
+                # NEW HERE
+                transition_id = arc.get("target")
+                transition_name, is_tau = transition_by_id.get(transition_id, (None, False))
+                print(transition_name, is_tau)
+                
+                if is_tau:
+                    # if tau -> substitute with artificial "START"
+                    atmost1_constraints.add("START")
+                elif transition_name:
+                    atmost1_constraints.add(transition_name)
+                print(atmost1_constraints)
+             
 
-                    transition = next(
-                        (t for t in workflow_net["transitions"] if t.get("id") == transition_id),
-                        None
-                    )
-                    if transition:
-                        transition_name = transition.get("name")
-                        if transition_name not in atmost1_constraints:
-                            atmost1_constraints.append(transition_name)
-   
-    result_atmost1 = [{
+                # transition_name = transition_by_id.get(arc.get("target"))
+                # if transition_name:
+                #     atmost1_constraints.add(transition_name)
+                    
+                    
+    return [{
         "template": "Atmost1",
         "parameters": [list(atmost1_constraints)],
     }]
-
-    return result_atmost1
-
-
-
-#TODO: QUI LA LOGICA DI SISNTESI DELLE SILENT CON START ARTIFICIALE
+    
 
 # End
-#@profile
+
 def get_end_constraint(workflow_net):
-    end_constraints = []
-
+    # Arc source set
+    arc_sources = {arc.get("source") for arc in workflow_net.get("arcs", [])}
+    
+    # group by target
+    arcs_by_target = {}
+    for arc in workflow_net.get("arcs", []):
+        target = arc.get("target")
+        arcs_by_target.setdefault(target, []).append(arc)
+        
+    # dict id -> name
+    transition_by_id = {
+        t.get("id"): t.get("name")
+        for t in workflow_net.get("transitions", [])
+    }
+    
+    # set to collect names
+    end_constraints = set()
+    
     for place in workflow_net.get("places", []):
+        if place["id"] not in arc_sources: 
+            # NEW HERE
 
-        if not any(arc.get("source") == place["id"] for arc in workflow_net.get("arcs", [])):
-            for arc in workflow_net.get("arcs", []):    
-                if arc.get("target") == place["id"]:
-                    transition_id = arc.get("source")
-
-                    transition = next(
-                        (t for t in workflow_net.get("transitions", []) if t.get("id") == transition_id),
-                        None
-                    )
-                    if transition:
-                        transition_name = transition.get("name")
-                        if transition_name not in end_constraints:
-                            end_constraints.append(transition_name)
-
-    result_end = [{
+                transition_id = arc.get("source")
+                transition_name, is_tau = transition_by_id.get(transition_id, (None, False))
+                print(transition_name, is_tau)
+                
+                if is_tau:
+                    end_constraints.add("END")
+                elif transition_name:
+                    end_constraints.add(transition_name)
+        
+            # for arc in arcs_by_target.get(place["id"], []): 
+            #     transition_name = transition_by_id.get(arc.get("source"))
+            #     if transition_name:
+            #         end_constraints.add(transition_name)
+                    
+    return [{
         "template": "End",
         "parameters": [list(end_constraints)],
     }]
-
-    return result_end
 
 
 ################################################# RELATION CONSTRAINTS
@@ -145,7 +178,7 @@ def translate_to_DEC(workflow_net, model_name):
     constraints = []
     constraints.extend(end_constraint)
     constraints.extend(atmost1)
-    constraints.extend(alternate_precedence)
+    #constraints.extend(alternate_precedence)
 
     output = {
         "name": model_name,
