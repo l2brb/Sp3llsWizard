@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="imported_1732622875.573075" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <name>
+      <text>imported_1732622875.573075</text>
+    </name>
+    <page id="n0">
+      <place id="fltma">
+        <name>
+          <text>
+          </text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+        <graphics>
+          <position x="120.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <place id="rhstj">
+        <name>
+          <text>rhstj</text>
+        </name>
+      </place>
+      <place id="xucrn">
+        <name>
+          <text>xucrn</text>
+        </name>
+      </place>
+      <place id="ckvbg">
+        <name>
+          <text>
+          </text>
+        </name>
+        <graphics>
+          <position x="320.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <place id="dhnec">
+        <name>
+          <text>dhnec</text>
+        </name>
+      </place>
+      <place id="xlnpn">
+        <name>
+          <text>xlnpn</text>
+        </name>
+      </place>
+      <place id="guyyr">
+        <name>
+          <text>guyyr</text>
+        </name>
+      </place>
+      <place id="pgmng">
+        <name>
+          <text>pgmng</text>
+        </name>
+      </place>
+      <transition id="fxgsj">
+        <name>
+          <text>fxgsj</text>
+        </name>
+      </transition>
+      <transition id="momcg">
+        <name>
+          <text>momcg</text>
+        </name>
+      </transition>
+      <transition id="lembk">
+        <name>
+          <text>lembk</text>
+        </name>
+      </transition>
+      <transition id="t1">
+        <name>
+          <text>t1</text>
+        </name>
+      </transition>
+      <transition id="fxyyu">
+        <name>
+          <text>fxyyu</text>
+        </name>
+      </transition>
+      <transition id="lhftp">
+        <name>
+          <text>qvrsp</text>
+        </name>
+      </transition>
+      <transition id="mbmaw">
+        <name>
+          <text>edfwh</text>
+        </name>
+      </transition>
+      <transition id="xkeln">
+        <name>
+          <text>toauy</text>
+        </name>
+      </transition>
+      <arc id="135374643191904" source="lembk" target="dhnec"/>
+      <arc id="135374643530208" source="dhnec" target="t1"/>
+      <arc id="135374651859232" source="rhstj" target="fxyyu"/>
+      <arc id="135374643161664" source="lhftp" target="xucrn"/>
+      <arc id="135374643600352" source="mbmaw" target="ckvbg"/>
+      <arc id="135374643709744" source="pgmng" target="mbmaw"/>
+      <arc id="135374643161840" source="xucrn" target="lembk"/>
+      <arc id="135374650601552" source="xlnpn" target="momcg"/>
+      <arc id="135374643530480" source="t1" target="xlnpn"/>
+      <arc id="135374643210448" source="fltma" target="lhftp"/>
+      <arc id="135374651858992" source="lembk" target="rhstj"/>
+      <arc id="135374643760048" source="fxyyu" target="guyyr"/>
+      <arc id="135374643760272" source="guyyr" target="momcg"/>
+      <arc id="135374650306416" source="fltma" target="fxgsj"/>
+      <arc id="135374643208528" source="fxgsj" target="ckvbg"/>
+      <arc id="135374643709264" source="momcg" target="pgmng"/>
+      <arc id="135374643618896" source="xkeln" target="xucrn"/>
+      <arc id="135376191863120" source="pgmng" target="xkeln"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="ckvbg">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>

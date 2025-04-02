@@ -12,7 +12,7 @@ from src.declare_translator import dec_translator
 
 app = typer.Typer(
     help="""
-Welocme to Sp3llsWizard, a tool for synthesizing DECLARE specifications from safe and sound Worfflow net casting three spells.
+Welocme to Sp3llsWizard, a tool for synthesizing DECLARE specifications from safe and sound Workflow net casting three spells.
 """
 )
 console = Console()

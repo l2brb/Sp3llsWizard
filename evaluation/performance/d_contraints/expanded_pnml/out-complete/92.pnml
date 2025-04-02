@@ -1,0 +1,732 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="imported_1732819492.192017" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <name>
+      <text>imported_1732819492.192017</text>
+    </name>
+    <page id="n0">
+      <place id="p1">
+        <name>
+          <text>
+          </text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+        <graphics>
+          <position x="120.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <place id="p3">
+        <name>
+          <text>
+          </text>
+        </name>
+        <graphics>
+          <position x="530.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <place id="p5">
+        <name>
+          <text>
+          </text>
+        </name>
+        <graphics>
+          <position x="760.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <place id="p2">
+        <name>
+          <text>
+          </text>
+        </name>
+        <graphics>
+          <position x="320.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <transition id="rfvgn">
+        <name>
+          <text>rfvgn</text>
+        </name>
+      </transition>
+      <transition id="pfjcc">
+        <name>
+          <text>pfjcc</text>
+        </name>
+      </transition>
+      <transition id="rtvwv">
+        <name>
+          <text>rtvwv</text>
+        </name>
+      </transition>
+      <transition id="qlzrr">
+        <name>
+          <text>qlzrr</text>
+        </name>
+      </transition>
+      <transition id="lrjlq">
+        <name>
+          <text>lrjlq</text>
+        </name>
+      </transition>
+      <transition id="hjxsf">
+        <name>
+          <text>hjxsf</text>
+        </name>
+      </transition>
+      <transition id="getwq">
+        <name>
+          <text>getwq</text>
+        </name>
+      </transition>
+      <transition id="ohbfy">
+        <name>
+          <text>ohbfy</text>
+        </name>
+      </transition>
+      <transition id="msbaj">
+        <name>
+          <text>msbaj</text>
+        </name>
+      </transition>
+      <transition id="nyhix">
+        <name>
+          <text>nyhix</text>
+        </name>
+      </transition>
+      <transition id="rqwng">
+        <name>
+          <text>rqwng</text>
+        </name>
+      </transition>
+      <transition id="abevl">
+        <name>
+          <text>abevl</text>
+        </name>
+      </transition>
+      <transition id="mkcrl">
+        <name>
+          <text>mkcrl</text>
+        </name>
+      </transition>
+      <transition id="jojeq">
+        <name>
+          <text>jojeq</text>
+        </name>
+      </transition>
+      <transition id="ulnlh">
+        <name>
+          <text>ulnlh</text>
+        </name>
+      </transition>
+      <transition id="gonjj">
+        <name>
+          <text>gonjj</text>
+        </name>
+      </transition>
+      <transition id="egijk">
+        <name>
+          <text>egijk</text>
+        </name>
+      </transition>
+      <transition id="uaydc">
+        <name>
+          <text>uaydc</text>
+        </name>
+      </transition>
+      <transition id="sqvlm">
+        <name>
+          <text>sqvlm</text>
+        </name>
+      </transition>
+      <transition id="asikb">
+        <name>
+          <text>asikb</text>
+        </name>
+      </transition>
+      <transition id="whayl">
+        <name>
+          <text>whayl</text>
+        </name>
+      </transition>
+      <transition id="cwcsq">
+        <name>
+          <text>cwcsq</text>
+        </name>
+      </transition>
+      <transition id="onsky">
+        <name>
+          <text>onsky</text>
+        </name>
+      </transition>
+      <transition id="stxld">
+        <name>
+          <text>stxld</text>
+        </name>
+      </transition>
+      <transition id="vksmx">
+        <name>
+          <text>vksmx</text>
+        </name>
+      </transition>
+      <transition id="bbsam">
+        <name>
+          <text>bbsam</text>
+        </name>
+      </transition>
+      <transition id="zrrnq">
+        <name>
+          <text>zrrnq</text>
+        </name>
+      </transition>
+      <transition id="jzmpq">
+        <name>
+          <text>jzmpq</text>
+        </name>
+      </transition>
+      <transition id="tmcpy">
+        <name>
+          <text>tmcpy</text>
+        </name>
+      </transition>
+      <transition id="dircs">
+        <name>
+          <text>dircs</text>
+        </name>
+      </transition>
+      <transition id="ixfig">
+        <name>
+          <text>ixfig</text>
+        </name>
+      </transition>
+      <transition id="dwjal">
+        <name>
+          <text>dwjal</text>
+        </name>
+      </transition>
+      <transition id="lwhvh">
+        <name>
+          <text>lwhvh</text>
+        </name>
+      </transition>
+      <transition id="trfai">
+        <name>
+          <text>trfai</text>
+        </name>
+      </transition>
+      <transition id="yzfib">
+        <name>
+          <text>yzfib</text>
+        </name>
+      </transition>
+      <transition id="xnhec">
+        <name>
+          <text>xnhec</text>
+        </name>
+      </transition>
+      <transition id="cyeye">
+        <name>
+          <text>cyeye</text>
+        </name>
+      </transition>
+      <transition id="hwbbq">
+        <name>
+          <text>hwbbq</text>
+        </name>
+      </transition>
+      <transition id="vkmtf">
+        <name>
+          <text>vkmtf</text>
+        </name>
+      </transition>
+      <transition id="oriqm">
+        <name>
+          <text>oriqm</text>
+        </name>
+      </transition>
+      <transition id="nqidr">
+        <name>
+          <text>nqidr</text>
+        </name>
+      </transition>
+      <transition id="unjnb">
+        <name>
+          <text>unjnb</text>
+        </name>
+      </transition>
+      <transition id="nbgzz">
+        <name>
+          <text>nbgzz</text>
+        </name>
+      </transition>
+      <transition id="auiel">
+        <name>
+          <text>auiel</text>
+        </name>
+      </transition>
+      <transition id="vyiam">
+        <name>
+          <text>vyiam</text>
+        </name>
+      </transition>
+      <transition id="ezxne">
+        <name>
+          <text>ezxne</text>
+        </name>
+      </transition>
+      <transition id="qwwdl">
+        <name>
+          <text>qwwdl</text>
+        </name>
+      </transition>
+      <transition id="eahrf">
+        <name>
+          <text>eahrf</text>
+        </name>
+      </transition>
+      <transition id="ivrcl">
+        <name>
+          <text>ivrcl</text>
+        </name>
+      </transition>
+      <transition id="wmoqq">
+        <name>
+          <text>wmoqq</text>
+        </name>
+      </transition>
+      <transition id="fqpjh">
+        <name>
+          <text>fqpjh</text>
+        </name>
+      </transition>
+      <transition id="rkefb">
+        <name>
+          <text>rkefb</text>
+        </name>
+      </transition>
+      <transition id="dvpmb">
+        <name>
+          <text>dvpmb</text>
+        </name>
+      </transition>
+      <transition id="mlons">
+        <name>
+          <text>mlons</text>
+        </name>
+      </transition>
+      <transition id="djaso">
+        <name>
+          <text>djaso</text>
+        </name>
+      </transition>
+      <transition id="vdomr">
+        <name>
+          <text>vdomr</text>
+        </name>
+      </transition>
+      <transition id="gipol">
+        <name>
+          <text>gipol</text>
+        </name>
+      </transition>
+      <transition id="wwyxy">
+        <name>
+          <text>wwyxy</text>
+        </name>
+      </transition>
+      <transition id="xwhbg">
+        <name>
+          <text>xwhbg</text>
+        </name>
+      </transition>
+      <transition id="dcxbi">
+        <name>
+          <text>dcxbi</text>
+        </name>
+      </transition>
+      <transition id="wadci">
+        <name>
+          <text>wadci</text>
+        </name>
+      </transition>
+      <transition id="qlbku">
+        <name>
+          <text>qlbku</text>
+        </name>
+      </transition>
+      <transition id="jcnjq">
+        <name>
+          <text>jcnjq</text>
+        </name>
+      </transition>
+      <transition id="igiir">
+        <name>
+          <text>igiir</text>
+        </name>
+      </transition>
+      <transition id="fbmva">
+        <name>
+          <text>fbmva</text>
+        </name>
+      </transition>
+      <transition id="brluh">
+        <name>
+          <text>brluh</text>
+        </name>
+      </transition>
+      <transition id="xuksm">
+        <name>
+          <text>xuksm</text>
+        </name>
+      </transition>
+      <transition id="wnsag">
+        <name>
+          <text>wnsag</text>
+        </name>
+      </transition>
+      <transition id="papqv">
+        <name>
+          <text>papqv</text>
+        </name>
+      </transition>
+      <transition id="syicj">
+        <name>
+          <text>syicj</text>
+        </name>
+      </transition>
+      <transition id="qfcnv">
+        <name>
+          <text>qfcnv</text>
+        </name>
+      </transition>
+      <transition id="jixbc">
+        <name>
+          <text>jixbc</text>
+        </name>
+      </transition>
+      <transition id="bexxq">
+        <name>
+          <text>bexxq</text>
+        </name>
+      </transition>
+      <transition id="fbtgs">
+        <name>
+          <text>fbtgs</text>
+        </name>
+      </transition>
+      <transition id="wljof">
+        <name>
+          <text>wljof</text>
+        </name>
+      </transition>
+      <transition id="jcqnp">
+        <name>
+          <text>jcqnp</text>
+        </name>
+      </transition>
+      <transition id="vmysa">
+        <name>
+          <text>vmysa</text>
+        </name>
+      </transition>
+      <transition id="cbnda">
+        <name>
+          <text>cbnda</text>
+        </name>
+      </transition>
+      <transition id="tysru">
+        <name>
+          <text>tysru</text>
+        </name>
+      </transition>
+      <transition id="aevxj">
+        <name>
+          <text>aevxj</text>
+        </name>
+      </transition>
+      <transition id="opyru">
+        <name>
+          <text>opyru</text>
+        </name>
+      </transition>
+      <transition id="bdhcw">
+        <name>
+          <text>bdhcw</text>
+        </name>
+      </transition>
+      <transition id="skvxn">
+        <name>
+          <text>skvxn</text>
+        </name>
+      </transition>
+      <transition id="gtpki">
+        <name>
+          <text>gtpki</text>
+        </name>
+      </transition>
+      <transition id="blppb">
+        <name>
+          <text>blppb</text>
+        </name>
+      </transition>
+      <transition id="ghsus">
+        <name>
+          <text>ghsus</text>
+        </name>
+      </transition>
+      <transition id="eedsc">
+        <name>
+          <text>eedsc</text>
+        </name>
+      </transition>
+      <transition id="bafuf">
+        <name>
+          <text>bafuf</text>
+        </name>
+      </transition>
+      <transition id="fyjpb">
+        <name>
+          <text>fyjpb</text>
+        </name>
+      </transition>
+      <transition id="fppdw">
+        <name>
+          <text>fppdw</text>
+        </name>
+      </transition>
+      <transition id="qzkbf">
+        <name>
+          <text>qzkbf</text>
+        </name>
+      </transition>
+      <transition id="ooszh">
+        <name>
+          <text>ooszh</text>
+        </name>
+      </transition>
+      <transition id="zzgcy">
+        <name>
+          <text>zzgcy</text>
+        </name>
+      </transition>
+      <transition id="vbnyu">
+        <name>
+          <text>vbnyu</text>
+        </name>
+      </transition>
+      <transition id="soazi">
+        <name>
+          <text>soazi</text>
+        </name>
+      </transition>
+      <transition id="gpxam">
+        <name>
+          <text>gpxam</text>
+        </name>
+      </transition>
+      <arc id="134527462245888" source="p3" target="nqidr"/>
+      <arc id="134527462282240" source="lrjlq" target="p5"/>
+      <arc id="134527462260224" source="bexxq" target="p3"/>
+      <arc id="134527462178304" source="p3" target="zrrnq"/>
+      <arc id="134527462278656" source="p3" target="cyeye"/>
+      <arc id="134527462173712" source="p3" target="igiir"/>
+      <arc id="134527462252048" source="p2" target="mkcrl"/>
+      <arc id="134527462281232" source="jzmpq" target="p5"/>
+      <arc id="134527462248464" source="p3" target="wljof"/>
+      <arc id="134527462277648" source="p2" target="qlzrr"/>
+      <arc id="134527462259216" source="p2" target="bexxq"/>
+      <arc id="134527462254624" source="gipol" target="p5"/>
+      <arc id="134527462247456" source="vbnyu" target="p2"/>
+      <arc id="134527462251040" source="p3" target="dvpmb"/>
+      <arc id="134527462258208" source="p1" target="xnhec"/>
+      <arc id="134527462280224" source="cbnda" target="p5"/>
+      <arc id="134527462168112" source="p2" target="sqvlm"/>
+      <arc id="134527462250032" source="p3" target="ghsus"/>
+      <arc id="134527462171696" source="p2" target="eahrf"/>
+      <arc id="134527462246448" source="tysru" target="p5"/>
+      <arc id="134527462253616" source="ulnlh" target="p2"/>
+      <arc id="134527462279216" source="wwyxy" target="p5"/>
+      <arc id="134527462259776" source="p2" target="ooszh"/>
+      <arc id="134527462256192" source="qwwdl" target="p2"/>
+      <arc id="134527462170688" source="p3" target="ivrcl"/>
+      <arc id="134527462252608" source="nyhix" target="p5"/>
+      <arc id="134527462278208" source="p3" target="vkmtf"/>
+      <arc id="134527462281792" source="p2" target="blppb"/>
+      <arc id="134527462244432" source="fyjpb" target="p5"/>
+      <arc id="134527462176848" source="p2" target="djaso"/>
+      <arc id="134527462255184" source="whayl" target="p5"/>
+      <arc id="134527462248016" source="p3" target="hjxsf"/>
+      <arc id="134527462251600" source="getwq" target="p5"/>
+      <arc id="134527462258768" source="p3" target="rtvwv"/>
+      <arc id="134527462277200" source="ixfig" target="p2"/>
+      <arc id="134527462280784" source="p3" target="papqv"/>
+      <arc id="134527462168672" source="sqvlm" target="p3"/>
+      <arc id="134527462175840" source="p1" target="trfai"/>
+      <arc id="134527462247008" source="p3" target="tmcpy"/>
+      <arc id="134527462250592" source="dircs" target="p2"/>
+      <arc id="134527462279776" source="p3" target="jzmpq"/>
+      <arc id="134527462257760" source="p2" target="brluh"/>
+      <arc id="134527462282352" source="cwcsq" target="p5"/>
+      <arc id="134527462256752" source="p2" target="nbgzz"/>
+      <arc id="134527462278768" source="uaydc" target="p5"/>
+      <arc id="134527462249584" source="skvxn" target="p5"/>
+      <arc id="134527462260336" source="ohbfy" target="p3"/>
+      <arc id="134527462252160" source="zzgcy" target="p3"/>
+      <arc id="134527462281344" source="fqpjh" target="p5"/>
+      <arc id="134527462277760" source="eahrf" target="p3"/>
+      <arc id="134527462177408" source="rqwng" target="p5"/>
+      <arc id="134527462255744" source="p3" target="jcqnp"/>
+      <arc id="134527462259328" source="qlbku" target="p3"/>
+      <arc id="134527462280336" source="hwbbq" target="p5"/>
+      <arc id="134527462251152" source="wljof" target="p5"/>
+      <arc id="134527462247568" source="gonjj" target="p2"/>
+      <arc id="134527462254736" source="p3" target="egijk"/>
+      <arc id="134527462258320" source="jixbc" target="p3"/>
+      <arc id="134527462175392" source="p3" target="fppdw"/>
+      <arc id="134527462246560" source="wadci" target="p5"/>
+      <arc id="134527462250144" source="vdomr" target="p5"/>
+      <arc id="134527462253728" source="p1" target="aevxj"/>
+      <arc id="134527462279328" source="dwjal" target="p5"/>
+      <arc id="134527462257312" source="p3" target="rkefb"/>
+      <arc id="134527462281904" source="qlzrr" target="p3"/>
+      <arc id="134527462249136" source="fbmva" target="p5"/>
+      <arc id="134527462245552" source="rfvgn" target="p3"/>
+      <arc id="134527462256304" source="soazi" target="p2"/>
+      <arc id="134527462259888" source="bbsam" target="p3"/>
+      <arc id="134527462174384" source="p2" target="msbaj"/>
+      <arc id="134527462278320" source="p2" target="onsky"/>
+      <arc id="134527462277312" source="p3" target="cbnda"/>
+      <arc id="134527462258880" source="lwhvh" target="p5"/>
+      <arc id="134527462244544" source="vyiam" target="p5"/>
+      <arc id="134527462248128" source="p1" target="qwwdl"/>
+      <arc id="134527462251712" source="p3" target="abevl"/>
+      <arc id="134527462255296" source="auiel" target="p5"/>
+      <arc id="134527462280896" source="ivrcl" target="p5"/>
+      <arc id="134527462139088" source="p3" target="jcnjq"/>
+      <arc id="134527462250704" source="p3" target="wmoqq"/>
+      <arc id="134527462175952" source="xwhbg" target="p2"/>
+      <arc id="134527462279888" source="vkmtf" target="p5"/>
+      <arc id="134527462254288" source="stxld" target="p5"/>
+      <arc id="134527462257872" source="bdhcw" target="p3"/>
+      <arc id="134527462174944" source="p3" target="wnsag"/>
+      <arc id="134527462178528" source="p3" target="fyjpb"/>
+      <arc id="134527462246112" source="p1" target="vbnyu"/>
+      <arc id="134527462249696" source="p3" target="yzfib"/>
+      <arc id="134527462278880" source="cyeye" target="p5"/>
+      <arc id="134527462260448" source="p1" target="ixfig"/>
+      <arc id="134527462173936" source="igiir" target="p5"/>
+      <arc id="134527462259440" source="p3" target="ezxne"/>
+      <arc id="134527462245104" source="dcxbi" target="p2"/>
+      <arc id="134527462248688" source="p3" target="mlons"/>
+      <arc id="134527462252272" source="mkcrl" target="p3"/>
+      <arc id="134527462255856" source="p2" target="bbsam"/>
+      <arc id="134527462277872" source="p3" target="lrjlq"/>
+      <arc id="134527462281456" source="p3" target="bafuf"/>
+      <arc id="134527462176512" source="p3" target="asikb"/>
+      <arc id="134527462258432" source="p2" target="opyru"/>
+      <arc id="134527462251264" source="dvpmb" target="p5"/>
+      <arc id="134527462254848" source="oriqm" target="p5"/>
+      <arc id="134527462280448" source="p3" target="fbtgs"/>
+      <arc id="134527462250256" source="ghsus" target="p5"/>
+      <arc id="134527462279440" source="p2" target="jojeq"/>
+      <arc id="134527462168336" source="p3" target="eedsc"/>
+      <arc id="134527462253840" source="p2" target="unjnb"/>
+      <arc id="134527462245664" source="p1" target="qzkbf"/>
+      <arc id="134527462249248" source="p3" target="whayl"/>
+      <arc id="134527462252832" source="qfcnv" target="p5"/>
+      <arc id="134527462260000" source="ooszh" target="p3"/>
+      <arc id="134527462278432" source="msbaj" target="p3"/>
+      <arc id="134527462282016" source="blppb" target="p3"/>
+      <arc id="134527462281008" source="papqv" target="p5"/>
+      <arc id="134527462177072" source="djaso" target="p3"/>
+      <arc id="134527462251824" source="eedsc" target="p5"/>
+      <arc id="134527462248240" source="hjxsf" target="p5"/>
+      <arc id="134527462258992" source="rtvwv" target="p5"/>
+      <arc id="134527462277424" source="zrrnq" target="p5"/>
+      <arc id="134527462176064" source="trfai" target="p2"/>
+      <arc id="134527462247232" source="tmcpy" target="p5"/>
+      <arc id="134527462250816" source="vksmx" target="p5"/>
+      <arc id="134527462254400" source="p3" target="gipol"/>
+      <arc id="134527462257984" source="brluh" target="p3"/>
+      <arc id="134527462280000" source="p3" target="vmysa"/>
+      <arc id="134527462256976" source="nbgzz" target="p3"/>
+      <arc id="134527462178640" source="p3" target="vyiam"/>
+      <arc id="134527462246224" source="p3" target="syicj"/>
+      <arc id="134527462249808" source="p2" target="zzgcy"/>
+      <arc id="134527462253392" source="p1" target="ulnlh"/>
+      <arc id="134527462260560" source="xnhec" target="p2"/>
+      <arc id="134527462278992" source="p3" target="wwyxy"/>
+      <arc id="134527462255968" source="jcqnp" target="p5"/>
+      <arc id="134527462277984" source="p2" target="gpxam"/>
+      <arc id="134527462248800" source="nqidr" target="p5"/>
+      <arc id="134527462252384" source="p3" target="nyhix"/>
+      <arc id="134527462281568" source="vmysa" target="p5"/>
+      <arc id="134527462251376" source="p3" target="getwq"/>
+      <arc id="134527462247792" source="p3" target="vksmx"/>
+      <arc id="134527462254960" source="egijk" target="p5"/>
+      <arc id="134527462258544" source="gtpki" target="p3"/>
+      <arc id="134527462169456" source="p2" target="xuksm"/>
+      <arc id="134527462280560" source="pfjcc" target="p5"/>
+      <arc id="134527462168448" source="jcnjq" target="p5"/>
+      <arc id="134527462175616" source="fppdw" target="p5"/>
+      <arc id="134527462172032" source="p3" target="tysru"/>
+      <arc id="134527462250368" source="p1" target="dircs"/>
+      <arc id="134527462253952" source="aevxj" target="p2"/>
+      <arc id="134527462257536" source="rkefb" target="p5"/>
+      <arc id="134527462279552" source="gpxam" target="p3"/>
+      <arc id="134527462282128" source="p3" target="cwcsq"/>
+      <arc id="134527462249360" source="p3" target="skvxn"/>
+      <arc id="134527462256528" source="unjnb" target="p3"/>
+      <arc id="134527462245776" source="p2" target="bdhcw"/>
+      <arc id="134527462260112" source="p2" target="ohbfy"/>
+      <arc id="134527462278544" source="onsky" target="p3"/>
+      <arc id="134527462244768" source="p3" target="lwhvh"/>
+      <arc id="134527462177184" source="p3" target="rqwng"/>
+      <arc id="134527462248352" source="p3" target="vdomr"/>
+      <arc id="134527462251936" source="abevl" target="p5"/>
+      <arc id="134527462255520" source="p2" target="gtpki"/>
+      <arc id="134527462259104" source="p2" target="qlbku"/>
+      <arc id="134527462277536" source="p3" target="pfjcc"/>
+      <arc id="134527462281120" source="p3" target="fqpjh"/>
+      <arc id="134527462250928" source="wmoqq" target="p5"/>
+      <arc id="134527462280112" source="p3" target="hwbbq"/>
+      <arc id="134527462247344" source="p1" target="gonjj"/>
+      <arc id="134527462254512" source="syicj" target="p5"/>
+      <arc id="134527462258096" source="p2" target="jixbc"/>
+      <arc id="134527462175168" source="wnsag" target="p5"/>
+      <arc id="134527462246336" source="p3" target="wadci"/>
+      <arc id="134527462253504" source="qzkbf" target="p2"/>
+      <arc id="134527462249920" source="yzfib" target="p5"/>
+      <arc id="134527462279104" source="p3" target="dwjal"/>
+      <arc id="134527462245328" source="p2" target="rfvgn"/>
+      <arc id="134527462256080" source="p1" target="soazi"/>
+      <arc id="134527462248912" source="mlons" target="p5"/>
+      <arc id="134527462278096" source="xuksm" target="p3"/>
+      <arc id="134527462259664" source="ezxne" target="p5"/>
+      <arc id="134527462281680" source="bafuf" target="p5"/>
+      <arc id="134527462176736" source="asikb" target="p5"/>
+      <arc id="134527462255072" source="p3" target="auiel"/>
+      <arc id="134527462247904" source="p3" target="fbmva"/>
+      <arc id="134527462251488" source="p3" target="qfcnv"/>
+      <arc id="134527462258656" source="opyru" target="p3"/>
+      <arc id="134527462173152" source="p3" target="uaydc"/>
+      <arc id="134527462280672" source="fbtgs" target="p5"/>
+      <arc id="134527462279664" source="jojeq" target="p3"/>
+      <arc id="134527462168560" source="p1" target="dcxbi"/>
+      <arc id="134527462175728" source="p1" target="xwhbg"/>
+      <arc id="134527462246896" source="p3" target="oriqm"/>
+      <arc id="134527462254064" source="p3" target="stxld"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="p5">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>

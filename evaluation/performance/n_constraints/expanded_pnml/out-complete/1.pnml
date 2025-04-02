@@ -1,0 +1,209 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="imported_1732622875.573075" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <name>
+      <text>imported_1732622875.573075</text>
+    </name>
+    <page id="n0">
+      <place id="fltma">
+        <name>
+          <text>
+          </text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+        <graphics>
+          <position x="120.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <place id="rhstj">
+        <name>
+          <text>rhstj</text>
+        </name>
+      </place>
+      <place id="xucrn">
+        <name>
+          <text>xucrn</text>
+        </name>
+      </place>
+      <place id="jkocj">
+        <name>
+          <text>jkocj</text>
+        </name>
+      </place>
+      <place id="ckvbg">
+        <name>
+          <text>
+          </text>
+        </name>
+        <graphics>
+          <position x="320.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <place id="cqflu">
+        <name>
+          <text>cqflu</text>
+        </name>
+      </place>
+      <place id="ifglx">
+        <name>
+          <text>ifglx</text>
+        </name>
+      </place>
+      <place id="guyyr">
+        <name>
+          <text>guyyr</text>
+        </name>
+      </place>
+      <place id="pgmng">
+        <name>
+          <text>pgmng</text>
+        </name>
+      </place>
+      <place id="vfvml">
+        <name>
+          <text>vfvml</text>
+        </name>
+      </place>
+      <place id="bhnwx">
+        <name>
+          <text>bhnwx</text>
+        </name>
+      </place>
+      <place id="phiha">
+        <name>
+          <text>phiha</text>
+        </name>
+      </place>
+      <place id="epzhu">
+        <name>
+          <text>epzhu</text>
+        </name>
+      </place>
+      <place id="rvfqy">
+        <name>
+          <text>rvfqy</text>
+        </name>
+      </place>
+      <transition id="fxgsj">
+        <name>
+          <text>fxgsj</text>
+        </name>
+      </transition>
+      <transition id="momcg">
+        <name>
+          <text>momcg</text>
+        </name>
+      </transition>
+      <transition id="eoxyg">
+        <name>
+          <text>eoxyg</text>
+        </name>
+      </transition>
+      <transition id="wzlqo">
+        <name>
+          <text>cbwfu</text>
+        </name>
+      </transition>
+      <transition id="lembk">
+        <name>
+          <text>lembk</text>
+        </name>
+      </transition>
+      <transition id="mkone">
+        <name>
+          <text>mkone</text>
+        </name>
+      </transition>
+      <transition id="fxyyu">
+        <name>
+          <text>fxyyu</text>
+        </name>
+      </transition>
+      <transition id="lhftp">
+        <name>
+          <text>qvrsp</text>
+        </name>
+      </transition>
+      <transition id="mbmaw">
+        <name>
+          <text>edfwh</text>
+        </name>
+      </transition>
+      <transition id="xkeln">
+        <name>
+          <text>toauy</text>
+        </name>
+      </transition>
+      <transition id="t1">
+        <name>
+          <text>t1</text>
+        </name>
+      </transition>
+      <transition id="qpggs">
+        <name>
+          <text>qpggs</text>
+        </name>
+      </transition>
+      <transition id="dtpyy">
+        <name>
+          <text>dtpyy</text>
+        </name>
+      </transition>
+      <transition id="goqnw">
+        <name>
+          <text>dkwuv</text>
+        </name>
+      </transition>
+      <transition id="aoniv">
+        <name>
+          <text>hgfpu</text>
+        </name>
+      </transition>
+      <arc id="135374643647488" source="mkone" target="jkocj"/>
+      <arc id="135374643648384" source="dtpyy" target="ifglx"/>
+      <arc id="135374643647376" source="vfvml" target="t1"/>
+      <arc id="135374643760272" source="guyyr" target="momcg"/>
+      <arc id="135374643648272" source="cqflu" target="dtpyy"/>
+      <arc id="135374651859232" source="rhstj" target="fxyyu"/>
+      <arc id="135374643648160" source="phiha" target="qpggs"/>
+      <arc id="135374643649056" source="aoniv" target="epzhu"/>
+      <arc id="135374643709744" source="pgmng" target="mbmaw"/>
+      <arc id="135374651858992" source="lembk" target="rhstj"/>
+      <arc id="135374643760048" source="fxyyu" target="guyyr"/>
+      <arc id="135374643648048" source="eoxyg" target="phiha"/>
+      <arc id="135374643648944" source="rvfqy" target="aoniv"/>
+      <arc id="135374643647040" source="mkone" target="vfvml"/>
+      <arc id="135374643161664" source="lhftp" target="xucrn"/>
+      <arc id="135374643647936" source="jkocj" target="eoxyg"/>
+      <arc id="135374643648832" source="wzlqo" target="ifglx"/>
+      <arc id="135374650601552" source="ifglx" target="momcg"/>
+      <arc id="135374643646928" source="goqnw" target="epzhu"/>
+      <arc id="135374643210448" source="fltma" target="lhftp"/>
+      <arc id="135374643208528" source="fxgsj" target="ckvbg"/>
+      <arc id="135374643709264" source="momcg" target="pgmng"/>
+      <arc id="135374643618896" source="xkeln" target="xucrn"/>
+      <arc id="135376191863120" source="pgmng" target="xkeln"/>
+      <arc id="135374643647824" source="cqflu" target="goqnw"/>
+      <arc id="135374643648720" source="rvfqy" target="wzlqo"/>
+      <arc id="135374643191904" source="lembk" target="cqflu"/>
+      <arc id="135374643600352" source="mbmaw" target="ckvbg"/>
+      <arc id="135374643647712" source="bhnwx" target="qpggs"/>
+      <arc id="135374643648608" source="qpggs" target="rvfqy"/>
+      <arc id="135374643161840" source="xucrn" target="lembk"/>
+      <arc id="135374650306416" source="fltma" target="fxgsj"/>
+      <arc id="135374643647600" source="t1" target="bhnwx"/>
+      <arc id="135374643648496" source="epzhu" target="mkone"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="ckvbg">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>
