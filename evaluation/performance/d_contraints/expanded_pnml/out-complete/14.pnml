@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="imported_1732819492.192017" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <name>
+      <text>imported_1732819492.192017</text>
+    </name>
+    <page id="n0">
+      <place id="p1">
+        <name>
+          <text>
+          </text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+        <graphics>
+          <position x="120.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <place id="p3">
+        <name>
+          <text>
+          </text>
+        </name>
+        <graphics>
+          <position x="530.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <place id="p5">
+        <name>
+          <text>
+          </text>
+        </name>
+        <graphics>
+          <position x="760.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <place id="p2">
+        <name>
+          <text>
+          </text>
+        </name>
+        <graphics>
+          <position x="320.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <transition id="bbkla">
+        <name>
+          <text>bbkla</text>
+        </name>
+      </transition>
+      <transition id="vziuy">
+        <name>
+          <text>vziuy</text>
+        </name>
+      </transition>
+      <transition id="fkrnf">
+        <name>
+          <text>fkrnf</text>
+        </name>
+      </transition>
+      <transition id="ipdmc">
+        <name>
+          <text>ipdmc</text>
+        </name>
+      </transition>
+      <transition id="kgnkr">
+        <name>
+          <text>kgnkr</text>
+        </name>
+      </transition>
+      <transition id="jcnjq">
+        <name>
+          <text>jcnjq</text>
+        </name>
+      </transition>
+      <transition id="wpnxi">
+        <name>
+          <text>wpnxi</text>
+        </name>
+      </transition>
+      <transition id="jvmfh">
+        <name>
+          <text>jvmfh</text>
+        </name>
+      </transition>
+      <transition id="rjbjj">
+        <name>
+          <text>rjbjj</text>
+        </name>
+      </transition>
+      <transition id="hmxkb">
+        <name>
+          <text>hmxkb</text>
+        </name>
+      </transition>
+      <transition id="sqvlm">
+        <name>
+          <text>sqvlm</text>
+        </name>
+      </transition>
+      <transition id="pbzor">
+        <name>
+          <text>pbzor</text>
+        </name>
+      </transition>
+      <transition id="qxvsk">
+        <name>
+          <text>qxvsk</text>
+        </name>
+      </transition>
+      <transition id="ffpml">
+        <name>
+          <text>ffpml</text>
+        </name>
+      </transition>
+      <transition id="nchal">
+        <name>
+          <text>nchal</text>
+        </name>
+      </transition>
+      <transition id="mrnzt">
+        <name>
+          <text>mrnzt</text>
+        </name>
+      </transition>
+      <transition id="ockxl">
+        <name>
+          <text>ockxl</text>
+        </name>
+      </transition>
+      <transition id="othmc">
+        <name>
+          <text>othmc</text>
+        </name>
+      </transition>
+      <arc id="134527462168448" source="jcnjq" target="p5"/>
+      <arc id="134527462169344" source="p3" target="ipdmc"/>
+      <arc id="134527462170240" source="vziuy" target="p5"/>
+      <arc id="134527462171136" source="mrnzt" target="p2"/>
+      <arc id="134527462172032" source="fkrnf" target="p5"/>
+      <arc id="134527461730320" source="p2" target="hmxkb"/>
+      <arc id="134527468990736" source="p2" target="bbkla"/>
+      <arc id="134527461728016" source="bbkla" target="p3"/>
+      <arc id="134527462169232" source="qxvsk" target="p5"/>
+      <arc id="134527462168336" source="p3" target="ockxl"/>
+      <arc id="134527462170128" source="p3" target="pbzor"/>
+      <arc id="134527462171920" source="jvmfh" target="p5"/>
+      <arc id="134527462171808" source="p3" target="fkrnf"/>
+      <arc id="134527462170912" source="p1" target="mrnzt"/>
+      <arc id="134527462168224" source="p3" target="vziuy"/>
+      <arc id="134527462169120" source="p3" target="jvmfh"/>
+      <arc id="134527462168112" source="p2" target="sqvlm"/>
+      <arc id="134527462169008" source="p3" target="qxvsk"/>
+      <arc id="134527462169904" source="ockxl" target="p5"/>
+      <arc id="134527462171696" source="nchal" target="p2"/>
+      <arc id="134527461698112" source="hmxkb" target="p3"/>
+      <arc id="134527462170688" source="wpnxi" target="p5"/>
+      <arc id="134527462172480" source="kgnkr" target="p2"/>
+      <arc id="134527462168784" source="othmc" target="p3"/>
+      <arc id="134527462171472" source="p1" target="nchal"/>
+      <arc id="134527462139088" source="p3" target="jcnjq"/>
+      <arc id="134527462170576" source="pbzor" target="p5"/>
+      <arc id="134527462169680" source="p3" target="rjbjj"/>
+      <arc id="134527462172368" source="ffpml" target="p2"/>
+      <arc id="134527462170464" source="p3" target="wpnxi"/>
+      <arc id="134527462168672" source="sqvlm" target="p3"/>
+      <arc id="134527462169568" source="ipdmc" target="p5"/>
+      <arc id="134527462172256" source="p1" target="kgnkr"/>
+      <arc id="134527462172144" source="p1" target="ffpml"/>
+      <arc id="134527462168560" source="p2" target="othmc"/>
+      <arc id="134527462170352" source="rjbjj" target="p5"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="p5">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>

@@ -1,10 +1,8 @@
 #test memusage time exec
 evaluation/performance/d_contraints/expanded_pnml/out-extra/*
-evaluation/performance/d_contraints/expanded_pnml/out-complete/*
-
 
 evaluation/performance/n_constraints/expanded_pnml/out-extra/*
-evaluation/performance/n_constraints/expanded_pnml/out-complete/*
+
 
 #eventlogs
 evaluation/performance/realworld/logs/*
@@ -18,7 +16,7 @@ src/old/*
 src/__pycache__/*
 
 
-
+evaluation/bisimulation/dump/*
 
 evaluation/diagnostics/benchmarking/*
 evaluation/diagnostics/extra/*

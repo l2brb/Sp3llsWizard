@@ -1,0 +1,277 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="imported_1732819492.192017" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <name>
+      <text>imported_1732819492.192017</text>
+    </name>
+    <page id="n0">
+      <place id="p1">
+        <name>
+          <text>
+          </text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+        <graphics>
+          <position x="120.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <place id="p3">
+        <name>
+          <text>
+          </text>
+        </name>
+        <graphics>
+          <position x="530.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <place id="p5">
+        <name>
+          <text>
+          </text>
+        </name>
+        <graphics>
+          <position x="760.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <place id="p2">
+        <name>
+          <text>
+          </text>
+        </name>
+        <graphics>
+          <position x="320.0" y="210.0"/>
+          <dimension x="40.0" y="40.0"/>
+        </graphics>
+      </place>
+      <transition id="bbkla">
+        <name>
+          <text>bbkla</text>
+        </name>
+      </transition>
+      <transition id="zmfxe">
+        <name>
+          <text>zmfxe</text>
+        </name>
+      </transition>
+      <transition id="wdykb">
+        <name>
+          <text>wdykb</text>
+        </name>
+      </transition>
+      <transition id="yfbrg">
+        <name>
+          <text>yfbrg</text>
+        </name>
+      </transition>
+      <transition id="vziuy">
+        <name>
+          <text>vziuy</text>
+        </name>
+      </transition>
+      <transition id="riuvy">
+        <name>
+          <text>riuvy</text>
+        </name>
+      </transition>
+      <transition id="brbue">
+        <name>
+          <text>brbue</text>
+        </name>
+      </transition>
+      <transition id="trfai">
+        <name>
+          <text>trfai</text>
+        </name>
+      </transition>
+      <transition id="djaso">
+        <name>
+          <text>djaso</text>
+        </name>
+      </transition>
+      <transition id="zgvxj">
+        <name>
+          <text>zgvxj</text>
+        </name>
+      </transition>
+      <transition id="xwhbg">
+        <name>
+          <text>xwhbg</text>
+        </name>
+      </transition>
+      <transition id="rqwng">
+        <name>
+          <text>rqwng</text>
+        </name>
+      </transition>
+      <transition id="fmxer">
+        <name>
+          <text>fmxer</text>
+        </name>
+      </transition>
+      <transition id="jcnjq">
+        <name>
+          <text>jcnjq</text>
+        </name>
+      </transition>
+      <transition id="igiir">
+        <name>
+          <text>igiir</text>
+        </name>
+      </transition>
+      <transition id="gbqxx">
+        <name>
+          <text>gbqxx</text>
+        </name>
+      </transition>
+      <transition id="wpnxi">
+        <name>
+          <text>wpnxi</text>
+        </name>
+      </transition>
+      <transition id="ijtdh">
+        <name>
+          <text>ijtdh</text>
+        </name>
+      </transition>
+      <transition id="elpnw">
+        <name>
+          <text>elpnw</text>
+        </name>
+      </transition>
+      <transition id="wnsag">
+        <name>
+          <text>wnsag</text>
+        </name>
+      </transition>
+      <transition id="sqvlm">
+        <name>
+          <text>sqvlm</text>
+        </name>
+      </transition>
+      <transition id="asikb">
+        <name>
+          <text>asikb</text>
+        </name>
+      </transition>
+      <transition id="fppdw">
+        <name>
+          <text>fppdw</text>
+        </name>
+      </transition>
+      <transition id="ffpml">
+        <name>
+          <text>ffpml</text>
+        </name>
+      </transition>
+      <transition id="nvfqr">
+        <name>
+          <text>nvfqr</text>
+        </name>
+      </transition>
+      <transition id="zniyy">
+        <name>
+          <text>zniyy</text>
+        </name>
+      </transition>
+      <transition id="ncuvh">
+        <name>
+          <text>ncuvh</text>
+        </name>
+      </transition>
+      <transition id="nchal">
+        <name>
+          <text>nchal</text>
+        </name>
+      </transition>
+      <transition id="rkonx">
+        <name>
+          <text>rkonx</text>
+        </name>
+      </transition>
+      <transition id="yxnef">
+        <name>
+          <text>yxnef</text>
+        </name>
+      </transition>
+      <transition id="othmc">
+        <name>
+          <text>othmc</text>
+        </name>
+      </transition>
+      <arc id="134527462168448" source="jcnjq" target="p5"/>
+      <arc id="134527462173824" source="wdykb" target="p5"/>
+      <arc id="134527462170240" source="vziuy" target="p5"/>
+      <arc id="134527462176512" source="p3" target="asikb"/>
+      <arc id="134527462174720" source="zniyy" target="p2"/>
+      <arc id="134527462175616" source="fppdw" target="p5"/>
+      <arc id="134527462177408" source="rqwng" target="p5"/>
+      <arc id="134527462173712" source="p3" target="igiir"/>
+      <arc id="134527468990736" source="p2" target="bbkla"/>
+      <arc id="134527461728016" source="bbkla" target="p3"/>
+      <arc id="134527462176400" source="yfbrg" target="p3"/>
+      <arc id="134527462172816" source="elpnw" target="p5"/>
+      <arc id="134527462175504" source="gbqxx" target="p5"/>
+      <arc id="134527462177296" source="ncuvh" target="p5"/>
+      <arc id="134527462174608" source="p1" target="yxnef"/>
+      <arc id="134527462168224" source="p3" target="vziuy"/>
+      <arc id="134527462177184" source="p3" target="rqwng"/>
+      <arc id="134527462172704" source="riuvy" target="p5"/>
+      <arc id="134527462173600" source="p3" target="wdykb"/>
+      <arc id="134527462174496" source="p1" target="zniyy"/>
+      <arc id="134527462170016" source="p3" target="brbue"/>
+      <arc id="134527462175392" source="p3" target="fppdw"/>
+      <arc id="134527462168112" source="p2" target="sqvlm"/>
+      <arc id="134527462175280" source="p3" target="gbqxx"/>
+      <arc id="134527462170800" source="p3" target="riuvy"/>
+      <arc id="134527462171696" source="nchal" target="p2"/>
+      <arc id="134527462172592" source="p3" target="elpnw"/>
+      <arc id="134527462174384" source="nvfqr" target="p5"/>
+      <arc id="134527462176176" source="p2" target="yfbrg"/>
+      <arc id="134527462169904" source="p3" target="zgvxj"/>
+      <arc id="134527462177072" source="djaso" target="p3"/>
+      <arc id="134527462170688" source="wpnxi" target="p5"/>
+      <arc id="134527462173376" source="zmfxe" target="p3"/>
+      <arc id="134527462175168" source="wnsag" target="p5"/>
+      <arc id="134527462176064" source="trfai" target="p2"/>
+      <arc id="134527462169792" source="p2" target="rkonx"/>
+      <arc id="134527462176960" source="rkonx" target="p3"/>
+      <arc id="134527462168784" source="othmc" target="p3"/>
+      <arc id="134527462171472" source="p1" target="nchal"/>
+      <arc id="134527462139088" source="p3" target="jcnjq"/>
+      <arc id="134527462175056" source="brbue" target="p5"/>
+      <arc id="134527462174160" source="p3" target="nvfqr"/>
+      <arc id="134527462172368" source="ffpml" target="p2"/>
+      <arc id="134527462176848" source="p2" target="djaso"/>
+      <arc id="134527462175952" source="xwhbg" target="p2"/>
+      <arc id="134527462169680" source="p3" target="fmxer"/>
+      <arc id="134527462177744" source="ijtdh" target="p5"/>
+      <arc id="134527462170464" source="p3" target="wpnxi"/>
+      <arc id="134527462168672" source="sqvlm" target="p3"/>
+      <arc id="134527462177632" source="fmxer" target="p5"/>
+      <arc id="134527462174944" source="p3" target="wnsag"/>
+      <arc id="134527462173152" source="p2" target="zmfxe"/>
+      <arc id="134527462175840" source="p1" target="trfai"/>
+      <arc id="134527462176736" source="asikb" target="p5"/>
+      <arc id="134527462172144" source="p1" target="ffpml"/>
+      <arc id="134527462168560" source="p2" target="othmc"/>
+      <arc id="134527462174832" source="yxnef" target="p2"/>
+      <arc id="134527462173040" source="p3" target="ncuvh"/>
+      <arc id="134527462173936" source="igiir" target="p5"/>
+      <arc id="134527462175728" source="p1" target="xwhbg"/>
+      <arc id="134527462176624" source="zgvxj" target="p5"/>
+      <arc id="134527462177520" source="p3" target="ijtdh"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="p5">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>
