@@ -11,7 +11,7 @@ def write_to_json(output, output_path: str):
 
 
 def main():
-    pnml_file_path = r"C:\Users\lucab\Documents\main\Sp3llsWizard\evaluation\bisimulation\wn\complete_pm4py.pnml"
+    pnml_file_path = "/home/l2brb/main/DECpietro/evaluation/bisimulation/wn/complete_pm4py.pnml"
 
     workflow_net = petri_parser.parse_wn_from_pnml(pnml_file_path)
 
@@ -20,10 +20,9 @@ def main():
     # 2 dec_translator
     if workflow_net:
         output = dec_translator.translate_to_DEC(workflow_net, model_name)
-        #print(output)
+        print(output)
 
-        #write_to_json(output, r"C:\Users\lucab\Documents\main\Sp3llsWizard\evaluation\bisimulation\wn\complete_dev_pm4py.json")
-
+        write_to_json(output, "/home/l2brb/main/DECpietro/evaluation/bisimulation/wn/complete_pm4py_test.json")
     
 if __name__ == "__main__":
     main()

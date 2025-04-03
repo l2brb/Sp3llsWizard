@@ -54,7 +54,6 @@ def get_atmost1_constraint(workflow_net):
                     atmost1_constraints.add(transition_name)
                 print(atmost1_constraints)
              
-
                 # transition_name = transition_by_id.get(arc.get("target"))
                 # if transition_name:
                 #     atmost1_constraints.add(transition_name)
@@ -80,8 +79,8 @@ def get_end_constraint(workflow_net):
         
     # dict id -> name
     transition_by_id = {
-        t.get("id"): t.get("name")
-        for t in workflow_net.get("transitions", [])
+        t.get("id"): (t.get("name"), t.get("is_tau", False))
+        for t in workflow_net["transitions"]
     }
     
     # set to collect names
@@ -90,7 +89,7 @@ def get_end_constraint(workflow_net):
     for place in workflow_net.get("places", []):
         if place["id"] not in arc_sources: 
             # NEW HERE
-
+            for arc in arcs_by_target.get(place["id"], []):
                 transition_id = arc.get("source")
                 transition_name, is_tau = transition_by_id.get(transition_id, (None, False))
                 print(transition_name, is_tau)
@@ -99,8 +98,8 @@ def get_end_constraint(workflow_net):
                     end_constraints.add("END")
                 elif transition_name:
                     end_constraints.add(transition_name)
-        
-            # for arc in arcs_by_target.get(place["id"], []): 
+                print(end_constraints)
+
             #     transition_name = transition_by_id.get(arc.get("source"))
             #     if transition_name:
             #         end_constraints.add(transition_name)
@@ -114,53 +113,119 @@ def get_end_constraint(workflow_net):
 ################################################# RELATION CONSTRAINTS
 
 # Alternate Precedence [if B prev A and not B in between]
-#@profile
-def get_alternate_precedence(workflow_net):
 
+def get_alternate_precedence(workflow_net):
+    # transition names mapping 
     transition_names = {t["id"]: t["name"] for t in workflow_net["transitions"]}
+    # set of place IDs
     places_ids = set(place["id"] for place in workflow_net["places"])
 
     arcs_from_place = {}
     arcs_to_place = {}
-
+    # group arcs by source and target
     for arc in workflow_net["arcs"]:
         source = arc["source"]
         target = arc["target"]
-
+    
         if source in places_ids:
-            arcs_from_place.setdefault(source, set()).add(target)
+            arcs_from_place.setdefault(source, set()).add(target) # source -> target
         if target in places_ids:
-            arcs_to_place.setdefault(target, set()).add(source)
+            arcs_to_place.setdefault(target, set()).add(source) # target -> source
 
-    altprecedence_constraints = []
-    mapping = {}
+    altprecedence_constraints = [] 
+    #mapping = {}
 
-
+    # Iterate over places to find constraints
     for place in workflow_net["places"]:
         if place.get("initialMarking") == "1" or place.get("finalMarking") == "1":
-            continue 
-
+            continue # skip initial and final places
+            
         place_id = place["id"]
-
+           
         predecessors = arcs_to_place.get(place_id, set())
         successors = arcs_from_place.get(place_id, set())
-
+        
         pred_transitions = {transition_names[t_id] for t_id in predecessors if t_id in transition_names}
         succ_transitions = {transition_names[t_id] for t_id in successors if t_id in transition_names}
-
+    
+        # append constraints
         if pred_transitions and succ_transitions:
             altprecedence_constraints.append({
                 "template": "AlternatePrecedence",
                 "parameters": [list(pred_transitions), list(succ_transitions)],
             })
 
-
-        key = tuple(pred_transitions) if len(pred_transitions) > 1 else next(iter(pred_transitions), None)
-        if key is not None:
-            mapping.setdefault(key, []).append(list(succ_transitions))
+        # # Create a mapping of predecessors to successors
+        # key = tuple(pred_transitions) if len(pred_transitions) > 1 else next(iter(pred_transitions), None)
+        # if key is not None:
+        #     mapping.setdefault(key, []).append(list(succ_transitions))
 
     #print(mapping)
     return altprecedence_constraints
+
+################################################# AltPrec Silent Synthesis
+
+# Replacement Finder
+
+def compute_silent_replacements(altprec_constraints, silent_labels):
+    """
+    For every invisible in target, catch successors not silent. 
+    Substitution mapping
+    """
+    replacements = {}
+    for constraint in altprec_constraints:
+        pred, succ = constraint["parameters"]
+        
+        for t in pred:
+            if t in silent_labels:
+                replacements.setdefault(t, set()).update({x for x in succ if x not in silent_labels})
+    return replacements
+
+# Apply replacements
+
+# TODO: errore nella sostituzione, raggruppo gli and e faccio casino
+def apply_replacements(altprec_constraints, replacements, silent_labels):
+    """
+    Substitute with the replacements in the previous mapping step.
+    """
+    processed = []
+    for constraint in altprec_constraints:
+        pred, succ = constraint["parameters"]
+        new_pred = set()
+        new_succ = set()
+        # Left susbtitution
+        for t in pred:
+            if t in silent_labels:
+                new_pred |= replacements.get(t, {t})
+            else:
+                new_pred.add(t)
+        # Right substitution
+        for t in succ:
+            if t in silent_labels:
+                new_succ |= replacements.get(t, {t})
+            else:
+                new_succ.add(t)
+        processed.append({
+            "template": "AlternatePrecedence",
+            "parameters": [list(new_pred), list(new_succ)]
+        })
+    return processed
+
+def get_alternate_precedence_with_closure(workflow_net):
+    """
+    Substitute with the replacements in the previous mapping step.
+    """
+    altprec_constraints = get_alternate_precedence(workflow_net)
+    
+    # Silent transitions
+    silent_labels = {t["name"] for t in workflow_net["transitions"] if t.get("is_tau", False)}
+   
+    # Substitution mapping
+    replacements = compute_silent_replacements(altprec_constraints, silent_labels)
+
+    # Apply replacements
+    final_constraints = apply_replacements(altprec_constraints, replacements, silent_labels)
+    return final_constraints
 
 
 
@@ -172,13 +237,13 @@ def translate_to_DEC(workflow_net, model_name):
     tasks = [transition["name"] for transition in workflow_net["transitions"] if not transition["is_tau"]]
 
     end_constraint = get_end_constraint(workflow_net)
-    alternate_precedence = get_alternate_precedence(workflow_net)
+    alternate_precedence = get_alternate_precedence_with_closure(workflow_net)
     atmost1 = get_atmost1_constraint(workflow_net)
 
     constraints = []
     constraints.extend(end_constraint)
     constraints.extend(atmost1)
-    #constraints.extend(alternate_precedence)
+    constraints.extend(alternate_precedence)
 
     output = {
         "name": model_name,

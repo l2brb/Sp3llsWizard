@@ -2,20 +2,24 @@ import os
 import json
 import csv
 import typer
+import pyfiglet
 from rich import print
 from rich.console import Console
+from rich.progress import Progress
 
 from src.utils import petri_parser
 from src.declare_translator import dec_translator 
 
 
+console = Console()
 
 app = typer.Typer(
     help="""
-Welocme to Sp3llsWizard, a tool for synthesizing DECLARE specifications from safe and sound Workflow net casting three spells.
+Welcome to Sp3llsWizard, a tool for synthesizing DECLARE specifications from safe and sound Workflow net casting three spells.
 """
 )
-console = Console()
+# ascii_banner = pyfiglet.figlet_format("Sp3llsWizard")
+# console.print(ascii_banner, style="blue")
 
 
 def write_to_json(output, output_path: str):
@@ -37,7 +41,7 @@ def export_wn(
     output_path: str = typer.Option(..., help="File path WF.json")
 ):
     """
-    Export WF net to JSON.
+    Export the parsed Workflow net into a JSON file.
     """
     workflow_net = petri_parser.parse_wn_from_pnml(pnml_file)
     if workflow_net:
@@ -48,23 +52,30 @@ def export_wn(
         console.print("[bold red]Error in WN parsing.[/bold red]")
 
 @app.command()
-def run_algorithm(
+def declare_synth(
     pnml_file: str = typer.Option(..., help="File path .pnml"),
     output_format: str = typer.Option("json", help="Output format: 'json' o 'csv'"),
     output_path: str = typer.Option(..., help="output file path")
 ):
     """
-    Cast the three spells and save output to csv or json
+    Cast the three spells and save output to CSV or JSON.
     """
-    workflow_net = petri_parser.parse_wn_from_pnml(pnml_file)
-    if not workflow_net:
-        console.print("[bold red]Error in WN parsing[/bold red]")
-        raise typer.Exit()
+    with Progress() as progress:
+        # Task 1: Parsing PNML File
+        parse_task = progress.add_task("[cyan]Parsing PNML file...", total=1)
+        workflow_net = petri_parser.parse_wn_from_pnml(pnml_file)
+        progress.update(parse_task, advance=1)
 
-    model_name = os.path.basename(pnml_file)
-    console.print(f"[cyan]DECLARE Synthesizing {model_name}...[/cyan]")
+        if not workflow_net:
+            console.print("[bold red]Error in WN parsing[/bold red]")
+            raise typer.Exit()
 
-    output = dec_translator.translate_to_DEC(workflow_net, model_name)
+        # Task 2: DECLARE Synthesis
+        synth_task = progress.add_task("[cyan]Synthesizing DECLARE constraints...", total=1)
+        model_name = os.path.basename(pnml_file)
+        output = dec_translator.translate_to_DEC(workflow_net, model_name)
+        progress.update(synth_task, advance=1)
+
     console.print("[bold green]DECLARE Constraints generated succesfully.[/bold green]")
 
     if output_format.lower() == "json":
@@ -73,6 +84,19 @@ def run_algorithm(
         write_to_csv(output, output_path)
     else:
         console.print("[bold red]Invalid output format. Use 'json' or 'csv'.[/bold red]")
+
+
+
+@app.command()
+def declare_silent_synth(
+    pnml_file: str = typer.Option(..., help="File path .pnml"),
+    output_format: str = typer.Option("json", help="Output format: 'json' o 'csv'"),
+    output_path: str = typer.Option(..., help="output file path")
+):
+    """
+    Cast the three (+ 1) spells and save output to CSV or JSON.
+    This algorithm removes the silent transitions eventually present in the input model.
+    """
 
 
 if __name__ == "__main__":

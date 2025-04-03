@@ -14,6 +14,7 @@ extra/*
 
 src/old/*
 src/__pycache__/*
+/src/declare_translator/__pycache__/*
 
 
 evaluation/bisimulation/dump/*

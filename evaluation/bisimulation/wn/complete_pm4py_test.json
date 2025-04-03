@@ -5,10 +5,8 @@
         "J",
         "G",
         "K",
-        "19",
         "I",
         "B",
-        "t1",
         "A",
         "C",
         "M",
@@ -35,8 +33,8 @@
             "template": "AlternatePrecedence",
             "parameters": [
                 [
-                    "F",
-                    "E"
+                    "E",
+                    "F"
                 ],
                 [
                     "I"
@@ -47,7 +45,8 @@
             "template": "AlternatePrecedence",
             "parameters": [
                 [
-                    "t1"
+                    "K",
+                    "M"
                 ],
                 [
                     "K"
@@ -73,7 +72,7 @@
                     "M"
                 ],
                 [
-                    "19"
+                    "J"
                 ]
             ]
         },
@@ -81,7 +80,7 @@
             "template": "AlternatePrecedence",
             "parameters": [
                 [
-                    "19"
+                    "J"
                 ],
                 [
                     "J"
@@ -107,8 +106,8 @@
                     "C"
                 ],
                 [
-                    "F",
-                    "E"
+                    "E",
+                    "F"
                 ]
             ]
         },
@@ -119,7 +118,8 @@
                     "I"
                 ],
                 [
-                    "t1"
+                    "K",
+                    "M"
                 ]
             ]
         },
@@ -127,7 +127,8 @@
             "template": "AlternatePrecedence",
             "parameters": [
                 [
-                    "t1"
+                    "K",
+                    "M"
                 ],
                 [
                     "M"
@@ -141,7 +142,7 @@
                     "K"
                 ],
                 [
-                    "19"
+                    "J"
                 ]
             ]
         }
