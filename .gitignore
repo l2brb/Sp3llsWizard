@@ -1,7 +1,6 @@
 #test memusage time exec
-evaluation/performance/d_contraints/expanded_pnml/out-extra/*
-
-evaluation/performance/n_constraints/expanded_pnml/out-extra/*
+evaluation/performance/set_cardinality/expanded_pnml/out-extra/*
+evaluation/performance/formula_size/expanded_pnml/out-extra/*
 
 
 #eventlogs

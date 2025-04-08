@@ -2,10 +2,11 @@
 
 ## Sp3llsWizard: From Sound Workflow Nets to LTLf Declarative Specifications by Casting Three Spells
 
-This repository contains the implementation and experimental toolbench presented in the paper “From Sound Workflow Nets to LTLf Declarative Specifications by Casting Three Spells". The work introduces a systematic approach to synthesize declarative process specifications from safe and sound Workflow nets, ensuring that the original behavior is fully preserved. Here, you'll find the complete toolchain and experimental setups, tested on both synthetic and real-world datasets, analyzing the correctness and performance of the implemented algorithm. 
+This repository contains the implementation and experimental toolbench presented in the paper “From Sound Workflow Nets to LTLf Declarative Specifications by Casting Three Spells".🧙
+The work presents a systematic approach to synthesizing declarative process specifications from safe and sound Workflow Nets (WF-nets), ensuring full behavioral preservation. Here you’ll find the complete toolchain and experimental setup, tested on both synthetic and real-world datasets, used to analyze the correctness and performance of the implemented algorithm.
 
 ## Overview
-Sp3llsWizard is an approach designed to formally synthesize DECLARE specifications from sound Workflow nets. The proof-of-concept implememtation automatically generates LTLf constraints from an input Workflow net in the form of a .pnml file.
+**Sp3llsWizard** is a framework to formally synthesize **DECLARE** specifications from **safe and sound Workflow Nets**. The proof-of-concept implementation automatically generates LTLf constraints from an input WF-net provided as a `.pnml` file.
 
 ## Repository
 
@@ -14,13 +15,21 @@ The main content of the repository is structured as follows:
     -  [/src/declare_translator](https://github.com/l2brb/Sp3llsWizard/tree/main/src/declare_translator): contains the algorithm's implementation
 -  [/evaluation/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation): folder containing datasets and results of our tests
     - [/evaluation/bisimualtion/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/bisimulation) contains the bisimulation test data 
-    - [/evaluation/setcardinality/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/d_contraints) includes the memory usage and execution time tests data 
-    - [/evaluation/formulasize/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/n_constraints) includes the memory usage and execution time tests data 
+    - [/evaluation/set_cardinality/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/d_contraints) includes the memory usage and execution time tests data 
+    - [/evaluation/formula_size/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/formula_size) includes the memory usage and execution time tests data 
     - [/evaluation/realworld/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/realworld) includes the memory usage and execution time tests data for real-world process models
 -  [/diagnostics/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/conformance): folder containing a downstream application of our algorithm for process diagnostics
 
-## Setup and run
-As a requirement, python 3.13.0 should be installed on your machine. To launch the .sh test files, you have to run them on a Unix-based system with a BASH shell. No installation procedure is required. This version has been tested on both a Ubuntu Linux (24.04.1) and a Mac OS X machine.
+## ⚙️ Setup & Execution
+
+- Requires **Python 3.13.0**
+- Tested on:
+  - Ubuntu Linux 24.04.1
+  - macOS
+  - Windows 11 (via WSL or Unix-like shell)
+- No installation is required — just clone, create the python environment with the dependecies and run.
+
+### Run the algorithm:
 
 ```
 python3 main.py run-algorithm --pnml-file ${INPUT_WN}  --output-format json --output-path ${OUTPUT_PATH}
