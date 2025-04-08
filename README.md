@@ -20,7 +20,7 @@ The main content of the repository is structured as follows:
     - [/evaluation/realworld/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/realworld) includes the memory usage and execution time tests data for real-world process models
 -  [/diagnostics/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/conformance): folder containing a downstream application of our algorithm for process diagnostics
 
-## ⚙️ Setup & Execution
+## Setup & Execution
 
 - Requires **Python 3.13.0**
 - Tested on:
@@ -70,7 +70,6 @@ expansion rule.
 ![formulasize](formulasize.png)
 
 
-
 #### Real-world process model testing 
 
 To evaluate the performance of our algorithm on real process models, we run memory usage and execution time tests on workflow nets derived from real-world event logs. First, we generate workflow nets by applying the Inductive Miner algorithm, available in pm4py.
@@ -78,7 +77,6 @@ To evaluate the performance of our algorithm on real process models, we run memo
 ```
 python3 miner.py
 ```
-
 
 We run our algorithm on the generated workflow nets to derive the corresponding Declare specification in JSON format. The scripts record memory usage (in MB) and execution time (in ms) during processing.
 
@@ -100,9 +98,22 @@ We run our algorithm on the generated workflow nets to derive the corresponding 
 
 ### Process Diagnostics
 
+The goal of this module is the use of the sysnthesized constraints as determinants of process diagnosis. We aim to demonstrate how we can single out the violated rules constituting the process model behavior, thereby spotlighting points of non-compliance with processes.
+
+To this end, we developed a dedicated diagnostic module that extends a declarative specification miner for constraint checking via the replay of runs on semi-symbolic automata.
+
 ```
 ./run-MINERfulFitnessChecker-unstable.sh -iLF ${INPUT_LOG} -iLF xes -oCSV ${OUTPUT_PATH}
 ```
+As a test case, we use real-world data from **BPIC 15\_5f**. After preprocessing (975 valid traces), the diagnostic pipeline works as follows:
+
+- *Discover* a process model from the event log using the α-algorithm.
+- *Translate* the resulting Workflow Net into a DECLARE specification via our synthesis algorithm.
+- *Check* the original event log against the declarative model to observe which constraints are satisfied or violated.
+
+
+
+
 
 
 
