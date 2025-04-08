@@ -1,10 +1,12 @@
 ![logo](logo.png)
 
 ![Python version](https://img.shields.io/badge/python-3.13-blue?logo=python&logoColor=white)
+![Conda](https://img.shields.io/badge/environment-conda-blue?logo=anaconda)
 ![License](https://img.shields.io/github/license/l2brb/Sp3llsWizard?color=green)
-![Last commit](https://img.shields.io/github/last-commit/l2brb/Sp3llsWizard)
 ![Repo size](https://img.shields.io/github/repo-size/l2brb/Sp3llsWizard)
 ![Issues](https://img.shields.io/github/issues/l2brb/Sp3llsWizard)
+[![arXiv](https://img.shields.io/badge/arXiv-2504.05114-b31b1b.svg)](https://arxiv.org/abs/2504.05114)
+
 
 
 ## Sp3llsWizard: From Sound Workflow Nets to LTLf Declarative Specifications by Casting Three Spells
