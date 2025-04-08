@@ -34,14 +34,14 @@ The main content of the repository is structured as follows:
     -  [/src/declare_translator](https://github.com/l2brb/Sp3llsWizard/tree/main/src/declare_translator): contains the algorithm's implementation
 -  [/evaluation/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation): folder containing datasets and results of our tests
     - [/evaluation/bisimulation/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/bisimulation) contains the bisimulation test data 
-    - [/evaluation/set_cardinality/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/d_contraints) includes the memory usage and execution time tests data 
-    - [/evaluation/formula_size/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/formula_size) includes the memory usage and execution time tests data 
+    - [/evaluation/set_cardinality/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/performance/set_cardinality) includes the memory usage and execution time tests data 
+    - [/evaluation/formula_size/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/performance/formula_size) includes the memory usage and execution time tests data 
     - [/evaluation/realworld/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/realworld) includes the memory usage and execution time tests data for real-world process models
 -  [/diagnostics/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/conformance): folder containing a downstream application of our algorithm for process diagnostics
 
-## Setup & Execution
+### Setup & Execution
 
-- Requires **Python 3.13.0**
+- Requires **Python 3.13.0** or newer.
 - Tested on:
   - Ubuntu Linux 24.04.1
   - macOS
@@ -50,9 +50,11 @@ The main content of the repository is structured as follows:
 
 ### Run the algorithm:
 
-```
+```bash
 python3 main.py run-algorithm --pnml-file ${INPUT_WN}  --output-format json --output-path ${OUTPUT_PATH}
 ```
+![execution](execution.png)
+
 
 ## Evaluation
 We evaluated our algorithm on a range of both synthetic and real-world data. For the real-world testbed, we take as input processes discovered by a well-known imperative process mining algorithm from a collection of openly available event logs. We conducted the performance tests on an AMD Ryzen 9 8945HS CPU at 4.00 GHz with 32 GB RAM running Ubuntu 24.04.1. 
@@ -76,7 +78,7 @@ We rely on an **iterative expansion mechanism**, implemented in [/expansion_rule
 4. Loops are added for iteration.
 
 This process is repeated for **1000 iterations**, each time expanding the net and applying our algorithm.  
-Results are available in [/cardinality_test_results/](https://github.com/l2brb/Sp3llsWizard\evaluation\performance\n_constraints\results).
+Results are available in [/cardinality_test_results/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/performance/set_cardinality).
 
 ![cardinality](cardinality.png)
 
@@ -93,7 +95,7 @@ expansion rule.
 
 To evaluate the performance of our algorithm on real process models, we run memory usage and execution time tests on workflow nets derived from real-world event logs. First, we generate workflow nets by applying the Inductive Miner algorithm, available in pm4py.
 
-```
+```bash
 python3 miner.py
 ```
 
@@ -121,7 +123,7 @@ The goal of this module is the use of the synthesized constraints as determinant
 
 To this end, we developed a dedicated diagnostic module that extends a declarative specification miner for constraint checking via the replay of runs on semi-symbolic automata.
 
-```
+```bash
 ./run-MINERfulFitnessChecker-unstable.sh -iLF ${INPUT_LOG} -iLF xes -oCSV ${OUTPUT_PATH}
 ```
 As a test case, we use real-world data from **BPIC 15\_5f**. After preprocessing (975 valid traces), the diagnostic pipeline works as follows:
