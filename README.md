@@ -1,5 +1,12 @@
 ![logo](logo.png)
 
+![Python version](https://img.shields.io/badge/python-3.13-blue?logo=python&logoColor=white)
+![License](https://img.shields.io/github/license/l2brb/Sp3llsWizard?color=green)
+![Last commit](https://img.shields.io/github/last-commit/l2brb/Sp3llsWizard)
+![Repo size](https://img.shields.io/github/repo-size/l2brb/Sp3llsWizard)
+![Issues](https://img.shields.io/github/issues/l2brb/Sp3llsWizard)
+
+
 ## Sp3llsWizard: From Sound Workflow Nets to LTLf Declarative Specifications by Casting Three Spells
 
 This repository contains the implementation and experimental toolbench presented in the paper “From Sound Workflow Nets to LTLf Declarative Specifications by Casting Three Spells".🧙
@@ -8,13 +15,24 @@ The work presents a systematic approach to synthesizing declarative process spec
 ## Overview
 **Sp3llsWizard** is a framework to formally synthesize **DECLARE** specifications from **safe and sound Workflow Nets**. The proof-of-concept implementation automatically generates LTLf constraints from an input WF-net provided as a `.pnml` file.
 
+## Quickstart
+
+```bash
+git clone https://github.com/l2brb/Sp3llsWizard.git
+cd Sp3llsWizard
+conda create -n sp3lls-env python=3.13 -y
+conda activate sp3lls-env
+pip install -r requirements.txt
+python3 main.py run-algorithm --pnml-file ${INPUT_WN}  --output-format json --output-path ${OUTPUT_PATH}
+```
+
 ## Repository
 
 The main content of the repository is structured as follows:
 -  [/src/](https://github.com/l2brb/Sp3llsWizard/tree/main/src): the root folder of the implementation source code
     -  [/src/declare_translator](https://github.com/l2brb/Sp3llsWizard/tree/main/src/declare_translator): contains the algorithm's implementation
 -  [/evaluation/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation): folder containing datasets and results of our tests
-    - [/evaluation/bisimualtion/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/bisimulation) contains the bisimulation test data 
+    - [/evaluation/bisimulation/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/bisimulation) contains the bisimulation test data 
     - [/evaluation/set_cardinality/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/d_contraints) includes the memory usage and execution time tests data 
     - [/evaluation/formula_size/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/formula_size) includes the memory usage and execution time tests data 
     - [/evaluation/realworld/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/realworld) includes the memory usage and execution time tests data for real-world process models
@@ -27,7 +45,7 @@ The main content of the repository is structured as follows:
   - Ubuntu Linux 24.04.1
   - macOS
   - Windows 11 (via WSL or Unix-like shell)
-- No installation is required — just clone, create the python environment with the dependecies and run.
+- No installation is required — just clone, create the python environment with the dependencies and run.
 
 ### Run the algorithm:
 
@@ -98,7 +116,7 @@ We run our algorithm on the generated workflow nets to derive the corresponding 
 
 ### Process Diagnostics
 
-The goal of this module is the use of the sysnthesized constraints as determinants of process diagnosis. We aim to demonstrate how we can single out the violated rules constituting the process model behavior, thereby spotlighting points of non-compliance with processes.
+The goal of this module is the use of the synthesized constraints as determinants of process diagnosis. We aim to demonstrate how we can single out the violated rules constituting the process model behavior, thereby spotlighting points of non-compliance with processes.
 
 To this end, we developed a dedicated diagnostic module that extends a declarative specification miner for constraint checking via the replay of runs on semi-symbolic automata.
 
