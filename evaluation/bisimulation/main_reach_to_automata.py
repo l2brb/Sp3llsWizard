@@ -1,6 +1,6 @@
 import pm4py
 import graphviz
-from automa import build_automaton_from_ts
+from evaluation.bisimulation.dump.automa import build_automaton_from_ts
 from exporter import save_automaton_to_json
 from exporter import save_automaton_to_dot
 

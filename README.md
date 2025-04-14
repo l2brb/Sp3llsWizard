@@ -62,7 +62,7 @@ We evaluated our algorithm on a range of both synthetic and real-world data. For
 
 #### Bisimulation
 
-To experimentally validate the correctness of our approach in the transmission and computation phases, we run a [bisimualtion](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/bisimulation) test. To this end, we . We run the stand-alone MINERful... . The convergence results are available in [/output/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/bisimulation) in the form of a workflow net.
+To experimentally validate the correctness of our approach, we run a [bisimualtion](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/bisimulation) test. To this end, we . We run the stand-alone MINERful... . The bisimulation test results are available in [/output/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/bisimulation).
 
 ### Performance analysis
 
