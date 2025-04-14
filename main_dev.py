@@ -3,7 +3,7 @@ import json
 import csv
 
 from src.utils import petri_parser
-from src.declare_translator import dec_translator_silentremover as dec_translator
+from src.declare_translator import dec_translator_silent as dec_translator
 
 def write_to_json(output, output_path: str):
     with open(output_path, 'w') as file:

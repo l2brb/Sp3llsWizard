@@ -9,7 +9,7 @@ from rich.progress import Progress
 
 from src.utils import petri_parser
 from src.declare_translator import dec_translator 
-from src.declare_translator import dec_translator_silentremover
+from src.declare_translator import dec_translator_silent
 
 
 console = Console()
@@ -111,7 +111,7 @@ def declare_silent_synth(
         # DECLARE Synthesizer
         synth_task = progress.add_task("[cyan]Synthesizing DECLARE constraints...", total=1)
         model_name = os.path.basename(pnml_file)
-        output = dec_translator_silentremover.translate_to_DEC(workflow_net, model_name)
+        output = dec_translator_silent.translate_to_DEC(workflow_net, model_name)
         progress.update(synth_task, advance=1)
 
     console.print("[bold green]DECLARE Constraints generated succesfully.[/bold green]")
