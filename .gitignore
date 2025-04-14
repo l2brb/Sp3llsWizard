@@ -5,6 +5,7 @@ evaluation/performance/formula_size/expanded_pnml/out-extra/*
 
 #eventlogs
 evaluation/performance/realworld/logs/*
+evaluation/performance/realworld/dump/*
 
 evaluation/diagnostics/clustering/dump*
 
@@ -12,8 +13,10 @@ evaluation/diagnostics/clustering/dump*
 extra/*
 
 src/old/*
+src/declare_translator/alternative_versions/*
 src/__pycache__/*
 /src/declare_translator/__pycache__/*
+
 
 
 evaluation/bisimulation/dump/*

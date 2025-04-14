@@ -1,24 +1,26 @@
 {
-    "name": "REVISED EASIER.pnml",
+    "name": "complete_pm4py.pnml",
     "tasks": [
-        "J",
-        "K",
-        "A",
-        "",
-        "B",
-        "C",
         "E",
-        "M",
-        "F",
+        "J",
         "G",
+        "K",
+        "t2",
         "I",
-        ""
+        "B",
+        "t1",
+        "A",
+        "C",
+        "M",
+        "F"
     ],
     "constraints": [
         {
             "template": "End",
             "parameters": [
-                []
+                [
+                    "B"
+                ]
             ]
         },
         {
@@ -33,10 +35,11 @@
             "template": "AlternatePrecedence",
             "parameters": [
                 [
-                    "M"
+                    "E",
+                    "F"
                 ],
                 [
-                    ""
+                    "I"
                 ]
             ]
         },
@@ -44,8 +47,53 @@
             "template": "AlternatePrecedence",
             "parameters": [
                 [
-                    "G",
-                    "A"
+                    "t1"
+                ],
+                [
+                    "K"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "J"
+                ],
+                [
+                    "B",
+                    "G"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "M"
+                ],
+                [
+                    "t2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "t2"
+                ],
+                [
+                    "J"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "A",
+                    "G"
                 ],
                 [
                     "C"
@@ -59,20 +107,8 @@
                     "C"
                 ],
                 [
-                    "F",
-                    "E"
-                ]
-            ]
-        },
-        {
-            "template": "AlternatePrecedence",
-            "parameters": [
-                [
-                    "F",
-                    "E"
-                ],
-                [
-                    "I"
+                    "E",
+                    "F"
                 ]
             ]
         },
@@ -83,7 +119,7 @@
                     "I"
                 ],
                 [
-                    ""
+                    "t1"
                 ]
             ]
         },
@@ -91,18 +127,7 @@
             "template": "AlternatePrecedence",
             "parameters": [
                 [
-                    ""
-                ],
-                [
-                    "K"
-                ]
-            ]
-        },
-        {
-            "template": "AlternatePrecedence",
-            "parameters": [
-                [
-                    ""
+                    "t1"
                 ],
                 [
                     "M"
@@ -116,30 +141,7 @@
                     "K"
                 ],
                 [
-                    ""
-                ]
-            ]
-        },
-        {
-            "template": "AlternatePrecedence",
-            "parameters": [
-                [
-                    "J"
-                ],
-                [
-                    "G",
-                    "B"
-                ]
-            ]
-        },
-        {
-            "template": "AlternatePrecedence",
-            "parameters": [
-                [
-                    ""
-                ],
-                [
-                    "J"
+                    "t2"
                 ]
             ]
         }

@@ -256,8 +256,6 @@ def translate_to_DEC(workflow_net, model_name):
 
 
 
-
-
 #TODO: EXTRA ALTRESP IMPLEMENTATION
 
 """ 

@@ -14,9 +14,8 @@ def main():
         print("Error: no PNML path")
         sys.exit(1)
     pnml_file_path = sys.argv[1]
-    #pnml_file_path = "/home/l2brb/main/DECpietro/evaluation/realworld/models/bpic12.pnml"
+    #pnml_file_path = ""
 
-    
     tracemalloc.start()
     memory_snapshots = []
 

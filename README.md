@@ -24,7 +24,7 @@ cd Sp3llsWizard
 conda create -n sp3lls-env python=3.13 -y
 conda activate sp3lls-env
 pip install -r requirements.txt
-python3 main.py run-algorithm --pnml-file ${INPUT_WN}  --output-format json --output-path ${OUTPUT_PATH}
+python3 main.py declare-synth --pnml-file ${INPUT_WN}  --output-format json --output-path ${OUTPUT_PATH}
 ```
 
 ## Repository
@@ -51,7 +51,7 @@ The main content of the repository is structured as follows:
 ### Run the algorithm:
 
 ```bash
-python3 main.py run-algorithm --pnml-file ${INPUT_WN}  --output-format json --output-path ${OUTPUT_PATH}
+python3 main.py declare-synth --pnml-file ${INPUT_WN}  --output-format json --output-path ${OUTPUT_PATH}
 ```
 ![execution](execution.png)
 
@@ -101,20 +101,20 @@ python3 miner.py
 
 We run our algorithm on the generated workflow nets to derive the corresponding Declare specification in JSON format. The scripts record memory usage (in MB) and execution time (in ms) during processing.
 
-| **Event log** | **Trans.** | **Places** | **Nodes** | **Mem.usage [MB]** | **Exec.time [ms]** |
-|---------------|-----------:|-----------:|----------:|-------------------:|-------------------:|
-| [BPIC 12](https://doi.org/10.4121/UUID:3926DB30-F712-4394-AEBC-75976070E91F) | 78 | 54 | 174 | 19.97 | 5.11 |
-| [BPIC 13<sub>cp</sub>](https://doi.org/10.4121/UUID:C2C3B154-AB26-4B31-A0E8-8F2350DDAC11) | 19 | 54 | 44 | 19.76 | 1.70 |
-| [BPIC 13<sub>inc</sub>](https://doi.org/10.4121/UUID:500573E6-ACCC-4B0C-9576-AA5468B10CEE) | 23 | 17 | 50 | 19.89 | 2.03 |
-| [BPIC 14<sub>f</sub>](https://doi.org/10.4121/UUID:3CFA2260-F5C5-44BE-AFE1-B70D35288D6D) | 46 | 35 | 102 | 19.90 | 3.31 |
-| [BPIC 15<sub>1f</sub>](https://doi.org/10.4121/UUID:A0ADDFDA-2044-4541-A450-FDCC9FE16D17) | 135 | 89 | 286 | 20.44 | 8.39 |
-| [BPIC 15<sub>2f</sub>](https://doi.org/10.4121/UUID:63A8435A-077D-4ECE-97CD-2C76D394D99C) | 200 | 123 | 422 | 20.91 | 12.30 |
-| [BPIC 15<sub>3f</sub>](https://doi.org/uuid:ed445cdd-27d5-4d77-a1f7-59fe7360cfbe) | 178 | 122 | 396 | 20.77 | 11.49 |
-| [BPIC 15<sub>4f</sub>](https://doi.org/uuid:679b11cf-47cd-459e-a6de-9ca614e25985) | 168 | 115 | 368 | 20.55 | 11.38 |
-| [BPIC 15<sub>5f</sub>](https://doi.org/uuid:b32c6fe5-f212-4286-9774-58dd53511cf8) | 150 | 99 | 320 | 20.43 | 9.16 |
-| [BPIC 17](https://doi.org/10.4121/UUID:5F3067DF-F10B-45DA-B98B-86AE4C7A310B) | 87 | 55 | 184 | 19.91 | 5.67 |
-| [RTFMP](https://doi.org/10.4121/UUID:270FD440-1057-4FB9-89A9-B699B47990F5) | 34 | 29 | 82 | 19.81 | 3.47 |
-| [Sepsis](https://doi.org/10.4121/UUID:915D2BFB-7E84-49AD-A286-DC35F063A460) | 50 | 39 | 116 | 19.75 | 3.65 |
+| **Event log** | **Trans.** | **Places** | **Nodes** | **Mem.usage [MB]** | **Exec.time [ms]** | **Model** |
+|---------------|-----------:|-----------:|----------:|-------------------:|-------------------:|------------:|
+| [BPIC 12](https://doi.org/10.4121/UUID:3926DB30-F712-4394-AEBC-75976070E91F) | 78 | 54 | 174 | 19.97 | 5.11 | [bpic12.pnml](https://github.com/l2brb/Sp3llsWizard/blob/main/evaluation/performance/realworld/models/bpic12.pnml) |
+| [BPIC 13<sub>cp</sub>](https://doi.org/10.4121/UUID:C2C3B154-AB26-4B31-A0E8-8F2350DDAC11) | 19 | 54 | 44 | 19.76 | 1.70 | [bpic13cp.pnml](https://github.com/l2brb/Sp3llsWizard/blob/main/evaluation/performance/realworld/models/bpic13cp.pnml) |
+| [BPIC 13<sub>inc</sub>](https://doi.org/10.4121/UUID:500573E6-ACCC-4B0C-9576-AA5468B10CEE) | 23 | 17 | 50 | 19.89 | 2.03 | [bpic13inc.pnml](https://github.com/l2brb/Sp3llsWizard/blob/main/evaluation/performance/realworld/models/bpic13inc.pnml) |
+| [BPIC 14<sub>f</sub>](https://doi.org/10.4121/UUID:3CFA2260-F5C5-44BE-AFE1-B70D35288D6D) | 46 | 35 | 102 | 19.90 | 3.31 | [bpic14f.pnml](https://github.com/l2brb/Sp3llsWizard/blob/main/evaluation/performance/realworld/models/bpic14f.pnml) |
+| [BPIC 15<sub>1f</sub>](https://doi.org/10.4121/UUID:A0ADDFDA-2044-4541-A450-FDCC9FE16D17) | 135 | 89 | 286 | 20.44 | 8.39 | [bpic151f.pnml](https://github.com/l2brb/Sp3llsWizard/blob/main/evaluation/performance/realworld/models/bpic151f.pnml) |
+| [BPIC 15<sub>2f</sub>](https://doi.org/10.4121/UUID:63A8435A-077D-4ECE-97CD-2C76D394D99C) | 200 | 123 | 422 | 20.91 | 12.30 | [bpic152f.pnml](https://github.com/l2brb/Sp3llsWizard/blob/main/evaluation/performance/realworld/models/bpic152f.pnml) |
+| [BPIC 15<sub>3f</sub>](https://doi.org/uuid:ed445cdd-27d5-4d77-a1f7-59fe7360cfbe) | 178 | 122 | 396 | 20.77 | 11.49 | [bpic153f.pnml](https://github.com/l2brb/Sp3llsWizard/blob/main/evaluation/performance/realworld/models/bpic153f.pnml) |
+| [BPIC 15<sub>4f</sub>](https://doi.org/uuid:679b11cf-47cd-459e-a6de-9ca614e25985) | 168 | 115 | 368 | 20.55 | 11.38 | [bpic154f.pnml](https://github.com/l2brb/Sp3llsWizard/blob/main/evaluation/performance/realworld/models/bpic154f.pnml) |
+| [BPIC 15<sub>5f</sub>](https://doi.org/uuid:b32c6fe5-f212-4286-9774-58dd53511cf8) | 150 | 99 | 320 | 20.43 | 9.16 | [bpic155f.pnml](https://github.com/l2brb/Sp3llsWizard/blob/main/evaluation/performance/realworld/models/bpic155f.pnml) |
+| [BPIC 17](https://doi.org/10.4121/UUID:5F3067DF-F10B-45DA-B98B-86AE4C7A310B) | 87 | 55 | 184 | 19.91 | 5.67 | [bpic17.pnml](https://github.com/l2brb/Sp3llsWizard/blob/main/evaluation/performance/realworld/models/bpic17.pnml) |
+| [RTFMP](https://doi.org/10.4121/UUID:270FD440-1057-4FB9-89A9-B699B47990F5) | 34 | 29 | 82 | 19.81 | 3.47 | [rtfmp.pnml](https://github.com/l2brb/Sp3llsWizard/blob/main/evaluation/performance/realworld/models/rtfmp.pnml) |
+| [Sepsis](https://doi.org/10.4121/UUID:915D2BFB-7E84-49AD-A286-DC35F063A460) | 50 | 39 | 116 | 19.75 | 3.65 | [sepsis.pnml](https://github.com/l2brb/Sp3llsWizard/blob/main/evaluation/performance/realworld/models/sepsis.pnml) |
 
 
 ### Process Diagnostics

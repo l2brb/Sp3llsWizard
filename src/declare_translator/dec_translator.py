@@ -128,7 +128,7 @@ def get_alternate_precedence(workflow_net):
 
 ########################################################### MAIN ##########################################################
 
-# MAIN
+# MAIN translate_to_DEC
 
 def translate_to_DEC(workflow_net, model_name):
 

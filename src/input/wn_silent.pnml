@@ -166,7 +166,7 @@
       </transition>
       <transition id="19">
         <name>
-          <text>19</text>
+          <text>t2</text>
         </name>
         <graphics>
           <position x="1175.0" y="140.0"/>

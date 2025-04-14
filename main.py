@@ -9,6 +9,7 @@ from rich.progress import Progress
 
 from src.utils import petri_parser
 from src.declare_translator import dec_translator 
+from src.declare_translator import dec_translator_silentremover
 
 
 console = Console()
@@ -61,7 +62,7 @@ def declare_synth(
     Cast the three spells and save output to CSV or JSON.
     """
     with Progress() as progress:
-        # Task 1: Parsing PNML File
+        # Parsing PNML File
         parse_task = progress.add_task("[cyan]Parsing PNML file...", total=1)
         workflow_net = petri_parser.parse_wn_from_pnml(pnml_file)
         progress.update(parse_task, advance=1)
@@ -70,7 +71,7 @@ def declare_synth(
             console.print("[bold red]Error in WN parsing[/bold red]")
             raise typer.Exit()
 
-        # Task 2: DECLARE Synthesis
+        # DECLARE Synthesizer
         synth_task = progress.add_task("[cyan]Synthesizing DECLARE constraints...", total=1)
         model_name = os.path.basename(pnml_file)
         output = dec_translator.translate_to_DEC(workflow_net, model_name)
@@ -97,7 +98,30 @@ def declare_silent_synth(
     Cast the three (+ 1) spells and save output to CSV or JSON.
     This algorithm removes the silent transitions eventually present in the input model.
     """
+    with Progress() as progress:
+        # Parsing PNML File
+        parse_task = progress.add_task("[cyan]Parsing PNML file...", total=1)
+        workflow_net = petri_parser.parse_wn_from_pnml(pnml_file)
+        progress.update(parse_task, advance=1)
 
+        if not workflow_net:
+            console.print("[bold red]Error in WN parsing[/bold red]")
+            raise typer.Exit()
+
+        # DECLARE Synthesizer
+        synth_task = progress.add_task("[cyan]Synthesizing DECLARE constraints...", total=1)
+        model_name = os.path.basename(pnml_file)
+        output = dec_translator_silentremover.translate_to_DEC(workflow_net, model_name)
+        progress.update(synth_task, advance=1)
+
+    console.print("[bold green]DECLARE Constraints generated succesfully.[/bold green]")
+
+    if output_format.lower() == "json":
+        write_to_json(output, output_path)
+    elif output_format.lower() == "csv":
+        write_to_csv(output, output_path)
+    else:
+        console.print("[bold red]Invalid output format. Use 'json' or 'csv'.[/bold red]")
 
 if __name__ == "__main__":
     app()
