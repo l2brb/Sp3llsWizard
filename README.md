@@ -10,11 +10,10 @@
 
 ## Sp3llsWizard: From Sound Workflow Nets to LTLf Declarative Specifications by Casting Three Spells
 
-This repository contains the implementation and experimental toolbench presented in the paper “From Sound Workflow Nets to LTLf Declarative Specifications by Casting Three Spells".🧙
-The work presents a systematic approach to synthesizing declarative process specifications from safe and sound Workflow Nets (WF nets), ensuring full behavioral preservation. Here you’ll find the complete toolchain and experimental setup, tested on both synthetic and real-world datasets, used to analyze the correctness and performance of the implemented algorithm.
+This repository contains the implementation and experimental toolbench presented in the paper “From Sound Workflow Nets to LTLf Declarative Specifications by Casting Three Spells" 🧙 submitted at the 23rd International Conference on Business Process Management (BPM 2025).The work presents a systematic approach to synthesizing declarative process specifications from safe and sound Workflow Nets (WF nets), ensuring full behavioral preservation. Here you’ll find the complete toolchain and experimental setup, tested on both synthetic and real-world datasets, used to analyze the correctness and performance of the implemented algorithm.
 
 ## Overview
-**Sp3llsWizard** has the ability to formally synthesize **DECLARE** specifications from **safe and sound Workflow Nets**. This proof-of-concept implementation automatically generates LTLf constraints from an input WF net provided as a `.pnml` file.
+**Sp3llsWizard** has the ability to formally synthesize **DECLARE** specifications from safe and sound **Workflow Nets**. This proof-of-concept implementation automatically generates LTLf constraints from an input WF net provided as a `.pnml` file.
 
 ## Quickstart
 
@@ -70,9 +69,15 @@ To generate the Reachability FSA, execute:
 ```bash
 bisimulation.py
 ```
+This script:
+
+- Loads the WF net.
+- Constructs its Reachability Graph.
+- Converts it to an FSA suitable for bisimulation comparison.
 
 *Specification FSA*
-To generate the Specification FSA from DECLARE constraints, execute MINERful:
+To generate the Specification FSA from DECLARE constraints, execute the `MINERfulSimplifier` module included in [MINERful](https://github.com/cdc08x/MINERful/):
+
 ```bash
 ./run-MINERfulSimplifier -iSF ${INPUT_MODEL} -iSE json -autoDOT ${OUTPUT_PATH} 
 ```
