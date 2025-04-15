@@ -6,7 +6,7 @@ from exporter import save_automaton_to_dot
 
 
 # Pnml Reader
-net, im, fm = pm4py.read_pnml("/home/l2brb/main/DECpietro/evaluation/bisimulation/test/wn_silent.pnml")
+net, im, fm = pm4py.read_pnml('your_path')
 
 # Reachability graph
 reach_graph = pm4py.convert_to_reachability_graph(net, im, fm)
@@ -36,7 +36,7 @@ pm4py.save_vis_transition_system(reach_graph, 'your path')
 def main():
 
     # WF pnml reader
-    net, im, fm = pm4py.read_pnml("/home/l2brb/main/DECpietro/evaluation/bisimulation/reachability_graph/REVISED EASIER.pnml")
+    net, im, fm = pm4py.read_pnml('your_path')
     
     # Reachability graph conversion
     reach_graph = pm4py.convert_to_reachability_graph(net, im, fm)

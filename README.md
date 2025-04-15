@@ -11,10 +11,10 @@
 ## Sp3llsWizard: From Sound Workflow Nets to LTLf Declarative Specifications by Casting Three Spells
 
 This repository contains the implementation and experimental toolbench presented in the paper “From Sound Workflow Nets to LTLf Declarative Specifications by Casting Three Spells".🧙
-The work presents a systematic approach to synthesizing declarative process specifications from safe and sound Workflow Nets (WF-nets), ensuring full behavioral preservation. Here you’ll find the complete toolchain and experimental setup, tested on both synthetic and real-world datasets, used to analyze the correctness and performance of the implemented algorithm.
+The work presents a systematic approach to synthesizing declarative process specifications from safe and sound Workflow Nets (WF nets), ensuring full behavioral preservation. Here you’ll find the complete toolchain and experimental setup, tested on both synthetic and real-world datasets, used to analyze the correctness and performance of the implemented algorithm.
 
 ## Overview
-**Sp3llsWizard** is a framework to formally synthesize **DECLARE** specifications from **safe and sound Workflow Nets**. The proof-of-concept implementation automatically generates LTLf constraints from an input WF-net provided as a `.pnml` file.
+**Sp3llsWizard** has the ability to formally synthesize **DECLARE** specifications from **safe and sound Workflow Nets**. This proof-of-concept implementation automatically generates LTLf constraints from an input WF net provided as a `.pnml` file.
 
 ## Quickstart
 
@@ -32,10 +32,10 @@ python3 main.py declare-synth --pnml-file ${INPUT_WN}  --output-format json --ou
 The main content of the repository is structured as follows:
 -  [/src/](https://github.com/l2brb/Sp3llsWizard/tree/main/src): the root folder of the implementation source code
     -  [/src/declare_translator](https://github.com/l2brb/Sp3llsWizard/tree/main/src/declare_translator): contains the algorithm's implementation
--  [/evaluation/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation): folder containing datasets and results of our tests
+-  [/evaluation/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation): folder containing code, datasets and results of our tests
     - [/evaluation/bisimulation/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/bisimulation) contains the bisimulation test data 
-    - [/evaluation/set_cardinality/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/performance/set_cardinality) includes the memory usage and execution time tests data 
-    - [/evaluation/formula_size/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/performance/formula_size) includes the memory usage and execution time tests data 
+    - [/evaluation/set_cardinality/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/performance/set_cardinality) includes test data on memory usage and execution time as the cardinality of the constraint set varies.
+    - [/evaluation/formula_size/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/performance/formula_size) includes tests data on memory usage and execution time under varying constraints formula size
     - [/evaluation/realworld/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/realworld) includes the memory usage and execution time tests data for real-world process models
 -  [/diagnostics/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/conformance): folder containing a downstream application of our algorithm for process diagnostics
 
@@ -46,7 +46,7 @@ The main content of the repository is structured as follows:
   - Ubuntu Linux 24.04.1
   - macOS
   - Windows 11 (via WSL or Unix-like shell)
-- No installation is required — just clone, create the python environment with the dependencies and run.
+- No installation is required — just clone, create the python environment with dependencies and run.
 
 ### Run the algorithm:
 
@@ -62,11 +62,25 @@ We evaluated our algorithm on a range of both synthetic and real-world data. For
 
 #### Bisimulation
 
-To experimentally validate the correctness of our approach, we run a [bisimualtion](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/bisimulation) test. To this end, we . We run the stand-alone MINERful... . The bisimulation test results are available in [/output/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/bisimulation).
+To experimentally validate the correctness of our approach, we run a [bisimualtion](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/bisimulation) test. To this end, we collected a set of WF nets both from synthetic generation and literature. We performed the comparison of the reachability FSA of WF nets and the specification FSA consisting of the Declare constraints returned by our tool.
+
+*Generating Reachability FSA from WF nets*
+
+To generate the Reachability FSA, execute:
+```bash
+bisimulation.py
+```
+
+*Specification FSA*
+To generate the Specification FSA from DECLARE constraints, execute MINERful:
+```bash
+./run-MINERfulSimplifier -iSF ${INPUT_MODEL} -iSE json -autoDOT ${OUTPUT_PATH} 
+```
+This comparison allows to verify that our DECLARE specifications faithfully represent the behavior of the original Workflow Nets. The bisimulation test results are available in [/output/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/bisimulation).
 
 ### Performance analysis
 
-To evaluate the runtime memory utilization of our Sp3llsWizard implementation, we run a [performance](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/d_contraints) test, split into two different configurations.
+To evaluate the runtime memory utilization and execution time of our Sp3llsWizard implementation, we run a [performance](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/d_contraints) test, split into two different configurations.
 
 
 #### Increasing constraint-set cardinality.
@@ -85,8 +99,7 @@ Results are available in [/cardinality_test_results/](https://github.com/l2brb/S
 
 #### Increasing constraint formula size
 
-Here, we configure the test on memory usage and execution time to investigate the algorithm’s performance while handling an expanding constraints’ formula size (i.e., with an increasing number of disjuncts). To this end, we progressively broaden the Workflow net by applying the soundness-preserving conditional
-expansion rule. 
+Here, we configure the test on memory usage and execution time to investigate the algorithm’s performance while handling an expanding constraints’ formula size (i.e., with an increasing number of disjuncts). To this end, we progressively broaden the Workflow net by applying the soundness-preserving conditional expansion rule. 
 
 ![formulasize](formulasize.png)
 
@@ -119,7 +132,7 @@ We run our algorithm on the generated workflow nets to derive the corresponding 
 
 ### Process Diagnostics
 
-The goal of this module is the use of the synthesized constraints as determinants of process diagnosis. We aim to demonstrate how we can single out the violated rules constituting the process model behavior, thereby spotlighting points of non-compliance with processes.
+This module tests the usage of the synthesized constraints as determinants of process diagnosis. We aim to demonstrate how we can single out the violated rules constituting the process model behavior, thereby spotlighting points of non-compliance with processes.
 
 To this end, we developed a dedicated diagnostic module that extends a declarative specification miner for constraint checking via the replay of runs on semi-symbolic automata.
 
