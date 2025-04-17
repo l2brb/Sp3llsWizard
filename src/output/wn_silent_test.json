@@ -45,18 +45,6 @@
             "template": "AlternatePrecedence",
             "parameters": [
                 [
-                    "K",
-                    "M"
-                ],
-                [
-                    "K"
-                ]
-            ]
-        },
-        {
-            "template": "AlternatePrecedence",
-            "parameters": [
-                [
                     "J"
                 ],
                 [
@@ -70,17 +58,6 @@
             "parameters": [
                 [
                     "M"
-                ],
-                [
-                    "J"
-                ]
-            ]
-        },
-        {
-            "template": "AlternatePrecedence",
-            "parameters": [
-                [
-                    "J"
                 ],
                 [
                     "J"
@@ -118,7 +95,6 @@
                     "I"
                 ],
                 [
-                    "K",
                     "M"
                 ]
             ]
@@ -127,11 +103,10 @@
             "template": "AlternatePrecedence",
             "parameters": [
                 [
-                    "K",
-                    "M"
+                    "I"
                 ],
                 [
-                    "M"
+                    "K"
                 ]
             ]
         },

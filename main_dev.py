@@ -1,6 +1,6 @@
 import os
 import json
-import csv
+
 
 from src.utils import petri_parser
 from src.declare_translator import dec_translator_silent as dec_translator
@@ -11,7 +11,7 @@ def write_to_json(output, output_path: str):
 
 
 def main():
-    pnml_file_path = "/home/l2brb/main/DECpietro/src/input/wn_silent.pnml"
+    pnml_file_path = "your_pnml_file_path.pnml"  # Replace with your actual PNML file path
 
     workflow_net = petri_parser.parse_wn_from_pnml(pnml_file_path)
 
@@ -20,9 +20,9 @@ def main():
     # 2 dec_translator
     if workflow_net:
         output = dec_translator.translate_to_DEC(workflow_net, model_name)
-        print(output)
+        #print(output)
 
-        write_to_json(output, "/home/l2brb/main/DECpietro/src/output/wn_silent_test.json")
+        write_to_json(output, "your_output_path.json") # Replace with your output path
     
 if __name__ == "__main__":
     main()
