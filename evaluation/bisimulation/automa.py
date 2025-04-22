@@ -2,10 +2,10 @@ import pm4py
 
 class Automaton:
     def __init__(self):
-        self.states = set()  # Q
-        self.transitions = {}  # Funzione di transizione (stato, input) -> stato
-        self.initial_state = None  # q_0
-        self.final_states = set()  # Stati finali
+        self.states = set()  
+        self.transitions = {}  
+        self.initial_state = None  
+        self.final_states = set() 
 
     def add_state(self, state, is_initial=False, is_final=False):
         self.states.add(state)
