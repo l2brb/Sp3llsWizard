@@ -20,7 +20,7 @@ This repository contains the implementation and experimental toolbench presented
 ```bash
 git clone https://github.com/l2brb/Sp3llsWizard.git
 cd Sp3llsWizard
-conda create -n sp3lls-env python=3.13 -y -f environment.yml
+conda env create -n sp3lls-env -f environment.yml
 conda activate sp3lls-env
 python3 main.py declare-synth --pnml-file ${INPUT_WN}  --output-format json --output-path ${OUTPUT_PATH}
 ```
