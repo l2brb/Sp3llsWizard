@@ -1,10 +1,10 @@
-{
+    {
     "name": "well-structured_fig27_pm4py.pnml",
     "tasks": [
         "t5",
         "t2",
         "t4",
-        "prova",
+        "t1",
         "t3"
     ],
     "constraints": [
@@ -20,7 +20,7 @@
             "template": "Atmost1",
             "parameters": [
                 [
-                    "prova"
+                    "t1"
                 ]
             ]
         },
@@ -28,7 +28,7 @@
             "template": "AlternatePrecedence",
             "parameters": [
                 [
-                    "prova",
+                    "t1",
                     "t2"
                 ],
                 [
@@ -41,7 +41,7 @@
             "template": "AlternatePrecedence",
             "parameters": [
                 [
-                    "prova"
+                    "t1"
                 ],
                 [
                     "t3"

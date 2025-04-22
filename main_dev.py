@@ -3,7 +3,7 @@ import json
 
 
 from src.utils import petri_parser
-from src.declare_translator import dec_translator_silent as dec_translator
+from src.declare_translator import dec_translator as dec_translator
 
 def write_to_json(output, output_path: str):
     with open(output_path, 'w') as file:
@@ -11,7 +11,7 @@ def write_to_json(output, output_path: str):
 
 
 def main():
-    pnml_file_path = "your_pnml_file_path.pnml"  # Replace with your actual PNML file path
+    pnml_file_path = "YOUR_PATH"  
 
     workflow_net = petri_parser.parse_wn_from_pnml(pnml_file_path)
 
@@ -20,9 +20,9 @@ def main():
     # 2 dec_translator
     if workflow_net:
         output = dec_translator.translate_to_DEC(workflow_net, model_name)
-        #print(output)
+        print(output)
 
-        write_to_json(output, "your_output_path.json") # Replace with your output path
+        write_to_json(output, "YOUR_PATH") 
     
 if __name__ == "__main__":
     main()

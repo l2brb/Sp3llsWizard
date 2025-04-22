@@ -141,7 +141,7 @@ This module tests the usage of the synthesized constraints as determinants of pr
 To this end, we developed a dedicated diagnostic module that extends a declarative specification miner for constraint checking via the replay of runs on semi-symbolic automata.
 
 ```bash
-./run-MINERfulFitnessChecker-unstable.sh -iLF ${INPUT_LOG} -iLF xes -oCSV ${OUTPUT_PATH}
+./run-MINERfulFitnessChecker-unstable.sh -iLF ${INPUT_LOG} -iLF xes -iSF ${INPUT_SPECIFICATION} -iSE json -oCSV ${OUTPUT_PATH}
 ```
 As a test case, we use real-world data from **BPIC 15\_5f**. After preprocessing (975 valid traces), the diagnostic pipeline works as follows:
 

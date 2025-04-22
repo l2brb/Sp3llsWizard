@@ -1,0 +1,297 @@
+{
+    "name": "road_fines_enriched.pnml_pm4py.pnml",
+    "tasks": [
+        "Full Payment",
+        "1 Year After Creation",
+        "Add Penalty",
+        "Full Payment",
+        "Partial Payment",
+        "Send Appeal to Prefecture",
+        "Create Fine",
+        "Dismissed by Prefecture",
+        "Send for Credit Collection",
+        "60 Days After Notification",
+        "Receive Result Appeal from Prefecture",
+        "Appeal to Judge",
+        "Partial Payment",
+        "Partial Payment",
+        "Send Fine",
+        "Notify Result Appeal to Offender",
+        "Insert Fine Notification",
+        "Insert Date Appeal to Prefecture",
+        "Dismissed by Judge",
+        "90 Days After Creation"
+    ],
+    "constraints": [
+        {
+            "template": "End",
+            "parameters": [
+                [
+                    "1 Year After Creation"
+                ]
+            ]
+        },
+        {
+            "template": "Atmost1",
+            "parameters": [
+                [
+                    "Create Fine"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Appeal to Judge"
+                ],
+                [
+                    "60 Days After Notification",
+                    "Dismissed by Judge"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Appeal to Judge"
+                ],
+                [
+                    "Partial Payment",
+                    "Dismissed by Judge"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Appeal to Judge"
+                ],
+                [
+                    "Full Payment",
+                    "Dismissed by Judge"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Appeal to Judge"
+                ],
+                [
+                    "Insert Date Appeal to Prefecture",
+                    "Dismissed by Judge"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Create Fine"
+                ],
+                [
+                    "Full Payment",
+                    "Send Fine"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "90 Days After Creation"
+                ],
+                [
+                    "1 Year After Creation"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Insert Date Appeal to Prefecture"
+                ],
+                [
+                    "Send Appeal to Prefecture"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Send Appeal to Prefecture"
+                ],
+                [
+                    "Dismissed by Prefecture",
+                    "Receive Result Appeal from Prefecture"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Receive Result Appeal from Prefecture"
+                ],
+                [
+                    "Notify Result Appeal to Offender"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Partial Payment",
+                    "Add Penalty"
+                ],
+                [
+                    "Full Payment"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Partial Payment",
+                    "Add Penalty"
+                ],
+                [
+                    "Send for Credit Collection"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Send Fine"
+                ],
+                [
+                    "Full Payment",
+                    "Insert Fine Notification"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Partial Payment",
+                    "60 Days After Notification"
+                ],
+                [
+                    "Full Payment"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Partial Payment",
+                    "60 Days After Notification"
+                ],
+                [
+                    "Add Penalty"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Partial Payment",
+                    "60 Days After Notification"
+                ],
+                [
+                    "Send for Credit Collection"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Send Fine"
+                ],
+                [
+                    "90 Days After Creation"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Notify Result Appeal to Offender",
+                    "Insert Fine Notification",
+                    "Partial Payment"
+                ],
+                [
+                    "Insert Date Appeal to Prefecture"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Notify Result Appeal to Offender",
+                    "Insert Fine Notification",
+                    "Partial Payment"
+                ],
+                [
+                    "60 Days After Notification"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Notify Result Appeal to Offender",
+                    "Insert Fine Notification",
+                    "Partial Payment"
+                ],
+                [
+                    "Full Payment"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Notify Result Appeal to Offender",
+                    "Insert Fine Notification",
+                    "Partial Payment"
+                ],
+                [
+                    "Appeal to Judge"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Full Payment",
+                    "Dismissed by Prefecture",
+                    "Send for Credit Collection",
+                    "Dismissed by Judge"
+                ],
+                [
+                    "1 Year After Creation"
+                ]
+            ]
+        }
+    ]
+}

@@ -1,1 +1,75 @@
-{"name": "non-free_choice_fig24_pm4py.pnml", "tasks": ["\n          ", "\n          ", "\n          ", "\n          ", "\n          "], "constraints": [{"template": "End", "parameters": [["\n          ", "\n          "]]}, {"template": "Atmost1", "parameters": [["\n          "]]}, {"template": "AlternatePrecedence", "parameters": [["\n          "], ["\n          "]]}, {"template": "AlternatePrecedence", "parameters": [["\n          "], ["\n          "]]}, {"template": "AlternatePrecedence", "parameters": [["\n          "], ["\n          "]]}, {"template": "AlternatePrecedence", "parameters": [["\n          "], ["\n          "]]}]}
+{
+    "name": "non-free_choice_fig24.pnml",
+    "tasks": [
+        "t3",
+        "t4",
+        "t0",
+        "t1",
+        "t2"
+    ],
+    "constraints": [
+        {
+            "template": "End",
+            "parameters": [
+                [
+                    "t4",
+                    "t3"
+                ]
+            ]
+        },
+        {
+            "template": "Atmost1",
+            "parameters": [
+                [
+                    "t0"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "t0"
+                ],
+                [
+                    "t4",
+                    "t1"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "t0"
+                ],
+                [
+                    "t2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "t1"
+                ],
+                [
+                    "t3"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "t2"
+                ],
+                [
+                    "t4",
+                    "t3"
+                ]
+            ]
+        }
+    ]
+}

@@ -122,6 +122,7 @@ def get_alternate_precedence(workflow_net):
 
     arcs_from_place = {}
     arcs_to_place = {}
+
     # group arcs by source and target
     for arc in workflow_net["arcs"]:
         source = arc["source"]
@@ -230,7 +231,9 @@ def apply_replacements(altprec_constraints, replacements, silent_labels):
 
 
 def get_alternate_precedence_with_closure(workflow_net):
+    # Get the alternate precedence constraints
     altprec_constraints = get_alternate_precedence(workflow_net)
+    # print("Raw Constraints:", altprec_constraints)
     silent_labels = {t["name"] for t in workflow_net["transitions"] if t.get("is_tau", False)}
     # print("Silent Labels:", silent_labels)
     replacements = compute_silent_replacements(workflow_net, silent_labels)
