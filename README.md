@@ -10,7 +10,7 @@
 
 ## Sp3llsWizard: From Sound Workflow Nets to LTLf Declarative Specifications by Casting Three Spells
 
-This repository contains the implementation and experimental toolbench presented in the paper “From Sound Workflow Nets to LTLf Declarative Specifications by Casting Three Spells" 🧙 submitted at the 23rd International Conference on Business Process Management (BPM 2025).The work presents a systematic approach to synthesizing declarative process specifications from safe and sound Workflow Nets (WF nets), ensuring full behavioral preservation. Here you’ll find the complete toolchain and experimental setup, tested on both synthetic and real-world datasets, used to analyze the correctness and performance of the implemented algorithm.
+This repository contains the implementation and experimental toolbench presented in the paper “From Sound Workflow Nets to LTLf Declarative Specifications by Casting Three Spells" 🧙 submitted at the 23rd International Conference on Business Process Management (BPM 2025). The work presents a systematic approach to synthesizing declarative process specifications from safe and sound Workflow Nets (WF nets), ensuring full behavioral preservation. Here you’ll find the complete toolchain and experimental setup, tested on both synthetic and real-world datasets, used to analyze the correctness and performance of the implemented algorithm.
 
 ## Overview
 **Sp3llsWizard** has the ability to formally synthesize **DECLARE** specifications from safe and sound **Workflow Nets**. This proof-of-concept implementation automatically generates LTLf constraints from an input WF net provided as a `.pnml` file.
@@ -33,18 +33,18 @@ The main content of the repository is structured as follows:
 -  [/evaluation/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation): folder containing code, datasets and results of our tests
     - [/evaluation/bisimulation/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/bisimulation) contains the bisimulation test data 
     - [/evaluation/set_cardinality/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/performance/set_cardinality) includes test data on memory usage and execution time as the cardinality of the constraint set varies.
-    - [/evaluation/formula_size/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/performance/formula_size) includes tests data on memory usage and execution time under varying constraints formula size
+    - [/evaluation/formula_size/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/performance/formula_size) includes test data on memory usage and execution time under varying constraints formula size
     - [/evaluation/realworld/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/realworld) includes the memory usage and execution time tests data for real-world process models
 -  [/diagnostics/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/conformance): folder containing a downstream application of our algorithm for process diagnostics
 
 ### Setup & Execution
 
-- Running on **Python 3.13.0**.
+- Running on **Python 3.11.0**.
 - Tested on:
   - Ubuntu Linux 24.04.1
   - macOS
   - Windows 11 (via WSL or Unix-like shell)
-- No installation is required — just clone, create the python environment with dependencies and run.
+- No installation is required — just clone, create the Python environment with dependencies, and run.
 
 ### Run the algorithm:
 
@@ -60,7 +60,7 @@ We evaluated our algorithm on a range of both synthetic and real-world data. For
 
 #### Bisimulation
 
-To experimentally validate the correctness of our approach, we run a [bisimualtion](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/bisimulation) test. To this end, we collected a set of WF nets both from synthetic generation and literature. We performed the comparison of the reachability FSA of WF nets and the specification FSA consisting of the Declare constraints returned by our tool.
+To experimentally validate the correctness of our approach, we run a [bisimualtion](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/bisimulation) test. To this end, we collected a set of WF nets both from synthetic generation and the literature. We performed the comparison of the reachability FSA of WF nets and the specification FSA consisting of the Declare constraints returned by our tool.
 
 *Generating Reachability FSA from WF nets*
 
