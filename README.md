@@ -1,6 +1,6 @@
 ![logo](logo.png)
 
-![Python version](https://img.shields.io/badge/python-3.13-blue?logo=python&logoColor=white)
+![Python version](https://img.shields.io/badge/python-3.11-blue?logo=python&logoColor=white)
 ![Conda](https://img.shields.io/badge/environment-conda-green?logo=anaconda)
 ![Repo size](https://img.shields.io/github/repo-size/l2brb/Sp3llsWizard)
 ![Issues](https://img.shields.io/github/issues/l2brb/Sp3llsWizard?color=red)
