@@ -4,7 +4,7 @@
 ![Conda](https://img.shields.io/badge/environment-conda-green?logo=anaconda)
 ![Repo size](https://img.shields.io/github/repo-size/l2brb/Sp3llsWizard)
 ![Issues](https://img.shields.io/github/issues/l2brb/Sp3llsWizard?color=red)
-![arXiv](https://arxiv.org/abs/2504.05114)
+[![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b?logo=arxiv&logoColor=white)](https://arxiv.org/abs/XXXX.XXXXX)
 
 
 
