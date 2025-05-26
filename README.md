@@ -4,13 +4,14 @@
 ![Conda](https://img.shields.io/badge/environment-conda-green?logo=anaconda)
 ![Repo size](https://img.shields.io/github/repo-size/l2brb/Sp3llsWizard)
 ![Issues](https://img.shields.io/github/issues/l2brb/Sp3llsWizard?color=red)
+![arXiv](https://arxiv.org/abs/2504.05114)
 
 
 
 
 ## Sp3llsWizard: From Sound Workflow Nets to LTLf Declarative Specifications by Casting Three Spells
 
-This repository contains the implementation and experimental toolbench presented in the paper “From Sound Workflow Nets to LTLf Declarative Specifications by Casting Three Spells" 🧙 submitted at the 23rd International Conference on Business Process Management (BPM 2025). The work presents a systematic approach to synthesizing declarative process specifications from safe and sound Workflow Nets (WF nets), ensuring full behavioral preservation. Here you’ll find the complete toolchain and experimental setup, tested on both synthetic and real-world datasets, used to analyze the correctness and performance of the implemented algorithm.
+This repository contains the implementation and experimental toolbench presented in the paper “From Sound Workflow Nets to LTLf Declarative Specifications by Casting Three Spells". The work presents a systematic approach to synthesizing declarative process specifications from safe and sound Workflow Nets (WF nets), ensuring full behavioral preservation. Here you’ll find the complete toolchain and experimental setup, tested on both synthetic and real-world datasets, used to analyze the correctness and performance of the implemented algorithm.
 
 ## Overview
 **Sp3llsWizard** has the ability to formally synthesize **DECLARE** specifications from safe and sound **Workflow Nets**. This proof-of-concept implementation automatically generates LTLf constraints from an input WF net provided as a `.pnml` file.
