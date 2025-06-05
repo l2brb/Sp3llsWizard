@@ -1,0 +1,1364 @@
+{
+    "name": "bpic155f.pnml",
+    "tasks": [
+        "01_HOOFD_065_0",
+        "tauJoin_26",
+        "01_HOOFD_110_2",
+        "01_HOOFD_380",
+        "skip_58",
+        "01_HOOFD_510_4",
+        "01_HOOFD_110_0",
+        "tauSplit_29",
+        "01_HOOFD_260",
+        "skip_53",
+        "01_HOOFD_050",
+        "05_EIND_010",
+        "01_HOOFD_490_5",
+        "08_AWB45_005",
+        "13_CRD_010",
+        "skip_74",
+        "01_HOOFD_520",
+        "skip_21",
+        "09_AH_I_010",
+        "01_HOOFD_494a",
+        "skip_19",
+        "01_HOOFD_195",
+        "01_HOOFD_375",
+        "01_HOOFD_490_2",
+        "skip_63",
+        "tauSplit_71",
+        "skip_81",
+        "01_HOOFD_810",
+        "01_HOOFD_010",
+        "skip_5",
+        "01_HOOFD_061",
+        "01_HOOFD_510_0",
+        "tauSplit_60",
+        "skip_78",
+        "01_HOOFD_815",
+        "14_VRIJ_010",
+        "init_loop_11",
+        "skip_20",
+        "skip_54",
+        "skip_69",
+        "01_HOOFD_011",
+        "skip_18",
+        "tauJoin_37",
+        "01_HOOFD_110",
+        "08_AWB45_020_1",
+        "01_HOOFD_370",
+        "08_AWB45_030",
+        "tauSplit_51",
+        "skip_84",
+        "skip_27",
+        "skip_59",
+        "skip_77",
+        "skip_13",
+        "01_HOOFD_110_1",
+        "skip_76",
+        "16_LGSV_010",
+        "skip_24",
+        "01_HOOFD_100",
+        "06_VD_010",
+        "01_HOOFD_250",
+        "tauSplit_79",
+        "02_DRZ_010",
+        "skip_16",
+        "skip_35",
+        "skip_50",
+        "skip_55",
+        "01_HOOFD_065_2",
+        "init_loop_42",
+        "01_HOOFD_330",
+        "skip_64",
+        "skip_32",
+        "01_HOOFD_015",
+        "tauSplit_3",
+        "01_HOOFD_490_1a",
+        "skip_70",
+        "01_HOOFD_510_3",
+        "skip_85",
+        "skip_23",
+        "END",
+        "01_HOOFD_030_1",
+        "01_HOOFD_020",
+        "skip_15",
+        "skip_47",
+        "01_HOOFD_480",
+        "01_HOOFD_510_2",
+        "01_HOOFD_814",
+        "tauSplit_25",
+        "skip_38",
+        "01_HOOFD_180",
+        "01_HOOFD_250_2",
+        "01_HOOFD_500",
+        "tauJoin_72",
+        "skip_10",
+        "START",
+        "04_BPT_005",
+        "08_AWB45_010",
+        "skip_49",
+        "01_HOOFD_491",
+        "01_HOOFD_510_2a",
+        "01_HOOFD_040",
+        "skip_48",
+        "tauJoin_61",
+        "tauSplit_33",
+        "skip_2",
+        "tauJoin_4",
+        "skip_14",
+        "skip_46",
+        "01_HOOFD_490_4",
+        "01_HOOFD_515",
+        "skip_87",
+        "01_HOOFD_060",
+        "01_HOOFD_490_1",
+        "skip_68",
+        "skip_41",
+        "init_loop_8",
+        "skip_17",
+        "skip_28",
+        "08_AWB45_020_2",
+        "tauJoin_52",
+        "01_HOOFD_530",
+        "11_AH_II_010",
+        "skip_1",
+        "skip_31",
+        "01_HOOFD_200",
+        "01_HOOFD_490_5a",
+        "01_BB_770",
+        "skip_86",
+        "skip_57",
+        "01_HOOFD_495",
+        "01_HOOFD_510_1",
+        "tauJoin_80",
+        "skip_40",
+        "01_HOOFD_820",
+        "01_HOOFD_430",
+        "skip_73",
+        "01_HOOFD_120",
+        "03_GBH_005",
+        "01_HOOFD_030_2",
+        "01_HOOFD_250_1",
+        "skip_56",
+        "skip_62",
+        "skip_67",
+        "skip_75",
+        "01_BB_540",
+        "init_loop_44",
+        "skip_22",
+        "01_HOOFD_065_1",
+        "skip_39",
+        "skip_65",
+        "tauJoin_83"
+    ],
+    "constraints": [
+        {
+            "template": "End",
+            "parameters": [
+                [
+                    "END"
+                ]
+            ]
+        },
+        {
+            "template": "Atmost1",
+            "parameters": [
+                [
+                    "START"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_015"
+                ],
+                [
+                    "01_HOOFD_020"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_19"
+                ],
+                [
+                    "skip_20",
+                    "skip_21"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tauSplit_71"
+                ],
+                [
+                    "skip_73",
+                    "01_HOOFD_510_2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_2",
+                    "01_HOOFD_011"
+                ],
+                [
+                    "01_HOOFD_015"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_110"
+                ],
+                [
+                    "01_HOOFD_120"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_810",
+                    "skip_85"
+                ],
+                [
+                    "tauJoin_83"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tauJoin_52"
+                ],
+                [
+                    "skip_55",
+                    "13_CRD_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tauSplit_60"
+                ],
+                [
+                    "skip_62",
+                    "01_HOOFD_491"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_010"
+                ],
+                [
+                    "skip_2",
+                    "01_HOOFD_011",
+                    "skip_1"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_110_1"
+                ],
+                [
+                    "01_HOOFD_110_2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "14_VRIJ_010",
+                    "skip_38"
+                ],
+                [
+                    "tauJoin_37"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_510_4",
+                    "skip_76"
+                ],
+                [
+                    "01_HOOFD_515"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tauSplit_51"
+                ],
+                [
+                    "skip_53",
+                    "01_HOOFD_490_1"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "16_LGSV_010",
+                    "skip_17"
+                ],
+                [
+                    "skip_19",
+                    "skip_18"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_5",
+                    "01_HOOFD_050"
+                ],
+                [
+                    "tauJoin_4"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_24",
+                    "01_HOOFD_060",
+                    "01_HOOFD_110_0"
+                ],
+                [
+                    "tauSplit_25"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_70",
+                    "tauJoin_72"
+                ],
+                [
+                    "tauJoin_26"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_250"
+                ],
+                [
+                    "01_HOOFD_260"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_55",
+                    "13_CRD_010",
+                    "skip_50"
+                ],
+                [
+                    "skip_57",
+                    "skip_56",
+                    "01_HOOFD_490_1a"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tauSplit_71"
+                ],
+                [
+                    "01_HOOFD_510_2a",
+                    "skip_74",
+                    "skip_75"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_65",
+                    "init_loop_42"
+                ],
+                [
+                    "init_loop_44"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_330"
+                ],
+                [
+                    "skip_49",
+                    "01_HOOFD_370"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_10",
+                    "skip_15"
+                ],
+                [
+                    "05_EIND_010",
+                    "skip_16"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_32",
+                    "01_HOOFD_110_2"
+                ],
+                [
+                    "tauSplit_33"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tauSplit_60"
+                ],
+                [
+                    "skip_63",
+                    "01_HOOFD_490_5a"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_510_3"
+                ],
+                [
+                    "01_HOOFD_510_4",
+                    "skip_76"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tauSplit_79"
+                ],
+                [
+                    "01_BB_770",
+                    "skip_81"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_23",
+                    "skip_77",
+                    "tauJoin_80"
+                ],
+                [
+                    "END"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_494a",
+                    "skip_59",
+                    "skip_64"
+                ],
+                [
+                    "skip_65",
+                    "tauJoin_37"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tauJoin_83"
+                ],
+                [
+                    "skip_87",
+                    "skip_86",
+                    "01_HOOFD_814"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_814"
+                ],
+                [
+                    "01_HOOFD_815"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tauJoin_4"
+                ],
+                [
+                    "skip_24",
+                    "skip_23",
+                    "01_HOOFD_060",
+                    "01_HOOFD_110_0"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tauJoin_26"
+                ],
+                [
+                    "skip_77",
+                    "skip_78",
+                    "01_HOOFD_520"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_065_2",
+                    "skip_31"
+                ],
+                [
+                    "tauJoin_26"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tauSplit_51"
+                ],
+                [
+                    "09_AH_I_010",
+                    "skip_54"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_500"
+                ],
+                [
+                    "01_HOOFD_510_0",
+                    "skip_69"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tauSplit_29"
+                ],
+                [
+                    "skip_32",
+                    "01_HOOFD_110_1"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "08_AWB45_010"
+                ],
+                [
+                    "08_AWB45_020_1"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_49",
+                    "01_HOOFD_370"
+                ],
+                [
+                    "01_HOOFD_375"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_480",
+                    "08_AWB45_030",
+                    "skip_48"
+                ],
+                [
+                    "skip_50",
+                    "tauSplit_51"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "START"
+                ],
+                [
+                    "01_HOOFD_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tauSplit_79"
+                ],
+                [
+                    "01_BB_540",
+                    "skip_84"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_1",
+                    "01_HOOFD_020"
+                ],
+                [
+                    "tauSplit_3"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tauSplit_25"
+                ],
+                [
+                    "01_HOOFD_065_1",
+                    "skip_27"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_73",
+                    "01_HOOFD_510_2"
+                ],
+                [
+                    "tauJoin_72"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_87",
+                    "01_HOOFD_815"
+                ],
+                [
+                    "01_HOOFD_820"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_510_0",
+                    "skip_68",
+                    "skip_69"
+                ],
+                [
+                    "01_HOOFD_510_1"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_100",
+                    "skip_28"
+                ],
+                [
+                    "tauSplit_29"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_41",
+                    "06_VD_010"
+                ],
+                [
+                    "01_HOOFD_110"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_62",
+                    "01_HOOFD_491"
+                ],
+                [
+                    "tauJoin_61"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_21"
+                ],
+                [
+                    "skip_22",
+                    "01_HOOFD_040"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "04_BPT_005",
+                    "skip_13",
+                    "01_HOOFD_065_0",
+                    "02_DRZ_010"
+                ],
+                [
+                    "skip_14",
+                    "skip_15"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tauSplit_33"
+                ],
+                [
+                    "skip_35",
+                    "01_HOOFD_490_5"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_47"
+                ],
+                [
+                    "01_HOOFD_250_1",
+                    "08_AWB45_030",
+                    "01_HOOFD_250",
+                    "skip_48"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_22",
+                    "01_HOOFD_040"
+                ],
+                [
+                    "tauJoin_4"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_030_2",
+                    "01_HOOFD_030_1",
+                    "03_GBH_005"
+                ],
+                [
+                    "skip_10",
+                    "init_loop_11"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_20",
+                    "tauSplit_3"
+                ],
+                [
+                    "init_loop_8"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tauJoin_37"
+                ],
+                [
+                    "skip_67",
+                    "01_HOOFD_495"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_53",
+                    "01_HOOFD_490_1"
+                ],
+                [
+                    "tauJoin_52"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_57",
+                    "01_HOOFD_490_1a"
+                ],
+                [
+                    "01_HOOFD_490_2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_495"
+                ],
+                [
+                    "01_HOOFD_500",
+                    "skip_68"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tauSplit_79"
+                ],
+                [
+                    "01_HOOFD_810",
+                    "skip_85"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tauSplit_25"
+                ],
+                [
+                    "01_HOOFD_100",
+                    "skip_28"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_40",
+                    "01_HOOFD_120"
+                ],
+                [
+                    "01_HOOFD_180"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_515",
+                    "skip_74"
+                ],
+                [
+                    "tauJoin_72"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_430"
+                ],
+                [
+                    "01_HOOFD_480"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tauSplit_3"
+                ],
+                [
+                    "skip_5",
+                    "01_HOOFD_050"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "05_EIND_010",
+                    "skip_16"
+                ],
+                [
+                    "16_LGSV_010",
+                    "skip_17"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tauSplit_33"
+                ],
+                [
+                    "14_VRIJ_010",
+                    "skip_38"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_250_1"
+                ],
+                [
+                    "01_HOOFD_250_2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_63",
+                    "01_HOOFD_490_5a"
+                ],
+                [
+                    "tauJoin_61"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_BB_770",
+                    "skip_81"
+                ],
+                [
+                    "tauJoin_80"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_56",
+                    "01_HOOFD_490_2"
+                ],
+                [
+                    "01_HOOFD_490_4",
+                    "skip_58"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_67",
+                    "01_HOOFD_510_1"
+                ],
+                [
+                    "skip_70",
+                    "tauSplit_71"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_510_2a",
+                    "skip_75"
+                ],
+                [
+                    "01_HOOFD_510_3"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_39",
+                    "01_HOOFD_180"
+                ],
+                [
+                    "init_loop_42"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_46",
+                    "init_loop_44"
+                ],
+                [
+                    "08_AWB45_005",
+                    "01_HOOFD_195",
+                    "08_AWB45_020_2",
+                    "08_AWB45_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "init_loop_8",
+                    "skip_18"
+                ],
+                [
+                    "01_HOOFD_030_2",
+                    "01_HOOFD_030_1",
+                    "03_GBH_005"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_14",
+                    "init_loop_11"
+                ],
+                [
+                    "01_HOOFD_061",
+                    "04_BPT_005",
+                    "02_DRZ_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "11_AH_II_010",
+                    "skip_54"
+                ],
+                [
+                    "tauJoin_52"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_380"
+                ],
+                [
+                    "01_HOOFD_430"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_490_4",
+                    "skip_58"
+                ],
+                [
+                    "skip_59",
+                    "tauSplit_60"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "08_AWB45_020_1",
+                    "08_AWB45_005",
+                    "01_HOOFD_200",
+                    "08_AWB45_020_2"
+                ],
+                [
+                    "skip_47",
+                    "skip_46"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_520"
+                ],
+                [
+                    "01_HOOFD_530"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_BB_540",
+                    "skip_84"
+                ],
+                [
+                    "tauJoin_83"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_061"
+                ],
+                [
+                    "skip_13",
+                    "01_HOOFD_065_0"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_065_1",
+                    "skip_27"
+                ],
+                [
+                    "tauJoin_26"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tauSplit_33"
+                ],
+                [
+                    "skip_39",
+                    "skip_40",
+                    "06_VD_010",
+                    "skip_41"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "09_AH_I_010"
+                ],
+                [
+                    "11_AH_II_010"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_86",
+                    "01_HOOFD_820"
+                ],
+                [
+                    "tauJoin_80"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_375"
+                ],
+                [
+                    "01_HOOFD_380"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tauSplit_29"
+                ],
+                [
+                    "01_HOOFD_065_2",
+                    "skip_31"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_195"
+                ],
+                [
+                    "01_HOOFD_200"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "01_HOOFD_260",
+                    "01_HOOFD_250_2"
+                ],
+                [
+                    "01_HOOFD_330"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_35",
+                    "01_HOOFD_490_5"
+                ],
+                [
+                    "tauJoin_26"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "tauJoin_61"
+                ],
+                [
+                    "01_HOOFD_494a",
+                    "skip_64"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_78",
+                    "01_HOOFD_530"
+                ],
+                [
+                    "tauSplit_79"
+                ]
+            ]
+        }
+    ]
+}

@@ -24,6 +24,7 @@ evaluation/bisimulation/dump/*
 evaluation/diagnostics/benchmarking/*
 evaluation/diagnostics/extra/*
 
+conformance/*
 
 #vscode
 .vscode/*

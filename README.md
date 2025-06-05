@@ -25,6 +25,10 @@ conda activate sp3lls-env
 python3 main.py declare-synth --pnml-file ${INPUT_WN}  --output-format json --output-path ${OUTPUT_PATH}
 ```
 
+Alternatively with `pip`:
+```bash
+pip install -r requirements.txt
+```
 ## Repository
 
 The main content of the repository is structured as follows:
