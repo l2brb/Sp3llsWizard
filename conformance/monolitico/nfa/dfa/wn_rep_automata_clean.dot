@@ -1,0 +1,27 @@
+digraph Automaton {
+rankdir=LR;
+0 [shape=circle, label=""];
+0 -> 3 [label=K];
+1 [shape=circle, label=""];
+1 -> 9 [label=C];
+2 [shape=doublecircle, label=""];
+3 [shape=circle, label=""];
+3 -> 8 [label=J];
+4 [shape=circle, label=""];
+initial [shape=plaintext, label=""];
+initial -> 4;
+4 -> 1 [label=A];
+5 [shape=circle, label=""];
+5 -> 0 [label=M];
+5 -> 7 [label=K];
+6 [shape=circle, label=""];
+6 -> 5 [label=B];
+7 [shape=circle, label=""];
+7 -> 3 [label=M];
+8 [shape=circle, label=""];
+8 -> 2 [label=B];
+8 -> 1 [label=G];
+9 [shape=circle, label=""];
+9 -> 6 [label=F];
+9 -> 6 [label=E];
+}
