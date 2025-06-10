@@ -1,0 +1,63 @@
+{
+    "name": "FIG3.pnml",
+    "transitions": [
+        "t5",
+        "t6",
+        "t1",
+        "t2",
+        "t3"
+    ],
+    "constraints": [
+        {
+            "template": "End",
+            "parameters": [
+                [
+                    "t6"
+                ]
+            ]
+        },
+        {
+            "template": "Atmost1",
+            "parameters": [
+                [
+                    "t1"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "t1"
+                ],
+                [
+                    "t3",
+                    "t2"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "t3"
+                ],
+                [
+                    "t5"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "t5",
+                    "t2"
+                ],
+                [
+                    "t6"
+                ]
+            ]
+        }
+    ]
+}

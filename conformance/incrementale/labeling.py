@@ -15,7 +15,7 @@ from src.utils import petri_parser
 
 
 # INTPUT WN
-pnml_file_path = "/home/l2brb/main/DECpietro/conformance/wnsample/wn_nfa.pnml"  
+pnml_file_path = "/home/l2brb/main/DECpietro/conformance/wnsample/sketch/FIG1.pnml"  
 workflow_net = petri_parser.parse_wn_from_pnml(pnml_file_path)
 #print(workflow_net)
 
@@ -41,7 +41,7 @@ def id2lab(tid):
 # ------------------------------------------------------------------
 # Reader della traccia 
 # Traccia input #TODO: solo un test per ora ci devo buttare un log parser sopra
-input_trace = ["A", "C", "A", "F", "B", "K", "M", "J", "B"]
+input_trace = ["A", "B", "B", "D"]
 
 
 
@@ -75,7 +75,7 @@ L_inv = {lab: L_inv[lab]                  # stesso oggetto lista
 
 # ------------------------------------------------------------------
 # Json della DecSpec 
-declare_path = Path("/home/l2brb/main/DECpietro/conformance/wnsample/wn_nfa.json")   
+declare_path = Path("/home/l2brb/main/DECpietro/conformance/wnsample/sketch/FIG1.json")   
 model_json   = json.loads(declare_path.read_text())
 
 #print("Model JSON:", model_json)
@@ -241,25 +241,42 @@ def declare_cost(realization):
 # ------------------------------------------------------------------
 # Ricerca brute-force cross product
 
-choices = [L_inv[label] for label in input_trace] # lista di alternative/posizione
+choices = [L_inv[label] for label in input_trace]   # lista di alternative/posizione
 best_cost, best_real, best_detail = math.inf, None, None
 
-for combo in product(*choices): # combo sono le realizzazioni possibili
-    print("Combo:", combo)
+best_sols    = []          # tutte le realizzazioni ottime
+best_details = []          # loro dettagli violazioni
+
+for combo in product(*choices):                     # combo = una realizzazione
+    #print("Combo:", combo)
     cost, detail = declare_cost(combo)
-    if cost < best_cost:
+
+    if cost < best_cost:                            # nuova soluzione migliore
         best_cost, best_real, best_detail = cost, combo, detail
-
-
+        best_sols    = [combo]                      # reset liste
+        best_details = [detail]
+    elif cost == best_cost:                         # costo ex-aequo --> aggiungi
+        best_sols.append(combo)                     
+        best_details.append(detail)                 
 
 print("****************************************************************************")
 print("INPUT TRACE LABELS:", input_trace)
 print("REALIZATION (ID):", best_real)
 print("MINIMUM COST (constraint violation counter):", best_cost)
 print("VIOLATIONS:")
-for d in best_detail:
-    print("  -", d)
+for elem in best_detail:
+    print("  -", elem)
 
+# ------------------------------------------------------------------
+# Altre realizzazioni con lo stesso costo minimo @TODO: da fare test, che facciamo qui?
+
+if len(best_sols) > 1:                              # ★ solo se ce ne sono altre
+    print("\nOTHER REALIZATIONS WITH THE SAME MINIMUM COST:")
+    for sol, det in zip(best_sols[1:], best_details[1:]):  # salta la prima (già mostrata)
+        print("--------------------------------------------------------------")
+        print("REALIZATION (ID):", sol)
+        for d in det:
+            print("  -", d)
 
 
 
