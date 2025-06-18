@@ -1,10 +1,9 @@
-# ------------------------------------------------------------------
-# Log Reader per PM4Py
-
 import pm4py
 
 LOG_PATH = "/home/l2brb/main/DECpietro/evaluation/performance/realworld/logs/sepsis/sepsis.xes"        
-log = pm4py.read_xes(LOG_PATH)           # per CSV usa read_csv(…)
+log = pm4py.read_xes(LOG_PATH)          
+
+
 
 def extract_labels(trace, attribute="concept:name"):
     # Se la traccia è un dizionario e contiene la chiave "event", itera sugli eventi

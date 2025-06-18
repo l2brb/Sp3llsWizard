@@ -18,7 +18,7 @@ from src.utils import petri_parser
 
 
 # INTPUT WN
-pnml_file_path = "/home/l2brb/main/DECpietro/conformance/wnsample/sketch/FIG1.pnml"  
+pnml_file_path = "/home/l2brb/main/DECpietro/evaluation/diagnostics/real-world/bpic155f/BPIC15_5f_alpha.pnml"  
 workflow_net = petri_parser.parse_wn_from_pnml(pnml_file_path)
 #print(workflow_net)
 
@@ -78,7 +78,7 @@ L_inv = {lab: L_inv[lab]                  # stesso oggetto lista
 
 # ------------------------------------------------------------------
 # Json della DecSpec 
-declare_path = Path("/home/l2brb/main/DECpietro/conformance/wnsample/sketch/FIG1.json")   
+declare_path = Path("/home/l2brb/main/DECpietro/evaluation/diagnostics/real-world/bpic155f/BPIC15_5f_constraints.json")   
 model_json   = json.loads(declare_path.read_text())
 
 #print("Model JSON:", model_json)
@@ -197,7 +197,7 @@ class AltPrecedence:
 
 # ------------------------------------------------------------------
 # Costruzione dei vincoli a partire dalla specifica sulla base degli automi definiti sopra
-# ------------------------------------------------------------------
+
 
 def build_constraints(spec_json):
     constraints = []
@@ -221,7 +221,7 @@ CONSTRAINTS = build_constraints(model_json)
 
 # ------------------------------------------------------------------
 # Cost function for each realization
-# ------------------------------------------------------------------
+
 
 def declare_cost(realization):
     constraints = copy.deepcopy(CONSTRAINTS)   # deepcopy for cleaning automata for each realization
@@ -240,56 +240,97 @@ def declare_cost(realization):
     return total, details                       
 
 
-#TODO: QUI SE VOGLIAMO QUALCHE EURISTICA
 # ------------------------------------------------------------------
-# Ricerca brute-force cross product
+# Event Log 
+import pm4py, csv, math, pathlib
 
-choices = [L_inv[label] for label in input_trace]   # lista di alternative/posizione
-best_cost, best_real, best_detail = math.inf, None, None
+LOG_PATH = "/home/l2brb/main/DECpietro/evaluation/performance/realworld/logs/BPIC155f/BPIC15_5f.xes"
+OUTPUT_CSV = "/home/l2brb/main/DECpietro/conformance/incrementale/alignment_results.csv"
 
-best_sols    = []          # tutte le realizzazioni ottime
-best_details = []          # loro dettagli violazioni
+log = pm4py.read_xes(LOG_PATH)                   
 
-for combo in product(*choices):                     # combo = una realizzazione
-    #print("Combo:", combo)
-    cost, detail = declare_cost(combo)
 
-    if cost < best_cost:                            # nuova soluzione migliore
-        best_cost, best_real, best_detail = cost, combo, detail
-        best_sols    = [combo]                      # reset liste
-        best_details = [detail]
-    elif cost == best_cost:                         # costo ex-aequo --> aggiungi
-        best_sols.append(combo)                     
-        best_details.append(detail)                 
+#TODO: BUG QUI
+def extract_labels(trace, attribute="concept:name"):
 
-print("****************************************************************************")
-print("INPUT TRACE LABELS:", input_trace)
-print("REALIZATION (ID):", best_real)
-print("MINIMUM COST (constraint violation counter):", best_cost)
-print("VIOLATIONS:")
-for elem in best_detail:
-    print("  -", elem)
+    if not trace:                        
+        return []
+    first_evt = trace[0]
+    if isinstance(first_evt, dict):      
+        return [evt[attribute] for evt in trace]
+    else:                                
+        return list(trace)               
+
+
+
+def align_trace(trace_labels):
+
+    unknowns = [lab for lab in trace_labels if lab not in L_inv]
+    if unknowns:                                       
+        msgs = [f"unknown label '{lab}'" for lab in set(unknowns)]
+        return math.inf, tuple(), msgs
+
+    local_inv = {lab: L_inv[lab] for lab in set(trace_labels)}
+    #print("Local L^-1:", local_inv)
+    choices = [local_inv[lab] for lab in trace_labels]
+
+    best_cost, best_sols, best_details = math.inf, [], []
+    for combo in product(*choices):
+        cost, detail = declare_cost(combo)
+        if cost < best_cost:
+            best_cost, best_sols, best_details = cost, [combo], [detail]
+        elif cost == best_cost:
+            best_sols.append(combo)
+            best_details.append(detail)
+
+    min_idx = best_sols.index(min(best_sols))
+    return best_cost, best_sols[min_idx], best_details[min_idx]
+
 
 # ------------------------------------------------------------------
-# Altre realizzazioni con lo stesso costo minimo @TODO: da fare test, che facciamo qui?
+# Loop tracce
 
-if len(best_sols) > 1:                              # ★ solo se ce ne sono altre
-    print("\nOTHER REALIZATIONS WITH THE SAME MINIMUM COST:")
-    for sol, det in zip(best_sols[1:], best_details[1:]):  # salta la prima (già mostrata)
-        print("--------------------------------------------------------------")
-        print("REALIZATION (ID):", sol)
-        for d in det:
-            print("  -", d)
+results = []
+sum_cost = 0
+max_cost = 0
+
+with open(OUTPUT_CSV, "w", newline="") as f:
+    writer = csv.writer(f)
+    writer.writerow(["trace_idx", "cost", "realization_ids", "violations"])  # header
+
+    for idx, pm_trace in enumerate(log):
+        labels = extract_labels(pm_trace)
+        cost, real, detail = align_trace(labels)
+
+        sum_cost += cost
+        max_cost = max(max_cost, cost)
+        results.append(cost)
+
+        writer.writerow([
+            idx,
+            cost,
+            ";".join(real),
+            " | ".join(detail)            
+        ])
+
+# ------------------------------------------------------------------
+# MEASURES
+n = len(results)
+avg_cost = sum_cost / n if n else 0
+perc_ok  = results.count(0) / n * 100 if n else 0
+
+print("==============================================================")
+print(f"Log file        : {pathlib.Path(LOG_PATH).name}")
+print(f"Trace analyzeD : {n}")
+print(f"Mean violation : {avg_cost:.2f}")
+print(f"OK percetnage   : {perc_ok:.1f}%")
+print(f"Max Violation   : {max_cost}")
+print(f"Results in {OUTPUT_CSV}")
+#print("==============================================================")
 
 
 
 exit()
-
-
-
-
-
-
 
 
 
@@ -369,7 +410,7 @@ class AltPrecedence:
 # Costruzione dei vincoli a partire dalla specifica sulla base degli automi definiti sopra
 
 def build_constraints(spec_json):
-    """automini a partire dalla specifica"""
+    """automata from DS"""
 
     constraints = []
     for c in spec_json["constraints"]:

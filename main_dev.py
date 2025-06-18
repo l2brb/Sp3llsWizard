@@ -11,7 +11,7 @@ def write_to_json(output, output_path: str):
 
 
 def main():
-    pnml_file_path = "/home/l2brb/main/DECpietro/conformance/wnsample/sketch/FIG3.pnml"  
+    pnml_file_path = "/home/l2brb/main/DECpietro/evaluation/performance/realworld/logs/sepsis/sepsis_heuristics.pnml"  
 
     workflow_net = petri_parser.parse_wn_from_pnml(pnml_file_path)
     #print(workflow_net)
@@ -24,7 +24,7 @@ def main():
         output = dec_translator.translate_to_DEC(workflow_net, model_name)
         print(output)
 
-        write_to_json(output, "/home/l2brb/main/DECpietro/conformance/wnsample/sketch/FIG3.json") 
+        write_to_json(output, "/home/l2brb/main/DECpietro/evaluation/performance/realworld/logs/sepsis/sepsis_heuristics.json") 
     
 if __name__ == "__main__":
     main()
