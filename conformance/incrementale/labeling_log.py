@@ -1,468 +1,228 @@
-import sys
-import os
-import json, copy, math
+import sys, os, json, copy, math, csv, pathlib, pm4py, pandas as pd
 from pathlib import Path
 from itertools import product
 from collections import defaultdict
 
-import pm4py, csv, math, pathlib
-
-
-# Add src to PYTHONPATH
-current_dir = os.path.dirname(os.path.abspath(__file__))
+# -------------------- PREAMBOLO PATH ------------------------------
+current_dir  = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.abspath(os.path.join(current_dir, "../../"))
 if project_root not in sys.path:
     sys.path.insert(0, project_root)
 
 from src.utils import petri_parser
 
-
-# INTPUT WN
-pnml_file_path = "/home/l2brb/main/DECpietro/evaluation/diagnostics/real-world/bpic155f/BPIC15_5f_alpha.pnml"  
-workflow_net = petri_parser.parse_wn_from_pnml(pnml_file_path)
-#print(workflow_net)
-
+# ------------------------------------------------------------------
+# INPUT WN
+# ------------------------------------------------------------------
+pnml_file_path = "/home/l2brb/main/DECpietro/evaluation/diagnostics/real-world/bpic155f/BPIC15_5f_alpha.pnml"
+workflow_net   = petri_parser.parse_wn_from_pnml(pnml_file_path)
 
 # ------------------------------------------------------------------
-# Mapping sulla WN : transition ids  ->  labels
-
+# Mapping WN: transition-id → label  +  helper id2lab
+# ------------------------------------------------------------------
 Map = {}
-
 for tr in workflow_net["transitions"]:
-    # se la transizione è silente, etichettala con 'τ' (tau)
     label = "τ" if tr["is_tau"] else tr["name"]
     Map[tr["id"]] = label
 print(Map)
 
-
-# helper per tradurre id → label
-def id2lab(tid):                      
+def id2lab(tid):
     return Map.get(tid, "?")
 
-
-
 # ------------------------------------------------------------------
-# Reader della traccia 
-# Traccia input #TODO: solo un test per ora ci devo buttare un log parser sopra
-input_trace = ["A", "B", "B", "D"]
-
-
-
-
+# L-1 globale (inverse mapping)
 # ------------------------------------------------------------------
-# L^-1 relabeling
-
-L_inv = {}                      
+L_inv = defaultdict(list)
 for t_id, lab in Map.items():
-    if lab not in L_inv:        
-        L_inv[lab] = []          
-    L_inv[lab].append(t_id)  
-
-#print("----------------------")
-#print("L^-1:", dict(L_inv))
-
-
+    L_inv[lab].append(t_id)
 
 # ------------------------------------------------------------------
-# L^-1 labeling della traccia
+# JSON Declare spec
 
-labels_in_trace = set(input_trace)
-
-L_inv = {lab: L_inv[lab]                  # stesso oggetto lista
-         for lab in labels_in_trace
-         if lab in L_inv}                 # ignora label “sconosciute”
-
-#print("L⁻¹ labeling della traccia", L_inv)
-
-
-
-# ------------------------------------------------------------------
-# Json della DecSpec 
-declare_path = Path("/home/l2brb/main/DECpietro/evaluation/diagnostics/real-world/bpic155f/BPIC15_5f_constraints.json")   
+declare_path = Path("/home/l2brb/main/DECpietro/evaluation/diagnostics/real-world/bpic155f/BPIC15_5f_constraints.json")
 model_json   = json.loads(declare_path.read_text())
 
-#print("Model JSON:", model_json)
-
-
-
-
-
-
-
 
 
 # ------------------------------------------------------------------
-# Mini-automi per i 3 template #TODO: PROVA DECLARE4PY potrei calcolare la fitness direttamente sulla realizzazione
-# ------------------------------------------------------------------
+# AUTOMI  (End / AtMost1 / AltPrecedence)
 
-# End automaton  
 class End:
-    def __init__(self, alpha):         # alpha = list of transition ids for the End template in the original decspec
-        #print(alpha)                  
-        self.X = set(alpha)            # [ALPHABETH] set of transition ids that are considered as End 
-        #print("End X:", self.X)
-        self.after_x   = False         # [STATE] True if at least one transition in X has been seen, False otherwise
-        self.bad_tail  = False         # [STATE] True if the trace ends with a transition in X, False otherwise @TODO CHECK DA FARE
+    def __init__(self, alpha):
+        self.X = set(alpha)
+        self.after_x = False
+        self.bad_tail = False
+        self.msg = []
+        self.pos = -1
 
-        self.msg = []                  # buffer violations
-        self.pos = -1                  # position counter (0-based)
-
-    def step(self, t):                 # Visit every element in the realization    
-        #print("Step:", t)
-        self.pos += 1                  # avanza indice
-
-        if t in self.X:                # if elem is in X
-            self.after_x  = True       # [TRANSITION] mark as seen
-            self.bad_tail = False      # if we see an X, we reset the bad_tail flag
-        else:                                                                                # simbolo diverso da X
-            if self.after_x:           # …e arriva DOPO un X
-                if not self.bad_tail:  # registra solo la prima volta
-                    labs = ",".join(id2lab(x) for x in self.X)
-                    ids  = ",".join(self.X)
-                    self.msg.append(
-                        f"[pos {self.pos}] End({labs}) violated (id {ids})"
-                    )
-                self.bad_tail = True   # flag violazione coda
-
-    def result(self):                       # check post-trace
-        # se bad_tail True, il messaggio è già stato aggiunto
-        if not self.after_x:           # se mai visto X
-            labs = ",".join(id2lab(x) for x in self.X)  
+    def step(self, t):
+        self.pos += 1
+        if t in self.X:
+            self.after_x, self.bad_tail = True, False
+        elif self.after_x and not self.bad_tail:
+            labs = ",".join(id2lab(x) for x in self.X)
             ids  = ",".join(self.X)
-            self.msg.append(
-                f"[pos END] End({labs}) missing (id {ids})"
-            )
-        # se after_x True ma bad_tail True, il messaggio è già stato aggiunto
+            self.msg.append(f"[pos {self.pos}] End({labs}) violated (id {ids})")
+            self.bad_tail = True
+
+    def result(self):
+        if not self.after_x:
+            labs = ",".join(id2lab(x) for x in self.X)
+            ids  = ",".join(self.X)
+            self.msg.append(f"[pos END] End({labs}) missing (id {ids})")
         return len(self.msg), self.msg
 
 
-# AtMost1 automaton
 class AtMost1:
     def __init__(self, alpha):
-        #print(alpha)
-        self.X = set(alpha)             # [ALPHABETH] set of transition ids that are considered as AtMost1
-        self.count = 0
-        self.msg = []
-        self.pos = -1                      # position counter (0-based)
+        self.X = set(alpha); self.count = 0
+        self.msg, self.pos = [], -1
 
     def step(self, t):
-        #print("Step:", t)
-        self.pos += 1                      # avanza indice 0-based
+        self.pos += 1
         if t in self.X:
-            self.count += 1       # count the number of transitions in X seen   
-            if self.count > 1:            # if more than one transition in X has been seen → violation
+            self.count += 1
+            if self.count > 1:
                 labs = ",".join(id2lab(x) for x in self.X)
                 ids  = ",".join(self.X)
-                self.msg.append(
-                    f"[pos {self.pos}] AtMost1({labs}) repeated (id {ids})"
-                )
+                self.msg.append(f"[pos {self.pos}] AtMost1({labs}) repeated (id {ids})")
 
     def result(self):
         return len(self.msg), self.msg
 
 
-# AlternatePrecedence automaton
 class AltPrecedence:
-    def __init__(self, Target, Activator): # Target and Activator transition ids lists
-        #print(Target, Activator)
-        self.X, self.Y = set(Target), set(Activator) # [ALPHABETH] set of transition ids that are considered as Target and Activator
-        self.waiting_target = True # [STATE]: True = sto aspettando un X che chiuda l’ultimo Y visto
-        self.msg = []                # buffer violazioni
-        self.pos = -1                 # position counter (0-based)
+    def __init__(self, Target, Activator):
+        self.X, self.Y = set(Target), set(Activator)
+        self.waiting_target = True
+        self.msg, self.pos = [], -1
 
     def step(self, t):
-        self.pos += 1                    # avanza indice 0-based
-
-        if self.waiting_target:                       # stato OPEN  (nessun Y aperto)
-            if t in self.Y:                           # Y apre una nuova coppia
-                # RElabeling
-                labsX = ",".join(sorted(id2lab(x) for x in self.X)) 
+        self.pos += 1
+        if self.waiting_target:
+            if t in self.Y:                                   # violazione
+                labsX = ",".join(sorted(id2lab(x) for x in self.X))
                 labsY = ",".join(sorted(id2lab(y) for y in self.Y))
                 idsY  = ",".join(sorted(self.Y))
-                self.msg.append(                           
+                self.msg.append(
                     f"[pos {self.pos}] AltPrec({{{labsX}}},{{{labsY}}}): "
                     f"violated in (id {idsY})"
                 )
-            elif t in self.X:                         # visto X
+            elif t in self.X:
                 self.waiting_target = False
-        else:                                         # aspetto Y per chiudere
-            if t in self.Y:                           # Y chiude la coppia
+        else:                                                 # aspetto Y
+            if t in self.Y:
                 self.waiting_target = True
 
     def result(self):
         return len(self.msg), self.msg
 
-
-
-
 # ------------------------------------------------------------------
-# Costruzione dei vincoli a partire dalla specifica sulla base degli automi definiti sopra
-
+# Build constraints 
 
 def build_constraints(spec_json):
     constraints = []
     for c in spec_json["constraints"]:
-        tmpl, parameter = c["template"], c["parameters"]
-
+        tmpl, param = c["template"], c["parameters"]
         if tmpl == "End":
-            constraints.append(End(*parameter)) # append l'oggetto End sui parameters della specifica del mago
-
+            constraints.append(End(*param))
         elif tmpl == "Atmost1":
-            constraints.append(AtMost1(*parameter))
-
+            constraints.append(AtMost1(*param))
         elif tmpl == "AlternatePrecedence":
-            constraints.append(AltPrecedence(parameter[0], parameter[1]))
+            constraints.append(AltPrecedence(param[0], param[1]))
     return constraints
 
 CONSTRAINTS = build_constraints(model_json)
-#print(type(CONSTRAINTS))
-#print(CONSTRAINTS)
-
 
 # ------------------------------------------------------------------
-# Cost function for each realization
-
+# Cost function
 
 def declare_cost(realization):
-    constraints = copy.deepcopy(CONSTRAINTS)   # deepcopy for cleaning automata for each realization
-
+    constraints = copy.deepcopy(CONSTRAINTS)
     for t in realization:
         for c in constraints:
-            c.step(t)   # passo la transizione della realization al vincolo costruito come automa
-
-    total = 0
-    details = []                                
+            c.step(t)
+    total, details = 0, []
     for c in constraints:
-        viol, msgs = c.result()                 
-        total += viol
-        details.extend(msgs)
-
-    return total, details                       
-
+        v, msg = c.result()
+        total += v
+        details.extend(msg)
+    return total, details
 
 # ------------------------------------------------------------------
-# Event Log 
-import pm4py, csv, math, pathlib
-
-LOG_PATH = "/home/l2brb/main/DECpietro/evaluation/performance/realworld/logs/BPIC155f/BPIC15_5f.xes"
-OUTPUT_CSV = "/home/l2brb/main/DECpietro/conformance/incrementale/alignment_results.csv"
-
-log = pm4py.read_xes(LOG_PATH)                   
-
-
-#TODO: BUG QUI
-def extract_labels(trace, attribute="concept:name"):
-
-    if not trace:                        
-        return []
-    first_evt = trace[0]
-    if isinstance(first_evt, dict):      
-        return [evt[attribute] for evt in trace]
-    else:                                
-        return list(trace)               
-
-
-
+# Allineamento per singola traccia
 def align_trace(trace_labels):
-
-    unknowns = [lab for lab in trace_labels if lab not in L_inv]
-    if unknowns:                                       
-        msgs = [f"unknown label '{lab}'" for lab in set(unknowns)]
-        return math.inf, tuple(), msgs
+    unknown = [lab for lab in trace_labels if lab not in L_inv]
+    if unknown:
+        return math.inf, tuple(), [f"unknown label {set(unknown)}"]
 
     local_inv = {lab: L_inv[lab] for lab in set(trace_labels)}
-    #print("Local L^-1:", local_inv)
-    choices = [local_inv[lab] for lab in trace_labels]
+    choices   = [local_inv[lab] for lab in trace_labels]
 
-    best_cost, best_sols, best_details = math.inf, [], []
+    best_cost, sols, dets = math.inf, [], []
     for combo in product(*choices):
         cost, detail = declare_cost(combo)
         if cost < best_cost:
-            best_cost, best_sols, best_details = cost, [combo], [detail]
+            best_cost, sols, dets = cost, [combo], [detail]
         elif cost == best_cost:
-            best_sols.append(combo)
-            best_details.append(detail)
+            sols.append(combo); dets.append(detail)
 
-    min_idx = best_sols.index(min(best_sols))
-    return best_cost, best_sols[min_idx], best_details[min_idx]
-
+    idx = sols.index(min(sols)) 
+    return best_cost, sols[idx], dets[idx]
 
 # ------------------------------------------------------------------
-# Loop tracce
+# Log
 
-results = []
-sum_cost = 0
-max_cost = 0
+LOG_PATH   = "/home/l2brb/main/DECpietro/evaluation/performance/realworld/logs/BPIC155f/BPIC15_5f.xes"
+OUTPUT_CSV = "/home/l2brb/main/DECpietro/conformance/incrementale/alignment_results.csv"
 
+log_obj = pm4py.read_xes(LOG_PATH)
+df      = pm4py.convert_to_dataframe(log_obj).sort_values(
+              ["case:concept:name", "time:timestamp"])
+
+# opzionale mapping label-log → label-modello
+LOG_LABEL_MAP = {}
+
+def norm_label(lbl): return LOG_LABEL_MAP.get(lbl, lbl)
+
+def extract_labels_df(sub_df, attr="concept:name"):
+    return [lab for lab in map(norm_label, sub_df[attr]) if lab in L_inv]
+
+# ------------------------------------------------------------------
+# LOOP TRACCE  +  outCSV
+
+results, sum_cost, max_cost = [], 0, 0
 with open(OUTPUT_CSV, "w", newline="") as f:
     writer = csv.writer(f)
-    writer.writerow(["trace_idx", "cost", "realization_ids", "violations"])  # header
+    writer.writerow(["trace_idx","cost","realization_ids","realization_labels","violations"])
 
-    for idx, pm_trace in enumerate(log):
-        labels = extract_labels(pm_trace)
+
+    for idx, (_, sub) in enumerate(df.groupby("case:concept:name")):
+        labels = extract_labels_df(sub)
         cost, real, detail = align_trace(labels)
 
-        sum_cost += cost
-        max_cost = max(max_cost, cost)
+        writer.writerow([idx,
+                         cost if math.isfinite(cost) else "inf",
+                         ";".join(real),
+                         ";".join(id2lab(r) for r in real), 
+                         " | ".join(detail)])
+
         results.append(cost)
-
-        writer.writerow([
-            idx,
-            cost,
-            ";".join(real),
-            " | ".join(detail)            
-        ])
+        sum_cost += (cost if math.isfinite(cost) else 0)
+        max_cost  = max(max_cost, cost)
 
 # ------------------------------------------------------------------
-# MEASURES
+# METRICS
+
 n = len(results)
-avg_cost = sum_cost / n if n else 0
-perc_ok  = results.count(0) / n * 100 if n else 0
+finite = [c for c in results if math.isfinite(c)]
+avg_cost = sum(finite)/len(finite) if finite else 0
+perc_ok  = results.count(0)/n*100 if n else 0
 
-print("==============================================================")
+print("------------------------------------------------------------------")
 print(f"Log file        : {pathlib.Path(LOG_PATH).name}")
-print(f"Trace analyzeD : {n}")
-print(f"Mean violation : {avg_cost:.2f}")
-print(f"OK percetnage   : {perc_ok:.1f}%")
-print(f"Max Violation   : {max_cost}")
-print(f"Results in {OUTPUT_CSV}")
-#print("==============================================================")
-
-
-
-exit()
-
-
-
-
-# VERSIONE SENZA DETTAGLI SU VIOLAZIONI
-
-#TODO: DA FARE TEST DECLARE4PY 
-# ------------------------------------------------------------------
-# Mini-automi per i 3 template 
-
-# End automaton
-class End:
-    def __init__(self, alpha):       # alpha = list of transition ids for the End template in the original decspec
-        #print(alpha)       
-        self.X = set(alpha)          # [ALPHABETH] set of transition ids that are considered as End 
-        #print("End X:", self.X)
-        self.seen = False            # [STATE] True if at least one transition in X has been seen, False otherwise
-        
-    
-    def step(self, t):               # Visit every element in the realization  
-        #print("Step:", t)
-        if t in self.X:              # if elem is in X
-            self.seen = True         # [TRANSITION] mark as seen
-    
-    def result(self):                # check post-trace
-        return 0 if self.seen else 1 
-
-
-# AtMost1 automaton
-class AtMost1: 
-    def __init__(self, alpha):
-        #print(alpha)
-        self.X = set(alpha); self.count = 0; self.viol = 0 # [ALPHABETH] set of transition ids that are considered as AtMost1
-
-    def step(self, t):
-        #print("Step:", t)
-        if t in self.X:
-            self.count += 1 # count the number of transitions in X seen
-            if self.count > 1: # if more than one transition in X has been seen --> violation
-                self.viol += 1  # increment violation counter
-
-    def result(self):
-        return self.viol # [OUTPUT] return the violation counter
-
-
-# AlternatePrecedence automaton
-class AltPrecedence:                
-
-    def __init__(self, Target, Activator): # Target and Activator transition ids lists
-        #print(Target, Activator)
-        self.X, self.Y = set(Target), set(Activator)  # [ALPHABETH] set of transition ids that are considered as Target and Activator
-        
-        # [STATE]: True = sto aspettando un X che chiuda l’ultimo Y visto
-        #        False = sto aspettando un nuovo Y
-        self.waiting_target = True; self.viol = 0 # counter for violations
-        
-    def step(self, t):
-        if not self.waiting_target:          # stato OPEN  (nessun Y aperto)
-            if t in self.X:                  # X senza Y → violazione
-                self.viol += 1
-            elif t in self.Y:                # Y apre una nuova coppia
-                self.waiting_target = True
-
-        else:                                # stato WAIT (aspetto un X)
-            if t in self.Y:                  # nuovo Y prima di X → violazione
-                self.viol += 1               # conto la violazione...
-                # ...e il nuovo Y diventa quello "aperto"
-                # (resto in waiting_target = True)
-            elif t in self.X:                # X chiude la coppia
-                self.waiting_target = False  # torno in stato OPEN
-
-
-    def result(self):
-        return self.viol
-
-# ------------------------------------------------------------------
-# Costruzione dei vincoli a partire dalla specifica sulla base degli automi definiti sopra
-
-def build_constraints(spec_json):
-    """automata from DS"""
-
-    constraints = []
-    for c in spec_json["constraints"]:
-        tmpl, parameter = c["template"], c["parameters"]
-
-        if tmpl == "End":
-            constraints.append(End(*parameter)) # append l'oggetto End sui parameters della specifica del mago
-
-        elif tmpl == "Atmost1":
-            constraints.append(AtMost1(*parameter))
-
-        elif tmpl == "AlternatePrecedence":
-            constraints.append(AltPrecedence(parameter[0], parameter[1]))
-    
-    return constraints
-
-
-
-CONSTRAINTS = build_constraints(model_json)
-#print(type(CONSTRAINTS))
-#print(CONSTRAINTS)
-
-
-# ------------------------------------------------------------------
-# Cost function for each realization
-
-def declare_cost(realization):
-
-    constraints = copy.deepcopy(CONSTRAINTS)       # deepcopy for cleaning automata for each realization
-
-    for t in realization:
-        for c in constraints: 
-            c.step(t)  # passo la transizione della realization al vincolo costruito come automa
-
-    return sum(c.result() for c in constraints)  # somma dei risultati di tutti i vincoli
-
-
-
-
-#TODO: QUI SE VOGLIAMO QUALCHE EURISTICA
-# ------------------------------------------------------------------
-# Ricerca brute-force cross product, 
-
-choices = [L_inv[label] for label in input_trace]   # lista di alternative/posizione
-best_cost, best_real = math.inf, None
-
-for combo in product(*choices): # combo sono le realizzazioni possibili
-    cost = declare_cost(combo)
-    if cost < best_cost:
-        best_cost, best_real = cost, combo
-
-print("****************************************************************************")
-print("Input Trace Lables : ", input_trace)
-print("REALIZATION (id):", best_real)
-print("MINIMUM COST (constraint violation counter):", best_cost)
+print(f"Trace analysed  : {n}")
+print(f"Mean violation  : {avg_cost:.2f}")
+print(f"OK percentage   : {perc_ok:.1f}%")
+print(f"Max violation   : {max_cost}")
+print(f"Results in      : {os.path.abspath(OUTPUT_CSV)}")
