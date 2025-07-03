@@ -2,6 +2,8 @@
 evaluation/performance/set_cardinality/expanded_pnml/out-extra/*
 evaluation/performance/formula_size/expanded_pnml/out-extra/*
 
+conformance/logtesting/*
+
 
 #eventlogs
 evaluation/performance/realworld/logs/*
@@ -31,3 +33,5 @@ evaluation/diagnostics/extra/*
 #pycharm
 .idea/*
 
+evaluation/performance/realworld/Sepsis Cases - Event Log.xes
+evaluation/performance/realworld/BPIC15_5.xes

@@ -252,7 +252,12 @@ def get_alternate_precedence_with_closure(workflow_net):
 
 def translate_to_DEC(workflow_net, model_name):
 
-    
+    mapping = {}
+    for t in workflow_net["transitions"]:
+        id_ = t["id"]
+        name = "tau" if t.get("is_tau", False) else t.get("name")
+        mapping.setdefault(name, []).append(id_)
+
     tasks = [transition["name"] for transition in workflow_net["transitions"] if not transition["is_tau"]]
 
     end_constraint = get_end_constraint(workflow_net)
@@ -266,6 +271,7 @@ def translate_to_DEC(workflow_net, model_name):
 
     output = {
         "name": model_name,
+        "transitionMap": mapping,
         "tasks": tasks,
         "constraints": constraints,
     }
@@ -275,6 +281,7 @@ def translate_to_DEC(workflow_net, model_name):
 
 
 
+#TODO: ADD A CSV DEEBUG EXPORT FEATURE 
 #TODO: EXTRA ALTRESP IMPLEMENTATION
 
 """ 

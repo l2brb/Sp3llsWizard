@@ -1,0 +1,639 @@
+{
+    "name": "sepsis.pnml",
+    "transitionMap": {
+        "tau": [
+            "tau_1",
+            "tauJoin_31",
+            "tauJoin_4",
+            "skip_5",
+            "skip_9",
+            "init_loop_21",
+            "skip_8",
+            "tauJoin_14",
+            "skip_33",
+            "skip_42",
+            "skip_19",
+            "skip_24",
+            "skip_38",
+            "init_loop_39",
+            "skip_45",
+            "skip_12",
+            "init_loop_26",
+            "skip_43",
+            "init_loop_6",
+            "skip_15",
+            "init_loop_16",
+            "skip_36",
+            "skip_37",
+            "skip_44",
+            "skip_46",
+            "tauJoin_11",
+            "skip_18",
+            "skip_20",
+            "skip_25",
+            "skip_28",
+            "skip_29",
+            "skip_32",
+            "skip_23",
+            "skip_41"
+        ],
+        "Leucocytes": [
+            "9a91e178-9a19-4704-a1ab-590e0f85f78a"
+        ],
+        "Release A": [
+            "17850bc7-aa37-48d6-be15-b079960a9319"
+        ],
+        "CRP": [
+            "44b733f0-5cda-4c90-9406-9544ab96138c"
+        ],
+        "Release C": [
+            "e872cfa7-72d9-4c24-bcb4-1b6bd76c87b7"
+        ],
+        "Return ER": [
+            "e4bb9fae-a800-459c-a3ce-04a98b22cb91"
+        ],
+        "ER Sepsis Triage": [
+            "e1fe93ac-6a36-45b6-8eac-239835b385a6"
+        ],
+        "IV Antibiotics": [
+            "5db34382-2f66-46f4-9103-a8bb3e512bc5"
+        ],
+        "ER Triage": [
+            "4ce532a0-8b7e-43aa-8c0c-c8230d3782ff"
+        ],
+        "Admission IC": [
+            "ab8d980c-cd15-40d0-b2ec-2df8defb4f7d"
+        ],
+        "Release D": [
+            "ad7a022c-50e6-4200-bc32-88076d354fa5"
+        ],
+        "LacticAcid": [
+            "8858a0e2-6b3d-4603-bfcb-05ab983f600e"
+        ],
+        "IV Liquid": [
+            "bde1598c-02e8-4a4a-acbc-9f3ccdc7ab43"
+        ],
+        "Admission NC": [
+            "9ac4f8c1-2e27-4729-9a22-7abe3b6224a9"
+        ],
+        "Release E": [
+            "7961a437-2869-44ed-b1ca-b92d057fbdec"
+        ],
+        "Release B": [
+            "a37d4b50-569a-4730-8756-a952da466e78"
+        ],
+        "ER Registration": [
+            "083cf176-3c9a-48fd-a7c7-11a75e6b2dcf"
+        ]
+    },
+    "tasks": [
+        "Leucocytes",
+        "Release A",
+        "CRP",
+        "Release C",
+        "Return ER",
+        "ER Sepsis Triage",
+        "IV Antibiotics",
+        "ER Triage",
+        "Admission IC",
+        "Release D",
+        "LacticAcid",
+        "IV Liquid",
+        "Admission NC",
+        "Release E",
+        "Release B",
+        "ER Registration"
+    ],
+    "constraints": [
+        {
+            "template": "End",
+            "parameters": [
+                [
+                    "END"
+                ]
+            ]
+        },
+        {
+            "template": "Atmost1",
+            "parameters": [
+                [
+                    "START"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Return ER"
+                ],
+                [
+                    "Release B"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ER Sepsis Triage"
+                ],
+                [
+                    "Release E",
+                    "IV Antibiotics"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ER Sepsis Triage"
+                ],
+                [
+                    "IV Antibiotics",
+                    "Release A"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ER Sepsis Triage"
+                ],
+                [
+                    "IV Antibiotics",
+                    "Release B"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ER Sepsis Triage"
+                ],
+                [
+                    "IV Antibiotics",
+                    "Release D"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ER Sepsis Triage"
+                ],
+                [
+                    "IV Antibiotics",
+                    "Release C"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "LacticAcid"
+                ],
+                [
+                    "skip_28",
+                    "Release E"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "LacticAcid"
+                ],
+                [
+                    "skip_28",
+                    "Release D"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "LacticAcid"
+                ],
+                [
+                    "skip_28",
+                    "Release C"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "LacticAcid"
+                ],
+                [
+                    "skip_28",
+                    "Release B"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Admission IC"
+                ],
+                [
+                    "Release E",
+                    "skip_41"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Admission IC"
+                ],
+                [
+                    "Release A",
+                    "skip_41"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Admission IC"
+                ],
+                [
+                    "skip_41",
+                    "Release B"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Admission IC"
+                ],
+                [
+                    "Release D",
+                    "skip_41"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Admission IC"
+                ],
+                [
+                    "skip_41",
+                    "Release C"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "CRP"
+                ],
+                [
+                    "skip_23",
+                    "Release E"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "CRP"
+                ],
+                [
+                    "skip_23",
+                    "Release D"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "CRP"
+                ],
+                [
+                    "skip_23",
+                    "Release C"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "CRP"
+                ],
+                [
+                    "skip_23",
+                    "Release B"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "IV Liquid"
+                ],
+                [
+                    "Release E"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "IV Liquid"
+                ],
+                [
+                    "Release A"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "IV Liquid"
+                ],
+                [
+                    "Release B"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "IV Liquid"
+                ],
+                [
+                    "Release D"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "IV Liquid"
+                ],
+                [
+                    "Release C"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Release E",
+                    "Release D",
+                    "Release C"
+                ],
+                [
+                    "Release B"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Leucocytes"
+                ],
+                [
+                    "Release E",
+                    "skip_18"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Leucocytes"
+                ],
+                [
+                    "skip_18",
+                    "Release D"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Leucocytes"
+                ],
+                [
+                    "skip_18",
+                    "Release C"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Leucocytes"
+                ],
+                [
+                    "skip_18",
+                    "Release B"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Release A"
+                ],
+                [
+                    "Release E"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Release A"
+                ],
+                [
+                    "Release D"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Release A"
+                ],
+                [
+                    "Release C"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Release A"
+                ],
+                [
+                    "Release B"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "IV Antibiotics"
+                ],
+                [
+                    "Release E"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "IV Antibiotics"
+                ],
+                [
+                    "Release A"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "IV Antibiotics"
+                ],
+                [
+                    "Release B"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "IV Antibiotics"
+                ],
+                [
+                    "Release D"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "IV Antibiotics"
+                ],
+                [
+                    "Release C"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ER Triage"
+                ],
+                [
+                    "Release E",
+                    "skip_36"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ER Triage"
+                ],
+                [
+                    "Release A",
+                    "skip_36"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ER Triage"
+                ],
+                [
+                    "skip_36",
+                    "Release B"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ER Triage"
+                ],
+                [
+                    "Release D",
+                    "skip_36"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ER Triage"
+                ],
+                [
+                    "skip_36",
+                    "Admission IC"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "ER Triage"
+                ],
+                [
+                    "skip_36",
+                    "Release C"
+                ]
+            ]
+        }
+    ]
+}

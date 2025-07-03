@@ -1,0 +1,336 @@
+{
+    "name": "rtfmp.pnml",
+    "transitionMap": {
+        "Send Fine": [
+            "c27accb3-9cd1-4a26-a784-7ec2deca0c0c"
+        ],
+        "tau": [
+            "skip_19",
+            "tauJoin_2",
+            "skip_10",
+            "tauSplit_13",
+            "tauSplit_22",
+            "skip_24",
+            "skip_3",
+            "skip_26",
+            "skip_16",
+            "init_loop_8",
+            "skip_11",
+            "skip_21",
+            "tauJoin_6",
+            "skip_7",
+            "skip_12",
+            "skip_15",
+            "tauSplit_17",
+            "tauJoin_18",
+            "skip_20",
+            "skip_4",
+            "tauJoin_14",
+            "tauJoin_23",
+            "skip_25"
+        ],
+        "Create Fine": [
+            "6000cf46-3fc3-4e67-9d65-0c98b4d2960d"
+        ],
+        "Payment": [
+            "b463f6e8-cc23-40aa-9f54-3fd167079254"
+        ],
+        "Add penalty": [
+            "92d4a64e-a8ae-40e4-bae9-9ce7382d4b62"
+        ],
+        "Send Appeal to Prefecture": [
+            "ad6228bb-e33d-4863-a4bc-1e2f0023f810"
+        ],
+        "Receive Result Appeal from Prefecture": [
+            "4a7d21ac-5378-4cb0-9cb0-3f84b68cefcd"
+        ],
+        "Notify Result Appeal to Offender": [
+            "f3d0c8ed-48a4-43d5-b35e-a98e8aabd0d1"
+        ],
+        "Insert Date Appeal to Prefecture": [
+            "b29ea44b-bdd7-41cc-8d45-5d6744e73fc2"
+        ],
+        "Insert Fine Notification": [
+            "0ef9e493-dc04-4214-852d-8e9761509aac"
+        ],
+        "Appeal to Judge": [
+            "2a00aed2-6b2b-45c2-8242-f345cc926564"
+        ],
+        "Send for Credit Collection": [
+            "8b4eea44-cafd-4f14-99f8-9e8db19d0d10"
+        ]
+    },
+    "tasks": [
+        "Send Fine",
+        "Create Fine",
+        "Payment",
+        "Add penalty",
+        "Send Appeal to Prefecture",
+        "Receive Result Appeal from Prefecture",
+        "Notify Result Appeal to Offender",
+        "Insert Date Appeal to Prefecture",
+        "Insert Fine Notification",
+        "Appeal to Judge",
+        "Send for Credit Collection"
+    ],
+    "constraints": [
+        {
+            "template": "End",
+            "parameters": [
+                [
+                    "END"
+                ]
+            ]
+        },
+        {
+            "template": "Atmost1",
+            "parameters": [
+                [
+                    "Create Fine"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Add penalty"
+                ],
+                [
+                    "Send for Credit Collection"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Create Fine"
+                ],
+                [
+                    "tauSplit_13",
+                    "Send for Credit Collection"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Create Fine"
+                ],
+                [
+                    "skip_12",
+                    "Insert Fine Notification"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Create Fine"
+                ],
+                [
+                    "skip_12",
+                    "Receive Result Appeal from Prefecture"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Create Fine"
+                ],
+                [
+                    "skip_12",
+                    "Send for Credit Collection"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Create Fine"
+                ],
+                [
+                    "skip_12",
+                    "Send Fine"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Create Fine"
+                ],
+                [
+                    "skip_12",
+                    "Appeal to Judge"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Create Fine"
+                ],
+                [
+                    "skip_12",
+                    "Notify Result Appeal to Offender"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Create Fine"
+                ],
+                [
+                    "skip_12",
+                    "Add penalty"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Payment"
+                ],
+                [
+                    "skip_10",
+                    "Send for Credit Collection"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Notify Result Appeal to Offender"
+                ],
+                [
+                    "Send for Credit Collection"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Send Fine"
+                ],
+                [
+                    "Send for Credit Collection"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Appeal to Judge"
+                ],
+                [
+                    "Send for Credit Collection"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Create Fine"
+                ],
+                [
+                    "Payment",
+                    "skip_7"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Create Fine"
+                ],
+                [
+                    "init_loop_8",
+                    "Send for Credit Collection"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Receive Result Appeal from Prefecture"
+                ],
+                [
+                    "Send for Credit Collection"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Insert Fine Notification"
+                ],
+                [
+                    "Notify Result Appeal to Offender"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Insert Fine Notification"
+                ],
+                [
+                    "Send for Credit Collection"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Insert Fine Notification"
+                ],
+                [
+                    "Appeal to Judge"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Insert Fine Notification"
+                ],
+                [
+                    "Receive Result Appeal from Prefecture"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Insert Fine Notification"
+                ],
+                [
+                    "Add penalty"
+                ]
+            ]
+        }
+    ]
+}

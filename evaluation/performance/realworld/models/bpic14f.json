@@ -1,0 +1,629 @@
+{
+    "name": "bpic14f.pnml",
+    "transitionMap": {
+        "tau": [
+            "tauSplit_4",
+            "init_loop_25",
+            "skip_32",
+            "skip_40",
+            "tauJoin_2",
+            "skip_11",
+            "skip_21",
+            "skip_27",
+            "skip_6",
+            "skip_44",
+            "skip_3",
+            "skip_24",
+            "skip_28",
+            "init_loop_37",
+            "skip_41",
+            "skip_45",
+            "skip_9",
+            "skip_29",
+            "skip_33",
+            "tauJoin_35",
+            "tauSplit_22",
+            "skip_16",
+            "tauJoin_5",
+            "init_loop_12",
+            "skip_14",
+            "init_loop_17",
+            "skip_19",
+            "skip_20",
+            "init_loop_7",
+            "skip_10",
+            "tauJoin_23",
+            "skip_39",
+            "skip_36",
+            "skip_15",
+            "init_loop_30",
+            "init_loop_42",
+            "skip_46"
+        ],
+        "Caused By CI": [
+            "c550e945-cc0d-43a3-b52c-276f7e08a4a1"
+        ],
+        "Closed": [
+            "465a5eec-7595-40e7-828a-d4714c1d71a3"
+        ],
+        "Open": [
+            "97afa0b6-a8f8-4242-bb4d-6f04c5c18698"
+        ],
+        "Status Change": [
+            "27b83a1a-9e97-4910-b7ba-fe72e8be183c"
+        ],
+        "Assignment": [
+            "02db0843-8ba9-4183-a97b-f0c3b9f293d7"
+        ],
+        "Reassignment": [
+            "827bebab-536d-4165-88e3-b4c3158fe389"
+        ],
+        "Update": [
+            "c0c61628-cf1a-486b-baca-6f3c999d1830"
+        ],
+        "Operator Update": [
+            "f1310fbe-60e7-4cb0-bd24-90966d7cd0dd"
+        ],
+        "Quality Indicator Fixed": [
+            "dda51754-ef8e-4861-a8dd-da5ae4cb0acf"
+        ]
+    },
+    "tasks": [
+        "Caused By CI",
+        "Closed",
+        "Open",
+        "Status Change",
+        "Assignment",
+        "Reassignment",
+        "Update",
+        "Operator Update",
+        "Quality Indicator Fixed"
+    ],
+    "constraints": [
+        {
+            "template": "End",
+            "parameters": [
+                [
+                    "END",
+                    "Quality Indicator Fixed"
+                ]
+            ]
+        },
+        {
+            "template": "Atmost1",
+            "parameters": [
+                [
+                    "Open"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_19",
+                    "init_loop_17"
+                ],
+                [
+                    "Assignment"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Open"
+                ],
+                [
+                    "Caused By CI",
+                    "init_loop_17"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Open"
+                ],
+                [
+                    "init_loop_17",
+                    "Closed"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Open"
+                ],
+                [
+                    "init_loop_17",
+                    "Quality Indicator Fixed"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Open"
+                ],
+                [
+                    "Assignment",
+                    "skip_16"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Assignment"
+                ],
+                [
+                    "Caused By CI",
+                    "skip_19"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Assignment"
+                ],
+                [
+                    "skip_19",
+                    "Closed"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Assignment"
+                ],
+                [
+                    "skip_19",
+                    "Quality Indicator Fixed"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Closed"
+                ],
+                [
+                    "skip_39",
+                    "Quality Indicator Fixed"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Operator Update"
+                ],
+                [
+                    "skip_14",
+                    "Caused By CI"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Operator Update"
+                ],
+                [
+                    "skip_14",
+                    "Closed"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Operator Update"
+                ],
+                [
+                    "skip_14",
+                    "Quality Indicator Fixed"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_39",
+                    "init_loop_37"
+                ],
+                [
+                    "Closed"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Open"
+                ],
+                [
+                    "Caused By CI",
+                    "skip_21"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Open"
+                ],
+                [
+                    "Closed",
+                    "skip_21"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Open"
+                ],
+                [
+                    "skip_21",
+                    "Quality Indicator Fixed"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Open"
+                ],
+                [
+                    "Status Change",
+                    "skip_21"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Open"
+                ],
+                [
+                    "skip_21",
+                    "Reassignment"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Open"
+                ],
+                [
+                    "Caused By CI",
+                    "tauSplit_22"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Open"
+                ],
+                [
+                    "tauSplit_22",
+                    "Closed"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Open"
+                ],
+                [
+                    "tauSplit_22",
+                    "Quality Indicator Fixed"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Caused By CI"
+                ],
+                [
+                    "skip_44",
+                    "Quality Indicator Fixed"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_9",
+                    "init_loop_7"
+                ],
+                [
+                    "Update"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Update"
+                ],
+                [
+                    "Caused By CI",
+                    "skip_9"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Update"
+                ],
+                [
+                    "Closed",
+                    "skip_9"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Update"
+                ],
+                [
+                    "Quality Indicator Fixed",
+                    "skip_9"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_27",
+                    "init_loop_25"
+                ],
+                [
+                    "Status Change"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Reassignment"
+                ],
+                [
+                    "Caused By CI",
+                    "skip_32"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Reassignment"
+                ],
+                [
+                    "skip_32",
+                    "Closed"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Reassignment"
+                ],
+                [
+                    "skip_32",
+                    "Quality Indicator Fixed"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Open"
+                ],
+                [
+                    "Caused By CI",
+                    "tauSplit_4"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Open"
+                ],
+                [
+                    "Closed",
+                    "tauSplit_4"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Open"
+                ],
+                [
+                    "Quality Indicator Fixed",
+                    "tauSplit_4"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Open"
+                ],
+                [
+                    "Caused By CI",
+                    "skip_3"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Open"
+                ],
+                [
+                    "skip_3",
+                    "Closed"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Open"
+                ],
+                [
+                    "skip_3",
+                    "Update"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Open"
+                ],
+                [
+                    "Operator Update",
+                    "skip_3"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Open"
+                ],
+                [
+                    "skip_3",
+                    "Quality Indicator Fixed"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_32",
+                    "init_loop_30"
+                ],
+                [
+                    "Reassignment"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "init_loop_42",
+                    "skip_44"
+                ],
+                [
+                    "Caused By CI"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "skip_14",
+                    "init_loop_12"
+                ],
+                [
+                    "Operator Update"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Status Change"
+                ],
+                [
+                    "Caused By CI",
+                    "skip_27"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Status Change"
+                ],
+                [
+                    "skip_27",
+                    "Closed"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "Status Change"
+                ],
+                [
+                    "skip_27",
+                    "Quality Indicator Fixed"
+                ]
+            ]
+        }
+    ]
+}

@@ -2,7 +2,7 @@ import os
 import json
 import csv
 import typer
-import pyfiglet
+#import pyfiglet
 from rich import print
 from rich.console import Console
 from rich.progress import Progress
@@ -10,7 +10,7 @@ from rich.progress import Progress
 from src.utils import petri_parser
 from src.declare_translator import dec_translator 
 from src.declare_translator import dec_translator_silent
-
+from src.alignment import run_conformance
 
 console = Console()
 
@@ -91,13 +91,13 @@ def declare_synth(
 @app.command()
 def declare_silent_synth(
     pnml_file: str = typer.Option(..., help="File path .pnml"),
-    output_format: str = typer.Option("json", help="Output format: 'json' o 'csv'"),
+    output_format: str = typer.Option("json", help="Output format: 'json' or 'csv'"),
     output_path: str = typer.Option(..., help="output file path")
 ):
-    """
+    """   
     Cast the three (+ 1) spells and save output to CSV or JSON.
-    This algorithm removes the silent transitions eventually present in the input model.
-    """
+    This algorithm removes the silent transitions eventually present in the input model."""
+    
     with Progress() as progress:
         # Parsing PNML File
         parse_task = progress.add_task("[cyan]Parsing PNML file...", total=1)
@@ -122,6 +122,24 @@ def declare_silent_synth(
         write_to_csv(output, output_path)
     else:
         console.print("[bold red]Invalid output format. Use 'json' or 'csv'.[/bold red]")
+
+
+@app.command()
+def conformance(
+    declare_json: str = typer.Option(..., help="Declarative specification path"),
+    log_path: str     = typer.Option(..., help="log path"),
+    output_csv: str   = typer.Option(..., help="output csv")
+):
+    """
+    Execute the alignment per trace based on optimal realization cost and save the output diagnostics in a .csv file.
+    """
+    with Progress() as progress:
+        task = progress.add_task("[cyan]Aligning log...", total=1)
+        run_conformance(declare_json, log_path, output_csv)
+        progress.update(task, advance=1)
+
+    console.print(f"[bold green]Diagnostics results in {output_csv}[/bold green]")
+
 
 if __name__ == "__main__":
     app()

@@ -3,7 +3,8 @@ from pathlib import Path
 from itertools import product
 from collections import defaultdict
 
-# -------------------- PREAMBOLO PATH ------------------------------
+# ------------------------------------------------------------------
+# SET WD 
 current_dir  = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.abspath(os.path.join(current_dir, "../../"))
 if project_root not in sys.path:
@@ -12,14 +13,20 @@ if project_root not in sys.path:
 from src.utils import petri_parser
 
 # ------------------------------------------------------------------
-# INPUT WN
-# ------------------------------------------------------------------
-pnml_file_path = "/home/l2brb/main/DECpietro/evaluation/diagnostics/real-world/bpic155f/BPIC15_5f_alpha.pnml"
-workflow_net   = petri_parser.parse_wn_from_pnml(pnml_file_path)
+# INPUT PATHS
 
+#PNML_PATH = "/Users/l2brb/Documents/main/DECpietro/conformance/logtesting/testone_pm4py.pnml"
+DECLARE_PATH = Path("/Users/l2brb/Documents/main/DECpietro/conformance/logtesting/testone_pm4py_TESTONE.json")
+LOG_PATH   = "/Users/l2brb/Documents/main/DECpietro/conformance/logtesting/log_testone.xes"
+OUTPUT_CSV = "/Users/l2brb/Documents/main/DECpietro/conformance/logtesting/testone_alignment_results.csv"
+
+"""
+################### DEPRECATED SINCE ALREADY IN JSON ###################
 # ------------------------------------------------------------------
 # Mapping WN: transition-id → label  +  helper id2lab
-# ------------------------------------------------------------------
+
+workflow_net   = petri_parser.parse_wn_from_pnml(PNML_PATH)
+
 Map = {}
 for tr in workflow_net["transitions"]:
     label = "τ" if tr["is_tau"] else tr["name"]
@@ -29,23 +36,43 @@ print(Map)
 def id2lab(tid):
     return Map.get(tid, "?")
 
-# ------------------------------------------------------------------
 # L-1 globale (inverse mapping)
-# ------------------------------------------------------------------
+
 L_inv = defaultdict(list)
 for t_id, lab in Map.items():
     L_inv[lab].append(t_id)
 
+#print(L_inv)  # per debug
+"""
+
 # ------------------------------------------------------------------
 # JSON Declare spec
 
-declare_path = Path("/home/l2brb/main/DECpietro/evaluation/diagnostics/real-world/bpic155f/BPIC15_5f_constraints.json")
-model_json   = json.loads(declare_path.read_text())
-
+model_json   = json.loads(DECLARE_PATH.read_text())
+#print(json.dumps(model_json, indent=4))  
 
 
 # ------------------------------------------------------------------
-# AUTOMI  (End / AtMost1 / AltPrecedence)
+# Mapping
+# Mapping: transition-id → label  (e vice-versa)  **usando il JSON**
+
+trans_map = model_json["transitionsMap"]      # label → [id, id, …]
+#print(trans_map)
+
+# id → label
+Map = {tid: lab for lab, tids in trans_map.items() for tid in tids}
+#print(Map)  # per debug
+
+def id2lab(tid):
+    return Map.get(tid, "?")
+
+# label → [ids] (inverse mapping)
+L_inv = defaultdict(list, trans_map) 
+#print(L_inv)
+
+
+# ------------------------------------------------------------------
+# AUTOMATA  (End / AtMost1 / AltPrecedence)
 
 class End:
     def __init__(self, alpha):
@@ -62,7 +89,7 @@ class End:
         elif self.after_x and not self.bad_tail:
             labs = ",".join(id2lab(x) for x in self.X)
             ids  = ",".join(self.X)
-            self.msg.append(f"[pos {self.pos}] End({labs}) violated (id {ids})")
+            self.msg.append(f"[pos {self.pos}] End({labs}) violated by (id {ids})")
             self.bad_tail = True
 
     def result(self):
@@ -100,25 +127,27 @@ class AltPrecedence:
     def step(self, t):
         self.pos += 1
         if self.waiting_target:
-            if t in self.Y:                                   # violazione
+            if t in self.Y:                                  
                 labsX = ",".join(sorted(id2lab(x) for x in self.X))
                 labsY = ",".join(sorted(id2lab(y) for y in self.Y))
                 idsY  = ",".join(sorted(self.Y))
                 self.msg.append(
                     f"[pos {self.pos}] AltPrec({{{labsX}}},{{{labsY}}}): "
-                    f"violated in (id {idsY})"
+                    f"violated by (id {idsY})"
                 )
             elif t in self.X:
                 self.waiting_target = False
-        else:                                                 # aspetto Y
+        else:                                                 
             if t in self.Y:
                 self.waiting_target = True
 
     def result(self):
         return len(self.msg), self.msg
 
+"""
+# DEPRECATED
 # ------------------------------------------------------------------
-# Build constraints 
+# Building constraints 
 
 def build_constraints(spec_json):
     constraints = []
@@ -132,8 +161,38 @@ def build_constraints(spec_json):
             constraints.append(AltPrecedence(param[0], param[1]))
     return constraints
 
-CONSTRAINTS = build_constraints(model_json)
+CONSTRAINTS = build_constraints(model_json)"""
 
+
+# ------------------------------- utility
+def names_to_ids(names, trans_map):
+    ids = []
+    for n in names:
+        if n in trans_map:           # label normale
+            ids.extend(trans_map[n])
+        else:                        # placeholder START/END ecc.
+            ids.append(n)
+    return ids
+
+# ------------------------------- build_constraints
+def build_constraints(spec_json):
+    trans_map = spec_json["transitionsMap"]
+    n2i = lambda lst: names_to_ids(lst, trans_map)
+
+    constraints = []
+    for c in spec_json["constraints"]:
+        if c["template"] == "End":
+            constraints.append(End(n2i(c["parameters"][0])))
+        elif c["template"] == "Atmost1":
+            constraints.append(AtMost1(n2i(c["parameters"][0])))
+        elif c["template"] == "AlternatePrecedence":
+            p, s = c["parameters"]
+            constraints.append(AltPrecedence(n2i(p), n2i(s)))
+    return constraints
+
+
+
+CONSTRAINTS = build_constraints(model_json)
 # ------------------------------------------------------------------
 # Cost function
 
@@ -150,7 +209,8 @@ def declare_cost(realization):
     return total, details
 
 # ------------------------------------------------------------------
-# Allineamento per singola traccia
+# Alignment function per trance
+
 def align_trace(trace_labels):
     unknown = [lab for lab in trace_labels if lab not in L_inv]
     if unknown:
@@ -173,9 +233,6 @@ def align_trace(trace_labels):
 # ------------------------------------------------------------------
 # Log
 
-LOG_PATH   = "/home/l2brb/main/DECpietro/evaluation/performance/realworld/logs/BPIC155f/BPIC15_5f.xes"
-OUTPUT_CSV = "/home/l2brb/main/DECpietro/conformance/incrementale/alignment_results.csv"
-
 log_obj = pm4py.read_xes(LOG_PATH)
 df      = pm4py.convert_to_dataframe(log_obj).sort_values(
               ["case:concept:name", "time:timestamp"])
@@ -188,28 +245,39 @@ def norm_label(lbl): return LOG_LABEL_MAP.get(lbl, lbl)
 def extract_labels_df(sub_df, attr="concept:name"):
     return [lab for lab in map(norm_label, sub_df[attr]) if lab in L_inv]
 
+
 # ------------------------------------------------------------------
 # LOOP TRACCE  +  outCSV
 
-results, sum_cost, max_cost = [], 0, 0
+results, sum_cost, max_cost, min_cost = [], 0, 0, 0
 with open(OUTPUT_CSV, "w", newline="") as f:
     writer = csv.writer(f)
-    writer.writerow(["trace_idx","cost","realization_ids","realization_labels","violations"])
+    writer.writerow([
+        "case_id",
+        "trace_len",
+        "cost",
+        "realization_ids",
+        "realization_labels",
+        "violations"
+        ])
 
 
-    for idx, (_, sub) in enumerate(df.groupby("case:concept:name")):
+    for case_name, sub in df.groupby("case:concept:name"):
         labels = extract_labels_df(sub)
         cost, real, detail = align_trace(labels)
 
-        writer.writerow([idx,
-                         cost if math.isfinite(cost) else "inf",
-                         ";".join(real),
-                         ";".join(id2lab(r) for r in real), 
-                         " | ".join(detail)])
+        writer.writerow([case_name,
+                        len(labels),  
+                        cost if math.isfinite(cost) else "inf",
+                        ";".join(real),
+                        ";".join(id2lab(r) for r in real), 
+                        " | ".join(detail)])
 
         results.append(cost)
         sum_cost += (cost if math.isfinite(cost) else 0)
         max_cost  = max(max_cost, cost)
+        min_cost = min(min_cost, cost) if results else cost
+
 
 # ------------------------------------------------------------------
 # METRICS
@@ -221,8 +289,9 @@ perc_ok  = results.count(0)/n*100 if n else 0
 
 print("------------------------------------------------------------------")
 print(f"Log file        : {pathlib.Path(LOG_PATH).name}")
-print(f"Trace analysed  : {n}")
-print(f"Mean violation  : {avg_cost:.2f}")
+print(f"Processed traces  : {n}")
+print(f"Mean violation cost  : {avg_cost:.2f}")
+print(f"Max violation cost   : {max_cost}")
+print(f"Min violation cost   : {min_cost}")
 print(f"OK percentage   : {perc_ok:.1f}%")
-print(f"Max violation   : {max_cost}")
 print(f"Results in      : {os.path.abspath(OUTPUT_CSV)}")
