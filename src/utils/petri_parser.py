@@ -42,9 +42,14 @@ def parse_wn_from_pnml(file_path):
             transition_id = transition.get("id")
             transition_name = transition.findtext('.//name/text')
 
+
+            # Treat empty or missing names as silent transitions (tau)
+            if not transition_name or transition_name.strip() == "":
+                transition_name = "tau"
+
             # invisible transition check
             toolspecific = transition.find('.//toolspecific[@activity="$invisible$"]')
-            is_tau = toolspecific is not None  # True if toolspecific activity="$invisible$"
+            is_tau = toolspecific is not None or transition_name == "tau"  # silent if toolspecific or unnamed
 
             workflow_net["transitions"].append({
                 "id": transition_id,

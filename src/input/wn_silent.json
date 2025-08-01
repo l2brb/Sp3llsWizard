@@ -1,0 +1,161 @@
+{
+    "name": "wn_silent.pnml",
+    "transitionMap": {
+        "E": [
+            "4"
+        ],
+        "J": [
+            "10"
+        ],
+        "G": [
+            "7"
+        ],
+        "K": [
+            "11"
+        ],
+        "tau": [
+            "19",
+            "t1"
+        ],
+        "I": [
+            "9"
+        ],
+        "B": [
+            "2"
+        ],
+        "A": [
+            "13"
+        ],
+        "C": [
+            "3"
+        ],
+        "M": [
+            "5"
+        ],
+        "F": [
+            "6"
+        ]
+    },
+    "tasks": [
+        "E",
+        "J",
+        "G",
+        "K",
+        "I",
+        "B",
+        "A",
+        "C",
+        "M",
+        "F"
+    ],
+    "constraints": [
+        {
+            "template": "End",
+            "parameters": [
+                [
+                    "B"
+                ]
+            ]
+        },
+        {
+            "template": "Atmost1",
+            "parameters": [
+                [
+                    "A"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "E",
+                    "F"
+                ],
+                [
+                    "I"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "J"
+                ],
+                [
+                    "B",
+                    "G"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "M"
+                ],
+                [
+                    "J"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "A",
+                    "G"
+                ],
+                [
+                    "C"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "C"
+                ],
+                [
+                    "E",
+                    "F"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "I"
+                ],
+                [
+                    "M"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "I"
+                ],
+                [
+                    "K"
+                ]
+            ]
+        },
+        {
+            "template": "AlternatePrecedence",
+            "parameters": [
+                [
+                    "K"
+                ],
+                [
+                    "J"
+                ]
+            ]
+        }
+    ]
+}

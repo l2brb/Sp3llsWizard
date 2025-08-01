@@ -143,7 +143,7 @@ def translate_to_DEC(workflow_net, model_name):
 
     output = {
         "name": model_name,
-        "tramsitionsMap": mapping,
+        "transitionsMap": mapping,
         "tasks": tasks,
         "constraints": constraints,
     }

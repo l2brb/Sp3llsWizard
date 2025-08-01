@@ -3,11 +3,12 @@ import json
 
 
 from src.utils import petri_parser
-from src.declare_translator import dec_translator_silent as dec_translator
+from src.declare_translator import dec_translator_silent_fix as dec_translator
+#from src.declare_translator import dec_translator_silent
 
 
-PNML_PATH = "/Users/l2brb/Documents/main/DECpietro/conformance/logtesting/testone/testone_pm4py.pnml"
-JSON_PATH = "/Users/l2brb/Documents/main/DECpietro/conformance/logtesting/testone/testone_pm4py.json"
+PNML_PATH = "/Users/l2brb/Documents/main/DECpietro/conformance/logtesting/municipality/test_m1A/0_02_6_pm4py.pnml"
+JSON_PATH = "/Users/l2brb/Documents/main/DECpietro/conformance/logtesting/municipality/test_m1A/0_02_6_pm4py.json"
 
 def write_to_json(output, output_path: str):
     with open(output_path, 'w') as file:
