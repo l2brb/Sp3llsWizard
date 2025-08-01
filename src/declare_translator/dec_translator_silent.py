@@ -166,6 +166,8 @@ def get_alternate_precedence(workflow_net):
 
 def compute_silent_replacements(workflow_net, silent_labels):
     transition_names = {t["id"]: t["name"] for t in workflow_net["transitions"]}
+    print(transition_names)
+    print("cazzzzzzzzzzzzzzzzzzzzzzzzzzzzzz")
     place_ids = {place["id"] for place in workflow_net["places"]}
 
     arcs_from_transition = {}
@@ -174,18 +176,28 @@ def compute_silent_replacements(workflow_net, silent_labels):
     # group arcs by source and target
     for arc in workflow_net["arcs"]:
         src, tgt = arc["source"], arc["target"]
+        print(f"rosita",src, tgt)
         if src in transition_names:
+            print (f"micaspicci",src)
+            print("cazzomannaggia")
             arcs_from_transition.setdefault(transition_names[src], set()).add(tgt)
+            print(f"miticooooooooooooooo",arcs_from_transition)
+            #print("cazzolesso")
         if src in place_ids:
             arcs_from_place.setdefault(src, set()).add(transition_names[tgt])
-
+            print(f"colioneee",transition_names[tgt])
+            #print(arcs_from_place)
+            #print("cazzolesso")
     # group arcs by target and source
     def find_non_silent_successors(silent, visited=None):
         if visited is None:
             visited = set()
         if silent in visited:
             return set()
+        
         visited.add(silent)
+       # print(visited)
+        print("cazzzzzzzzzzzzzzzzzzzzzzzzzzzzzz")
         result = set()
         for place in arcs_from_transition.get(silent, []):
             for tr in arcs_from_place.get(place, []):
@@ -193,9 +205,12 @@ def compute_silent_replacements(workflow_net, silent_labels):
                     result |= find_non_silent_successors(tr, visited)
                 else:
                     result.add(tr)
+        print(result)    
         return result
+            
 
     replacements = {silent: find_non_silent_successors(silent) for silent in silent_labels}
+    #print(replacements)
     return replacements
 
 # Apply replacements: per raw constraint, expand silent in preds and succs separately
