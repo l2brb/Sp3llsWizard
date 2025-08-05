@@ -1,4 +1,4 @@
-![logo](logo.png)
+![logo](images/logo.png)
 
 ![Python version](https://img.shields.io/badge/python-3.11-blue?logo=python&logoColor=white)
 ![Conda](https://img.shields.io/badge/environment-conda-green?logo=anaconda)
@@ -55,7 +55,7 @@ The main content of the repository is structured as follows:
 ```bash
 python3 main.py declare-synth --pnml-file ${INPUT_WN}  --output-format json --output-path ${OUTPUT_PATH}
 ```
-![execution](execution.png)
+![execution](images/execution.png)
 
 
 ## Evaluation
@@ -102,14 +102,14 @@ We rely on an **iterative expansion mechanism**, implemented in [/expansion_rule
 This process is repeated for **1000 iterations**, each time expanding the net and applying our algorithm.  
 Results are available in [/cardinality_test_results/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/performance/set_cardinality).
 
-![cardinality](cardinality.png)
+![cardinality](images/cardinality.png)
 
 
 #### Increasing constraint formula size
 
 Here, we configure the test on memory usage and execution time to investigate the algorithm’s performance while handling an expanding constraints’ formula size (i.e., with an increasing number of disjuncts). To this end, we progressively broaden the Workflow net by applying the soundness-preserving conditional expansion rule. 
 
-![formulasize](formulasize.png)
+![formulasize](images/formulasize.png)
 
 
 #### Real-world process model testing 
@@ -145,7 +145,8 @@ This module tests the usage of the synthesized constraints as determinants of pr
 To this end, we developed a dedicated diagnostic module that extends a declarative specification miner for constraint checking via the replay of runs on semi-symbolic automata.
 
 ```bash
-./run-MINERfulFitnessChecker-unstable.sh -iLF ${INPUT_LOG} -iLF xes -iSF ${INPUT_SPECIFICATION} -iSE json -oCSV ${OUTPUT_PATH}
+./run-MINERfulFitnessChecker-unstable.sh -iLF ${INPUT_LOG} -iLF xes -iSF ${INPUT_SPECIFICATION} -iSE json -oCSV ${OUTPUT_PATH} --debug all  > ${DEBUG_TXT_PATH}
+
 ```
 As a test case, we use real-world data from **BPIC 15\_5f**. After preprocessing (975 valid traces), the diagnostic pipeline works as follows:
 

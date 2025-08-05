@@ -1,16 +1,21 @@
 #test memusage time exec
 evaluation/performance/set_cardinality/expanded_pnml/out-extra/*
 evaluation/performance/formula_size/expanded_pnml/out-extra/*
-
-conformance/logtesting/*
-
-
 #eventlogs
 evaluation/performance/realworld/logs/*
 evaluation/performance/realworld/dump/*
 
+evaluation/bisimulation/dump/*
+
 evaluation/diagnostics/clustering/dump*
 
+evaluation/diagnostics/benchmarking/*
+evaluation/diagnostics/extra/*
+
+evaluation/performance/realworld/Sepsis Cases - Event Log.xes
+evaluation/performance/realworld/BPIC15_5.xes
+
+conformance/*
 
 extra/*
 
@@ -20,18 +25,10 @@ src/__pycache__/*
 /src/declare_translator/__pycache__/*
 
 
-
-evaluation/bisimulation/dump/*
-
-evaluation/diagnostics/benchmarking/*
-evaluation/diagnostics/extra/*
-
-
-
 #vscode
 .vscode/*
 #pycharm
 .idea/*
+#conda
+.conda/*
 
-evaluation/performance/realworld/Sepsis Cases - Event Log.xes
-evaluation/performance/realworld/BPIC15_5.xes
