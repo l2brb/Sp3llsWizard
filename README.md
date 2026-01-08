@@ -64,7 +64,7 @@ We evaluated our algorithm on a range of both synthetic and real-world data. For
 
 #### Bisimulation
 
-To experimentally validate the correctness of our approach, we run a [bisimualtion](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/bisimulation) test. To this end, we collected a set of WF nets both from synthetic generation and the literature. We performed the comparison of the reachability FSA of WF nets and the specification FSA consisting of the Declare constraints returned by our tool.
+To experimentally validate the correctness of our approach, we run a [bisimulation](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/bisimulation) test. To this end, we collected a set of WF nets both from synthetic generation and the literature. We performed the comparison of the reachability FSA of WF nets and the specification FSA consisting of the Declare constraints returned by our tool.
 
 *Generating Reachability FSA from WF nets*
 
