@@ -1,144 +1,68 @@
-import os
-import json
-import csv
-import typer
-#import pyfiglet
-from rich import print
-from rich.console import Console
-from rich.progress import Progress
+"""CLI for the transition-based workflow-net to DECLARE translator."""
 
-from src.utils import petri_parser
-from src.declare_translator import dec_translator 
-from src.declare_translator import dec_translator_silent
-from src.alignment import run_conformance
+import csv
+import json
+from enum import Enum
+from pathlib import Path
+
+import typer
+from lxml import etree
+from rich.console import Console
+
+from src.declare_translator.dec_translator import translate_to_DEC
+from src.utils.petri_parser import parse_wn_from_pnml
 
 console = Console()
-
-app = typer.Typer(
-    help="""
-Welcome to Sp3llsWizard, a tool for synthesizing DECLARE specifications from safe and sound Workflow net casting three spells.
-"""
-)
-# ascii_banner = pyfiglet.figlet_format("Sp3llsWizard")
-# console.print(ascii_banner, style="blue")
+app = typer.Typer(help="Synthesize DECLARE specifications over workflow-net transition IDs.")
 
 
-def write_to_json(output, output_path: str):
-    with open(output_path, 'w') as file:
+class OutputFormat(str, Enum):
+    json = "json"
+    csv = "csv"
+
+
+def write_to_json(output, output_path):
+    with open(output_path, "w", encoding="utf-8") as file:
         json.dump(output, file, indent=4)
-    console.log(f"[green]Output JSON saved in[/green] {output_path}")
+        file.write("\n")
 
 
-def write_to_csv(constraints, output_path: str):
-    with open(output_path, 'w', newline='') as file:
-        writer = csv.writer(file)
-        for key, value in constraints.items():
-            writer.writerow([key, value])
-    console.log(f"[green]CSV saved in[/green] {output_path}")
+def write_to_csv(output, output_path):
+    """Keep the existing two-column model-summary CSV format."""
+    with open(output_path, "w", newline="", encoding="utf-8") as file:
+        csv.writer(file).writerows(output.items())
+
 
 @app.command()
 def export_wn(
-    pnml_file: str = typer.Option(..., help="File path .pnml"),
-    output_path: str = typer.Option(..., help="File path WF.json")
+    pnml_file: Path = typer.Option(..., exists=True, dir_okay=False, readable=True),
+    output_path: Path = typer.Option(..., dir_okay=False),
 ):
-    """
-    Export the parsed Workflow net into a JSON file.
-    """
-    workflow_net = petri_parser.parse_wn_from_pnml(pnml_file)
-    if workflow_net:
-        from src.utils import wn_json  
-        wn_json.write_to_json(workflow_net, output_path)
-        console.print("[bold green]WF net succesfully exported![/bold green]")
-    else:
-        console.print("[bold red]Error in WN parsing.[/bold red]")
+    """Export the parsed workflow net; names are retained as metadata."""
+    try:
+        write_to_json(parse_wn_from_pnml(pnml_file), output_path)
+    except (OSError, ValueError, etree.XMLSyntaxError) as exc:
+        console.print(f"Error: {exc}", style="red", markup=False)
+        raise typer.Exit(code=1) from exc
+    console.print(f"Workflow net saved to {output_path}", markup=False)
+
 
 @app.command()
 def declare_synth(
-    pnml_file: str = typer.Option(..., help="File path .pnml"),
-    output_format: str = typer.Option("json", help="Output format: 'json' o 'csv'"),
-    output_path: str = typer.Option(..., help="output file path")
+    pnml_file: Path = typer.Option(..., exists=True, dir_okay=False, readable=True),
+    output_format: OutputFormat = typer.Option(OutputFormat.json),
+    output_path: Path = typer.Option(..., dir_okay=False),
 ):
-    """
-    Cast the three spells and save output to CSV or JSON.
-    """
-    with Progress() as progress:
-        # Parsing PNML File
-        parse_task = progress.add_task("[cyan]Parsing PNML file...", total=1)
-        workflow_net = petri_parser.parse_wn_from_pnml(pnml_file)
-        progress.update(parse_task, advance=1)
-
-        if not workflow_net:
-            console.print("[bold red]Error in WN parsing[/bold red]")
-            raise typer.Exit()
-
-        # DECLARE Synthesizer
-        synth_task = progress.add_task("[cyan]Synthesizing DECLARE constraints...", total=1)
-        model_name = os.path.basename(pnml_file)
-        output = dec_translator.translate_to_DEC(workflow_net, model_name)
-        progress.update(synth_task, advance=1)
-
-    console.print("[bold green]DECLARE Constraints generated succesfully.[/bold green]")
-
-    if output_format.lower() == "json":
-        write_to_json(output, output_path)
-    elif output_format.lower() == "csv":
-        write_to_csv(output, output_path)
-    else:
-        console.print("[bold red]Invalid output format. Use 'json' or 'csv'.[/bold red]")
-
-
-
-@app.command()
-def declare_silent_synth(
-    pnml_file: str = typer.Option(..., help="File path .pnml"),
-    output_format: str = typer.Option("json", help="Output format: 'json' or 'csv'"),
-    output_path: str = typer.Option(..., help="output file path")
-):
-    """   
-    Cast the three (+ 1) spells and save output to CSV or JSON.
-    This algorithm removes the silent transitions eventually present in the input model."""
-    
-    with Progress() as progress:
-        # Parsing PNML File
-        parse_task = progress.add_task("[cyan]Parsing PNML file...", total=1)
-        workflow_net = petri_parser.parse_wn_from_pnml(pnml_file)
-        progress.update(parse_task, advance=1)
-
-        if not workflow_net:
-            console.print("[bold red]Error in WN parsing[/bold red]")
-            raise typer.Exit()
-
-        # DECLARE Synthesizer
-        synth_task = progress.add_task("[cyan]Synthesizing DECLARE constraints...", total=1)
-        model_name = os.path.basename(pnml_file)
-        output = dec_translator_silent.translate_to_DEC(workflow_net, model_name)
-        progress.update(synth_task, advance=1)
-
-    console.print("[bold green]DECLARE Constraints generated succesfully.[/bold green]")
-
-    if output_format.lower() == "json":
-        write_to_json(output, output_path)
-    elif output_format.lower() == "csv":
-        write_to_csv(output, output_path)
-    else:
-        console.print("[bold red]Invalid output format. Use 'json' or 'csv'.[/bold red]")
-
-
-@app.command()
-def conformance(
-    declare_json: str = typer.Option(..., help="Declarative specification path"),
-    log_path: str     = typer.Option(..., help="log path"),
-    output_csv: str   = typer.Option(..., help="output csv")
-):
-    """
-    Execute the alignment per trace based on optimal realization cost and save the output diagnostics in a .csv file.
-    """
-    with Progress() as progress:
-        task = progress.add_task("[cyan]Aligning log...", total=1)
-        run_conformance(declare_json, log_path, output_csv)
-        progress.update(task, advance=1)
-
-    console.print(f"[bold green]Diagnostics results in {output_csv}[/bold green]")
+    """Apply the three original rules using transition IDs as the alphabet."""
+    try:
+        workflow_net = parse_wn_from_pnml(pnml_file)
+        output = translate_to_DEC(workflow_net, pnml_file.name)
+        writer = write_to_json if output_format == OutputFormat.json else write_to_csv
+        writer(output, output_path)
+    except (OSError, ValueError, etree.XMLSyntaxError) as exc:
+        console.print(f"Error: {exc}", style="red", markup=False)
+        raise typer.Exit(code=1) from exc
+    console.print(f"DECLARE specification saved to {output_path}", markup=False)
 
 
 if __name__ == "__main__":

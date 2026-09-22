@@ -22,20 +22,66 @@ For more information about the Sp3llsWizard approach and toolkit, consult the fo
 ## Overview
 **Sp3llsWizard** has the ability to formally synthesize **DECLARE** specifications from safe and sound **Workflow Nets**. This proof-of-concept implementation automatically generates LTLf constraints from an input WF net provided as a `.pnml` file.
 
+The stable `main` branch encodes **transition IDs**, not activity labels. The
+alphabet is the transition set `T`: two transitions with the same display name
+remain distinct symbols. Names are retained only by `export-wn` as metadata.
+All transitions are retained as explicit symbols, even if marked invisible in
+PNML. No hiding, silent-transition closure or label projection is performed.
+
+The original three rules are preserved: `Atmost1` over the source place's
+postset, `End` over the sink place's preset, and one branched
+`AlternatePrecedence(preset, postset)` for each internal place. Safety and
+soundness are required; the parser validates structure and boundary markings,
+but does not prove these semantic properties.
+
+The local `dev` branch preserves the experimental silent translators,
+label-based conformance/alignment, alternative implementations and scratch
+outputs. Those experiments are not part of the stable CLI. See
+[the core review and branch inventory](docs/REVISIONE_CORE.md).
+
+
 ## Quickstart
+
+Python 3.11 or later:
 
 ```bash
 git clone https://github.com/l2brb/Sp3llsWizard.git
 cd Sp3llsWizard
-conda env create -n sp3lls-env -f environment.yml
-conda activate sp3lls-env
-python3 main.py declare-synth --pnml-file ${INPUT_WN}  --output-format json --output-path ${OUTPUT_PATH}
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+mkdir -p output
+python main.py declare-synth --pnml-file examples/sequence.pnml --output-path output/sequence.json
+python main.py export-wn --pnml-file examples/sequence.pnml --output-path output/net.json
 ```
 
-Alternatively with `pip`:
+Alternatively, create the minimal Conda environment:
+
 ```bash
-pip install -r requirements.txt
+conda env create -f environment.yml
+conda activate sp3lls-env
 ```
+
+`examples/sequence.pnml` has two transitions named `Approve`, with distinct IDs
+`t1` and `t2`. The output alphabet is `["t1", "t2"]`; the only complete run is
+`["t1", "t2"]`. JSON uses the existing `name`, `tasks`, `constraints` fields,
+with IDs in every constraint parameter. `--output-format csv` retains the
+legacy two-column model-summary export; JSON is the specification format.
+
+Only `declare-synth` and `export-wn` are supported on `main`. Input errors and
+invalid output formats return a nonzero exit status.
+
+Run the regression suite:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+The suite explores the full reachable product of the Petri-net marking
+automaton and independent DECLARE monitors on small fixtures, including loops.
+This checks complete-language equivalence on those fixtures without a trace
+length cutoff. It does not constitute a new proof for arbitrary input nets.
+
 ## Repository
 
 The main content of the repository is structured as follows:
@@ -45,12 +91,12 @@ The main content of the repository is structured as follows:
     - [/evaluation/bisimulation/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/bisimulation) contains the bisimulation test data 
     - [/evaluation/set_cardinality/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/performance/set_cardinality) includes test data on memory usage and execution time as the cardinality of the constraint set varies.
     - [/evaluation/formula_size/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/performance/formula_size) includes test data on memory usage and execution time under varying constraints formula size
-    - [/evaluation/realworld/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/realworld) includes the memory usage and execution time tests data for real-world process models
--  [/diagnostics/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/conformance): folder containing a downstream application of our algorithm for process diagnostics
+    - [/evaluation/realworld/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/performance/realworld) includes the memory usage and execution time tests data for real-world process models
+-  [/evaluation/diagnostics/](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/diagnostics): folder containing a downstream application of our algorithm for process diagnostics
 
 ### Setup & Execution
 
-- Running on **Python 3.11.0**.
+- Minimum supported Python: **3.11**.
 - Tested on:
   - Ubuntu Linux 24.04.1
   - macOS
@@ -66,6 +112,15 @@ python3 main.py declare-synth --pnml-file ${INPUT_WN}  --output-format json --ou
 
 
 ## Evaluation
+
+The following material documents the original paper experiments. Historical
+JSON specifications and results are preserved as published; they are not
+regenerated by this cleanup and may use display names. Legacy scripts can
+contain machine-specific paths. Their broader dependencies are retained in
+`evaluation/environment.yml`; they are not required by the stable translator.
+Some generated benchmark PNML files contain duplicate node IDs and are now
+rejected explicitly; see the review for the observed cases.
+
 We evaluated our algorithm on a range of both synthetic and real-world data. For the real-world testbed, we take as input processes discovered by a well-known imperative process mining algorithm from a collection of openly available event logs. We conducted the performance tests on an AMD Ryzen 9 8945HS CPU at 4.00 GHz with 32 GB RAM running Ubuntu 24.04.1. 
 
 
@@ -73,17 +128,16 @@ We evaluated our algorithm on a range of both synthetic and real-world data. For
 
 To experimentally validate the correctness of our approach, we run a [bisimulation](https://github.com/l2brb/Sp3llsWizard/tree/main/evaluation/bisimulation) test. To this end, we collected a set of WF nets both from synthetic generation and the literature. We performed the comparison of the reachability FSA of WF nets and the specification FSA consisting of the Declare constraints returned by our tool.
 
-*Generating Reachability FSA from WF nets*
+*Automated regression check*
 
-To generate the Reachability FSA, execute:
 ```bash
-bisimulation.py
+python -m unittest tests.test_translation -v
 ```
-This script:
 
-- Loads the WF net.
-- Constructs its Reachability Graph.
-- Converts it to an FSA suitable for bisimulation comparison.
+This checks seven synthetic nets and the five PNML models in
+`evaluation/bisimulation/test/wn_collection/wn`, always over transition IDs.
+The historical `bisimulation.py` and its exports remain research artifacts;
+that script requires path configuration and is not the automated test runner.
 
 *Specification FSA*
 To generate the Specification FSA from DECLARE constraints, execute the `MINERfulSimplifier` module included in [MINERful](https://github.com/cdc08x/MINERful/):

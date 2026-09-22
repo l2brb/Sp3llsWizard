@@ -1,153 +1,83 @@
-# TARGET SOURCE BRANCHING VERSION
+"""The three-spell encoding of safe, sound workflow nets over transition IDs.
 
-"""
-translate_to_DECLARE
----------------------------
-Translate the Workflow Net to Declarative constraints.
-
-Args:
-- workflow_net: Dictionary representing the Workflow Net.
-
-Returns:
-- constraints: List of Declarative constraints.
+Names are display metadata: they never identify symbols in the specification.
+Every transition is retained, including unnamed or invisible PNML transitions.
+The three rules and their place-wise branching are unchanged.
 """
 
-
-# EXISTANCE CONTRAINTS
-
-# AtMost1
 
 def get_atmost1_constraint(workflow_net):
-    # Arc target set
-    arc_targets = {arc.get("target") for arc in workflow_net["arcs"]}
-    
-    # group by source
+    """At most one occurrence from the initial place's postset."""
+    arc_targets = {arc["target"] for arc in workflow_net["arcs"]}
     arcs_by_source = {}
     for arc in workflow_net["arcs"]:
-        source = arc.get("source")
-        arcs_by_source.setdefault(source, []).append(arc)
-        
-    # dict id -> name
-    transition_by_id = {
-        t.get("id"): t.get("name")
-        for t in workflow_net["transitions"]
-    }
-    
-    # set to collect names
-    atmost1_constraints = set()
-    
+        arcs_by_source.setdefault(arc["source"], []).append(arc)
+
+    transition_ids = {t["id"] for t in workflow_net["transitions"]}
+    atmost1 = set()
     for place in workflow_net["places"]:
         if place["id"] not in arc_targets:
             for arc in arcs_by_source.get(place["id"], []):
-                transition_name = transition_by_id.get(arc.get("target"))
-                if transition_name:
-                    atmost1_constraints.add(transition_name)
-                    
-    return [{
-        "template": "Atmost1",
-        "parameters": [list(atmost1_constraints)],
-    }]
+                if arc["target"] in transition_ids:
+                    atmost1.add(arc["target"])
+    return [{"template": "Atmost1", "parameters": [sorted(atmost1)]}]
 
 
-# End
 def get_end_constraint(workflow_net):
-    # Arc source set
-    arc_sources = {arc.get("source") for arc in workflow_net.get("arcs", [])}
-    
-    # group by target
+    """The last transition belongs to the final place's preset."""
+    arc_sources = {arc["source"] for arc in workflow_net["arcs"]}
     arcs_by_target = {}
-    for arc in workflow_net.get("arcs", []):
-        target = arc.get("target")
-        arcs_by_target.setdefault(target, []).append(arc)
-        
-    # dict id -> name
-    transition_by_id = {
-        t.get("id"): t.get("name")
-        for t in workflow_net.get("transitions", [])
-    }
-    
-    # set to collect names
-    end_constraints = set()
-    
-    for place in workflow_net.get("places", []):
+    for arc in workflow_net["arcs"]:
+        arcs_by_target.setdefault(arc["target"], []).append(arc)
+
+    transition_ids = {t["id"] for t in workflow_net["transitions"]}
+    end = set()
+    for place in workflow_net["places"]:
         if place["id"] not in arc_sources:
             for arc in arcs_by_target.get(place["id"], []):
-                transition_name = transition_by_id.get(arc.get("source"))
-                if transition_name:
-                    end_constraints.add(transition_name)
-                    
-    return [{
-        "template": "End",
-        "parameters": [list(end_constraints)],
-    }]
+                if arc["source"] in transition_ids:
+                    end.add(arc["source"])
+    return [{"template": "End", "parameters": [sorted(end)]}]
 
 
-# RELATION CONSTRAINTS
-
-# Alternate Precedence [if B prev A and not B in between]
 def get_alternate_precedence(workflow_net):
-
-    transition_names = {t["id"]: t["name"] for t in workflow_net["transitions"]}
-    places_ids = set(place["id"] for place in workflow_net["places"])
-
-    arcs_from_place = {}
-    arcs_to_place = {}
-
+    """One branched AlternatePrecedence(preset, postset) per internal place."""
+    transition_ids = {t["id"] for t in workflow_net["transitions"]}
+    place_ids = {p["id"] for p in workflow_net["places"]}
+    arcs_from_place, arcs_to_place = {}, {}
     for arc in workflow_net["arcs"]:
-        source = arc["source"]
-        target = arc["target"]
-
-        if source in places_ids:
+        source, target = arc["source"], arc["target"]
+        if source in place_ids:
             arcs_from_place.setdefault(source, set()).add(target)
-        if target in places_ids:
+        if target in place_ids:
             arcs_to_place.setdefault(target, set()).add(source)
 
-    altprecedence_constraints = []
-
+    constraints = []
     for place in workflow_net["places"]:
         if place.get("initialMarking") == "1" or place.get("finalMarking") == "1":
-            continue 
-
-        place_id = place["id"]
-
-        predecessors = arcs_to_place.get(place_id, set())
-        successors = arcs_from_place.get(place_id, set())
-
-        pred_transitions = {transition_names[t_id] for t_id in predecessors if t_id in transition_names}
-        succ_transitions = {transition_names[t_id] for t_id in successors if t_id in transition_names}
-
-        if pred_transitions and succ_transitions:
-            altprecedence_constraints.append({
+            continue
+        predecessors = arcs_to_place.get(place["id"], set()) & transition_ids
+        successors = arcs_from_place.get(place["id"], set()) & transition_ids
+        if predecessors and successors:
+            constraints.append({
                 "template": "AlternatePrecedence",
-                "parameters": [list(pred_transitions), list(succ_transitions)],
+                "parameters": [sorted(predecessors), sorted(successors)],
             })
+    return constraints
 
-    return altprecedence_constraints
-
-
-
-########################################################### MAIN ##########################################################
-
-# MAIN translate_to_DEC
 
 def translate_to_DEC(workflow_net, model_name):
+    """Encode a safe, sound WF net; safety and soundness are preconditions.
 
-    
-    tasks = [transition["name"] for transition in workflow_net["transitions"]]
-
-    end_constraint = get_end_constraint(workflow_net)
-    alternate_precedence = get_alternate_precedence(workflow_net)
-    atmost1 = get_atmost1_constraint(workflow_net)
-
+    The alphabet is T, not the image of T under an activity-label mapping.
+    The output retains the existing name/tasks/constraints JSON schema.
+    """
     constraints = []
-    constraints.extend(end_constraint)
-    constraints.extend(atmost1)
-    constraints.extend(alternate_precedence)
-
-    output = {
+    constraints.extend(get_end_constraint(workflow_net))
+    constraints.extend(get_atmost1_constraint(workflow_net))
+    constraints.extend(get_alternate_precedence(workflow_net))
+    return {
         "name": model_name,
-        "tasks": tasks,
+        "tasks": [t["id"] for t in workflow_net["transitions"]],
         "constraints": constraints,
     }
-
-    return output

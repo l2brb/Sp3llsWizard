@@ -32,3 +32,14 @@ src/__pycache__/*
 #conda
 .conda/*
 
+
+# Local OS files, Python caches and environments
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+
+# Generated CLI output and local sketches
+/output/
+/sketchs/
