@@ -22,11 +22,14 @@ For more information about the Sp3llsWizard approach and toolkit, consult the fo
 ## Overview
 **Sp3llsWizard** has the ability to formally synthesize **DECLARE** specifications from safe and sound **Workflow Nets**. This proof-of-concept implementation automatically generates LTLf constraints from an input WF net provided as a `.pnml` file.
 
-The stable `main` branch encodes **transition IDs**, not activity labels. The
-alphabet is the transition set `T`: two transitions with the same display name
-remain distinct symbols. Names are retained only by `export-wn` as metadata.
-All transitions are retained as explicit symbols, even if marked invisible in
-PNML. No hiding, silent-transition closure or label projection is performed.
+The stable `main` branch always synthesizes constraints over **transition IDs**.
+The synthesis alphabet is the transition set `T`: two transitions with the same
+display name remain distinct during synthesis. Select `--symbols ids`
+to export those IDs, or `--symbols labels` (default) to substitute names after synthesis.
+Both exports include `transitionsMap` (label → list of transition IDs) for
+subsequent refinement. All transitions participate in synthesis, including
+invisible PNML transitions. Neither export performs silent-transition closure
+or hides transitions.
 
 The original three rules are preserved: `Atmost1` over the source place's
 postset, `End` over the sink place's preset, and one branched
@@ -34,7 +37,7 @@ postset, `End` over the sink place's preset, and one branched
 soundness are required; the parser validates structure and boundary markings,
 but does not prove these semantic properties.
 
-The local `dev` branch preserves the experimental silent translators,
+The `dev` branch preserves the experimental silent translators,
 label-based conformance/alignment, alternative implementations and scratch
 outputs. Those experiments are not part of the stable CLI. See
 [the core review and branch inventory](docs/REVISIONE_CORE.md).
@@ -63,10 +66,40 @@ conda activate sp3lls-env
 ```
 
 `examples/sequence.pnml` has two transitions named `Approve`, with distinct IDs
-`t1` and `t2`. The output alphabet is `["t1", "t2"]`; the only complete run is
-`["t1", "t2"]`. JSON uses the existing `name`, `tasks`, `constraints` fields,
-with IDs in every constraint parameter. `--output-format csv` retains the
-legacy two-column model-summary export; JSON is the specification format.
+`t1` and `t2`. The default label output has alphabet `["Approve"]`. With
+`--symbols ids`, the alphabet is `["t1", "t2"]` and the only complete run is
+`["t1", "t2"]`. JSON contains `name`, `tasks`,
+`constraints` and `transitionsMap`. `--output-format csv` retains the legacy
+two-column model-summary export, including the mapping; JSON is the
+specification format.
+
+### Choose transition IDs or labels
+
+```bash
+# Transition IDs (explicit opt-in)
+python main.py declare-synth --pnml-file examples/sequence.pnml --symbols ids --output-path output/sequence-ids.json
+
+# Labels (default when --symbols is omitted), substituted after synthesis
+python main.py declare-synth --pnml-file examples/sequence.pnml --symbols labels --output-path output/sequence-labels.json
+```
+
+The option works with both `--output-format json` and `--output-format csv`.
+In label mode, `tasks` and every constraint parameter use the PNML names;
+repeated labels are listed once within each set. Constraints and their groups
+are retained, even when a label appears on both sides. Missing or blank names
+fall back to the transition ID. In both modes, the example's mapping is:
+
+```json
+"transitionsMap": {"Approve": ["t1", "t2"]}
+```
+
+The behavioral-equivalence guarantee concerns the ID-based specification.
+With unique labels, label export is a renaming. With duplicate labels, this
+post-processing is a label substitution, not a general language-preserving
+projection: it can change the accepted behavior. For example, the two
+sequential `Approve` transitions become `Atmost1(Approve)` and
+`AlternatePrecedence(Approve, Approve)`. Keep ID output for behavioral analysis
+and use the mapping for further refinement.
 
 Only `declare-synth` and `export-wn` are supported on `main`. Input errors and
 invalid output formats return a nonzero exit status.

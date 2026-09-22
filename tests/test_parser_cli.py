@@ -73,10 +73,54 @@ class CliTests(unittest.TestCase):
                                           '--output-path', path, '--output-format', output_format)
                     self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
                     if output_format == 'json':
-                        self.assertEqual(json.loads(path.read_text())['tasks'], ['t1', 't2'])
+                        self.assertEqual(json.loads(path.read_text())['tasks'], ['Approve'])
                     else:
                         with path.open() as file:
-                            self.assertEqual([row[0] for row in csv.reader(file)], ['name', 'tasks', 'constraints'])
+                            self.assertEqual([row[0] for row in csv.reader(file)], ['name', 'tasks', 'constraints', 'transitionsMap'])
+
+    def test_explicit_id_output(self):
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / 'ids.json'
+            result = self.run_cli('declare-synth', '--pnml-file', EXAMPLE,
+                                  '--output-path', path, '--symbols', 'ids')
+            self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+            output = json.loads(path.read_text())
+            self.assertEqual(output['tasks'], ['t1', 't2'])
+            self.assertEqual(output['constraints'][-1]['parameters'], [['t1'], ['t2']])
+
+    def test_label_output_in_json_and_csv(self):
+        import ast
+        with tempfile.TemporaryDirectory() as folder:
+            for fmt in ('json', 'csv'):
+                with self.subTest(format=fmt):
+                    path = Path(folder) / f'labels.{fmt}'
+                    result = self.run_cli('declare-synth', '--pnml-file', EXAMPLE,
+                                          '--output-path', path, '--output-format', fmt,
+                                          '--symbols', 'labels')
+                    self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+                    if fmt == 'json':
+                        output = json.loads(path.read_text())
+                    else:
+                        with path.open() as file:
+                            rows = dict(csv.reader(file))
+                        output = {key: ast.literal_eval(rows[key]) for key in
+                                  ('tasks', 'constraints', 'transitionsMap')}
+                    self.assertEqual(output['tasks'], ['Approve'])
+                    self.assertEqual(output['transitionsMap'], {'Approve': ['t1', 't2']})
+                    self.assertEqual(output['constraints'][-1]['parameters'],
+                                     [['Approve'], ['Approve']])
+
+    def test_symbols_help_and_invalid_value(self):
+        result = self.run_cli('declare-synth', '--help')
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn('--symbols', result.stdout)
+        self.assertIn('labels', result.stdout)
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / 'invalid.json'
+            result = self.run_cli('declare-synth', '--pnml-file', EXAMPLE,
+                                  '--output-path', path, '--symbols', 'invalid')
+            self.assertNotEqual(result.returncode, 0)
+            self.assertFalse(path.exists())
 
     def test_export_wn(self):
         with tempfile.TemporaryDirectory() as folder:
