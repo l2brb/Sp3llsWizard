@@ -10,7 +10,7 @@
 
 ## Sp3llsWizard: From Sound Workflow Nets to LTLf Declarative Specifications by Casting Three Spells
 
-This repository contains the implementation and experimental toolbench presented in the paper “From Sound Workflow Nets to LTLf Declarative Specifications by Casting Three Spells". The work presents a systematic approach to synthesizing declarative process specifications from safe and sound Workflow Nets (WF nets), ensuring full behavioral preservation. Here you’ll find the complete toolchain and experimental setup, tested on both synthetic and real-world datasets, used to analyze the correctness and performance of the implemented algorithm.
+This repository contains the implementation and experimental toolbench presented in the paper “From Sound Workflow Nets to LTLf Declarative Specifications by Casting Three Spells". The work presents a systematic approach to synthesizing declarative process specifications from safe and sound Workflow Nets, ensuring behavioral preservation. Here you’ll find the complete toolchain and experimental setup, tested on both synthetic and real-world datasets, used to analyze the correctness and performance of the implemented algorithm.
 
 ## Publications and further material
 For more information about the Sp3llsWizard approach and toolkit, consult the following publications:
@@ -20,27 +20,12 @@ For more information about the Sp3llsWizard approach and toolkit, consult the fo
   - Presentation: [slideshare.net/slideshow/from-sound-workflow-nets-to-ltlf-declarative-specifications-7dab/285115645](https://www.slideshare.net/slideshow/from-sound-workflow-nets-to-ltlf-declarative-specifications-7dab/285115645)
 
 ## Overview
-**Sp3llsWizard** has the ability to formally synthesize **DECLARE** specifications from safe and sound **Workflow Nets**. This proof-of-concept implementation automatically generates LTLf constraints from an input WF net provided as a `.pnml` file.
+**Sp3llsWizard** synthesize **DECLARE** specifications from safe and sound **Workflow Nets**. This proof-of-concept implementation automatically generates LTLf constraints from an input WF net provided as a `.pnml` file.
 
-The stable `main` branch always synthesizes constraints over **transition IDs**.
-The synthesis alphabet is the transition set `T`: two transitions with the same
-display name remain distinct during synthesis. Select `--symbols ids`
-to export those IDs, or `--symbols labels` (default) to substitute names after synthesis.
-Both exports include `transitionsMap` (label → list of transition IDs) for
-subsequent refinement. All transitions participate in synthesis, including
-invisible PNML transitions. Neither export performs silent-transition closure
-or hides transitions.
-
-The original three rules are preserved: `Atmost1` over the source place's
-postset, `End` over the sink place's preset, and one branched
-`AlternatePrecedence(preset, postset)` for each internal place. Safety and
-soundness are required; the parser validates structure and boundary markings,
-but does not prove these semantic properties.
-
-The `dev` branch preserves the experimental silent translators,
-label-based conformance/alignment, alternative implementations and scratch
-outputs. Those experiments are not part of the stable CLI. See
-[the core review and branch inventory](docs/REVISIONE_CORE.md).
+The `main` branch  synthesizes constraints over **transition IDs**.
+The synthesis alphabet is the transition set `T`. Select `--symbols ids` to export those IDs, or `--symbols labels` (default) to substitute names after synthesis.
+Both exports include `transitionsMap` (label → list of transition IDs) for subsequent refinement. All transitions participate in synthesis, including
+silent (tau) transitions. 
 
 
 ## Quickstart
